@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #00ff41;
+  --primary: #00ff41;
+  --secondary: #003b00;
+  --accent: #ffff00;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --font-retro: var(--font-press-start-2p);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-retro), monospace;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* CRT Scanline Effect */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.2));
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 50;
+  animation: scrollScanlines 10s linear infinite;
+}
+
+@keyframes scrollScanlines {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+/* Terminal Glow */
+body {
+  text-shadow: 0 0 5px var(--primary);
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--background);
+  text-shadow: none;
+}
