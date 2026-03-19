@@ -1,66 +1,228 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #00ff41;
-  --primary: #00ff41;
-  --secondary: #003b00;
-  --accent: #ffff00;
+  --background: #f3f6f8;
+  --foreground: #111827;
+  --text-secondary: #4b5563;
+  --accent: #f59e0e;
+  --accent-dark: #d97706;
+  --accent-light: #fef3c7;
+  --border-dark: #0f172a;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.14);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-full: 9999px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
+  --color-text-secondary: var(--text-secondary);
   --color-accent: var(--accent);
-  --font-retro: var(--font-press-start-2p);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-light);
+  --color-border-dark: var(--border-dark);
+  --color-card-bg: var(--card-bg);
+  --font-heading: var(--font-nunito);
+  --font-body: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-retro), monospace;
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   overflow-x: hidden;
-  height: 100vh;
-  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* CRT Scanline Effect */
-.scanlines {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 50%,
-      rgba(0, 0, 0, 0.2) 50%,
-      rgba(0, 0, 0, 0.2));
-  background-size: 100% 4px;
-  pointer-events: none;
-  z-index: 50;
-  animation: scrollScanlines 10s linear infinite;
-}
-
-@keyframes scrollScanlines {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(4px);
-  }
-}
-
-/* Terminal Glow */
-body {
-  text-shadow: 0 0 5px var(--primary);
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), var(--font-body), sans-serif;
 }
 
 ::selection {
-  background: var(--primary);
-  color: var(--background);
-  text-shadow: none;
+  background: var(--accent);
+  color: var(--foreground);
+}
+
+/* ============================================
+   NEO-BRUTALIST UTILITIES (Kirim.in Style)
+   ============================================ */
+
+/* 3D Orange CTA Button */
+.btn-kirim {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-family: var(--font-heading), sans-serif;
+  color: #ffffff;
+  background: var(--accent);
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 3px 3px 0px 0px var(--border-dark);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+}
+
+.btn-kirim:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px var(--border-dark);
+}
+
+.btn-kirim:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px var(--border-dark);
+}
+
+/* Outline Button */
+.btn-outline-brutal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-family: var(--font-heading), sans-serif;
+  color: var(--foreground);
+  background: var(--card-bg);
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 3px 3px 0px 0px var(--border-dark);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-outline-brutal:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px var(--border-dark);
+  background: var(--accent-light);
+}
+
+.btn-outline-brutal:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px var(--border-dark);
+}
+
+/* Neo-Brutalist Badge ("sticker" style) */
+.badge-brutal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: var(--font-heading), sans-serif;
+  color: var(--foreground);
+  background: var(--card-bg);
+  border: 2px solid var(--border-dark);
+  border-radius: var(--radius-full);
+  box-shadow: 2px 2px 0px 0px var(--border-dark);
+}
+
+/* Card with soft shadow */
+.card-brutal {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1.5px solid #e5e7eb;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-brutal:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* Card with hard border (neo-brutalist) */
+.card-hard {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 2px solid var(--border-dark);
+  box-shadow: 4px 4px 0px 0px var(--border-dark);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-hard:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--border-dark);
+}
+
+/* Icon container (colored circle with dark border) */
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--border-dark);
+  flex-shrink: 0;
+}
+
+/* Badge chip for tech tags */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  border: 1.5px solid var(--accent-dark);
+}
+
+/* Section spacing */
+.section {
+  padding: 5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 7rem 2rem;
+  }
+}
+
+/* Divider: colored band */
+.divider-band {
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  border-radius: 3px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Accent text */
+.text-accent-pop {
+  color: var(--accent);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
 }

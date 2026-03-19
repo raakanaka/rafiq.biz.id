@@ -1,13 +1,35 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import CommandInput from "@/components/CommandInput";
+import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
-// Placeholder data - would ideally come from a CMS or the PDF content
+const projectEmojis = ["🏢", "📚", "🎨", "🌿", "🌍", "🇯🇵", "👔", "⚖️", "💰", "✈️", "🧠", "📈", "🤝", "🚗", "🧪", "🛡️"];
+
+const iconColors = [
+    { bg: "#fef3c7" },
+    { bg: "#dbeafe" },
+    { bg: "#d1fae5" },
+    { bg: "#fce7f3" },
+    { bg: "#e0e7ff" },
+    { bg: "#fef9c3" },
+    { bg: "#f3e8ff" },
+    { bg: "#ffe4e6" },
+    { bg: "#ccfbf1" },
+    { bg: "#fef3c7" },
+    { bg: "#dbeafe" },
+    { bg: "#d1fae5" },
+    { bg: "#e0f2fe" },
+    { bg: "#fef9c3" },
+    { bg: "#f0fdf4" },
+    { bg: "#fce7f3" },
+];
+
 const projects = [
     {
         id: 1,
-        title: "PT_Dananjaya_Zafer_Adibrata",
+        title: "PT Dananjaya Zafer Adibrata",
         description: "Company profile for Arka Consultant, specializing in business licensing and formation.",
         tech: ["Web Profile", "Business", "Consulting"],
         link: "https://dzagroup.co.id/arka-consultant/",
@@ -21,14 +43,14 @@ const projects = [
     },
     {
         id: 3,
-        title: "MEJA_KREATIF_STUDIO",
+        title: "Meja Kreatif Studio",
         description: "Modern website for a creative studio focusing on digital branding and aesthetics.",
         tech: ["Creative", "Branding", "UI/UX"],
         link: "https://mejakreatif.com",
     },
     {
         id: 4,
-        title: "YAYASAN_PETAI",
+        title: "Yayasan PETAI",
         description: "Organization profile dedicated to forest conservation and environmental sustainability.",
         tech: ["Non-Profit", "Environment", "NGO"],
         link: "https://petai.or.id",
@@ -42,14 +64,14 @@ const projects = [
     },
     {
         id: 6,
-        title: "JAPAN_SHIKEN_SHOP",
+        title: "Japan Shiken Shop",
         description: "Specialized e-commerce store catering to niche markets with a Japanese focus.",
         tech: ["E-Commerce", "Niche", "Store"],
         link: "https://japanshiken.com",
     },
     {
         id: 7,
-        title: "THE_BUSINESS_TAILOR",
+        title: "The Business Tailor",
         description: "Corporate site offering bespoke business strategy and branding solutions.",
         tech: ["Corporate", "Strategy", "B2B"],
         link: "https://thebusinesstailor.com.sg",
@@ -70,65 +92,142 @@ const projects = [
     },
     {
         id: 10,
-        title: "ALKHAIR TOUR AND TRAVEL",
+        title: "Alkhair Tour and Travel",
         description: "The Travel Agency for the best travel experience.",
         tech: ["Travel", "Agency", "Gallery"],
         link: "https://alkhaitravel.id",
     },
     {
         id: 11,
-        title: "PRAKTIQU",
+        title: "Praktiqu",
         description: "The Consultant Psychology Agency.",
         tech: ["Consulting", "Psychology", "Agency"],
-        link: "https://praktiqu.com",
+        link: "https://event.praktiqu.com",
     },
     {
         id: 12,
-        title: "EVRANDO_SEO",
+        title: "Evrando SEO",
         description: "SEO case study achieving top rankings for 'Lysaght Medan' keyword.",
         tech: ["SEO", "Keyword Research", "Analytics"],
         link: "https://evrando.com",
+    },
+    {
+        id: 13,
+        title: "Kolaborasa",
+        description: "Website sistem untuk platform kolaborasi dan manajemen.",
+        tech: ["Platform", "System", "Collaboration"],
+        link: "https://kolaborasa.id",
+    },
+    {
+        id: 14,
+        title: "Mulya Rental Mobil",
+        description: "Website travel dan rental mobil untuk layanan transportasi wisata.",
+        tech: ["Travel", "Rent Car", "Service"],
+        link: "https://mulyarentalmobil.com",
+    },
+    {
+        id: 15,
+        title: "BPT KLIN",
+        description: "Website produk chemical soap dan solusi kebersihan profesional.",
+        tech: ["Chemical", "Product", "Industry"],
+        link: "https://bptklin.com",
+    },
+    {
+        id: 16,
+        title: "Asia Safety Pro",
+        description: "Website layanan protection guard dan keamanan profesional.",
+        tech: ["Security", "Protection", "Service"],
+        link: "https://asiasafety.pro",
     },
 ];
 
 export default function Projects() {
     return (
-        <main className="min-h-screen flex flex-col font-mono relative z-10 p-4 md:p-8">
+        <main className="min-h-screen flex flex-col">
             <Navbar />
-            <div className="max-w-6xl mx-auto w-full flex-1">
-                <h1 className="text-3xl md:text-5xl text-primary mb-8 text-shadow-glow">
-                    Projects
-                </h1>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {projects.map((project) => (
-                        <div
-                            key={project.id}
-                            className="border border-primary bg-black/50 p-4 hover:bg-primary/10 transition-colors group relative"
+            <section className="section flex-1">
+                <div className="max-w-6xl mx-auto">
+                    {/* Header */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="text-center mb-12"
+                    >
+                        <h1
+                            className="text-4xl md:text-5xl font-extrabold mb-4"
+                            style={{ color: "var(--foreground)", letterSpacing: "-0.02em" }}
                         >
-                            <div className="absolute top-0 right-0 p-1 text-xs text-secondary bg-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                                [OPEN]
-                            </div>
-                            <h2 className="text-xl text-accent mb-2">{project.title}</h2>
-                            <p className="text-sm text-primary/80 mb-4 h-20 overflow-hidden">
-                                {project.description}
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {project.tech.map((t) => (
-                                    <span key={t} className="text-xs border border-secondary px-1 text-secondary font-bold">
-                                        {t}
-                                    </span>
-                                ))}
-                            </div>
-                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="block w-full text-center border border-accent text-accent hover:bg-accent hover:text-black py-1 text-sm">
-                                [ Visit_Site ]
-                            </a>
-                        </div>
-                    ))}
+                            My <span className="text-accent-pop">Projects</span>
+                        </h1>
+                        <p className="text-lg" style={{ color: "var(--text-secondary)" }}>
+                            Explore the work I&apos;ve crafted for clients and personal endeavors ✦
+                        </p>
+                    </motion.div>
+
+                    {/* Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {projects.map((project, i) => (
+                            <motion.a
+                                key={project.id}
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.4, delay: i * 0.05 }}
+                                className="card-brutal group"
+                                style={{
+                                    padding: "1.5rem",
+                                    textDecoration: "none",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                }}
+                            >
+                                <div className="flex items-start justify-between mb-3">
+                                    <div
+                                        className="icon-circle"
+                                        style={{ background: iconColors[i % iconColors.length].bg }}
+                                    >
+                                        <span style={{ fontSize: "1.125rem" }}>{projectEmojis[i % projectEmojis.length]}</span>
+                                    </div>
+                                    <ArrowUpRight
+                                        size={16}
+                                        style={{
+                                            color: "var(--text-secondary)",
+                                            transition: "transform 0.2s",
+                                            flexShrink: 0,
+                                            marginTop: 2,
+                                        }}
+                                        className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                    />
+                                </div>
+                                <h2
+                                    className="text-base font-bold mb-2"
+                                    style={{ color: "var(--foreground)" }}
+                                >
+                                    {project.title}
+                                </h2>
+                                <p
+                                    className="text-sm leading-relaxed mb-4 flex-1"
+                                    style={{ color: "var(--text-secondary)" }}
+                                >
+                                    {project.description}
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tech.map((t) => (
+                                        <span key={t} className="chip">{t}</span>
+                                    ))}
+                                </div>
+                            </motion.a>
+                        ))}
+                    </div>
                 </div>
-            </div>
-            <div className="mt-8"></div>
-            <CommandInput />
+            </section>
+
+            <Footer />
         </main>
     );
 }

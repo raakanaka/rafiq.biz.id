@@ -1,61 +1,180 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TypingText from "./TypingText";
+import Link from "next/link";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="flex flex-col gap-4 text-primary p-4 md:p-8 max-w-4xl mx-auto min-h-[60vh] justify-center">
-            <div className="mb-4">
-                <TypingText
-                    text="> Initializing Rafiq.exe..."
-                    delay={0}
-                    className="block text-accent mb-2"
-                />
-                <TypingText
-                    text="> Status: ONLINE"
-                    delay={1.5}
-                    className="block text-primary mb-2"
-                />
-                <TypingText
-                    text="> Loading profile data..."
-                    delay={3}
-                    className="block text-primary mb-4"
-                />
+        <section
+            className="relative overflow-hidden"
+            style={{ minHeight: "88vh", display: "flex", alignItems: "center" }}
+        >
+            {/* Decorative grid background */}
+            <div
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    backgroundImage: `
+                        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
+                    `,
+                    backgroundSize: "40px 40px",
+                    zIndex: 0,
+                }}
+            />
+
+            {/* Decorative blob */}
+            <div
+                style={{
+                    position: "absolute",
+                    top: "10%",
+                    right: "-5%",
+                    width: 400,
+                    height: 400,
+                    borderRadius: "50%",
+                    background: "radial-gradient(circle, rgba(245,158,14,0.15) 0%, transparent 70%)",
+                    zIndex: 0,
+                }}
+            />
+
+            <div className="max-w-6xl mx-auto px-6 w-full relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Left: Text content */}
+                    <div>
+                        {/* Sticker badge */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 16, rotate: -2 }}
+                            animate={{ opacity: 1, y: 0, rotate: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="mb-6"
+                        >
+                            <span className="badge-brutal">
+                                <Sparkles size={14} style={{ color: "var(--accent)" }} />
+                                Available for freelance
+                            </span>
+                        </motion.div>
+
+                        {/* Heading */}
+                        <motion.h1
+                            initial={{ opacity: 0, y: 24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6"
+                            style={{ letterSpacing: "-0.02em", color: "var(--foreground)" }}
+                        >
+                            Build, Create, &{" "}
+                            <span className="text-accent-pop">Stand Out</span>
+                            <br />
+                            — With{" "}
+                            <span
+                                style={{
+                                    background: "var(--accent)",
+                                    color: "#fff",
+                                    padding: "2px 12px",
+                                    borderRadius: "var(--radius-sm)",
+                                    border: "2px solid var(--border-dark)",
+                                    boxShadow: "3px 3px 0px 0px var(--border-dark)",
+                                }}
+                            >
+                                Rafiq
+                            </span>
+                        </motion.h1>
+
+                        {/* Subtitle */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.25 }}
+                            className="text-lg mb-10 leading-relaxed"
+                            style={{ color: "var(--text-secondary)", maxWidth: 480 }}
+                        >
+                            Web Developer & SEO Specialist based in Indonesia.
+                            I craft performant, accessible, and visually polished digital experiences.
+                        </motion.p>
+
+                        {/* CTAs */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            className="flex flex-wrap gap-4"
+                        >
+                            <Link href="/projects" className="btn-kirim">
+                                View Projects <ArrowRight size={16} />
+                            </Link>
+                            <Link href="/about" className="btn-outline-brutal">
+                                About Me
+                            </Link>
+                        </motion.div>
+                    </div>
+
+                    {/* Right: Decorative card collage */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.92 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.7, delay: 0.3 }}
+                        className="hidden lg:block relative"
+                        style={{ minHeight: 400 }}
+                    >
+                        {/* Main card */}
+                        <div
+                            className="card-hard"
+                            style={{
+                                padding: "2rem",
+                                position: "absolute",
+                                top: "10%",
+                                left: "10%",
+                                width: "80%",
+                                animation: "float 6s ease-in-out infinite",
+                            }}
+                        >
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="icon-circle" style={{ background: "var(--accent-light)" }}>
+                                    <span style={{ fontSize: "1.25rem" }}>💻</span>
+                                </div>
+                                <div>
+                                    <div className="text-sm font-bold" style={{ color: "var(--foreground)" }}>Web Developer</div>
+                                    <div className="text-xs" style={{ color: "var(--text-secondary)" }}>rafiq.biz.id</div>
+                                </div>
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                                {["React", "Next.js", "SEO", "Node.js"].map((t) => (
+                                    <span key={t} className="chip">{t}</span>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Small floating badge */}
+                        <div
+                            className="badge-brutal"
+                            style={{
+                                position: "absolute",
+                                top: "0%",
+                                right: "5%",
+                                animation: "float 8s ease-in-out infinite 1s",
+                            }}
+                        >
+                            <span style={{ fontSize: "0.875rem" }}>🟢</span> Available to work
+                        </div>
+
+                        {/* Stats mini-card */}
+                        <div
+                            className="card-hard"
+                            style={{
+                                position: "absolute",
+                                bottom: "5%",
+                                right: "5%",
+                                padding: "1rem 1.25rem",
+                                animation: "float 7s ease-in-out infinite 0.5s",
+                            }}
+                        >
+                            <div className="text-2xl font-extrabold" style={{ color: "var(--accent)" }}>12+</div>
+                            <div className="text-xs font-semibold" style={{ color: "var(--text-secondary)" }}>Projects Done</div>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
-
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 5, duration: 0.5 }}
-            >
-                <h1 className="text-4xl md:text-6xl mb-6 text-white text-shadow-glow">
-                    Hello, I am Rafiq.
-                </h1>
-                <h2 className="text-xl md:text-2xl text-accent mb-8">
-                    &lt;WebDeveloper /&gt;
-                </h2>
-
-                <p className="leading-8 text-sm md:text-base max-w-2xl text-opacity-90 text-primary/80">
-                    Welcome to my digital terminal. I build things for the web.
-                    Passionate about clean code, retro aesthetics, and solving complex problems.
-                </p>
-            </motion.div>
-
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 6.5, duration: 0.5 }}
-                className="mt-12 flex flex-col gap-2 border border-secondary p-4 bg-secondary/10"
-            >
-                <h3 className="text-accent underline decoration-dotted mb-2">System Specs:</h3>
-                <ul className="list-disc list-inside text-xs md:text-sm space-y-1">
-                    <li>Location: Indonesia</li>
-                    <li>OS: Windows (Power User)</li>
-                    <li>Stack: React, Next.js, Node.js</li>
-                    <li>Coffee: Required</li>
-                </ul>
-            </motion.div>
         </section>
     );
 }

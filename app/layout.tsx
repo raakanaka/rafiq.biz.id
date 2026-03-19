@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { Press_Start_2P } from "next/font/google";
+import { Nunito, Inter } from "next/font/google";
 import "./globals.css";
 
-const pressStart2P = Press_Start_2P({
-  weight: "400",
-  variable: "--font-press-start-2p",
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800", "900"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Rafiq.exe",
-  description: "Terminal Style Portfolio",
+  title: "Rafiq — Web Developer & SEO Specialist",
+  description:
+    "Hi, I'm Rafiq. A Web Developer and SEO Specialist based in Indonesia. I craft performant, accessible, and visually polished web experiences.",
 };
 
 export default function RootLayout({
@@ -20,13 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${pressStart2P.variable} antialiased`}
-      >
-        <div className="scanlines"></div>
-        <div className="terminal-wrapper">
-          {children}
-        </div>
+      <body className={`${nunito.variable} ${inter.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );
