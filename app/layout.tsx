@@ -14,9 +14,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rafiq — Web Developer & SEO Specialist",
+  metadataBase: new URL("https://rafiq.biz.id"),
+  title: {
+    default: "Rafiq — Web Developer & SEO Specialist",
+    template: "%s | Rafiq",
+  },
   description:
     "Hi, I'm Rafiq. A Web Developer and SEO Specialist based in Indonesia. I craft performant, accessible, and visually polished web experiences.",
+  keywords: ["Rafiq", "Web Developer", "SEO Specialist", "Indonesia", "Frontend Developer", "Next.js", "React"],
+  openGraph: {
+    title: "Rafiq — Web Developer & SEO Specialist",
+    description: "Hi, I'm Rafiq. A Web Developer and SEO Specialist based in Indonesia.",
+    url: "https://rafiq.biz.id",
+    siteName: "Rafiq's Portfolio",
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rafiq — Web Developer & SEO Specialist",
+    description: "Hi, I'm Rafiq. A Web Developer and SEO Specialist based in Indonesia.",
+  },
 };
 
 export default function RootLayout({
