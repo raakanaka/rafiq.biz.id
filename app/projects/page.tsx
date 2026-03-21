@@ -139,6 +139,27 @@ const projects = [
         tech: ["Security", "Protection", "Service"],
         link: "https://asiasafety.pro",
     },
+    {
+        id: 17,
+        title: "HiiBoss AI",
+        description: "AI-powered platform building intelligent agents for business automation and smart workflow management.",
+        tech: ["AI", "Automation", "Platform"],
+        link: "https://hiiboss.ai/",
+    },
+    {
+        id: 18,
+        title: "ShopFoodie AI",
+        description: "Innovative AI-driven culinary e-commerce platform for smart recipe recommendations and personalized shopping.",
+        tech: ["E-Commerce", "AI", "FoodTech"],
+        link: "https://shopfoodie-ai.com/",
+    },
+    {
+        id: 19,
+        title: "Vive Software",
+        description: "Modern software solutions and technology consulting focusing on scalable enterprise systems and digital transformation.",
+        tech: ["Software", "Enterprise", "Consulting"],
+        link: "https://vive.software/",
+    },
 ];
 
 export default function Projects() {
