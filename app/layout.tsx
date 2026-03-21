@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     url: "https://rafiq.biz.id",
     siteName: "Rafiq's Portfolio",
     locale: "id_ID",
+    alternateLocale: ["en_US", "en_SG"],
     type: "website",
   },
   twitter: {
