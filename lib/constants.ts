@@ -15,5 +15,5 @@ export const TARGET_CITIES = [
   "padang", "malang", "balikpapan", "samarinda", "tasikmalaya",
   "pontianak", "banjarmasin", "denpasar", "serang", "jambi",
   "surakarta", "manado", "cimahi", "kupang", "jayapura",
-  "yogyakarta", "mataram", "cilegon"
+  "yogyakarta", "mataram", "cilegon", "tanjung-balai", "tebing-tinggi", "pematang-siantar", "binjai", "lhokseumawe",
 ];
