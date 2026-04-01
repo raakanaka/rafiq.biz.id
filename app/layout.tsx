@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     title: "Rafiq — Web Developer & SEO Specialist",
     description: "Hi, I'm Rafiq. A Web Developer and SEO Specialist based in Indonesia.",
   },
+  verification: {
+    google: "5miu4ARJmpD9kvO9MCJEXx68h31JTqARMZbMlb8Kem4",
+  },
 };
 
 export default function RootLayout({
