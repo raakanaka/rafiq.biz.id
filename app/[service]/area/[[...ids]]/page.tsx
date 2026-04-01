@@ -154,10 +154,10 @@ export default async function LocationDirectoryPage({ params }: Props) {
             )}
             
             <h1 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
-              Cakupan Layanan di <span className="text-accent">{formatString(currentLevelName)}</span>
+              Cakupan Layanan Web Developer di <span className="text-accent">{formatString(currentLevelName)}</span>
             </h1>
             <p className="text-lg text-text-secondary max-w-2xl leading-relaxed">
-              Jelajahi hierarki layanan kami atau pesan langsung {serviceName.toLowerCase()} khusus untuk wilayah ini agar mendapatkan peringkat lokal terbaik di mesin pencari.
+              Kami siap membantu bisnis Anda di wilayah ini mendominasi pencarian Google. Eksplorasi hierarki area spesifik Anda, atau klik di bawah untuk melihat penawaran pembuatan Website Company Profile dan Toko Online.
             </p>
           </div>
 
