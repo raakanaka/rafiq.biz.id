@@ -45,7 +45,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "Optimasi Google",
         "SEO Bergaransi",
         "Jasa SEO Murah",
-        "Traffic Organik"
+        "Traffic Organik",
+        "jasa GEO",
+        "Jasa SEO AI",
+        "SEO Optimasi",
+        "Jasa SEO Profesional",
+        "Jasa SEO Terbaik",
+        "Jasa SEO Murah"
       ],
       openGraph: { title, description, type: "website" },
     };
@@ -74,6 +80,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Company profile",
       "Website bisnis",
       "Pembuatan landing page",
+      "Jasa Pembuatan Website Profesional",
+      "Jasa Pembuatan Website Terbaik",
+      "Jasa Pembuatan Website Murah",
+      "Jasa Pembuatan Website Bergaransi",
+      "Jasa Pembuatan Website Profesional",
+      "Jasa Pembuatan Website Terbaik",
+      "Jasa Pembuatan Website Murah",
+      "Jasa Pembuatan Website Bergaransi",
+      "buat website murah",
+      "buat website profesional",
+      "buat website terbaik",
+      "buat website murah",
+      "buat website bergaransi",
     ],
     openGraph: {
       title,
@@ -254,9 +273,9 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
               Jasa {serviceName} <span className="text-accent-pop">{displayLocation}</span>
             </h1>
             <p className="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl mx-auto leading-relaxed">
-              {isSeoService 
-               ? "Raih posisi puncak mesin pencarian dengan kepastian teknik optimasi White-hat yang aman. Jadikan profil bisnis Anda raja traffic organik, dominasi visibilitas AI Overview (SGE), dan biarkan kompetitor berjuang hanya jadi penonton di halaman gurem." 
-               : "Bukan sekadar website biasa. Kami membangun ekosistem digital (Company Profile, Toko Online, Landing Page) yang dirancang secara saintifik untuk mendominasi Semantic Search, dan mengubah trafik organik menjadi klien potensial."
+              {isSeoService
+                ? "Raih posisi puncak mesin pencarian dengan kepastian teknik optimasi White-hat yang aman. Jadikan profil bisnis Anda raja traffic organik, dominasi visibilitas AI Overview (SGE), dan biarkan kompetitor berjuang hanya jadi penonton di halaman gurem."
+                : "Bukan sekadar website biasa. Kami membangun ekosistem digital (Company Profile, Toko Online, Landing Page) yang dirancang secara saintifik untuk mendominasi Semantic Search, dan mengubah trafik organik menjadi klien potensial."
               }
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -316,7 +335,7 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-              
+
               {isSeoService ? (
                 <>
                   {/* Paket SEO 1 : 1.8 Juta */}
