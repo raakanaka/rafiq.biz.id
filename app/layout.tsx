@@ -36,8 +36,17 @@ export const metadata: Metadata = {
     title: "Rafiq — Web Developer & SEO Specialist",
     description: "Hi, I'm Rafiq. A Web Developer and SEO Specialist based in Indonesia.",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": "https://rafiq.biz.id/feed.xml",
+    },
+  },
   verification: {
     google: "5miu4ARJmpD9kvO9MCJEXx68h31JTqARMZbMlb8Kem4",
+  },
+  other: {
+    "llms.txt": "https://rafiq.biz.id/llms.txt",
+    "llms-full.txt": "https://rafiq.biz.id/llms-full.txt",
   },
 };
 
