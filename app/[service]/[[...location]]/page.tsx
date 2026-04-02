@@ -80,6 +80,41 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
   const waMessage = `Halo, saya tertarik dengan ${serviceName.toLowerCase()}${displayLocation}. Boleh info lebih lanjut?`;
   const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`;
 
+  const faqList = [
+    {
+      q: "Berapa biaya jasa pembuatan website profesional untuk bisnis saya?",
+      a: "Harga layanan dari web developer kami sangat kompetitif namun tetap memberikan standar kualitas enterprise. Kami menawarkan paket transparan mulai dari Rp1.600.000 untuk paket pembuatan web UMKM, hingga Rp2.900.000 untuk kelas Corporate Premium dengan fitur e-commerce dan optimasi SEO tingkat lanjut."
+    },
+    {
+      q: "Berapa lama proses pembuatan / pengembangan toko online hingga dapat digunakan?",
+      a: "Durasi proses rekayasa desain web (web development) rata-rata memakan waktu singkat antara 3-14 hari kerja. Estimasi ini bisa lebih cepat tergantung pada kelengkapan materi pendukung bisnis Anda, serta kerumitan sistem maupun integrasi custom yang dibutuhkan."
+    },
+    {
+      q: "Apakah website sudah dirancang SEO-Friendly dan gampang ditemukan di pencarian Google, Bing, dan lainnya?",
+      a: "Tentu. Semua fondasi website dibangun menggunakan teknik On-Page SEO terstandarisasi, arsitektur Semantic HTML, plus schema markup Data Terstruktur JSON-LD. Kami juga mendaftarkan sitemap web ke Google Search Console dan Bing Webmaster untuk memperkuat dan mempermudah indeksasi oleh robot mesin penelusur."
+    },
+    {
+      q: "Bagaimana optimasi AI Overview (Google SGE & Copilot) dari jasa pembuatan website Anda?",
+      a: "Era pencarian sudah beralih ke Search Generative Experience bertenaga AI. Website rancangan kami sudah dikondisikan sangat ramah untuk crawler AI (LLM-friendly), diinjeksi dengan copywriting semantik agar inti halaman mudah ditangkap secara otomatis (indexing) oleh mesin SGE sebagai rekomendasi profil bisnis yang terpercaya."
+    },
+    {
+      q: "Apakah desain konten bersifat Mobile-Friendly (Responsif) di semua platform layar?",
+      a: "Pasti! Saat ini mayoritas pengunjung berasal dari smartphone. Kami menerapkan pendekatan desain Mobile-First yang menjamin kecepatan pemuatan (Core Web Vitals) superior, ditambah lagi dengan antarmuka User Experience (UX) yang sangat terorganisir, baik pada ukuran layar desktop besar hingga seukuran saku."
+    },
+    {
+      q: "Lebih baik mana: Memakai template CMS instan atau menyewa Jasa Bikin Web Profesional?",
+      a: "Template CMS gratisan sering menyertakan fitur bawaan berat yang memperlambat website (bloat) dan rentan celah keamanan. Sebaliknya dengan pembuat website profesional, strategi rekayasa alur pengunjung sudah dipikirkan matang-matang guna menaikan retensi hingga memperlancar navigasi pemicu klik WhatsApp sebagai prospek konversi."
+    },
+    {
+      q: "Apakah saya harus membayar biaya maintenance hosting atau layanan server tahunan?",
+      a: "Tentu. Mesin website selalu memerlukan perpanjangan akses kepemilikan nama domain.com asli Anda serta berlangganan ruang cloud storage server (Web Hosting) yang aktif 24/7. Bersama kami, kompleksitas ini diurus 100% oleh ahli teknis, Anda tak perlu ribet mengurusi downtime, cukup fokus meraup pelanggan bisnis yang berdatangan."
+    },
+    {
+      q: `Apakah ke depannya saya bisa memperbarui informasi layanan untuk ${serviceName} secara manual?`,
+      a: "Pasti bisa. Anda tak butuh pengetahuan coding. Terdapat akses control panel admin intuitif untuk mengganti isi teks landing page, foto portofolio, hingga produk. Kalaupun timbul pertanyaan sewaktu penggunaan, prioritas customer support pendamping (live maintenance chat) kami senantiasa siaga dengan instruksi penyelesaian paling mudah di hari kerja."
+    }
+  ];
+
   // JSON-LD Structured Data for Service, LocalBusiness/Organization, and FAQ
   const jsonLd = {
     "@context": "https://schema.org",
@@ -123,40 +158,14 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
       },
       {
         "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Berapa lama proses pembuatan website?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Proses pembuatan rata-rata memakan waktu 3-14 hari kerja, tergantung pada kompleksitas fitur dan kesiapan materi dari Anda.",
-            },
+        "mainEntity": faqList.map((faq) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a,
           },
-          {
-            "@type": "Question",
-            "name": "Apakah website sudah termasuk optimasi SEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ya, semua paket pembuatan website kami sudah disetting SEO On-page dasar dan diregistrasikan di Google Search Console agar mudah terindeks.",
-            },
-          },
-          {
-            "@type": "Question",
-            "name": "Apakah saya harus bayar perpanjangan tahunan?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Tentu. Setiap website membutuhkan domain dan layanan hosting (server) yang perlu diperpanjang setiap tahun agar website tetap aktif.",
-            },
-          },
-          {
-            "@type": "Question",
-            "name": "Bisa untuk Google AI Overview?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Website dirancang dengan standar semantik HTML yang bersih serta snippet microdata/JSON-LD, yang sangat membantu agar konten Anda bisa mudah dikutip oleh Google AI Overview (SGE).",
-            },
-          },
-        ],
+        })),
       },
     ],
   };
@@ -294,7 +303,7 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
                   <span className="text-3xl font-extrabold text-foreground">Rp2,9 Juta</span>
                 </div>
                 <ul className="space-y-4 mb-8 flex-1">
-                  {["Semua Fitur Paket Pro", "Server Hosting Premium Spesifikasi Tinggi", "Katalog Produk Lanjut/LMS", "Fitur Bilingual (Dua Bahasa)", "Analisis Konversi Tahapan", "Revisi Minor Selama Masa Aktif"].map((feature, i) => (
+                  {["Semua Fitur Paket Pro", "Server Hosting Premium Spesifikasi Tinggi", "Katalog Produk Lanjut", "Fitur Bilingual (Dua Bahasa)", "Analisis Konversi Tahapan", "Revisi Minor Selama Masa Aktif"].map((feature, i) => (
                     <li key={i} className="flex items-start gap-3 text-text-secondary">
                       <CheckCircle2 className="text-accent flex-shrink-0" size={20} />
                       <span>{feature}</span>
@@ -321,12 +330,7 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
             </div>
 
             <div className="space-y-4">
-              {[
-                { q: "Berapa biaya jasa pembuatan website profesional?", a: "Harga jasa freelancer / web developer sangat bervariasi. Kami menawarkan paket transparan mulai dari Rp1.600.000 untuk kelas UMKM hingga Rp2.900.000 untuk Corporate VIP dengan fitur katalog dan optimasi SGE tingkat lanjut." },
-                { q: "Apa bedanya website biasa dengan website hasil optimasi AIO/SEO?", a: "Website biasa hanya menampilkan informasi statis. Website hasil optimasi kami dirancang secara 'Semantic', memakai arsitektur Data Terstruktur, sehingga kecerdasan buatan Google (AI Overview) memahami secara instan bahwa Anda adalah layanan terbaik di wilayah sasaran." },
-                { q: "Apakah layanan pembuatan web ini mencakup toko online (E-commerce)?", a: "Tentu. Pada Paket Premium, kami mencakup pembuatan katalog produk atau sistem toko online yang memudahkan pembeli melakukan checkout dan mendongkrak niat pembelian (buying intent)." },
-                { q: "Pentingkah menyewa Jasa Bikin Web jika bisa buat sendiri?", a: "Membuat web sendiri mungkin murah, namun tanpa pemahaman kuat di bidang UX Konversi dan Teknikal SEO, web tersebut akan sulit ditemukan di halaman pertama Google. Jasa ahli kami memastikan investasi Anda kembali melalui traffic murni." },
-              ].map((faq, i) => (
+              {faqList.map((faq, i) => (
                 <div key={i} className="card-hard p-6">
                   <h3 className="text-lg font-bold mb-2 text-foreground flex items-center gap-2">
                     <span className="text-accent">Q:</span> {faq.q}
