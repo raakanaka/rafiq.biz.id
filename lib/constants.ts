@@ -1,4 +1,4 @@
-export const ALLOWED_SERVICES = [
+export const WEB_DEV_SERVICES = [
   "jasa-pembuatan-website",
   "bikin-website",
   "jasa-web",
@@ -7,6 +7,18 @@ export const ALLOWED_SERVICES = [
   "developer-website",
   "buat-website"
 ];
+
+export const SEO_SERVICES = [
+  "jasa-seo",
+  "jasa-optimasi-website",
+  "jasa-seo-lokal",
+  "jasa-seo-murah",
+  "jasa-seo-bergaransi",
+  "pakar-seo",
+  "konsultan-seo"
+];
+
+export const ALLOWED_SERVICES = [...WEB_DEV_SERVICES, ...SEO_SERVICES];
 
 export const TARGET_CITIES = [
   "jakarta", "surabaya", "bandung", "medan", "bekasi",
