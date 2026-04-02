@@ -2,6 +2,8 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Experience from "@/components/Experience";
+import GitHubActivity from "@/components/GitHubActivity";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -52,6 +54,18 @@ export default function Home() {
         <main className="min-h-screen flex flex-col">
             <Navbar />
             <Hero />
+
+            {/* Divider band */}
+            <div className="divider-band" />
+
+            {/* Work Experience */}
+            <Experience />
+
+            {/* Divider band */}
+            <div className="divider-band" />
+
+            {/* GitHub Activity */}
+            <GitHubActivity />
 
             {/* Divider band */}
             <div className="divider-band" />
