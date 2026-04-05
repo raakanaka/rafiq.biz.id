@@ -1,6 +1,5 @@
-import { ALLOWED_SERVICES, TARGET_CITIES, WEB_DEV_SERVICES, SEO_SERVICES } from '@/lib/constants';
+import { ALLOWED_SERVICES, TARGET_CITIES, SEO_SERVICES } from '../../lib/constants';
 
-export const dynamic = 'force-static';
 function formatString(str: string): string {
   return str.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
 }
@@ -45,7 +44,7 @@ export async function GET() {
     {
       title: 'About Rafiq',
       link: `${baseUrl}/about`,
-      description: 'Rafiq is a dedicated Web Developer and SEO Specialist based in Indonesia. He specializes in building accessible, performant, and visually striking applications using Next.js, React, TypeScript, and Tailwind CSS.',
+      description: 'Rafiq is a dedicated Web Developer and SEO Specialist based in Indonesia. He specializes in building accessible, performant, and visually striking applications using Astro, React, TypeScript, and Tailwind CSS.',
       category: 'About',
     },
     {
@@ -62,7 +61,7 @@ export async function GET() {
     },
   ];
 
-  // Service items (top-level only, not all location variants)
+  // Service items
   const serviceItems = ALLOWED_SERVICES.map(service => {
     const name = formatString(service);
     const isSeo = SEO_SERVICES.includes(service);
@@ -76,7 +75,6 @@ export async function GET() {
     };
   });
 
-  // Top city service items (only first 5 services × top 10 cities to keep feed manageable)
   const cityItems = ALLOWED_SERVICES.slice(0, 3).flatMap(service => {
     const name = formatString(service);
     const isSeo = SEO_SERVICES.includes(service);
@@ -90,7 +88,6 @@ export async function GET() {
     }));
   });
 
-  // Project items
   const projectItems = projects.map(p => ({
     title: `Project: ${p.title}`,
     link: p.link,

@@ -11,8 +11,8 @@ name = "rafiq-biz-id"
 "/app" = "."
 
 [run]
-# Ini adalah environment variable standard untuk server produksi Next.js
+# Ini adalah environment variable standard untuk server produksi
 env = { NODE_ENV = "production", PORT = "8080" }
 
 # Menjalankan spesifik file server dari hasil build "standalone"
-command = "node /app/.next/standalone/server.js"
+command = "node /app/dist/server/entry.mjs"

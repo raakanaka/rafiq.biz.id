@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Experience from '../components/Experience';
+import Footer from '../components/Footer';
+
+const iconColors = [
+    { bg: "#fef3c7", border: "#d97706" },
+    { bg: "#dbeafe", border: "#2563eb" },
+    { bg: "#d1fae5", border: "#059669" },
+];
+
+const featuredProjects = [
+    {
+        title: "HALOEXPERT",
+        description: "Learning Management System simplifying online training and education programs.",
+        tech: ["LMS", "Education", "Platform"],
+        link: "https://haloexpert.id",
+        emoji: "📚",
+    },
+    {
+        title: "Meja Kreatif Studio",
+        description: "Modern website for a creative studio focusing on digital branding and aesthetics.",
+        tech: ["Creative", "Branding", "UI/UX"],
+        link: "https://mejakreatif.com",
+        emoji: "🎨",
+    },
+    {
+        title: "EKSPORA",
+        description: "Platform empowering SMEs to enter and succeed in the international export market.",
+        tech: ["SME", "Export", "Platform"],
+        link: "https://ekspora.com",
+        emoji: "🌍",
+    },
+];
+
+const skills = [
+    { name: "JavaScript", emoji: "⚡" },
+    { name: "TypeScript", emoji: "🔷" },
+    { name: "React", emoji: "⚛️" },
+    { name: "Astro", emoji: "🚀" },
+    { name: "Tailwind CSS", emoji: "🎨" },
+    { name: "Node.js", emoji: "🟩" },
+    { name: "SEO", emoji: "🔍" },
+    { name: "UI/UX Design", emoji: "✨" },
+];
+---
+
+<Layout>
+    <main class="min-h-screen flex flex-col">
+        <Navbar client:load />
+        <Hero client:load />
+
+        <!-- Divider band -->
+        <div class="divider-band"></div>
+
+        <!-- Work Experience -->
+        <Experience client:load />
+        
+        <!-- Divider band -->
+        <div class="divider-band"></div>
+
+        <!-- Featured Projects -->
+        <section class="section" style="background: var(--card-bg)">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-3" style="color: var(--foreground); letter-spacing: -0.02em;">
+                        Featured <span class="text-accent-pop">Projects</span>
+                    </h2>
+                    <p style="color: var(--text-secondary); font-size: 1.0625rem;">
+                        A selection of work I'm proud of
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {featuredProjects.map((project, i) => (
+                        <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="card-brutal group block"
+                            style="padding: 1.75rem; text-decoration: none;"
+                        >
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="icon-circle" style={`background: ${iconColors[i % iconColors.length].bg};`}>
+                                    <span style="font-size: 1.25rem;">{project.emoji}</span>
+                                </div>
+                                <!-- Basic implementation of ArrowUpRight svg since lucide react icon is inside an astro map -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style="color: var(--text-secondary); transition: transform 0.2s;"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2" style="color: var(--foreground);">
+                                {project.title}
+                            </h3>
+                            <p class="text-sm mb-5 leading-relaxed" style="color: var(--text-secondary);">
+                                {project.description}
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                {project.tech.map((t) => (
+                                    <span class="chip">{t}</span>
+                                ))}
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider band -->
+        <div class="divider-band"></div>
+
+        <!-- Skills -->
+        <section class="section">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-3" style="color: var(--foreground); letter-spacing: -0.02em;">
+                        Skills & <span class="text-accent-pop">Stack</span>
+                    </h2>
+                    <p style="color: var(--text-secondary); font-size: 1.0625rem;">
+                        Technologies I work with daily
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    {skills.map((skill) => (
+                        <div class="badge-brutal" style="font-size: 0.875rem; padding: 8px 16px;">
+                            <span>{skill.emoji}</span> {skill.name}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <Footer client:load />
+    </main>
+</Layout>

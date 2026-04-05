@@ -1,0 +1,60 @@
+---
+import '../styles/globals.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string[];
+  canonicalUrl?: string;
+}
+
+const { 
+  title = "Rafiq — Web Developer & SEO Specialist",
+  description = "Hi, I'm Rafiq. A Web Developer and SEO Specialist based in Indonesia. I craft performant, accessible, and visually polished web experiences.",
+  keywords = ["Rafiq", "Web Developer", "SEO Specialist", "Indonesia", "Frontend Developer", "Astro", "React"],
+  canonicalUrl = Astro.url.href
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+        <meta name="keywords" content={keywords.join(', ')} />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="canonical" href={canonicalUrl} />
+        <link rel="sitemap" href="/sitemap.xml" />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+        <link rel="llms" type="text/plain" href="/llms.txt" />
+        <link rel="llms-full" type="text/plain" href="/llms-full.txt" />
+		<meta name="generator" content={Astro.generator} />
+        
+        <!-- Google Verification -->
+        <meta name="google-site-verification" content="5miu4ARJmpD9kvO9MCJEXx68h31JTqARMZbMlb8Kem4" />
+
+		<!-- OpenGraph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:site_name" content="Rafiq's Portfolio" />
+		<meta property="og:locale" content="id_ID" />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+
+		<title>{title}</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+	</head>
+	<body class="antialiased">
+		<slot />
+	</body>
+</html>

@@ -1,0 +1,30 @@
+﻿===== C:\Users\rafiq\.gemini\antigravity\brain\02970976-e5dc-4767-9416-20aa0453978a\implementation_plan.md =====
+# Migrasi Next.js ke Astro SSR (Wasmer Edge)
+
+Berdasarkan temuan Anda bahwa Wasmer secara resmi mendukung Astro dengan baik (bahkan SSR), kita akan melakukan migrasi *codebase* dari Next.js ke **Astro**. 
+
+Astro sangat cocok dengan kasus penggunaan Anda:
+===== C:\Users\rafiq\.gemini\antigravity\brain\b02bd26e-d95c-4c75-8881-443cd074deb7\implementation_plan.md =====
+# Programmatic SEO Landing Page: Jasa Pembuatan Website
+
+Membuat landing page dinamis (Programmatic SEO) untuk layanan Pengembangan Website yang menargetkan 514 Kota/Kabupaten dan 7.285 Kecamatan di Indonesia tanpa perlu membuat halaman manual. Halaman ini akan dioptimasi untuk Generative Engine Optimization (GEO), AI Overview Indexing, dan konversi tinggi, dengan memperhatikan standar loading < 2MB Google Core Update.
+
+## User Review Required
+===== C:\Users\rafiq\.gemini\antigravity\brain\3726461a-876a-4f49-ac99-b0c34698a263\implementation_plan.md =====
+# Implementation Plan - Fix Double "Jasa" in Service Titles
+
+The user reported a double "Jasa" issue (e.g., "Jasa Jasa Pembuatan Website"). This happens because the `service` slug often already contains "jasa-", and the code adds another "Jasa" prefix during rendering and metadata generation.
+
+## User Review Required
+===== C:\Users\rafiq\.gemini\antigravity\brain\991256c3-b947-40c0-9eb4-dd5cce8f8a78\implementation_plan.md =====
+# Implementation Plan - RSS Feed Integration
+
+Adding an RSS feed will improve the website's discoverability by search engines and AI aggregators, and provide a structured way for users to follow latest updates on "Bank Minyak Jelantah Jogja".
+
+## Proposed Changes
+===== C:\Users\rafiq\.gemini\antigravity\brain\ee9ae4cc-0482-440e-9b13-10fa1c73e405\implementation_plan.md =====
+# SEO & AI Crawling Optimization
+
+Rencana ini bertujuan untuk meningkatkan indeksibilitas website di mesin pencari (Google, Bing) serta memastikan konten dapat dirayapi dengan baik oleh model AI (seperti GPTBot, ChatGPT, dsb).
+
+## User Review Required

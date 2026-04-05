@@ -1,6 +1,5 @@
-import { ALLOWED_SERVICES, TARGET_CITIES, WEB_DEV_SERVICES, SEO_SERVICES } from '@/lib/constants';
+import { ALLOWED_SERVICES, TARGET_CITIES, WEB_DEV_SERVICES, SEO_SERVICES } from '../../lib/constants';
 
-export const dynamic = 'force-static';
 function formatString(str: string): string {
   return str.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
 }
@@ -14,7 +13,7 @@ export async function GET() {
 
 ## About
 
-Rafiq is a dedicated Web Developer and SEO Specialist based in Indonesia. He specializes in building accessible, performant, and visually striking web applications using modern technologies including Next.js, React, TypeScript, and Tailwind CSS. He also provides professional SEO services including local SEO, keyword optimization, backlink building, and AI Overview (SGE) optimization.
+Rafiq is a dedicated Web Developer and SEO Specialist based in Indonesia. He specializes in building accessible, performant, and visually striking web applications using modern technologies including Astro, React, TypeScript, and Tailwind CSS. He also provides professional SEO services including local SEO, keyword optimization, backlink building, and AI Overview (SGE) optimization.
 
 ## Contact
 
@@ -66,7 +65,7 @@ Pricing:
 
 ## Skills & Technologies
 
-JavaScript, TypeScript, React, Next.js, Tailwind CSS, Node.js, SEO, UI/UX Design, Git, Keyword Research, Analytics
+JavaScript, TypeScript, React, Astro, Tailwind CSS, Node.js, SEO, UI/UX Design, Git, Keyword Research, Analytics
 
 ## Pages
 

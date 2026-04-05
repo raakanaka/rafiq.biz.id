@@ -1,6 +1,5 @@
-import { ALLOWED_SERVICES, TARGET_CITIES, WEB_DEV_SERVICES, SEO_SERVICES } from '@/lib/constants';
+import { ALLOWED_SERVICES, TARGET_CITIES, WEB_DEV_SERVICES, SEO_SERVICES } from '../../lib/constants';
 
-export const dynamic = 'force-static';
 function formatString(str: string): string {
   return str.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
 }
@@ -14,7 +13,7 @@ export async function GET() {
     { q: "Apakah website sudah SEO-Friendly?", a: "Ya. Semua website dibangun dengan On-Page SEO, Semantic HTML, schema markup JSON-LD, dan didaftarkan ke Google Search Console dan Bing Webmaster." },
     { q: "Bagaimana optimasi AI Overview (Google SGE)?", a: "Website dirancang ramah untuk crawler AI (LLM-friendly) dengan copywriting semantik agar mudah diindeks oleh mesin SGE." },
     { q: "Apakah desain Mobile-Friendly?", a: "Ya, kami menerapkan pendekatan Mobile-First yang menjamin Core Web Vitals superior di semua ukuran layar." },
-    { q: "Template CMS atau Jasa Bikin Web Profesional?", a: "Template CMS sering heavy dan rentan celah keamanan. Dengan developer profesional, strategi konversi sudah dipikirkan matang untuk memaksimalkan konversi." },
+    { q: "Template CMS atau Jasa Bikin Web Profesional?", a: "Template CMS sering heavy dan rentan celah keamanan. Dengan developer profesional, strategi konversi sudah dipikirkan matang." },
     { q: "Apakah ada biaya maintenance?", a: "Ya, maintenance mencakup perpanjangan domain dan hosting. Kami mengurus 100% kebutuhan teknis." },
     { q: "Bisa update konten sendiri?", a: "Pasti bisa melalui control panel admin intuitif tanpa butuh pengetahuan coding." },
   ];
@@ -31,18 +30,18 @@ export async function GET() {
   ];
 
   const projects = [
-    { title: "PT Dananjaya Zafer Adibrata", desc: "Company profile for business licensing and formation consulting (Arka Consultant).", link: "https://dzagroup.co.id/arka-consultant/", tech: ["Web Profile", "Business", "Consulting"] },
+    { title: "PT Dananjaya Zafer Adibrata", desc: "Company profile for business licensing and formation consulting.", link: "https://dzagroup.co.id/arka-consultant/", tech: ["Web Profile", "Business"] },
     { title: "HALOEXPERT", desc: "Learning Management System (LMS) simplifying online training and education programs.", link: "https://haloexpert.id", tech: ["LMS", "Education", "Platform"] },
     { title: "Meja Kreatif Studio", desc: "Modern website for a creative studio focusing on digital branding and aesthetics.", link: "https://mejakreatif.com", tech: ["Creative", "Branding", "UI/UX"] },
     { title: "Yayasan PETAI", desc: "Organization profile dedicated to forest conservation and environmental sustainability.", link: "https://petai.or.id", tech: ["Non-Profit", "Environment", "NGO"] },
     { title: "EKSPORA", desc: "Platform empowering SMEs to enter and succeed in the international export market.", link: "https://ekspora.com", tech: ["SME", "Export", "Platform"] },
     { title: "Japan Shiken Shop", desc: "Specialized e-commerce store catering to niche markets with a Japanese focus.", link: "https://japanshiken.com", tech: ["E-Commerce", "Niche", "Store"] },
-    { title: "The Business Tailor", desc: "Corporate site offering bespoke business strategy and branding solutions.", link: "https://thebusinesstailor.com.sg", tech: ["Corporate", "Strategy", "B2B"] },
+    { title: "The Business Tailor", desc: "Corporate site offering bespoke business strategy and branding solutions.", link: "https://thebusinesstailor.com.sg", tech: ["Corporate", "Strategy"] },
     { title: "BEDAHKASUS", desc: "News portal focused on legal updates, expert case analysis, and law enforcement.", link: "https://bedahkasus.com", tech: ["News Portal", "Law", "Media"] },
     { title: "DUNIAFINTECH", desc: "Fintech news platform optimized for SEO and high-speed performance.", link: "https://duniafintech.com", tech: ["Fintech", "SEO", "Optimization"] },
     { title: "Alkhair Tour and Travel", desc: "Travel agency for the best travel experience.", link: "https://alkhaitravel.id", tech: ["Travel", "Agency", "Gallery"] },
-    { title: "Praktiqu", desc: "Consultant psychology agency.", link: "https://event.praktiqu.com", tech: ["Consulting", "Psychology", "Agency"] },
-    { title: "Evrando SEO", desc: "SEO case study achieving top rankings for 'Lysaght Medan' keyword.", link: "https://evrando.com", tech: ["SEO", "Keyword Research", "Analytics"] },
+    { title: "Praktiqu", desc: "Consultant psychology agency.", link: "https://event.praktiqu.com", tech: ["Consulting", "Psychology"] },
+    { title: "Evrando SEO", desc: "SEO case study achieving top rankings for 'Lysaght Medan' keyword.", link: "https://evrando.com", tech: ["SEO", "Keyword Research"] },
     { title: "Kolaborasa", desc: "Collaboration and management platform.", link: "https://kolaborasa.id", tech: ["Platform", "System", "Collaboration"] },
     { title: "Mulya Rental Mobil", desc: "Car rental and tourist transportation service.", link: "https://mulyarentalmobil.com", tech: ["Travel", "Rent Car", "Service"] },
     { title: "BPT KLIN", desc: "Chemical soap and professional cleaning solutions.", link: "https://bptklin.com", tech: ["Chemical", "Product", "Industry"] },
@@ -69,7 +68,7 @@ export async function GET() {
 **GitHub:** https://github.com/raakanaka
 **WhatsApp:** https://wa.me/6282160731800
 
-Rafiq is a dedicated Web Developer and SEO Specialist based in Indonesia. He specializes in building accessible, performant, and visually striking web applications using modern technologies including Next.js, React, TypeScript, and Tailwind CSS. He provides professional SEO services including local SEO, keyword optimization, backlink building, and AI Overview (SGE) optimization.
+Rafiq is a dedicated Web Developer and SEO Specialist based in Indonesia. He specializes in building accessible, performant, and visually striking web applications using modern technologies including Astro, React, TypeScript, and Tailwind CSS. He provides professional SEO services including local SEO, keyword optimization, backlink building, and AI Overview (SGE) optimization.
 
 His journey began with a curiosity for how things work on the screen. Today, he works with the latest tech stack to deliver high-quality digital experiences for clients across Indonesia and Southeast Asia.
 
@@ -77,7 +76,7 @@ His journey began with a curiosity for how things work on the screen. Today, he 
 
 ## Skills & Technologies
 
-JavaScript, TypeScript, React, Next.js, Tailwind CSS, Node.js, Git, UI/UX Design, SEO, Keyword Research, Analytics
+JavaScript, TypeScript, React, Astro, Tailwind CSS, Node.js, Git, UI/UX Design, SEO, Keyword Research, Analytics
 
 ---
 

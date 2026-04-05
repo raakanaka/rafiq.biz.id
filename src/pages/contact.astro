@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import { Mail, Linkedin, Github, MapPin } from "lucide-react";
+
+const contactColors = [
+    { bg: "#fef3c7", icon: "#d97706" },
+    { bg: "#dbeafe", icon: "#2563eb" },
+    { bg: "#d1fae5", icon: "#059669" },
+    { bg: "#fce7f3", icon: "#db2777" },
+];
+
+const contacts = [
+    {
+        title: "Email",
+        value: "rafiq.adha@rafiq.biz.id",
+        href: "mailto:rafiq.adha@rafiq.biz.id",
+    },
+    {
+        title: "LinkedIn",
+        value: "@rafiq-alhafizh-adha",
+        href: "https://linkedin.com/in/rafiq-alhafizh-adha",
+    },
+    {
+        title: "GitHub",
+        value: "/raakanaka",
+        href: "https://github.com/raakanaka",
+    },
+    {
+        title: "Location",
+        value: "Jakarta, Indonesia",
+        href: null,
+    },
+];
+
+const getIcon = (title: string) => {
+    switch(title) {
+        case "Email": return Mail;
+        case "LinkedIn": return Linkedin;
+        case "GitHub": return Github;
+        case "Location": return MapPin;
+        default: return MapPin;
+    }
+}
+---
+
+<Layout title="Contact | Rafiq" description="Get in touch with Rafiq">
+    <main class="min-h-screen flex flex-col">
+        <Navbar client:load />
+
+        <section class="section flex-1 flex items-center">
+            <div class="max-w-4xl mx-auto w-full">
+                <!-- Header -->
+                <div class="text-center mb-14">
+                    <h1
+                        class="text-4xl md:text-5xl font-extrabold mb-4"
+                        style="color: var(--foreground); letter-spacing: -0.02em;"
+                    >
+                        Get in <span class="text-accent-pop">Touch</span>
+                    </h1>
+                    <p
+                        class="text-lg mx-auto"
+                        style="color: var(--text-secondary); max-width: 480px;"
+                    >
+                        Ready to start a project? I'm available for freelance work and collaborations ✦
+                    </p>
+                </div>
+
+                <!-- Contact cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    {contacts.map((item, i) => {
+                        const Icon = getIcon(item.title);
+                        const isLink = !!item.href;
+                        
+                        return isLink ? (
+                            <a
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="card-brutal flex items-center gap-5 hover:-translate-y-1 transition-transform"
+                                style={`padding: 1.5rem 1.75rem; text-decoration: none; display: flex;`}
+                            >
+                                <div
+                                    class="icon-circle"
+                                    style={`background: ${contactColors[i].bg}; color: ${contactColors[i].icon};`}
+                                >
+                                    <Icon size={22} />
+                                </div>
+                                <div>
+                                    <div
+                                        class="text-sm font-bold mb-0.5"
+                                        style="color: var(--text-secondary);"
+                                    >
+                                        {item.title}
+                                    </div>
+                                    <div
+                                        class="text-base font-extrabold"
+                                        style="color: var(--foreground);"
+                                    >
+                                        {item.value}
+                                    </div>
+                                </div>
+                            </a>
+                        ) : (
+                            <div
+                                class="card-brutal flex items-center gap-5 hover:-translate-y-1 transition-transform"
+                                style={`padding: 1.5rem 1.75rem; display: flex;`}
+                            >
+                                <div
+                                    class="icon-circle"
+                                    style={`background: ${contactColors[i].bg}; color: ${contactColors[i].icon};`}
+                                >
+                                    <Icon size={22} />
+                                </div>
+                                <div>
+                                    <div
+                                        class="text-sm font-bold mb-0.5"
+                                        style="color: var(--text-secondary);"
+                                    >
+                                        {item.title}
+                                    </div>
+                                    <div
+                                        class="text-base font-extrabold"
+                                        style="color: var(--foreground);"
+                                    >
+                                        {item.value}
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+
+        <Footer client:load />
+    </main>
+</Layout>

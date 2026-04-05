@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -14,7 +12,11 @@ const navItems = [
 ];
 
 export default function Navbar() {
-    const pathname = usePathname();
+    const [pathname, setPathname] = useState("/");
+    
+    useEffect(() => {
+        setPathname(window.location.pathname);
+    }, []);
     const [mobileOpen, setMobileOpen] = useState(false);
 
     return (
@@ -27,7 +29,7 @@ export default function Navbar() {
         >
             <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
                 {/* Logo */}
-                <Link
+                <a
                     href="/"
                     className="text-xl font-extrabold"
                     style={{
@@ -37,13 +39,13 @@ export default function Navbar() {
                     }}
                 >
                     <span style={{ color: "var(--accent)" }}>R</span>afiq<span style={{ color: "var(--accent)" }}>.</span>
-                </Link>
+                </a>
 
                 {/* Desktop nav */}
                 <ul className="hidden md:flex items-center gap-1">
                     {navItems.map((item) => (
                         <li key={item.path}>
-                            <Link
+                            <a
                                 href={item.path}
                                 className="px-4 py-2 text-sm font-bold transition-all"
                                 style={{
@@ -56,15 +58,15 @@ export default function Navbar() {
                                 }}
                             >
                                 {item.name}
-                            </Link>
+                            </a>
                         </li>
                     ))}
                 </ul>
 
                 {/* CTA Desktop */}
-                <Link href="/contact" className="btn-kirim hidden md:inline-flex" style={{ padding: "0.5rem 1.25rem", fontSize: "0.8125rem" }}>
+                <a href="/contact" className="btn-kirim hidden md:inline-flex" style={{ padding: "0.5rem 1.25rem", fontSize: "0.8125rem", textDecoration: "none" }}>
                     Let&apos;s Talk ✦
-                </Link>
+                </a>
 
                 {/* Mobile menu toggle */}
                 <button
@@ -96,7 +98,7 @@ export default function Navbar() {
                     >
                         <div className="px-6 py-4 flex flex-col gap-2">
                             {navItems.map((item) => (
-                                <Link
+                                <a
                                     key={item.path}
                                     href={item.path}
                                     onClick={() => setMobileOpen(false)}
@@ -111,16 +113,16 @@ export default function Navbar() {
                                     }}
                                 >
                                     {item.name}
-                                </Link>
+                                </a>
                             ))}
-                            <Link
+                            <a
                                 href="/contact"
                                 onClick={() => setMobileOpen(false)}
                                 className="btn-kirim mt-2"
-                                style={{ textAlign: "center", fontSize: "0.8125rem" }}
+                                style={{ textAlign: "center", fontSize: "0.8125rem", textDecoration: "none" }}
                             >
                                 Let&apos;s Talk ✦
-                            </Link>
+                            </a>
                         </div>
                     </motion.div>
                 )}
