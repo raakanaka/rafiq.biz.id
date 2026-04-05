@@ -12,7 +12,8 @@ name = "rafiq-biz-id"
 
 [run]
 # Ini adalah environment variable standard untuk server produksi
-env = { NODE_ENV = "production", PORT = "8080" }
+# env = { NODE_ENV = "production", PORT = "8080" } (dihapus/dipindah untuk mencegah TypeError parse)
+
 
 # Menjalankan spesifik file server dari hasil build "standalone"
 command = "node /app/dist/server/entry.mjs"
