@@ -14,6 +14,19 @@ function formatString(str: string): string {
   return str.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 }
 
+export function generateStaticParams() {
+  const params: { service: string; location?: string[] }[] = [];
+  ALLOWED_SERVICES.forEach((service) => {
+    // Base service page
+    params.push({ service, location: [] });
+    // Targeted cities
+    TARGET_CITIES.forEach((city) => {
+      params.push({ service, location: [city] });
+    });
+  });
+  return params;
+}
+
 // --- METADATA ---
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;

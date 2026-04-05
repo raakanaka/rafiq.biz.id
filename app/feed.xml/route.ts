@@ -1,5 +1,6 @@
 import { ALLOWED_SERVICES, TARGET_CITIES, WEB_DEV_SERVICES, SEO_SERVICES } from '@/lib/constants';
 
+export const dynamic = 'force-static';
 function formatString(str: string): string {
   return str.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
 }

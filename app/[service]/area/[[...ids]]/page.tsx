@@ -36,6 +36,14 @@ function slugify(str: string): string {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
+export function generateStaticParams() {
+  const params: { service: string; ids?: string[] }[] = [];
+  ALLOWED_SERVICES.forEach((service) => {
+    params.push({ service, ids: [] });
+  });
+  return params;
+}
+
 // --- METADATA ---
 export async function generateMetadata({ params }: Props) {
   const resolvedParams = await params;

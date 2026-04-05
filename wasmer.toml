@@ -1,0 +1,18 @@
+[app]
+# Nama aplikasi Anda di Wasmer (gunakan format namespace/nama-aplikasi jika ada, misalnya "klien-anda/rafiq-biz")
+name = "rafiq-biz-id" 
+
+[dependencies]
+# Kita menggunakan mesin Node.js versi 20 yang didukung oleh Wasmer
+"wasmer/nodejs" = "^20"
+
+[fs]
+# Memetakan folder project saat ini ke direktori virtual "/app" dalam environment Wasmer
+"/app" = "."
+
+[run]
+# Ini adalah environment variable standard untuk server produksi Next.js
+env = { NODE_ENV = "production", PORT = "8080" }
+
+# Menjalankan spesifik file server dari hasil build "standalone"
+command = "node /app/.next/standalone/server.js"

@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { ALLOWED_SERVICES, TARGET_CITIES } from '@/lib/constants'
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://rafiq.biz.id';
 
