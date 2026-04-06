@@ -1,0 +1,201 @@
+import { c as createComponent } from './astro-component_XJQSBfgp.mjs';
+import 'piccolore';
+import { o as renderComponent, r as renderTemplate, p as Fragment, u as unescapeHTML, m as maybeRenderHead, h as addAttribute } from './server_arAVftlG.mjs';
+import { $ as $$Layout } from './Layout_3vgJ6SRq.mjs';
+import { A as ALLOWED_SERVICES, S as SEO_SERVICES } from './constants_CRfD9pci.mjs';
+import { ArrowUpRight, CheckCircle2, MapPin } from 'lucide-react';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const prerender = false;
+const $$ = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$props, $$slots);
+  Astro2.self = $$;
+  const { service, location } = Astro2.params;
+  const resolvedService = service;
+  const locationArray = location ? location.split("/") : [];
+  if (!ALLOWED_SERVICES.includes(resolvedService)) {
+    return Astro2.redirect("/404");
+  }
+  function formatString(str) {
+    return str.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+  }
+  const serviceName = formatString(resolvedService);
+  const locationName = locationArray.length > 0 ? formatString(locationArray.join(" ")) : "";
+  const displayLocation = locationName ? ` di ${locationName}` : "";
+  const whatsappNumber = "6282160731800";
+  const waMessage = `Halo, saya tertarik dengan ${serviceName.toLowerCase()}${displayLocation}. Boleh info lebih lanjut?`;
+  const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`;
+  const isSeoService = SEO_SERVICES.includes(resolvedService);
+  const titleContent = isSeoService ? `Jasa ${serviceName}${displayLocation} | Pakar SEO Profesional Bergaransi` : `Jasa ${serviceName}${displayLocation} | Web Developer Bergaransi`;
+  const descriptionContent = isSeoService ? `Mencari ahli optimasi ranking laman? Kami adalah agensi Jasa SEO Profesional${displayLocation} yang fokus mendominasi kata kunci Google, Bing, & AI Overview. Tingkatkan trafik Anda!` : `Mencari jasa pembuatan website${displayLocation}? Kami adalah web developer profesional yang berfokus pada desain web responsif, company profile, dan toko online dengan optimasi SEO tingkat lanjut. Mulai Rp 1.6 Juta.`;
+  const keywordsList = isSeoService ? [
+    `Jasa ${serviceName}`,
+    `${serviceName.toLowerCase()}${displayLocation}`,
+    "Konsultan SEO",
+    "Pakar SEO",
+    "Backlink",
+    "Optimasi Google",
+    "SEO Bergaransi",
+    "SEO Murah"
+  ] : [
+    `Jasa ${serviceName}`,
+    `${serviceName.toLowerCase()}${displayLocation}`,
+    "Buat Website Murah",
+    "Developer Website",
+    "SEO Friendly",
+    "Website Bisnis",
+    "Pembuatan website"
+  ];
+  const faqListWebDev = [
+    {
+      q: "Berapa biaya jasa pembuatan website profesional untuk bisnis saya?",
+      a: "Harga layanan dari web developer kami sangat kompetitif namun tetap memberikan standar kualitas enterprise. Kami menawarkan paket transparan mulai dari Rp1.600.000 untuk paket pembuatan web UMKM, hingga Rp2.900.000 untuk kelas Corporate Premium dengan fitur e-commerce dan optimasi SEO tingkat lanjut."
+    },
+    {
+      q: "Berapa lama proses pembuatan / pengembangan toko online hingga dapat digunakan?",
+      a: "Durasi proses rekayasa desain web (web development) rata-rata memakan waktu singkat antara 3-14 hari kerja. Estimasi ini bisa lebih cepat tergantung pada kelengkapan materi pendukung bisnis Anda, serta kerumitan sistem maupun integrasi custom yang dibutuhkan."
+    },
+    {
+      q: "Apakah website sudah dirancang SEO-Friendly dan gampang ditemukan di pencarian Google, Bing, dan lainnya?",
+      a: "Tentu. Semua fondasi website dibangun menggunakan teknik On-Page SEO terstandarisasi, arsitektur Semantic HTML, plus schema markup Data Terstruktur JSON-LD. Kami juga mendaftarkan sitemap web ke Google Search Console dan Bing Webmaster untuk memperkuat dan mempermudah indeksasi oleh robot mesin penelusur."
+    },
+    {
+      q: "Bagaimana optimasi AI Overview (Google SGE & Copilot) dari jasa pembuatan website Anda?",
+      a: "Era pencarian sudah beralih ke Search Generative Experience bertenaga AI. Website rancangan kami sudah dikondisikan sangat ramah untuk crawler AI (LLM-friendly), diinjeksi dengan copywriting semantik agar inti halaman mudah ditangkap secara otomatis (indexing) oleh mesin SGE sebagai rekomendasi profil bisnis yang terpercaya."
+    },
+    {
+      q: "Apakah desain konten bersifat Mobile-Friendly (Responsif) di semua platform layar?",
+      a: "Pasti! Saat ini mayoritas pengunjung berasal dari smartphone. Kami menerapkan pendekatan desain Mobile-First yang menjamin kecepatan pemuatan (Core Web Vitals) superior, ditambah lagi dengan antarmuka User Experience (UX) yang sangat terorganisir, baik pada ukuran layar desktop besar hingga seukuran saku."
+    },
+    {
+      q: "Lebih baik mana: Memakai template CMS instan atau menyewa Jasa Bikin Web Profesional?",
+      a: "Template CMS gratisan sering menyertakan fitur bawaan berat yang memperlambat website (bloat) dan rentan celah keamanan. Sebaliknya dengan pembuat website profesional, strategi rekayasa alur pengunjung sudah dipikirkan matang-matang guna menaikan retensi hingga memperlancar navigasi pemicu klik WhatsApp sebagai prospek konversi."
+    },
+    {
+      q: "Apakah saya harus membayar biaya maintenance hosting atau layanan server tahunan?",
+      a: "Tentu. Mesin website selalu memerlukan perpanjangan akses kepemilikan nama domain.com asli Anda serta berlangganan ruang cloud storage server (Web Hosting) yang aktif 24/7. Bersama kami, kompleksitas ini diurus 100% oleh ahli teknis, Anda tak perlu ribet mengurusi downtime, cukup fokus meraup pelanggan bisnis yang berdatangan."
+    },
+    {
+      q: `Apakah ke depannya saya bisa memperbarui informasi layanan untuk ${serviceName} secara manual?`,
+      a: "Pasti bisa. Anda tak butuh pengetahuan coding. Terdapat akses control panel admin intuitif untuk mengganti isi teks landing page, foto portofolio, hingga produk. Kalaupun timbul pertanyaan sewaktu penggunaan, prioritas customer support pendamping (live maintenance chat) kami senantiasa siaga dengan instruksi penyelesaian paling mudah di hari kerja."
+    }
+  ];
+  const faqListSEO = [
+    {
+      q: `Berapa biaya rata-rata untuk Jasa ${serviceName} ini?`,
+      a: "Skema harga kami sangat transparan; mulai dari Rp 1.800.000 untuk paket Lokal SEO GMB, Rp 2.500.000 untuk Optimasi SEO Bisnis skala menengah, dan Rp 3.500.000 untuk strategi SEO VIP Enterprise komprehensif yang dirancang menggandakan omzet secara organik."
+    },
+    {
+      q: "Berapa lama waktu yang dibutuhkan hingga website menembus Page 1 Google?",
+      a: "SEO adalah proses maraton organik, bukan sekadar lari sprint. Biasanya, pergerakan tren naik (uptarget) mulai terlihat di bulan pertama hingga ketiga. Tentu rentang waktu diukur tergantung pada tingkat kesulitan kompetitor pencarian (keyword difficulty) serta frekuensi penerapan optimasi konten backlink."
+    },
+    {
+      q: "Teknik optimasi SEO apa yang Anda gunakan? Apakah aman?",
+      a: "Tentu saja 100% White-Hat SEO murni. Kami menggunakan fondasi perbaikan skor teknikal kecepatan situs (Core Web Vitals), struktur siloing on-page audit, pemasangan skema entitas semantis, juga menyertakan jejaring tautan masuk (High-Authority Backlink) agar jauh dari radar penalti mesin Google."
+    },
+    {
+      q: "Apakah Jasa SEO Anda menyokong kemampuan penelusuran (AI Overview / SGE)?",
+      a: "Begitu mendukung. Melalui integrasi Markup Data Skema (Schema-LD JSON) dengan presisi informasi lokal, kapabilitas algoritma Artificial Intelligence LLM akan jauh lebih mudah memahami esensi dari pendaratan situs bisnis. Hal ini membuka kran trafik eksklusif saat mesin merekomendasikan cuplikan web Anda."
+    },
+    {
+      q: "Benarkah Anda memberi kepastian atau jaminan naiknya Traffic Pengunjung?",
+      a: "Agensi SEO profesional pantang memberi iming-iming instan yang menyesatkan; tetapi, kami berani menjamin pelaksanaan optimasi (delivered work) kelas premium. Saat kami setujui perbaikan long-tail keywords yang Anda bidik, trafik dipastikan sehat meningkat. Kami pantau performanya dari analitik terverifikasi agar return investasi dapat terlaksana maksimal."
+    },
+    {
+      q: "Apakah saya harus berkontribusi menyiapkan salinan artikel blog promosi sendiri?",
+      a: "Sama sekali tak merepotkan bagi klien kami. Konten adalah bagian tak terpisahkan dari ranking. Paket layanan telah menyentuh aspek Content Writing pilar sesuai intensional komersial calon penelusur yang menstimulasi keintiman baca sebelum transaksi ditutup via kontak narahubung konsultasi WhatsApp."
+    },
+    {
+      q: "Mekanisme kerja seperti apa yang dilakukan pada optimasi SEO Lokal Anda?",
+      a: "Dalam lanskap Lokal SEO, mesin ingin merekam titik pijakan terdekat pelanggan. Kami menyerbu Google Business Profile (Map) Anda via ulasan sah, serta mendistribusikan kutipan nama-alamat-kontak (NAP) di aneka jejaring vertikal. Tujuannya adalah memborong kotak The Local 3-Pack di posisi paling strategis layar gawai pelanggan kota setempat."
+    },
+    {
+      q: "Bagaimana cara mengetahui bahwa progres Jasa SEO tersebut berjalan lurus?",
+      a: "Kami memprioritaskan rasa tenang nasabah di fase apa pun. Tiap peralihan akhir bulan, hasil analisa portofolio ranking pencarian kata kunci diturunkan dalam wujud lampiran terstruktur. Termasuk performansi impresi klik berpandu ketat rekaman Google Search Console."
+    }
+  ];
+  const currentFaqList = isSeoService ? faqListSEO : faqListWebDev;
+  const currentOffers = isSeoService ? [
+    { name: "SEO Lokal", price: "1800000", priceCurrency: "IDR" },
+    { name: "SEO Bisnis", price: "2500000", priceCurrency: "IDR" },
+    { name: "SEO VIP Enterprise", price: "3500000", priceCurrency: "IDR" }
+  ] : [
+    { name: "Paket Starter", price: "1600000", priceCurrency: "IDR" },
+    { name: "Paket Pro", price: "2200000", priceCurrency: "IDR" },
+    { name: "Paket Premium", price: "2900000", priceCurrency: "IDR" }
+  ];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "serviceType": serviceName,
+        "provider": {
+          "@type": "Organization",
+          "name": "Rafiq Web Developer"
+        },
+        "areaServed": locationName ? { "@type": "Place", "name": locationName } : { "@type": "Country", "name": "Indonesia" },
+        "offers": currentOffers.map((o) => ({
+          "@type": "Offer",
+          "name": o.name,
+          "price": o.price,
+          "priceCurrency": o.priceCurrency
+        }))
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": currentFaqList.map((faq) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+        }))
+      }
+    ]
+  };
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": titleContent, "description": descriptionContent, "keywords": keywordsList }, { "default": ($$result2) => renderTemplate`  ${maybeRenderHead()}<main class="min-h-screen flex flex-col bg-background font-body">  <header class="w-full p-6 flex justify-center items-center"> <a href="/" class="text-xl font-bold font-heading text-foreground" style="text-decoration: none;">
+Rafiq<span class="text-accent-pop">.</span> </a> </header>  <section class="section pt-6 lg:pt-16 pb-12 lg:pb-24 flex-1 flex flex-col items-center justify-center text-center"> <div class="max-w-4xl mx-auto px-4"> <div class="badge-brutal mb-6 mx-auto inline-flex"> <span>🎯</span> ${isSeoService ? "Spesialis Penakluk Algoritma Pencarian Google" : "Web Developer Spesialis Keuntungan Bisnis"} </div> <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6 text-foreground leading-tight" style="letter-spacing: -0.02em;">
+Jasa ${serviceName} <span class="text-accent-pop">${displayLocation}</span> </h1> <p class="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl mx-auto leading-relaxed"> ${isSeoService ? "Raih posisi puncak mesin pencarian dengan kepastian teknik optimasi White-hat yang aman. Jadikan profil bisnis Anda raja traffic organik, dominasi visibilitas AI Overview (SGE), dan biarkan kompetitor berjuang hanya jadi penonton di halaman gurem." : "Bukan sekadar website biasa. Kami membangun ekosistem digital (Company Profile, Toko Online, Landing Page) yang dirancang secara saintifik untuk mendominasi Semantic Search, dan mengubah trafik organik menjadi klien potensial."} </p> <div class="flex flex-col sm:flex-row gap-4 justify-center items-center"> <a${addAttribute(waLink, "href")} target="_blank" rel="noopener noreferrer" class="btn-kirim w-full sm:w-auto text-lg py-4 px-8">
+Konsultasi Gratis ${renderComponent($$result2, "ArrowUpRight", ArrowUpRight, { "className": "ml-2 inline-block", "size": 20 })} </a> <a href="#harga" class="btn-outline-brutal w-full sm:w-auto text-lg py-4 px-8">
+Lihat Harga
+</a> </div> </div> </section>  <section class="section" style="background: var(--card-bg);"> <div class="max-w-6xl mx-auto px-4"> <div class="text-center mb-16"> <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-foreground">
+Kenapa Bisnis Anda Butuh Layanan Kami?
+</h2> <p class="text-text-secondary text-lg">Solusi nyata dari ekspert ${serviceName.toLowerCase()} yang memahami niat pencarian (Search Intent) pelanggan Anda.</p> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> ${(isSeoService ? [
+    { title: "Dominasi Halaman Pertama (Page 1)", desc: "Kami menganalisa celah keyword dari kompetitor terdahulu Anda. Praktik strategi siloing SEO mumpuni ini mendorong ranking halaman naik signifikan, menjamin klik masuk secara konstan dari pelanggan riil.", emoji: "🥇" },
+    { title: "Profil High-Authority Backlink", desc: "Meningkatkan daya magis pelacakan mesin Google (Domain Authority) ke situs web Anda langsung secara natural. Sistem situs Anda akan diguyur ragam sokongan tautan masuk tanpa ada sentuhan robot spam buatan.", emoji: "🔗" },
+    { title: "Audit Indeks Berteknologi AI", desc: "Arus lalu-lintas algoritma sering cepat berganti; SEO masa kini harus menyesuaikan. Kami mendongkrak Core Web Vitals situs sembari menyinergikannya via JSON Semantic agar Google AI Copilot tertarik melirik Anda selalu.", emoji: "⚡" }
+  ] : [
+    { title: "Dominasi AI Overview & GEO", desc: "Website diinjeksi dengan Semantic HTML dan JSON-LD terstruktur. Hasilnya? Bisnis Anda berpeluang besar dikutip langsung oleh AI Google saat prospek mencari layanan lokal.", emoji: "🤖" },
+    { title: "Desain Berbasis Psikologi Konversi", desc: "Kami tidak sekadar membuat desain web yang cantik. Tata letak, copywriting, dan posisi tombol dirancang khusus untuk menuntun pengunjung menghubungi WhatsApp Anda.", emoji: "🎯" },
+    { title: "Performa Kilat (Core Web Vitals)", desc: "Kecepatan muat di bawah 2 detik. Dibangun tanpa framework usang, menjamin ranking SEO tinggi dan menekan batas pantulan (Bounce Rate) calon pelanggan Anda.", emoji: "⚡" }
+  ]).map((feature) => renderTemplate`<div class="card-brutal p-8 hover:-translate-y-1 transition-transform"> <div class="icon-circle mb-6 bg-accent-light border-accent-dark"> <span class="text-2xl">${feature.emoji}</span> </div> <h3 class="text-xl font-bold mb-3 text-foreground">${feature.title}</h3> <p class="text-text-secondary leading-relaxed">${feature.desc}</p> </div>`)} </div> </div> </section>  <section id="harga" class="section bg-background"> <div class="max-w-6xl mx-auto px-4"> <div class="text-center mb-16"> <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-foreground">
+Paket <span class="text-accent-pop">Harga</span> Terbaik
+</h2> <p class="text-text-secondary text-lg">Pilih paket investasi yang mengembalikan margin lewat kekuatan terorganisasi organik lalu-lintas pencari mesin.</p> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">  ${isSeoService ? renderTemplate`${renderComponent($$result2, "Fragment", Fragment, {}, { "default": ($$result3) => renderTemplate` <div class="card-hard flex flex-col p-8 bg-white"> <div class="mb-4"> <span class="badge-brutal text-xs mb-4">GMB / Lokal Maps</span> <h3 class="text-2xl font-bold text-foreground">SEO Lokal</h3> </div> <div class="mb-6 flex items-baseline"> <span class="text-3xl font-extrabold text-foreground">Rp1,8 Juta</span> <span class="text-text-secondary ml-2">/bulan</span> </div> <ul class="space-y-4 mb-8 flex-1"> ${["Audit Teknis On-Page SEO", "Optimasi Profil Google Maps VVIP", "Riset Keyword Long-Tail", "Perbaikan Meta & Title Tag", "Submit Sitemap Mesin Telusur"].map((feature) => renderTemplate`<li class="flex items-start gap-3 text-text-secondary"> ${renderComponent($$result3, "CheckCircle2", CheckCircle2, { "className": "text-accent flex-shrink-0", "size": 20 })} <span>${feature}</span> </li>`)} </ul> <a${addAttribute(waLink, "href")} target="_blank" rel="noopener noreferrer" class="btn-outline-brutal w-full justify-center">Kontak Kami</a> </div> <div class="card-hard flex flex-col p-8 transform md:-translate-y-4" style="background: var(--accent-light); border-color: var(--accent-dark);"> <div class="mb-4 relative"> <div class="absolute -top-4 -right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full border border-border-dark shadow-[2px_2px_0px_#0f172a] transform rotate-3">
+TERLARIS
+</div> <span class="badge-brutal text-xs mb-4 bg-white">Target Kata Kunci Persaingan</span> <h3 class="text-2xl font-bold text-foreground">SEO Bisnis</h3> </div> <div class="mb-6 flex items-baseline"> <span class="text-3xl font-extrabold text-foreground">Rp2,5 Juta</span> <span class="text-text-secondary ml-2">/bulan</span> </div> <ul class="space-y-4 mb-8 flex-1"> ${["Semua Fitur Paket Lokal SEO", "High Authority Eksternal Backlink", "Pembuatan 2 Artikel SEO Semantik", "Optimasi Schema JSON-LD/SGE", "Laporan Rekaman Google Analytics Bulanan"].map((feature) => renderTemplate`<li class="flex items-start gap-3 text-text-secondary font-medium"> ${renderComponent($$result3, "CheckCircle2", CheckCircle2, { "className": "text-accent flex-shrink-0", "size": 20 })} <span>${feature}</span> </li>`)} </ul> <a${addAttribute(waLink, "href")} target="_blank" rel="noopener noreferrer" class="btn-kirim w-full justify-center text-center">Konsultasikan</a> </div> <div class="card-hard flex flex-col p-8 bg-white"> <div class="mb-4"> <span class="badge-brutal text-xs mb-4">Sapu Bersih Ranking (Nasional)</span> <h3 class="text-2xl font-bold text-foreground">SEO VIP Enterprise</h3> </div> <div class="mb-6 flex items-baseline"> <span class="text-3xl font-extrabold text-foreground">Rp3,5 Juta</span> <span class="text-text-secondary ml-2">/bulan</span> </div> <ul class="space-y-4 mb-8 flex-1"> ${["Semua Fitur Paket SEO Bisnis", "Membangun Jaringan Pemasok Edu-Web", "Dukungan Optimasi Struktur Kode Situs", "Pembuatan 4+ Pilar Artikel Authority", "Proteksi Spam Serangan Eksternal", "Consultant Dedicated Langsung"].map((feature) => renderTemplate`<li class="flex items-start gap-3 text-text-secondary"> ${renderComponent($$result3, "CheckCircle2", CheckCircle2, { "className": "text-accent flex-shrink-0", "size": 20 })} <span>${feature}</span> </li>`)} </ul> <a${addAttribute(waLink, "href")} target="_blank" rel="noopener noreferrer" class="btn-outline-brutal w-full justify-center">Jadwalkan Zoom</a> </div> ` })}` : renderTemplate`${renderComponent($$result2, "Fragment", Fragment, {}, { "default": ($$result3) => renderTemplate` <div class="card-hard flex flex-col p-8 bg-white"> <div class="mb-4"> <span class="badge-brutal text-xs mb-4">UMKM / Personal</span> <h3 class="text-2xl font-bold text-foreground">Paket Starter</h3> </div> <div class="mb-6 flex items-baseline"> <span class="text-3xl font-extrabold text-foreground">Rp1,6 Juta</span> </div> <ul class="space-y-4 mb-8 flex-1"> ${["Custom Tema Responsif", "Domain & Hosting (1 Tahun)", "SEO On-Page Dasar", "Bandwidth Unmetered", "Integrasi Tombol WhatsApp", "Maks. 5 Halaman Dasar"].map((feature) => renderTemplate`<li class="flex items-start gap-3 text-text-secondary"> ${renderComponent($$result3, "CheckCircle2", CheckCircle2, { "className": "text-accent flex-shrink-0", "size": 20 })} <span>${feature}</span> </li>`)} </ul> <a${addAttribute(waLink, "href")} target="_blank" rel="noopener noreferrer" class="btn-outline-brutal w-full justify-center">Pilih Paket</a> </div> <div class="card-hard flex flex-col p-8 transform md:-translate-y-4" style="background: var(--accent-light); border-color: var(--accent-dark);"> <div class="mb-4 relative"> <div class="absolute -top-4 -right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full border border-border-dark shadow-[2px_2px_0px_#0f172a] transform rotate-3">
+TERLARIS
+</div> <span class="badge-brutal text-xs mb-4 bg-white">Perusahaan / CV</span> <h3 class="text-2xl font-bold text-foreground">Paket Pro</h3> </div> <div class="mb-6 flex items-baseline"> <span class="text-3xl font-extrabold text-foreground">Rp2,2 Juta</span> </div> <ul class="space-y-4 mb-8 flex-1"> ${["Semua Fitur Paket Starter", "Desain Halaman Khusus Premium", "Email Bisnis Profesional", "Setup Schema Markup / AI Overview", "Maks. 10 Halaman", "Gratis Setup Google My Business"].map((feature) => renderTemplate`<li class="flex items-start gap-3 text-text-secondary font-medium"> ${renderComponent($$result3, "CheckCircle2", CheckCircle2, { "className": "text-accent flex-shrink-0", "size": 20 })} <span>${feature}</span> </li>`)} </ul> <a${addAttribute(waLink, "href")} target="_blank" rel="noopener noreferrer" class="btn-kirim w-full justify-center text-center">Pilih Paket Kami</a> </div> <div class="card-hard flex flex-col p-8 bg-white"> <div class="mb-4"> <span class="badge-brutal text-xs mb-4">Corporate VIP</span> <h3 class="text-2xl font-bold text-foreground">Paket Premium</h3> </div> <div class="mb-6 flex items-baseline"> <span class="text-3xl font-extrabold text-foreground">Rp2,9 Juta</span> </div> <ul class="space-y-4 mb-8 flex-1"> ${["Semua Fitur Paket Pro", "Server Hosting Premium Spesifikasi Tinggi", "Katalog Produk Lanjut/LMS", "Fitur Bilingual (Dua Bahasa)", "Analisis Konversi Tahapan", "Revisi Minor Selama Masa Aktif"].map((feature) => renderTemplate`<li class="flex items-start gap-3 text-text-secondary"> ${renderComponent($$result3, "CheckCircle2", CheckCircle2, { "className": "text-accent flex-shrink-0", "size": 20 })} <span>${feature}</span> </li>`)} </ul> <a${addAttribute(waLink, "href")} target="_blank" rel="noopener noreferrer" class="btn-outline-brutal w-full justify-center">Pilih Paket</a> </div> ` })}`} </div> </div> </section>  <div class="divider-band"></div>  <section class="section pb-12" style="background: var(--card-bg);"> <div class="max-w-4xl mx-auto px-4"> <div class="text-center mb-16"> <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-foreground">
+Pertanyaan<span class="text-accent-pop"> Umum</span> </h2> <p class="text-text-secondary text-lg">FAQ seputar pengalaman teknis layanan ${serviceName.toLowerCase()}.</p> </div> <div class="space-y-4"> ${currentFaqList.map((faq) => renderTemplate`<div class="card-hard p-6"> <h3 class="text-lg font-bold mb-2 text-foreground flex items-center gap-2"> <span class="text-accent">Q:</span> ${faq.q} </h3> <p class="text-text-secondary pl-6 leading-relaxed">${faq.a}</p> </div>`)} </div> </div> </section>  <section class="bg-background pt-12 pb-24 border-t border-gray-200"> <div class="max-w-4xl mx-auto px-4 text-center"> <div class="mb-6 flex items-center justify-center gap-2"> ${renderComponent($$result2, "MapPin", MapPin, { "className": "text-accent", "size": 32 })} <h2 class="text-3xl font-extrabold text-foreground">Area Layanan Terluas</h2> </div> <p class="text-lg text-text-secondary mb-8 leading-relaxed max-w-2xl mx-auto">
+Dari pusat kota hingga pelosok desa, layanan ${serviceName.toLowerCase()} kami mencakup komprehensif seluruh penjuru Nusantara. Hadir mendominasi telusuran spesifik persis di tapal batas kota domisili Anda!
+</p> <a${addAttribute(`/${resolvedService}/area`, "href")} class="btn-outline-brutal text-lg py-4 px-8 inline-flex bg-white text-center hover:-translate-y-1 transition-transform">
+Lihat Direktori 38 Provinsi & 83.000 Desa ${renderComponent($$result2, "ArrowUpRight", ArrowUpRight, { "className": "ml-2 inline-block", "size": 20 })} </a> </div> </section> <footer class="w-full py-8 text-center bg-border-dark text-white text-sm"> <p class="mb-2 opacity-80">
+&copy; ${(/* @__PURE__ */ new Date()).getFullYear()} Rafiq Web Developer. All rights reserved.
+</p> <p class="opacity-60 text-xs">${serviceName} Spesialis${displayLocation}</p> </footer> </main> `, "head": ($$result2) => renderTemplate`${renderComponent($$result2, "Fragment", Fragment, { "slot": "head" }, { "default": ($$result3) => renderTemplate(_a || (_a = __template([' <script type="application/ld+json">', "<\/script> "])), unescapeHTML(JSON.stringify(jsonLd))) })}` })}`;
+}, "D:/Github/rafiq.biz.id/src/pages/[service]/[...location].astro", void 0);
+
+const $$file = "D:/Github/rafiq.biz.id/src/pages/[service]/[...location].astro";
+const $$url = "/[service]/[...location]";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$,
+  file: $$file,
+  prerender,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
