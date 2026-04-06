@@ -1,0 +1,4 @@
+name: rafiqwebsite
+owner: raakanaka
+package: .
+kind: wasmer.io/App.v0

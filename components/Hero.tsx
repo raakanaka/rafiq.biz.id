@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
@@ -100,12 +99,12 @@ export default function Hero() {
                             transition={{ duration: 0.6, delay: 0.4 }}
                             className="flex flex-wrap gap-4"
                         >
-                            <Link href="/projects" className="btn-kirim">
+                            <a href="/projects" className="btn-kirim">
                                 View Projects <ArrowRight size={16} />
-                            </Link>
-                            <Link href="/about" className="btn-outline-brutal">
+                            </a>
+                            <a href="/about" className="btn-outline-brutal">
                                 About Me
-                            </Link>
+                            </a>
                         </motion.div>
                     </div>
 

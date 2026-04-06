@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -13,7 +12,7 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                     {/* Brand */}
                     <div className="flex flex-col items-center md:items-start gap-1">
-                        <Link
+                        <a
                             href="/"
                             className="text-lg font-extrabold"
                             style={{
@@ -23,7 +22,7 @@ export default function Footer() {
                             }}
                         >
                             <span style={{ color: "var(--accent)" }}>R</span>afiq<span style={{ color: "var(--accent)" }}>.</span>
-                        </Link>
+                        </a>
                         <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
                             Building polished web experiences ✦
                         </p>
