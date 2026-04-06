@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { ALLOWED_SERVICES, SEO_SERVICES } from "../../lib/constants";
+import { ALLOWED_SERVICES, SEO_SERVICES } from "../../../lib/constants";
 import { ArrowUpRight, CheckCircle2, MapPin } from "lucide-react";
 
 export const prerender = false;
@@ -170,7 +170,7 @@ const jsonLd = {
 
 <Layout title={titleContent} description={descriptionContent} keywords={keywordsList}>
     <Fragment slot="head">
-        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
     </Fragment>
 
     <main class="min-h-screen flex flex-col bg-background font-body">
