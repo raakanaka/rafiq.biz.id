@@ -6,13 +6,15 @@ interface Props {
   description?: string;
   keywords?: string[];
   canonicalUrl?: string;
+  robots?: string;
 }
 
 const { 
   title = "Rafiq — Web Developer & SEO Specialist",
   description = "Hi, I'm Rafiq. A Web Developer and SEO Specialist based in Indonesia. I craft performant, accessible, and visually polished web experiences.",
   keywords = ["Rafiq", "Web Developer", "SEO Specialist", "Indonesia", "Frontend Developer", "Astro", "React"],
-  canonicalUrl = Astro.url.href
+  canonicalUrl = Astro.url.href,
+  robots = "index, follow"
 } = Astro.props;
 ---
 
@@ -23,6 +25,8 @@ const {
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
         <meta name="keywords" content={keywords.join(', ')} />
+        <meta name="robots" content={robots} />
+        <meta name="googlebot" content={robots} />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="canonical" href={canonicalUrl} />
         <link rel="sitemap" href="/sitemap.xml" />

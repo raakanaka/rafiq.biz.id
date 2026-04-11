@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { ALLOWED_SERVICES, SEO_SERVICES } from "../../../lib/constants";
+import NicheLandingPage from './NicheLandingPage.astro';
+import { ALLOWED_SERVICES, SEO_SERVICES, TARGET_CITIES_98 } from "../../../lib/constants";
+import { NICHE_MAP, NICHE_SLUGS } from "../../../lib/niches";
 import { ArrowUpRight, CheckCircle2, MapPin } from "lucide-react";
 
 export const prerender = false;
@@ -9,17 +11,60 @@ const { service, location } = Astro.params;
 const resolvedService = service as string;
 const locationArray = location ? location.split('/') : [];
 
-if (!ALLOWED_SERVICES.includes(resolvedService)) {
+// ========================================
+// CHECK FOR NICHE LANDING PAGES
+// URL pattern: /jasa-website-[niche]-[city]
+// The [service] param captures the full slug
+// ========================================
+let nicheMatch = null;
+let nicheCitySlug = '';
+
+if (resolvedService.startsWith('jasa-website-')) {
+  const remainder = resolvedService.replace('jasa-website-', '');
+  // Sort by length descending to match longest niche slugs first (e.g., "klinik-kecantikan" before "klinik")
+  const sortedSlugs = [...NICHE_SLUGS].sort((a, b) => b.length - a.length);
+  
+  for (const nicheSlug of sortedSlugs) {
+    if (remainder.startsWith(nicheSlug + '-')) {
+      const citySlug = remainder.slice(nicheSlug.length + 1);
+      if (TARGET_CITIES_98.includes(citySlug)) {
+        nicheMatch = NICHE_MAP.get(nicheSlug)!;
+        nicheCitySlug = citySlug;
+        break;
+      }
+    }
+  }
+}
+
+// Niche pages will be rendered conditionally in the template below.
+if (!nicheMatch && !ALLOWED_SERVICES.includes(resolvedService)) {
   return Astro.redirect('/404');
 }
 
 function formatString(str: string): string {
   return str.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 }
+let resolvedServiceName = formatString(resolvedService);
+let resolvedLocationName = locationArray.length > 0 ? formatString(locationArray.join(" ")) : "";
+let displayLocation = "";
 
-const serviceName = formatString(resolvedService);
-const locationName = locationArray.length > 0 ? formatString(locationArray.join(" ")) : "";
-const displayLocation = locationName ? ` di ${locationName}` : "";
+if (locationArray.length > 0) {
+  const joinedLocation = locationArray.join("-");
+  const allCities = [...new Set([...TARGET_CITIES, ...TARGET_CITIES_98])].sort((a,b) => b.length - a.length);
+  const matchedCity = allCities.find(c => joinedLocation.endsWith(c));
+
+  if (matchedCity && matchedCity !== joinedLocation) {
+    const cleanNichePart = joinedLocation.replace(new RegExp(`-?${matchedCity}$`), '');
+    resolvedLocationName = formatString(matchedCity);
+    resolvedServiceName = `${resolvedServiceName} ${formatString(cleanNichePart)}`;
+    displayLocation = ` di ${resolvedLocationName}`;
+  } else {
+    displayLocation = ` di ${resolvedLocationName}`;
+  }
+}
+
+const serviceName = resolvedServiceName;
+const locationName = resolvedLocationName;
 
 const whatsappNumber = "6282160731800";
 const waMessage = `Halo, saya tertarik dengan ${serviceName.toLowerCase()}${displayLocation}. Boleh info lebih lanjut?`;
@@ -27,16 +72,18 @@ const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMess
 
 const isSeoService = SEO_SERVICES.includes(resolvedService);
 
+const titlePrefix = serviceName.toLowerCase().startsWith('jasa') ? serviceName : `Jasa ${serviceName}`;
+
 const titleContent = isSeoService 
-  ? `Jasa ${serviceName}${displayLocation} | Pakar SEO Profesional Bergaransi` 
-  : `Jasa ${serviceName}${displayLocation} | Web Developer Bergaransi`;
+  ? `${titlePrefix}${displayLocation} | Pakar SEO Profesional Bergaransi` 
+  : `${titlePrefix}${displayLocation} | Web Developer Bergaransi`;
 
 const descriptionContent = isSeoService
   ? `Mencari ahli optimasi ranking laman? Kami adalah agensi Jasa SEO Profesional${displayLocation} yang fokus mendominasi kata kunci Google, Bing, & AI Overview. Tingkatkan trafik Anda!`
   : `Mencari jasa pembuatan website${displayLocation}? Kami adalah web developer profesional yang berfokus pada desain web responsif, company profile, dan toko online dengan optimasi SEO tingkat lanjut. Mulai Rp 1.6 Juta.`;
 
 const keywordsList = isSeoService ? [
-  `Jasa ${serviceName}`,
+  `${titlePrefix}`,
   `${serviceName.toLowerCase()}${displayLocation}`,
   "Konsultan SEO",
   "Pakar SEO",
@@ -45,7 +92,7 @@ const keywordsList = isSeoService ? [
   "SEO Bergaransi",
   "SEO Murah"
 ] : [
-  `Jasa ${serviceName}`,
+  `${titlePrefix}`,
   `${serviceName.toLowerCase()}${displayLocation}`,
   "Buat Website Murah",
   "Developer Website",
@@ -168,6 +215,9 @@ const jsonLd = {
 };
 ---
 
+{nicheMatch && nicheCitySlug ? (
+    <NicheLandingPage niche={nicheMatch} citySlug={nicheCitySlug} />
+) : (
 <Layout title={titleContent} description={descriptionContent} keywords={keywordsList}>
     <Fragment slot="head">
         <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
@@ -188,7 +238,7 @@ const jsonLd = {
                     <span>🎯</span> {isSeoService ? "Spesialis Penakluk Algoritma Pencarian Google" : "Web Developer Spesialis Keuntungan Bisnis"}
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6 text-foreground leading-tight" style="letter-spacing: -0.02em;">
-                    Jasa {serviceName} <span class="text-accent-pop">{displayLocation}</span>
+                    {titlePrefix} <span class="text-accent-pop">{displayLocation}</span>
                 </h1>
                 <p class="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl mx-auto leading-relaxed">
                     {isSeoService
@@ -431,3 +481,4 @@ const jsonLd = {
 
     </main>
 </Layout>
+)}
