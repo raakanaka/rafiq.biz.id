@@ -1,4 +1,7 @@
-export { y as handler, z as options, B as startServer } from './chunks/server_arAVftlG.mjs';
-import 'piccolore';
-import 'es-module-lexer';
-import 'clsx';
+globalThis.process ??= {};
+globalThis.process.env ??= {};
+import "cloudflare:workers";
+import { w } from "./chunks/worker-entry_C3X8gKDK.mjs";
+export {
+  w as default
+};

@@ -1,6 +1,6 @@
 globalThis.process ??= {};
 globalThis.process.env ??= {};
-const onRequest = (_, next) => next();
+const server = {};
 export {
-  onRequest
+  server
 };
