@@ -1,0 +1,9 @@
+name = "rafiq-biz-id"
+compatibility_date = "2026-04-16"
+
+kv_namespaces = [
+  { binding = "SESSION" }
+]
+
+[images]
+binding = "IMAGES"
