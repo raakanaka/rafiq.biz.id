@@ -74,6 +74,7 @@ export const NICHES: NicheDefinition[] = [
       { title: "Katalog Produk Tak Terbatas", description: "Upload ribuan produk tanpa batas, lengkap dengan variasi warna, ukuran, dan harga grosir untuk agen atau reseller.", emoji: "📦" },
       { title: "Integrasi Payment Gateway", description: "Terima pembayaran otomatis via Virtual Account, QRIS, e-Wallet, dan Kartu Kredit tanpa konfirmasi manual.", emoji: "💳" },
       { title: "Cek Ongkir & Resi Otomatis", description: "Terhubung langsung dengan JNE, J&T, SiCepat, dll. Pelanggan bisa cek ongkir dan lacak resi langsung di website.", emoji: "🚚" },
+      { title: "Google Merchant Shopping", description: "Produk Anda otomatis didaftarkan ke Google Merchant Center agar tampil di tab Shopping pada pencarian Google.", emoji: "🛍️" },
       { title: "Manajemen Reseller / Dropship", description: "Fitur khusus untuk pendaftaran reseller dengan sistem diskon bertingkat yang memudahkan ekspansi jaringan.", emoji: "👥" }
     ],
     [

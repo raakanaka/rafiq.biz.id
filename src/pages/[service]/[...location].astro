@@ -33,6 +33,10 @@ if (resolvedService.startsWith('jasa-website-')) {
         nicheCitySlug = citySlug;
         break;
       }
+    } else if (remainder === nicheSlug) {
+      nicheMatch = NICHE_MAP.get(nicheSlug)!;
+      nicheCitySlug = "seluruh-indonesia";
+      break;
     }
   }
 }

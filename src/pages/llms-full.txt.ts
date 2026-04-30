@@ -100,7 +100,7 @@ ${WEB_DEV_SERVICES.map(s => `### ${formatString(s)}
 | Package | Price | Features |
 |---------|-------|----------|
 | Paket Basic UMKM | Rp 3.500.000 | Responsive E-commerce design, domain & hosting, basic SEO, payment gateway integration, basic product catalog |
-| Paket Advanced UMKM | Rp 5.500.000 | All Basic features + premium design, business email, AI Overview setup, advanced catalog, automatic shipping courier integration |
+| Paket Advanced UMKM | Rp 5.500.000 | All Basic features + Setup Google Merchant Shopping, premium design, business email, AI Overview setup, advanced catalog, automatic shipping courier integration |
 | Paket Custom Enterprise | Custom | All Advanced features + custom web app, ERP/cashier integration, bilingual, dedicated support |
 
 #### Web Development FAQ
