@@ -95,6 +95,14 @@ ${WEB_DEV_SERVICES.map(s => `### ${formatString(s)}
 | Paket Pro (Perusahaan/CV) | Rp 2.200.000 | All Starter features + premium page design, professional business email, Schema Markup / AI Overview setup, max 10 pages, Google My Business setup |
 | Paket Premium (Corporate VIP) | Rp 2.900.000 | All Pro features + premium hosting, advanced product catalog/LMS, bilingual support, conversion analysis, minor revisions during active period |
 
+#### E-Commerce UMKM Special Pricing
+
+| Package | Price | Features |
+|---------|-------|----------|
+| Paket Basic UMKM | Rp 3.500.000 | Responsive E-commerce design, domain & hosting, basic SEO, payment gateway integration, basic product catalog |
+| Paket Advanced UMKM | Rp 5.500.000 | All Basic features + premium design, business email, AI Overview setup, advanced catalog, automatic shipping courier integration |
+| Paket Custom Enterprise | Custom | All Advanced features + custom web app, ERP/cashier integration, bilingual, dedicated support |
+
 #### Web Development FAQ
 
 ${faqWebDev.map(f => `**Q: ${f.q}**
@@ -138,7 +146,7 @@ ${projects.map((p, i) => `### ${i + 1}. ${p.title}
 
 ## Service Area
 
-Available across ${TARGET_CITIES.length}+ major cities in Indonesia, covering 38 provinces and 83,000+ villages nationwide.
+Available across 416 regencies and 98 cities in Indonesia, covering 38 provinces and 83,000+ villages nationwide.
 
 ### Priority Cities
 ${TARGET_CITIES.map(c => `- ${formatString(c)}: ${baseUrl}/jasa-pembuatan-website/${c}`).join('\n')}

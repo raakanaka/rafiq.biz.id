@@ -58,6 +58,42 @@ function niche(
 }
 
 export const NICHES: NicheDefinition[] = [
+  // E-COMMERCE UMKM (SPECIAL PRICING)
+  niche(
+    "ecommerce-umkm", "A", "Teknologi",
+    "Jasa Pembuatan Website E-commerce UMKM [KOTA] | Jualan Online Mudah",
+    "Jasa pembuatan website e-commerce khusus UMKM di [KOTA]. Fitur lengkap, harga terjangkau mulai 3.5 Juta, siap tingkatkan penjualan Anda seluruh Indonesia.",
+    {
+      headline: "Website E-commerce Profesional untuk UMKM di [KOTA]",
+      subheadline: "Bawa produk lokal Anda ke pasar nasional dengan toko online mandiri yang terintegrasi pembayaran otomatis dan kurir pengiriman.",
+      cta: "Konsultasi Toko Online",
+      badge: "🛒 Spesialis E-commerce UMKM"
+    },
+    "Banyak UMKM di [KOTA] masih bergantung pada marketplace dengan potongan admin yang tinggi dan persaingan harga berdarah. Tanpa toko online sendiri, brand Anda sulit berkembang dan membangun loyalitas pelanggan jangka panjang.",
+    [
+      { title: "Katalog Produk Tak Terbatas", description: "Upload ribuan produk tanpa batas, lengkap dengan variasi warna, ukuran, dan harga grosir untuk agen atau reseller.", emoji: "📦" },
+      { title: "Integrasi Payment Gateway", description: "Terima pembayaran otomatis via Virtual Account, QRIS, e-Wallet, dan Kartu Kredit tanpa konfirmasi manual.", emoji: "💳" },
+      { title: "Cek Ongkir & Resi Otomatis", description: "Terhubung langsung dengan JNE, J&T, SiCepat, dll. Pelanggan bisa cek ongkir dan lacak resi langsung di website.", emoji: "🚚" },
+      { title: "Manajemen Reseller / Dropship", description: "Fitur khusus untuk pendaftaran reseller dengan sistem diskon bertingkat yang memudahkan ekspansi jaringan.", emoji: "👥" }
+    ],
+    [
+      { title: "Bebas Potongan Admin", description: "100% keuntungan masuk ke rekening Anda tanpa potongan platform pihak ketiga.", emoji: "💰" },
+      { title: "Aset Digital Milik Sendiri", description: "Bangun database pelanggan Anda sendiri untuk retargeting dan promosi di masa depan.", emoji: "🔒" },
+      { title: "SEO Friendly & Cepat", description: "Website dioptimasi agar produk Anda mudah ditemukan di Google oleh pembeli di seluruh Indonesia.", emoji: "⚡" }
+    ],
+    [
+      { name: "Siti Nurhaliza", role: "Owner Batik Nusantara", text: "Sejak beralih dari marketplace ke website e-commerce sendiri, margin keuntungan kami naik 20% karena tidak ada potongan admin lagi!" },
+      { name: "Budi Santoso", role: "Distributor Snack Lokal", text: "Fitur reseller-nya sangat membantu. Sekarang kami punya ratusan agen di seluruh Indonesia yang order langsung via website." },
+      { name: "Hendra Wijaya", role: "Pemilik Toko Gadget", text: "Integrasi ongkir otomatis membuat admin kami tidak perlu repot cek tarif satu-satu. Proses packing dan pengiriman jadi super cepat." }
+    ],
+    [
+      { q: "Berapa biaya pembuatan website e-commerce UMKM?", a: "Harga paket mulai dari Rp 3.500.000 untuk Paket Basic, Rp 5.500.000 untuk Paket Advanced, dan harga Custom untuk fitur Enterprise." },
+      { q: "Apakah sudah termasuk domain dan hosting?", a: "Ya, semua paket sudah termasuk gratis nama domain (.com dan.id ( Untuk Paket Teratas)) dan cloud hosting super cepat selama 1 tahun pertama." },
+      { q: "Bisa integrasi dengan pembayaran QRIS dan Virtual Account?", a: "Tentu! Pembeli bisa membayar menggunakan QRIS, Transfer Bank (VA), atau e-Wallet favorit mereka." },
+      { q: "Bagaimana cara menghitung ongkos kirim?", a: "Sistem toko online kami terintegrasi dengan API kurir nasional. Ongkir akan dihitung otomatis sesuai kecamatan tujuan pembeli." },
+      { q: "Apakah ada batasan jumlah produk?", a: "Tidak ada batasan jumlah produk. Anda bisa mengunggah sebanyak apapun produk sesuai kapasitas hosting yang tersedia." }
+    ]
+  ),
 
   // ================================================================
   // KATEGORI A — EXISTING (3 NICHE)

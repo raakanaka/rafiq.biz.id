@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import NicheLandingPage from './NicheLandingPage.astro';
 import { ALLOWED_SERVICES, SEO_SERVICES, TARGET_CITIES, TARGET_CITIES_98 } from "../../../lib/constants";
+import { TARGET_REGENCIES_416 } from "../../../lib/regencies";
 import { NICHE_MAP, NICHE_SLUGS } from "../../../lib/niches";
 import { ArrowUpRight, CheckCircle2, MapPin } from "lucide-react";
 
@@ -27,7 +28,7 @@ if (resolvedService.startsWith('jasa-website-')) {
   for (const nicheSlug of sortedSlugs) {
     if (remainder.startsWith(nicheSlug + '-')) {
       const citySlug = remainder.slice(nicheSlug.length + 1);
-      if (TARGET_CITIES_98.includes(citySlug)) {
+      if (TARGET_CITIES_98.includes(citySlug) || TARGET_REGENCIES_416.includes(citySlug)) {
         nicheMatch = NICHE_MAP.get(nicheSlug)!;
         nicheCitySlug = citySlug;
         break;
@@ -50,7 +51,7 @@ let displayLocation = "";
 
 if (locationArray.length > 0) {
   const joinedLocation = locationArray.join("-");
-  const allCities = [...new Set([...TARGET_CITIES, ...TARGET_CITIES_98])].sort((a,b) => b.length - a.length);
+  const allCities = [...new Set([...TARGET_CITIES, ...TARGET_CITIES_98, ...TARGET_REGENCIES_416])].sort((a,b) => b.length - a.length);
   const matchedCity = allCities.find(c => joinedLocation.endsWith(c));
 
   if (matchedCity && matchedCity !== joinedLocation) {

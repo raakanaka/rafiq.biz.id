@@ -47,11 +47,16 @@ const pageKeywords = [
 
 const nicheDisplayName = n.slug.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
 
-// Pricing + JSON-LD
-const offers = [
-  { name: "Paket Starter", price: "1600000", priceCurrency: "IDR" },
-  { name: "Paket Pro", price: "2200000", priceCurrency: "IDR" },
-  { name: "Paket Premium", price: "2900000", priceCurrency: "IDR" },
+const isEcommerceUmkm = n.slug === "ecommerce-umkm";
+
+const offers = isEcommerceUmkm ? [
+  { badge: "UMKM Retail", name: "Paket Basic UMKM", price: "3500000", priceCurrency: "IDR", display: "Rp3,5 Juta", features: ["Desain E-commerce Responsif", "Domain & Hosting (1 Tahun)", "SEO On-Page Dasar", "Bandwidth Unmetered", "Integrasi Payment Gateway", "Katalog Produk Dasar"] },
+  { badge: "Toko Grosir & Distributor", name: "Paket Advanced UMKM", price: "5500000", priceCurrency: "IDR", display: "Rp5,5 Juta", isPopular: true, features: ["Semua Fitur Paket Basic", "Desain Halaman Khusus Premium", "Email Bisnis Profesional", "Setup Schema Markup / AI Overview", "Katalog Produk Lanjut", "Integrasi Kurir Otomatis"] },
+  { badge: "Corporate & Enterprise", name: "Paket Custom Enterprise", price: "0", priceCurrency: "IDR", display: "Custom", features: ["Semua Fitur Paket Advanced", "Custom Web Application", "Integrasi ERP / Sistem Kasir", "Dukungan Optimasi Struktur Kode", "Fitur Bilingual", "Dedicated Support"] }
+] : [
+  { badge: "UMKM / Personal", name: "Paket Starter", price: "1600000", priceCurrency: "IDR", display: "Rp1,6 Juta", features: ["Custom Tema Responsif", "Domain & Hosting (1 Tahun)", "SEO On-Page Dasar", "Bandwidth Unmetered", "Integrasi Tombol WhatsApp", "Maks. 5 Halaman Dasar"] },
+  { badge: "Perusahaan / CV", name: "Paket Pro", price: "2200000", priceCurrency: "IDR", display: "Rp2,2 Juta", isPopular: true, features: ["Semua Fitur Paket Starter", "Desain Halaman Khusus Premium", "Email Bisnis Profesional", "Setup Schema Markup / AI Overview", "Maks. 10 Halaman", "Gratis Setup Google My Business"] },
+  { badge: "Corporate VIP", name: "Paket Premium", price: "2900000", priceCurrency: "IDR", display: "Rp2,9 Juta", features: ["Semua Fitur Paket Pro", "Server Hosting Premium", "Katalog Produk Lanjut/LMS", "Fitur Bilingual (Dua Bahasa)", "Analisis Konversi", "Revisi Minor Selama Masa Aktif"] },
 ];
 
 const jsonLd = {
@@ -220,39 +225,24 @@ const jsonLd = {
           <p class="text-text-secondary text-lg">Investasi website profesional yang menghasilkan return berkali lipat lewat pelanggan baru.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          <div class="card-hard flex flex-col p-8 bg-white">
-            <div class="mb-4"><span class="badge-brutal text-xs mb-4">UMKM / Personal</span><h3 class="text-2xl font-bold text-foreground">Paket Starter</h3></div>
-            <div class="mb-6 flex items-baseline"><span class="text-3xl font-extrabold text-foreground">Rp1,6 Juta</span></div>
-            <ul class="space-y-4 mb-8 flex-1">
-              {["Custom Tema Responsif", "Domain & Hosting (1 Tahun)", "SEO On-Page Dasar", "Bandwidth Unmetered", "Integrasi Tombol WhatsApp", "Maks. 5 Halaman Dasar"].map(f => (
-                <li class="flex items-start gap-3 text-text-secondary"><CheckCircle2 className="text-accent flex-shrink-0" size={20} /><span>{f}</span></li>
-              ))}
-            </ul>
-            <a href={waLink} target="_blank" rel="noopener noreferrer" class="btn-outline-brutal w-full justify-center">Pilih Paket</a>
-          </div>
-          <div class="card-hard flex flex-col p-8 transform md:-translate-y-4" style="background: var(--accent-light); border-color: var(--accent-dark);">
-            <div class="mb-4 relative">
-              <div class="absolute -top-4 -right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full border border-border-dark shadow-[2px_2px_0px_#0f172a] transform rotate-3">TERLARIS</div>
-              <span class="badge-brutal text-xs mb-4 bg-white">Perusahaan / CV</span><h3 class="text-2xl font-bold text-foreground">Paket Pro</h3>
+          {offers.map(offer => (
+            <div class={`card-hard flex flex-col p-8 ${offer.isPopular ? 'transform md:-translate-y-4' : 'bg-white'}`} style={offer.isPopular ? 'background: var(--accent-light); border-color: var(--accent-dark);' : ''}>
+              <div class="mb-4 relative">
+                {offer.isPopular && <div class="absolute -top-4 -right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full border border-border-dark shadow-[2px_2px_0px_#0f172a] transform rotate-3">TERLARIS</div>}
+                <span class={`badge-brutal text-xs mb-4 ${offer.isPopular ? 'bg-white' : ''}`}>{offer.badge}</span>
+                <h3 class="text-2xl font-bold text-foreground">{offer.name}</h3>
+              </div>
+              <div class="mb-6 flex items-baseline"><span class="text-3xl font-extrabold text-foreground">{offer.display}</span></div>
+              <ul class="space-y-4 mb-8 flex-1">
+                {offer.features.map(f => (
+                  <li class={`flex items-start gap-3 text-text-secondary ${offer.isPopular ? 'font-medium' : ''}`}>
+                    <CheckCircle2 className="text-accent flex-shrink-0" size={20} /><span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href={waLink} target="_blank" rel="noopener noreferrer" class={`${offer.isPopular ? 'btn-kirim' : 'btn-outline-brutal'} w-full justify-center text-center`}>{offer.isPopular ? 'Pilih Paket Kami' : 'Pilih Paket'}</a>
             </div>
-            <div class="mb-6 flex items-baseline"><span class="text-3xl font-extrabold text-foreground">Rp2,2 Juta</span></div>
-            <ul class="space-y-4 mb-8 flex-1">
-              {["Semua Fitur Paket Starter", "Desain Halaman Khusus Premium", "Email Bisnis Profesional", "Setup Schema Markup / AI Overview", "Maks. 10 Halaman", "Gratis Setup Google My Business"].map(f => (
-                <li class="flex items-start gap-3 text-text-secondary font-medium"><CheckCircle2 className="text-accent flex-shrink-0" size={20} /><span>{f}</span></li>
-              ))}
-            </ul>
-            <a href={waLink} target="_blank" rel="noopener noreferrer" class="btn-kirim w-full justify-center text-center">Pilih Paket Kami</a>
-          </div>
-          <div class="card-hard flex flex-col p-8 bg-white">
-            <div class="mb-4"><span class="badge-brutal text-xs mb-4">Corporate VIP</span><h3 class="text-2xl font-bold text-foreground">Paket Premium</h3></div>
-            <div class="mb-6 flex items-baseline"><span class="text-3xl font-extrabold text-foreground">Rp2,9 Juta</span></div>
-            <ul class="space-y-4 mb-8 flex-1">
-              {["Semua Fitur Paket Pro", "Server Hosting Premium", "Katalog Produk Lanjut/LMS", "Fitur Bilingual (Dua Bahasa)", "Analisis Konversi", "Revisi Minor Selama Masa Aktif"].map(f => (
-                <li class="flex items-start gap-3 text-text-secondary"><CheckCircle2 className="text-accent flex-shrink-0" size={20} /><span>{f}</span></li>
-              ))}
-            </ul>
-            <a href={waLink} target="_blank" rel="noopener noreferrer" class="btn-outline-brutal w-full justify-center">Pilih Paket</a>
-          </div>
+          ))}
         </div>
       </div>
     </section>

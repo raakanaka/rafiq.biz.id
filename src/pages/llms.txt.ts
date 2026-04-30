@@ -33,6 +33,11 @@ Pricing:
 - Paket Pro (Perusahaan/CV): Rp 2.200.000
 - Paket Premium (Corporate VIP): Rp 2.900.000
 
+E-Commerce UMKM Special Pricing:
+- Paket Basic UMKM: Rp 3.500.000
+- Paket Advanced UMKM: Rp 5.500.000
+- Paket Custom Enterprise: Custom Pricing
+
 ### SEO Services
 ${SEO_SERVICES.map(s => `- [${formatString(s)}](${baseUrl}/${s})`).join('\n')}
 
@@ -76,7 +81,7 @@ JavaScript, TypeScript, React, Astro, Tailwind CSS, Node.js, SEO, UI/UX Design, 
 
 ## Service Area Coverage
 
-Available across ${TARGET_CITIES.length}+ major cities in Indonesia covering 38 provinces and 83,000+ villages.
+Available across 416 regencies and 98 cities in Indonesia covering 38 provinces and 83,000+ villages.
 
 Top cities: ${TARGET_CITIES.slice(0, 15).map(c => formatString(c)).join(', ')}, and more.
 
