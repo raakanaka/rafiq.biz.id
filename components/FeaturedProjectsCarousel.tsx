@@ -91,7 +91,6 @@ export default function FeaturedProjectsCarousel() {
             <p className="featured-carousel-industry">{project.industry}</p>
             <h3>{project.title}</h3>
             <p className="featured-carousel-copy">{project.summary.en}</p>
-            <p className="featured-carousel-copy" lang="id">{project.summary.id}</p>
 
             <div className="flex flex-wrap gap-2 mt-auto">
               {project.tech.map((tag) => (
