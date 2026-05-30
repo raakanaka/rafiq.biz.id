@@ -18,6 +18,11 @@ const contacts = [
         href: "mailto:rafiq.adha@rafiq.biz.id",
     },
     {
+        title: "Email",
+        value: "rafiqalhafizh12@gmail.com",
+        href: "mailto:rafiqalhafizh12@gmail.com",
+    },
+    {
         title: "LinkedIn",
         value: "@rafiq-alhafizh-adha",
         href: "https://linkedin.com/in/rafiq-alhafizh-adha",
@@ -47,7 +52,7 @@ const getIcon = (title: string) => {
 
 <Layout title="Contact | Rafiq" description="Get in touch with Rafiq">
     <main class="min-h-screen flex flex-col">
-        <Navbar client:load />
+        <Navbar client:only="react" />
 
         <section class="section flex-1 flex items-center">
             <div class="max-w-4xl mx-auto w-full">
@@ -70,8 +75,9 @@ const getIcon = (title: string) => {
                 <!-- Contact cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {contacts.map((item, i) => {
-                        const Icon = getIcon(item.title);
-                        const isLink = !!item.href;
+        const Icon = getIcon(item.title);
+        const isLink = !!item.href;
+        const color = contactColors[i % contactColors.length];
                         
                         return isLink ? (
                             <a
@@ -83,7 +89,7 @@ const getIcon = (title: string) => {
                             >
                                 <div
                                     class="icon-circle"
-                                    style={`background: ${contactColors[i].bg}; color: ${contactColors[i].icon};`}
+                                    style={`background: ${color.bg}; color: ${color.icon};`}
                                 >
                                     <Icon size={22} />
                                 </div>
@@ -109,7 +115,7 @@ const getIcon = (title: string) => {
                             >
                                 <div
                                     class="icon-circle"
-                                    style={`background: ${contactColors[i].bg}; color: ${contactColors[i].icon};`}
+                                    style={`background: ${color.bg}; color: ${color.icon};`}
                                 >
                                     <Icon size={22} />
                                 </div>

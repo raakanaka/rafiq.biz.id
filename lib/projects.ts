@@ -44,6 +44,20 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 46,
+    slug: "midiatek",
+    title: "Midiatek",
+    link: "https://midiatek.id/",
+    tech: ["Automotive", "Diagnostic Tools", "Company Website"],
+    industry: "Automotive technology",
+    service: "Company website",
+    emoji: "🔧",
+    summary: {
+      en: "A professional company website for Midiatek, an automotive workshop technology brand focused on diagnostic tools, workshop solutions, and practical support for Indonesian automotive businesses.",
+      id: "Website perusahaan profesional untuk Midiatek, brand teknologi bengkel otomotif yang berfokus pada alat diagnostik, solusi bengkel, dan dukungan praktis untuk bisnis otomotif di Indonesia.",
+    },
+  },
+  {
     id: 45,
     slug: "svingolf-apparel",
     title: "Svingolf Apparel",
