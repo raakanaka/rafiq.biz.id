@@ -1,9 +1,9 @@
 globalThis.process ??= {};
 globalThis.process.env ??= {};
-import { c as createComponent } from "./astro-component_BDQLFbuj.mjs";
-import { k as renderComponent, r as renderTemplate, m as maybeRenderHead } from "./worker-entry_C3X8gKDK.mjs";
-import { $ as $$Layout } from "./createLucideIcon_Bp2E0FbM.mjs";
-import { N as Navbar, F as Footer } from "./Footer_1b0BUHYF.mjs";
+import { c as createComponent } from "./astro-component_IWDcd06N.mjs";
+import { k as renderComponent, r as renderTemplate, m as maybeRenderHead } from "./worker-entry_UpPFtIRo.mjs";
+import { $ as $$Layout } from "./createLucideIcon_CTPOnP7p.mjs";
+import { N as Navbar, F as Footer } from "./Footer_Bxx3NAc7.mjs";
 const $$About = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$props, $$slots);
   Astro2.self = $$About;
@@ -31,7 +31,9 @@ I am Rafiq, a dedicated Web Developer and SEO Specialist based in Indonesia.
 My journey began with a curiosity for how things work on the screen.
                         Today, I work with the latest tech stack including Astro, React, and Tailwind CSS
                         to deliver high-quality digital experiences.
-</p> </div> <!-- Skills --> <div> <h2 class="text-2xl font-extrabold mb-6" style="color: var(--foreground);">
+</p> <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px dashed var(--border-dark); display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;"> <span class="text-sm font-bold" style="color: var(--foreground);">Need a copy of my resume?</span> <a href="/Resume_Rafiq_Al_Hafizh_Adha.pdf" download class="btn-kirim" style="padding: 0.5rem 1.25rem; font-size: 0.8125rem; text-decoration: none;">
+Download CV / Resume 📥
+</a> </div> </div> <!-- Skills --> <div> <h2 class="text-2xl font-extrabold mb-6" style="color: var(--foreground);">
 Skills ⚡
 </h2> <div class="flex flex-wrap gap-3"> ${skills.map((skill) => renderTemplate`<span class="badge-brutal hover:-translate-y-1 hover:shadow-[3px_3px_0px_var(--border-dark)] transition-all duration-300" style="font-size: 0.8125rem; padding: 6px 14px; display: inline-block;"> <span>${skill.emoji}</span> ${skill.name} </span>`)} </div> </div> </div> </section> ${renderComponent($$result2, "Footer", Footer, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/home/malaka/Documents/rafiq/components/Footer", "client:component-export": "default" })} </main> ` })}`;
 }, "/home/malaka/Documents/rafiq/src/pages/about.astro", void 0);

@@ -1,6 +1,6 @@
 globalThis.process ??= {};
 globalThis.process.env ??= {};
-import { c as createLucideIcon } from "./createLucideIcon_Bp2E0FbM.mjs";
+import { c as createLucideIcon } from "./createLucideIcon_CTPOnP7p.mjs";
 const __iconNode = [
   [
     "path",

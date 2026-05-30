@@ -1,7 +1,7 @@
 globalThis.process ??= {};
 globalThis.process.env ??= {};
 import { A as ALLOWED_SERVICES, T as TARGET_CITIES, a as TARGET_CITIES_98 } from "./constants_CXIdmYgm.mjs";
-import { N as NICHE_SLUGS } from "./niches_CDM8Av3T.mjs";
+import { N as NICHE_SLUGS } from "./niches_CNQa4CCN.mjs";
 async function GET() {
   const baseUrl = "https://rafiq.biz.id";
   const now = (/* @__PURE__ */ new Date()).toISOString().split("T")[0];

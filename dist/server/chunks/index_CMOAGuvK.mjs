@@ -1,10 +1,10 @@
 globalThis.process ??= {};
 globalThis.process.env ??= {};
-import { c as createComponent } from "./astro-component_BDQLFbuj.mjs";
-import { k as renderComponent, r as renderTemplate, m as maybeRenderHead, g as addAttribute } from "./worker-entry_C3X8gKDK.mjs";
-import { c as createLucideIcon, $ as $$Layout } from "./createLucideIcon_Bp2E0FbM.mjs";
-import { j as jsxRuntimeExports, m as motion, N as Navbar, F as Footer } from "./Footer_1b0BUHYF.mjs";
-import { M as MapPin } from "./map-pin_SU6FhInq.mjs";
+import { c as createComponent } from "./astro-component_IWDcd06N.mjs";
+import { k as renderComponent, r as renderTemplate, m as maybeRenderHead, g as addAttribute } from "./worker-entry_UpPFtIRo.mjs";
+import { c as createLucideIcon, $ as $$Layout } from "./createLucideIcon_CTPOnP7p.mjs";
+import { j as jsxRuntimeExports, m as motion, N as Navbar, F as Footer } from "./Footer_Bxx3NAc7.mjs";
+import { M as MapPin } from "./map-pin_B4Jt8sPd.mjs";
 const __iconNode$3 = [
   ["path", { d: "M5 12h14", key: "1ays0h" }],
   ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
@@ -222,71 +222,93 @@ function Hero() {
 }
 const experiences = [
   {
-    title: "SEO Manager",
-    company: "Asia Safety Protection®",
+    title: "SEO - Web Development",
+    company: "Asia Safety Protection",
     type: "Freelance",
-    location: "Bali, Indonesia",
+    location: "Remote",
     period: "Jan 2026 – Present",
-    description: "Improving website structure, on-page/off-page SEO, and page speed performance to support organic growth and search visibility.",
+    description: "Freelance SEO Manager focused on improving website structure, on-page/off-page SEO, page speed, technical foundations, and search visibility to support long-term organic growth.",
     emoji: "🔍",
     color: { bg: "#dbeafe", border: "#2563eb" }
   },
   {
-    title: "Frontend Developer",
+    title: "Web Development",
     company: "PraktiQu",
-    type: "Freelance",
-    location: "Bandung, Indonesia",
+    type: "Contract",
+    location: "Remote",
     period: "Apr 2025 – Present",
-    description: "Designing UI, building landing page systems, and creating responsive, user-friendly interfaces.",
+    description: "Freelance Front-End Developer focused on improving UI design, building landing page systems, layout refinement, and creating responsive, user-friendly interfaces.",
     emoji: "⚛️",
     color: { bg: "#ede9fe", border: "#7c3aed" }
   },
   {
-    title: "Senior Web Developer",
+    title: "Web Development",
     company: "Al Khair Tour and Travel",
-    type: "Freelance",
-    location: "Medan, Indonesia",
+    type: "Contract",
+    location: "Onsite",
     period: "Aug 2025 – Mar 2026",
-    description: "Building, managing, and maintaining high-performance websites and providing technical support.",
+    description: "Fully responsible for the design and development of Al Khair website, including UI design, responsive frontend/backend development, CMS integration, and SEO optimization.",
     emoji: "🌍",
     color: { bg: "#d1fae5", border: "#059669" }
   },
   {
-    title: "Senior Web Developer",
-    company: "The Business Tailor Pte Ltd",
-    type: "Remote",
-    location: "Singapore",
-    period: "Nov 2024 – Jul 2025",
-    description: "Creating and maintaining the company's official website with modern web technologies.",
-    emoji: "🏢",
+    title: "Web Development",
+    company: "PT Socta Creatives Indonesia",
+    type: "Apprenticeship",
+    location: "Remote",
+    period: "Nov 2024 – Oct 2025",
+    description: "Web designer providing enhanced user experiences, designing and implementing websites using WordPress and Framer. Improved site speed by 40% through cache optimization and image compression.",
+    emoji: "🎨",
     color: { bg: "#fef3c7", border: "#d97706" }
   },
   {
-    title: "SEO Consultant",
-    company: "PT. Duta Agensi",
+    title: "Product Design",
+    company: "PT Duta Agensi Mail",
     type: "Contract",
-    location: "Jakarta, Indonesia",
-    period: "Jan 2024 – Oct 2024",
-    description: "Handling SEO structure, sandbox recovery strategies, and technical audits for various clients.",
+    location: "Remote",
+    period: "Jan 2024 – Nov 2024",
+    description: "Led project to speed up website and improve user experience on duniafintech.com. Optimized widgets, plugins, images, caching, and clean databases using WordPress CMS.",
     emoji: "📊",
     color: { bg: "#fce7f3", border: "#db2777" }
   },
   {
-    title: "Web Developer",
-    company: "Ouzen Group",
-    type: "Full-Time",
-    location: "Medan, Indonesia",
-    period: "Jul 2019 – Feb 2023",
-    description: "Full-stack development, technical troubleshooting, and site optimization for various digital projects.",
-    emoji: "💻",
+    title: "Product Design",
+    company: "PT Halo Karya Bersama",
+    type: "Intern",
+    location: "Remote",
+    period: "Nov 2023 – Mar 2024",
+    description: "Redesigned Halo Siswa's UI/UX (rebranded as HaloExpert). Created visualizations for heroes, footers, navigation, researched interaction design, and prototyped in application testing.",
+    emoji: "⚙️",
     color: { bg: "#e0f2fe", border: "#0284c7" }
+  },
+  {
+    title: "Web Designer",
+    company: "PT Ouzen Anugerah Indonesia",
+    type: "Full-Time",
+    location: "Onsite",
+    period: "Jun 2019 – Feb 2023",
+    description: "Team leader handling landing pages for product sales. Developed 20+ landing pages per month using Native HTML and WordPress CMS with a focus on speed, design frameworks, and mockups.",
+    emoji: "💻",
+    color: { bg: "#fee2e2", border: "#ef4444" }
+  },
+  {
+    title: "Web Designer",
+    company: "PT Kereta Api Indonesia",
+    type: "Intern",
+    location: "Onsite",
+    period: "Dec 2017 – Mar 2018",
+    description: "Internship at PT Kereta Api Indonesia. Managed and redesigned a subsidiary company profile website belonging to PT Kereta Api Indonesia Divre 1 North Sumatra using Native PHP.",
+    emoji: "🚂",
+    color: { bg: "#dbeafe", border: "#2563eb" }
   }
 ];
 const typeColors = {
   Freelance: { bg: "#d1fae5", color: "#065f46", border: "#059669" },
   Remote: { bg: "#dbeafe", color: "#1e40af", border: "#2563eb" },
   Contract: { bg: "#fef3c7", color: "#92400e", border: "#d97706" },
-  "Full-Time": { bg: "#ede9fe", color: "#5b21b6", border: "#7c3aed" }
+  "Full-Time": { bg: "#ede9fe", color: "#5b21b6", border: "#7c3aed" },
+  Apprenticeship: { bg: "#fce7f3", color: "#9d174d", border: "#db2777" },
+  Intern: { bg: "#e0f2fe", color: "#0369a1", border: "#0284c7" }
 };
 function Experience() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "section", id: "experience", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-6xl mx-auto", children: [

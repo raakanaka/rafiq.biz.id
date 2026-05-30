@@ -1,7 +1,7 @@
 globalThis.process ??= {};
 globalThis.process.env ??= {};
-import { c as createComponent } from "./astro-component_BDQLFbuj.mjs";
-import { g as addAttribute, o as renderHead, p as renderSlot, r as renderTemplate, n as reactExports } from "./worker-entry_C3X8gKDK.mjs";
+import { c as createComponent } from "./astro-component_IWDcd06N.mjs";
+import { g as addAttribute, o as renderHead, p as renderSlot, r as renderTemplate, n as reactExports } from "./worker-entry_UpPFtIRo.mjs";
 const $$Layout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$props, $$slots);
   Astro2.self = $$Layout;
