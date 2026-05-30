@@ -190,6 +190,145 @@ h1, h2, h3, h4, h5, h6 {
   border: 1.5px solid var(--accent-dark);
 }
 
+.project-detail-panel,
+.project-side-panel,
+.project-content-block {
+  background: var(--card-bg);
+  border: 1.5px solid #e5e7eb;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+
+.project-detail-panel {
+  padding: 2rem;
+}
+
+.project-side-panel {
+  padding: 1.5rem;
+  position: sticky;
+  top: 5.5rem;
+}
+
+.project-detail-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--border-dark);
+  border-radius: 50%;
+  background: var(--accent-light);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.project-language-stack {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.language-label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 0.75rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: #eef2ff;
+  color: #3730a3;
+  border: 1.5px solid #3730a3;
+  font-size: 0.75rem;
+  font-weight: 800;
+  font-family: var(--font-heading), sans-serif;
+}
+
+.project-lead {
+  color: var(--text-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.project-meta-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-meta-list div {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.project-meta-list div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.project-meta-list dt {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-meta-list dd {
+  margin-top: 0.25rem;
+  color: var(--foreground);
+  font-weight: 700;
+}
+
+.project-meta-list a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.project-meta-list a:hover {
+  text-decoration: underline;
+}
+
+.project-content-block {
+  padding: 1.75rem;
+}
+
+.project-content-block h2 {
+  color: var(--foreground);
+  font-size: 1.75rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.project-content-block h3 {
+  color: var(--foreground);
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-content-block p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+@media (max-width: 1023px) {
+  .project-side-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-detail-panel,
+  .project-side-panel,
+  .project-content-block {
+    padding: 1.25rem;
+  }
+
+  .project-lead {
+    font-size: 1rem;
+  }
+}
+
 /* Section spacing */
 .section {
   padding: 5rem 1.5rem;

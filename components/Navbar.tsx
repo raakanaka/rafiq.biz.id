@@ -18,6 +18,7 @@ export default function Navbar() {
         setPathname(window.location.pathname);
     }, []);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const isActive = (path: string) => path === "/projects" ? pathname.startsWith("/projects") : pathname === path;
 
     return (
         <nav
@@ -49,11 +50,11 @@ export default function Navbar() {
                                 href={item.path}
                                 className="px-4 py-2 text-sm font-bold transition-all"
                                 style={{
-                                    color: pathname === item.path ? "var(--accent)" : "var(--text-secondary)",
+                                    color: isActive(item.path) ? "var(--accent)" : "var(--text-secondary)",
                                     textDecoration: "none",
                                     borderRadius: "var(--radius-sm)",
-                                    background: pathname === item.path ? "var(--accent-light)" : "transparent",
-                                    border: pathname === item.path ? "1.5px solid var(--accent-dark)" : "1.5px solid transparent",
+                                    background: isActive(item.path) ? "var(--accent-light)" : "transparent",
+                                    border: isActive(item.path) ? "1.5px solid var(--accent-dark)" : "1.5px solid transparent",
                                     fontFamily: "var(--font-heading)",
                                 }}
                             >
@@ -104,11 +105,11 @@ export default function Navbar() {
                                     onClick={() => setMobileOpen(false)}
                                     className="py-2.5 px-4 text-sm font-bold"
                                     style={{
-                                        color: pathname === item.path ? "var(--accent)" : "var(--foreground)",
+                                        color: isActive(item.path) ? "var(--accent)" : "var(--foreground)",
                                         textDecoration: "none",
                                         borderRadius: "var(--radius-sm)",
-                                        background: pathname === item.path ? "var(--accent-light)" : "transparent",
-                                        border: pathname === item.path ? "1.5px solid var(--accent-dark)" : "1.5px solid transparent",
+                                        background: isActive(item.path) ? "var(--accent-light)" : "transparent",
+                                        border: isActive(item.path) ? "1.5px solid var(--accent-dark)" : "1.5px solid transparent",
                                         fontFamily: "var(--font-heading)",
                                     }}
                                 >
