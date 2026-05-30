@@ -16,9 +16,28 @@ const skills = [
     { name: "Keyword Research", emoji: "🔑" },
     { name: "Analytics", emoji: "📊" },
 ];
+
+const canonicalUrl = "https://rafiq.biz.id/about";
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Rafiq",
+    "url": canonicalUrl,
+    "description": "Get to know Rafiq, Web Developer and SEO Specialist based in Indonesia.",
+    "mainEntity": {
+        "@type": "Person",
+        "name": "Rafiq Al Hafizh Adha",
+        "jobTitle": "Web Developer & SEO Specialist",
+        "url": "https://rafiq.biz.id"
+    }
+};
 ---
 
-<Layout title="About Me | Rafiq" description="Get to know Rafiq, Web Developer & SEO Specialist">
+<Layout title="About Me | Rafiq" description="Get to know Rafiq, Web Developer & SEO Specialist" canonicalUrl={canonicalUrl}>
+    <Fragment slot="head">
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+    </Fragment>
+
     <main class="min-h-screen flex flex-col">
         <Navbar client:only="react" />
 

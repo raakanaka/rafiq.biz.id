@@ -54,8 +54,7 @@ export default function FeaturedProjectsCarousel() {
     <div className="featured-carousel" aria-label="Featured projects carousel">
       <div className="featured-carousel-toolbar">
         <div className="featured-carousel-status">
-          <span>Rotates every 5 seconds</span>
-          <span lang="id">Berganti otomatis setiap 5 detik</span>
+          
         </div>
 
         <div className="featured-carousel-controls">

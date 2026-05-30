@@ -1,9 +1,10 @@
 import { ALLOWED_SERVICES, TARGET_CITIES, TARGET_CITIES_98 } from '../../lib/constants';
 import { NICHE_SLUGS } from '../../lib/niches';
+import { projects } from '../../lib/projects';
 
 export async function GET() {
   const baseUrl = 'https://rafiq.biz.id';
-  const now = new Date().toISOString().split('T')[0];
+  const lastmod = '2026-05-30';
 
   const routes: Array<{ url: string; priority: string; changefreq: string }> = [
     { url: baseUrl, priority: '1.0', changefreq: 'weekly' },
@@ -11,6 +12,14 @@ export async function GET() {
     { url: `${baseUrl}/projects`, priority: '0.8', changefreq: 'monthly' },
     { url: `${baseUrl}/contact`, priority: '0.5', changefreq: 'yearly' },
   ];
+
+  projects.forEach((project) => {
+    routes.push({
+      url: `${baseUrl}/projects/${project.slug}`,
+      priority: '0.6',
+      changefreq: 'monthly'
+    });
+  });
 
   // Existing service pages (web dev + SEO services × old cities)
   ALLOWED_SERVICES.forEach((service) => {
@@ -37,7 +46,7 @@ export async function GET() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes.map(r => `  <url>
     <loc>${r.url}</loc>
-    <lastmod>${now}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
   </url>`).join("\n")}

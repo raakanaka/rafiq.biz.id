@@ -3,16 +3,45 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { iconColors, projects } from '../../lib/projects';
+
+const canonicalUrl = "https://rafiq.biz.id/projects";
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "CollectionPage",
+            "name": "Project Portfolio",
+            "description": "Selected website, SEO, e-commerce, media, and platform projects by Rafiq.",
+            "url": canonicalUrl,
+            "hasPart": projects.map((project) => ({
+                "@type": "CreativeWork",
+                "name": project.title,
+                "url": `https://rafiq.biz.id/projects/${project.slug}`,
+                "about": project.industry
+            }))
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rafiq.biz.id" },
+                { "@type": "ListItem", "position": 2, "name": "Projects", "item": canonicalUrl }
+            ]
+        }
+    ]
+};
 ---
 
-<Layout title="Projects | Rafiq" description="Explore selected website, SEO, e-commerce, media, and platform projects by Rafiq.">
+<Layout title="Projects | Rafiq" description="Explore selected website, SEO, e-commerce, media, and platform projects by Rafiq." canonicalUrl={canonicalUrl}>
+    <Fragment slot="head">
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+    </Fragment>
+
     <main class="min-h-screen flex flex-col">
         <Navbar client:only="react" />
 
         <section class="section flex-1">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12">
-                    <div class="badge-brutal mb-5">English first · Bahasa Indonesia second</div>
                     <h1
                         class="text-4xl md:text-5xl font-extrabold mb-4"
                         style="color: var(--foreground); letter-spacing: -0.02em;"

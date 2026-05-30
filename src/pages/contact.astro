@@ -48,9 +48,32 @@ const getIcon = (title: string) => {
         default: return MapPin;
     }
 }
+
+const canonicalUrl = "https://rafiq.biz.id/contact";
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Rafiq",
+    "url": canonicalUrl,
+    "description": "Get in touch with Rafiq for freelance web development, SEO, and digital collaboration.",
+    "mainEntity": {
+        "@type": "Person",
+        "name": "Rafiq Al Hafizh Adha",
+        "email": ["rafiq.adha@rafiq.biz.id", "rafiqalhafizh12@gmail.com"],
+        "url": "https://rafiq.biz.id",
+        "sameAs": [
+            "https://github.com/raakanaka",
+            "https://linkedin.com/in/rafiq-alhafizh-adha"
+        ]
+    }
+};
 ---
 
-<Layout title="Contact | Rafiq" description="Get in touch with Rafiq">
+<Layout title="Contact | Rafiq" description="Get in touch with Rafiq" canonicalUrl={canonicalUrl}>
+    <Fragment slot="head">
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+    </Fragment>
+
     <main class="min-h-screen flex flex-col">
         <Navbar client:only="react" />
 
