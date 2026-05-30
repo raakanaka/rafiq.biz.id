@@ -70,7 +70,7 @@ export async function GET() {
       link: `${baseUrl}/${service}`,
       description: isSeo
         ? `Agensi Jasa SEO Profesional yang fokus mendominasi kata kunci Google, Bing, & AI Overview. Tingkatkan trafik bisnis Anda secara organik.`
-        : `Jasa pembuatan website profesional berfokus pada desain web responsif, company profile, dan toko online dengan optimasi SEO tingkat lanjut. Mulai Rp 1.6 Juta.`,
+        : `Jasa pembuatan website profesional berfokus pada desain web responsif, company profile, dan toko online dengan optimasi SEO tingkat lanjut. Mulai Rp 1.9 Juta.`,
       category: isSeo ? 'SEO Services' : 'Web Development',
     };
   });
@@ -83,7 +83,7 @@ export async function GET() {
       link: `${baseUrl}/${service}/${city}`,
       description: isSeo
         ? `Layanan ${name} profesional di ${formatString(city)}. Dominasi ranking Google, Bing, dan AI Overview untuk bisnis lokal Anda.`
-        : `Jasa pembuatan website profesional di ${formatString(city)}. Desain responsif, SEO-friendly, mulai Rp 1.6 Juta.`,
+        : `Jasa pembuatan website profesional di ${formatString(city)}. Desain responsif, SEO-friendly, mulai Rp 1.9 Juta.`,
       category: isSeo ? 'SEO Services' : 'Web Development',
     }));
   });

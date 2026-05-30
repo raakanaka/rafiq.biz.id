@@ -50,13 +50,13 @@ const nicheDisplayName = n.slug.replace(/-/g, ' ').replace(/\b\w/g, (l: string) 
 const isEcommerceUmkm = n.slug === "ecommerce-umkm";
 
 const offers = isEcommerceUmkm ? [
-  { badge: "UMKM Retail", name: "Paket Basic UMKM", price: "3500000", priceCurrency: "IDR", display: "Rp3,5 Juta", features: ["Desain E-commerce Responsif", "Domain & Hosting (1 Tahun)", "SEO On-Page Dasar", "Bandwidth Unmetered", "Integrasi Payment Gateway", "Katalog Produk Dasar"] },
-  { badge: "Toko Grosir & Distributor", name: "Paket Advanced UMKM", price: "5500000", priceCurrency: "IDR", display: "Rp5,5 Juta", isPopular: true, features: ["Semua Fitur Paket Basic", "Setup Google Merchant Shopping", "Email Bisnis Profesional", "Setup Schema Markup / AI Overview", "Katalog Produk Lanjut", "Integrasi Kurir Otomatis"] },
-  { badge: "Corporate & Enterprise", name: "Paket Custom Enterprise", price: "0", priceCurrency: "IDR", display: "Custom", features: ["Semua Fitur Paket Advanced", "Custom Web Application", "Integrasi ERP / Sistem Kasir", "Dukungan Optimasi Struktur Kode", "Fitur Bilingual", "Dedicated Support"] }
+  { badge: "UMKM Retail", name: "Paket Basic UMKM", price: "4500000", priceCurrency: "IDR", display: "Rp4,5 Juta", features: ["Desain E-commerce Responsif", "Domain & Hosting (1 Tahun)", "SEO On-Page Dasar", "Bandwidth Unmetered", "Integrasi Payment Gateway", "Katalog Produk Dasar"] },
+  { badge: "Toko Grosir & Distributor", name: "Paket Advanced UMKM", price: "7500000", priceCurrency: "IDR", display: "Rp7,5 Juta", isPopular: true, features: ["Semua Fitur Paket Basic", "Setup Google Merchant Shopping", "Email Bisnis Profesional", "Setup Schema Markup / AI Overview", "Katalog Produk Lanjut", "Integrasi Kurir Otomatis"] },
+  { badge: "Corporate & Enterprise", name: "Paket Custom Enterprise", price: "12000000", priceCurrency: "IDR", display: "Mulai Rp12 Juta", features: ["Semua Fitur Paket Advanced", "Custom Web Application", "Integrasi ERP / Sistem Kasir", "Dukungan Optimasi Struktur Kode", "Fitur Bilingual", "Dedicated Support"] }
 ] : [
-  { badge: "UMKM / Personal", name: "Paket Starter", price: "1600000", priceCurrency: "IDR", display: "Rp1,6 Juta", features: ["Custom Tema Responsif", "Domain & Hosting (1 Tahun)", "SEO On-Page Dasar", "Bandwidth Unmetered", "Integrasi Tombol WhatsApp", "Maks. 5 Halaman Dasar"] },
-  { badge: "Perusahaan / CV", name: "Paket Pro", price: "2200000", priceCurrency: "IDR", display: "Rp2,2 Juta", isPopular: true, features: ["Semua Fitur Paket Starter", "Desain Halaman Khusus Premium", "Email Bisnis Profesional", "Setup Schema Markup / AI Overview", "Maks. 10 Halaman", "Gratis Setup Google My Business"] },
-  { badge: "Corporate VIP", name: "Paket Premium", price: "2900000", priceCurrency: "IDR", display: "Rp2,9 Juta", features: ["Semua Fitur Paket Pro", "Server Hosting Premium", "Katalog Produk Lanjut/LMS", "Fitur Bilingual (Dua Bahasa)", "Analisis Konversi", "Revisi Minor Selama Masa Aktif"] },
+  { badge: "UMKM / Personal", name: "Paket Starter", price: "1900000", priceCurrency: "IDR", display: "Rp1,9 Juta", features: ["Custom Tema Responsif", "Domain & Hosting (1 Tahun)", "SEO On-Page Dasar", "Bandwidth Unmetered", "Integrasi Tombol WhatsApp", "Maks. 5 Halaman Dasar"] },
+  { badge: "Perusahaan / CV", name: "Paket Pro", price: "3500000", priceCurrency: "IDR", display: "Rp3,5 Juta", isPopular: true, features: ["Semua Fitur Paket Starter", "Desain Halaman Khusus Premium", "Email Bisnis Profesional", "Setup Schema Markup / AI Overview", "Maks. 10 Halaman", "Gratis Setup Google My Business"] },
+  { badge: "Corporate VIP", name: "Paket Premium", price: "5900000", priceCurrency: "IDR", display: "Rp5,9 Juta", features: ["Semua Fitur Paket Pro", "Server Hosting Premium", "Katalog Produk Lanjut/LMS", "Fitur Bilingual (Dua Bahasa)", "Analisis Konversi", "Revisi Minor Selama Masa Aktif"] },
 ];
 
 const jsonLd = {
@@ -223,6 +223,9 @@ const jsonLd = {
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-foreground">Paket <span class="text-accent-pop">Harga</span> Terbaik</h2>
           <p class="text-text-secondary text-lg">Investasi website profesional yang menghasilkan return berkali lipat lewat pelanggan baru.</p>
+          <p class="text-sm text-text-secondary mt-3 max-w-3xl mx-auto leading-relaxed">
+            Paket tengah direkomendasikan untuk mayoritas bisnis karena paling seimbang antara fitur, SEO, dan biaya. Harga dapat menyesuaikan jika domain, hosting premium, lisensi plugin, integrasi API, atau tools berbayar mengikuti kenaikan kurs USD.
+          </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {offers.map(offer => (

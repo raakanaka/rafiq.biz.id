@@ -88,7 +88,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Hendra Wijaya", role: "Pemilik Toko Gadget", text: "Integrasi ongkir otomatis membuat admin kami tidak perlu repot cek tarif satu-satu. Proses packing dan pengiriman jadi super cepat." }
     ],
     [
-      { q: "Berapa biaya pembuatan website e-commerce UMKM?", a: "Harga paket mulai dari Rp 3.500.000 untuk Paket Basic, Rp 5.500.000 untuk Paket Advanced, dan harga Custom untuk fitur Enterprise." },
+      { q: "Berapa biaya pembuatan website e-commerce UMKM?", a: "Harga paket mulai dari Rp 4.500.000 untuk Paket Basic, Rp 7.500.000 untuk Paket Advanced, dan harga Custom untuk fitur Enterprise." },
       { q: "Apakah sudah termasuk domain dan hosting?", a: "Ya, semua paket sudah termasuk gratis nama domain (.com dan.id ( Untuk Paket Teratas)) dan cloud hosting super cepat selama 1 tahun pertama." },
       { q: "Bisa integrasi dengan pembayaran QRIS dan Virtual Account?", a: "Tentu! Pembeli bisa membayar menggunakan QRIS, Transfer Bank (VA), atau e-Wallet favorit mereka." },
       { q: "Bagaimana cara menghitung ongkos kirim?", a: "Sistem toko online kami terintegrasi dengan API kurir nasional. Ongkir akan dihitung otomatis sesuai kecamatan tujuan pembeli." },
@@ -129,7 +129,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Hendra Wijaya", role: "Supplier Rempah-rempah", text: "Investasi website ini luar biasa worth it. Dalam 2 bulan sudah ada 5 inquiry dari buyer baru di Timur Tengah." }
     ],
     [
-      { q: "Berapa biaya pembuatan website eksportir?", a: "Harga mulai dari Rp 1.600.000 untuk paket dasar hingga Rp 2.900.000 untuk paket premium dengan fitur katalog lengkap dan multi-bahasa." },
+      { q: "Berapa biaya pembuatan website eksportir?", a: "Harga mulai dari Rp 1.900.000 untuk paket dasar hingga Rp 5.900.000 untuk paket premium dengan fitur katalog lengkap dan multi-bahasa." },
       { q: "Berapa lama proses pengerjaan?", a: "Rata-rata 5-7 hari kerja tergantung kompleksitas dan kelengkapan materi yang Anda siapkan." },
       { q: "Apakah website bisa diakses buyer luar negeri?", a: "Tentu! Website dihosting di server global dengan CDN, sehingga loading cepat diakses dari negara manapun." },
       { q: "Bisa dalam bahasa Inggris?", a: "Ya, kami menyediakan opsi bilingual (Indonesia & Inggris) agar buyer internasional mudah memahami produk Anda." },
@@ -166,7 +166,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Rizki Aditya", role: "Founder Backpacker Tour", text: "Desainnya keren dan SEO-nya jalan. Sekarang kami di halaman 1 Google untuk keyword travel di kota kami." }
     ],
     [
-      { q: "Berapa biaya pembuatan website travel agent?", a: "Mulai dari Rp 1.600.000 untuk paket dasar dengan halaman paket wisata, hingga Rp 2.900.000 untuk fitur booking online lengkap." },
+      { q: "Berapa biaya pembuatan website travel agent?", a: "Mulai dari Rp 1.900.000 untuk paket dasar dengan halaman paket wisata, hingga Rp 5.900.000 untuk fitur booking online lengkap." },
       { q: "Bisa kelola paket wisata sendiri?", a: "Tentu! Anda mendapat akses admin untuk menambah, mengedit, atau menghapus paket wisata dengan mudah." },
       { q: "Apakah ada sistem pembayaran online?", a: "Kami bisa mengintegrasikan berbagai metode pembayaran termasuk transfer bank dan e-wallet sesuai kebutuhan." },
       { q: "Berapa lama proses pengerjaan?", a: "Rata-rata 5-10 hari kerja tergantung kompleksitas fitur dan kelengkapan materi wisata Anda." },
@@ -203,7 +203,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Pak Darmawan", role: "Manager Baitul Haramain", text: "Form pendaftaran online sangat memudahkan. Jamaah bisa daftar 24 jam dan kami tinggal follow up via WhatsApp." }
     ],
     [
-      { q: "Berapa biaya pembuatan website umroh?", a: "Mulai dari Rp 1.600.000 untuk paket basic hingga Rp 2.900.000 untuk paket premium dengan fitur pendaftaran online lengkap." },
+      { q: "Berapa biaya pembuatan website umroh?", a: "Mulai dari Rp 1.900.000 untuk paket basic hingga Rp 5.900.000 untuk paket premium dengan fitur pendaftaran online lengkap." },
       { q: "Bisa tambah paket umroh sendiri?", a: "Tentu, Anda mendapat akses admin untuk update paket, harga, dan jadwal keberangkatan kapanpun." },
       { q: "Apakah website aman untuk data jamaah?", a: "Ya, website dilengkapi SSL certificate dan keamanan standar industri untuk melindungi data pribadi jamaah." },
       { q: "Berapa lama website selesai?", a: "Rata-rata 5-7 hari kerja setelah materi lengkap diterima oleh tim kami." },
@@ -244,7 +244,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "dr. Citra Dewi, Sp.A", role: "Dokter Anak, Klinik Buah Hati", text: "Desain website sangat profesional dan meyakinkan. Orang tua jadi lebih percaya membawa anaknya ke klinik kami." }
     ],
     [
-      { q: "Berapa biaya pembuatan website klinik?", a: "Mulai dari Rp 1.600.000 untuk profil klinik dasar hingga Rp 2.900.000 untuk fitur pendaftaran online dan multi-dokter." },
+      { q: "Berapa biaya pembuatan website klinik?", a: "Mulai dari Rp 1.900.000 untuk profil klinik dasar hingga Rp 5.900.000 untuk fitur pendaftaran online dan multi-dokter." },
       { q: "Berapa lama proses pengerjaan?", a: "Rata-rata 5-7 hari kerja. Kami membutuhkan data dokter, jadwal, dan foto klinik dari Anda." },
       { q: "Bisa update jadwal dokter sendiri?", a: "Ya, panel admin kami sangat mudah digunakan untuk update jadwal, tambah dokter baru, atau edit informasi klinik." },
       { q: "Apakah data pasien aman?", a: "Website dilengkapi SSL dan standar keamanan yang sesuai untuk melindungi data pasien." },
@@ -281,7 +281,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Lisa Anggraini", role: "Manager Salon Cantik", text: "Sekarang jadwal stylist lebih teratur dan efisien. Revenue naik 30% sejak pakai booking online." }
     ],
     [
-      { q: "Berapa biaya pembuatan website salon?", a: "Mulai dari Rp 1.600.000 untuk katalog layanan dasar hingga Rp 2.900.000 dengan sistem booking online terintegrasi." },
+      { q: "Berapa biaya pembuatan website salon?", a: "Mulai dari Rp 1.900.000 untuk katalog layanan dasar hingga Rp 5.900.000 dengan sistem booking online terintegrasi." },
       { q: "Bagaimana fitur booking online bekerja?", a: "Pelanggan memilih layanan, stylist, tanggal & jam, lalu konfirmasi. Anda mendapat notifikasi otomatis di WhatsApp." },
       { q: "Bisa update harga layanan sendiri?", a: "Ya, panel admin memungkinkan Anda mengubah harga, menambah layanan baru, atau mengatur promo dengan mudah." },
       { q: "Apakah bisa tampilkan galeri dari Instagram?", a: "Bisa! Kami mengintegrasikan feed Instagram Anda langsung di website untuk menampilkan karya terbaru." },
@@ -318,7 +318,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Ratna Dewi", role: "Founder Aura Wellness", text: "Voucher digital jadi revenue stream baru. Banyak yang beli voucher untuk hadiah, semua lewat website." }
     ],
     [
-      { q: "Berapa biaya website spa?", a: "Mulai dari Rp 1.600.000 untuk profil spa dasar hingga Rp 2.900.000 dengan reservasi online dan voucher digital." },
+      { q: "Berapa biaya website spa?", a: "Mulai dari Rp 1.900.000 untuk profil spa dasar hingga Rp 5.900.000 dengan reservasi online dan voucher digital." },
       { q: "Bisa sistem reservasi online?", a: "Ya, fitur booking tersedia di paket Pro ke atas, lengkap dengan notifikasi otomatis ke WhatsApp Anda." },
       { q: "Bisa update menu treatment sendiri?", a: "Tentu, panel admin intuitif memudahkan Anda mengubah treatment, harga, dan promo kapan saja." },
       { q: "Apakah desainnya bisa disesuaikan?", a: "Ya, desain disesuaikan dengan branding spa Anda termasuk warna, logo, dan gaya visual." },
@@ -355,7 +355,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "dr. Felicia", role: "Founder Luminous Skin Clinic", text: "Blog skincare kami mendatangkan traffic organik yang luar biasa. Banyak pembaca yang akhirnya jadi pasien." }
     ],
     [
-      { q: "Berapa biaya website klinik kecantikan?", a: "Mulai dari Rp 1.600.000 untuk profil klinik dasar hingga Rp 2.900.000 dengan galeri before-after dan sistem promo." },
+      { q: "Berapa biaya website klinik kecantikan?", a: "Mulai dari Rp 1.900.000 untuk profil klinik dasar hingga Rp 5.900.000 dengan galeri before-after dan sistem promo." },
       { q: "Bisa tampilkan galeri before-after?", a: "Ya, fitur galeri before-after tersedia lengkap dengan kategorisasi jenis treatment." },
       { q: "Bagaimana cara kelola promo?", a: "Panel admin memudahkan Anda membuat, mengedit, dan mengatur jadwal promo dengan visual yang menarik." },
       { q: "Apakah desain bisa custom?", a: "Ya, desain disesuaikan dengan branding klinik Anda termasuk color scheme dan style visual." },
@@ -392,7 +392,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "dr. Indah, Sp.OG", role: "Klinik Ibu & Anak Sayang Bunda", text: "Artikel parenting di website kami mendatangkan banyak pembaca yang kemudian menjadi pasien tetap." }
     ],
     [
-      { q: "Berapa biaya website bidan?", a: "Mulai dari Rp 1.600.000 untuk profil praktik bidan hingga Rp 2.900.000 untuk klinik ibu anak dengan fitur lengkap." },
+      { q: "Berapa biaya website bidan?", a: "Mulai dari Rp 1.900.000 untuk profil praktik bidan hingga Rp 5.900.000 untuk klinik ibu anak dengan fitur lengkap." },
       { q: "Bisa tampilkan layanan lengkap?", a: "Ya, semua layanan dari pemeriksaan kehamilan, persalinan, imunisasi hingga konsultasi laktasi bisa ditampilkan." },
       { q: "Bagaimana cara update jadwal?", a: "Panel admin sangat mudah digunakan untuk update jadwal praktik, menambah layanan, atau mengubah informasi." },
       { q: "Apakah data pasien aman?", a: "Website dilengkapi SSL dan enkripsi standar untuk melindungi data pasien yang masuk melalui form." },
@@ -433,7 +433,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "David Susanto", role: "Manager Sakura Japanese Restaurant", text: "Sejak punya website, pelanggan dari hotel dan kantor sekitar banyak yang datang. Mereka menemukan kami lewat Google." }
     ],
     [
-      { q: "Berapa biaya website restoran?", a: "Mulai dari Rp 1.600.000 untuk menu digital dasar hingga Rp 2.900.000 dengan reservasi online dan galeri lengkap." },
+      { q: "Berapa biaya website restoran?", a: "Mulai dari Rp 1.900.000 untuk menu digital dasar hingga Rp 5.900.000 dengan reservasi online dan galeri lengkap." },
       { q: "Bisa update menu sendiri?", a: "Ya, Anda bisa menambah, mengubah, atau menghapus menu beserta foto dan harga dari panel admin." },
       { q: "Apakah ada fitur reservasi?", a: "Ya, sistem reservasi tersedia di paket Pro ke atas dengan notifikasi otomatis ke WhatsApp Anda." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah foto makanan dan data menu lengkap diterima." },
@@ -470,7 +470,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Mbak Lina", role: "Owner Dapur Mama Catering", text: "Form order online sangat membantu. Tidak perlu bolak-balik chat untuk konfirmasi detail pesanan." }
     ],
     [
-      { q: "Berapa biaya website catering?", a: "Mulai dari Rp 1.600.000 untuk katalog menu dasar hingga Rp 2.900.000 dengan form order online dan galeri lengkap." },
+      { q: "Berapa biaya website catering?", a: "Mulai dari Rp 1.900.000 untuk katalog menu dasar hingga Rp 5.900.000 dengan form order online dan galeri lengkap." },
       { q: "Berapa minimum order?", a: "Minimum order bisa Anda atur sendiri di panel admin sesuai kebijakan catering Anda." },
       { q: "Apakah ada area delivery?", a: "Ya, Anda bisa menampilkan peta area delivery dan menginformasikan jangkauan layanan pengiriman." },
       { q: "Bisa customisasi menu per event?", a: "Tentu, form order bisa disesuaikan untuk menerima request menu khusus dari pelanggan." },
@@ -507,7 +507,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Irfan Hakim", role: "Manager Kopitektur", text: "Event booking via website sangat membantu. Weekend selalu penuh karena orang sudah reservasi tempat online." }
     ],
     [
-      { q: "Berapa biaya website cafe?", a: "Mulai dari Rp 1.600.000 untuk menu digital dasar hingga Rp 2.900.000 dengan reservasi online dan event page." },
+      { q: "Berapa biaya website cafe?", a: "Mulai dari Rp 1.900.000 untuk menu digital dasar hingga Rp 5.900.000 dengan reservasi online dan event page." },
       { q: "Bisa integrasi Instagram?", a: "Ya, feed Instagram cafe Anda bisa ditampilkan langsung di website untuk konten yang selalu fresh." },
       { q: "Bisa update menu sendiri?", a: "Tentu, panel admin memudahkan Anda update menu, harga, dan promo kapanpun." },
       { q: "Apakah desain bisa sesuai branding?", a: "Ya, kami menyesuaikan desain dengan identitas visual dan vibes cafe Anda." },
@@ -544,7 +544,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Tante Nina", role: "Owner Kue Nina Homemade", text: "Promo Lebaran di website langsung viral. Order membludak dan kami kewalahan — dalam arti baik!" }
     ],
     [
-      { q: "Berapa biaya website bakery?", a: "Mulai dari Rp 1.600.000 untuk katalog dasar hingga Rp 2.900.000 dengan form order custom dan galeri premium." },
+      { q: "Berapa biaya website bakery?", a: "Mulai dari Rp 1.900.000 untuk katalog dasar hingga Rp 5.900.000 dengan form order custom dan galeri premium." },
       { q: "Bisa terima order custom cake?", a: "Ya, form order custom tersedia untuk pelanggan menentukan rasa, ukuran, desain, dan tanggal pengambilan." },
       { q: "Berapa minimum order?", a: "Kebijakan minimum order bisa Anda atur sendiri sesuai ketentuan bakery Anda." },
       { q: "Apakah ada area delivery?", a: "Ya, Anda bisa menampilkan informasi area pengiriman dan ongkir di website." },
@@ -581,7 +581,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Ibu Santi", role: "Director Bakso Malang Sejati", text: "Form pendaftaran mitra online sangat efisien. Lead masuk dari berbagai kota tanpa harus roadshow." }
     ],
     [
-      { q: "Berapa biaya website franchise?", a: "Mulai dari Rp 1.600.000 untuk profil franchise dasar hingga Rp 2.900.000 dengan halaman kemitraan dan galeri outlet." },
+      { q: "Berapa biaya website franchise?", a: "Mulai dari Rp 1.900.000 untuk profil franchise dasar hingga Rp 5.900.000 dengan halaman kemitraan dan galeri outlet." },
       { q: "Berapa modal franchise yang ditampilkan?", a: "Anda yang menentukan informasi modal dan paket franchise yang ingin ditampilkan di website." },
       { q: "Bisa update lokasi outlet?", a: "Ya, Anda bisa menambah outlet baru di peta seiring ekspansi bisnis franchise Anda." },
       { q: "Apakah ada support dari pusat?", a: "Informasi support dan training dari pusat bisa ditampilkan untuk meyakinkan calon mitra." },
@@ -622,7 +622,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Kak Deni", role: "Tutor Les Matematika", text: "Blog tips belajar mendatangkan traffic luar biasa. Banyak orang tua yang baca lalu mendaftarkan anaknya." }
     ],
     [
-      { q: "Berapa biaya website bimbel?", a: "Mulai dari Rp 1.600.000 untuk profil bimbel dasar hingga Rp 2.900.000 dengan pendaftaran online dan blog." },
+      { q: "Berapa biaya website bimbel?", a: "Mulai dari Rp 1.900.000 untuk profil bimbel dasar hingga Rp 5.900.000 dengan pendaftaran online dan blog." },
       { q: "Mata pelajaran apa saja yang bisa ditampilkan?", a: "Semua mata pelajaran dan level kelas bisa ditampilkan sesuai program bimbel Anda." },
       { q: "Bisa kelas online dan offline?", a: "Ya, website bisa menampilkan informasi untuk kedua format belajar beserta jadwalnya." },
       { q: "Apakah ada fitur blog?", a: "Ya, fitur blog tersedia untuk membagikan tips belajar dan menarik traffic organik." },
@@ -659,7 +659,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Kak Anisa", role: "Founder, Speak Up English", text: "Blog bahasa Inggris di website kami mendatangkan ribuan visitor per bulan. Banyak yang akhirnya mendaftar." }
     ],
     [
-      { q: "Berapa biaya website kursus bahasa?", a: "Mulai dari Rp 1.600.000 untuk profil program dasar hingga Rp 2.900.000 dengan pendaftaran online dan blog." },
+      { q: "Berapa biaya website kursus bahasa?", a: "Mulai dari Rp 1.900.000 untuk profil program dasar hingga Rp 5.900.000 dengan pendaftaran online dan blog." },
       { q: "Program apa saja yang bisa ditampilkan?", a: "Semua program dari General English, IELTS, TOEFL, Business English hingga kids class." },
       { q: "Bisa kelas online dan offline?", a: "Ya, website bisa menampilkan kedua format dengan jadwal dan harga masing-masing." },
       { q: "Apakah bisa multi-bahasa?", a: "Ya, paket premium menyediakan opsi bilingual untuk website dalam bahasa Indonesia dan Inggris." },
@@ -696,7 +696,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Bu Sari", role: "Owner, Pelangi Daycare", text: "CCTV dan informasi keamanan di website membuat orang tua langsung yakin mendaftar." }
     ],
     [
-      { q: "Berapa biaya website daycare?", a: "Mulai dari Rp 1.600.000 untuk profil dasar hingga Rp 2.900.000 dengan galeri, form pendaftaran, dan blog parenting." },
+      { q: "Berapa biaya website daycare?", a: "Mulai dari Rp 1.900.000 untuk profil dasar hingga Rp 5.900.000 dengan galeri, form pendaftaran, dan blog parenting." },
       { q: "Apakah ada jam operasional?", a: "Ya, informasi jam operasional, hari libur, dan jadwal pickup-dropoff bisa ditampilkan jelas." },
       { q: "Bagaimana protokol keamanan ditampilkan?", a: "Kami membuat halaman khusus yang menjelaskan seluruh protokol keamanan dan fasilitas keselamatan." },
       { q: "Bisa update galeri kegiatan?", a: "Tentu, Anda bisa upload foto kegiatan terbaru dari admin panel kapanpun." },
@@ -733,7 +733,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Pak Darmadi", role: "Founder, Pusat Pelatihan Profesional", text: "Website resmi membuat kami dipercaya instansi pemerintah untuk program pelatihan kerjasama." }
     ],
     [
-      { q: "Berapa biaya website LPK?", a: "Mulai dari Rp 1.600.000 untuk profil lembaga dasar hingga Rp 2.900.000 dengan form pendaftaran dan tracking alumni." },
+      { q: "Berapa biaya website LPK?", a: "Mulai dari Rp 1.900.000 untuk profil lembaga dasar hingga Rp 5.900.000 dengan form pendaftaran dan tracking alumni." },
       { q: "Apakah sertifikasi bisa ditampilkan?", a: "Ya, semua sertifikasi, akreditasi, dan izin operasional bisa ditampilkan untuk membangun kepercayaan." },
       { q: "Bagaimana peluang kerja setelah lulus?", a: "Halaman khusus menampilkan data penempatan kerja alumni dan mitra perusahaan yang bekerjasama." },
       { q: "Bisa tambah program pelatihan baru?", a: "Tentu, admin panel memudahkan penambahan program, jadwal, dan batch baru kapanpun." },
@@ -770,7 +770,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Pak Guno", role: "Ketua Yayasan Pendidikan Harapan", text: "Citra sekolah kami naik drastis sejak punya website profesional. Orang tua lebih percaya mendaftarkan anaknya." }
     ],
     [
-      { q: "Berapa biaya website sekolah?", a: "Mulai dari Rp 1.600.000 untuk profil sekolah dasar hingga Rp 2.900.000 dengan PPDB online dan portal berita." },
+      { q: "Berapa biaya website sekolah?", a: "Mulai dari Rp 1.900.000 untuk profil sekolah dasar hingga Rp 5.900.000 dengan PPDB online dan portal berita." },
       { q: "Bagaimana PPDB online bekerja?", a: "Calon siswa mengisi form pendaftaran online, upload berkas, dan mendapat konfirmasi otomatis." },
       { q: "Apakah bisa tampilkan akreditasi?", a: "Ya, informasi akreditasi, sertifikat, dan prestasi sekolah bisa ditampilkan di halaman khusus." },
       { q: "Bisa update berita sendiri?", a: "Tentu, panel admin memudahkan posting berita, pengumuman, dan update galeri kegiatan." },
@@ -811,7 +811,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Mr. Anderson", role: "Director, Indo Realty Group", text: "Filter pencarian di website sangat membantu pembeli menemukan properti yang sesuai budget mereka." }
     ],
     [
-      { q: "Berapa biaya website properti?", a: "Mulai dari Rp 1.600.000 untuk listing dasar hingga Rp 2.900.000 dengan filter pencarian dan peta interaktif." },
+      { q: "Berapa biaya website properti?", a: "Mulai dari Rp 1.900.000 untuk listing dasar hingga Rp 5.900.000 dengan filter pencarian dan peta interaktif." },
       { q: "Bisa tambah listing sendiri?", a: "Ya, admin panel sangat mudah untuk upload properti baru lengkap dengan foto, harga, dan detail." },
       { q: "Apakah ada fitur pencarian?", a: "Ya, tersedia filter pencarian berdasarkan tipe, harga, lokasi, dan luas bangunan/tanah." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 7-10 hari kerja untuk website properti dengan fitur listing lengkap." },
@@ -848,7 +848,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Ibu Dewi", role: "Owner, Permata Asri Developer", text: "Progress pembangunan yang di-update di website membuat pembeli merasa aman dan percaya." }
     ],
     [
-      { q: "Berapa biaya website developer?", a: "Mulai dari Rp 1.600.000 untuk profil perumahan dasar hingga Rp 2.900.000 dengan simulasi KPR dan booking online." },
+      { q: "Berapa biaya website developer?", a: "Mulai dari Rp 1.900.000 untuk profil perumahan dasar hingga Rp 5.900.000 dengan simulasi KPR dan booking online." },
       { q: "Apakah ada simulasi KPR?", a: "Ya, kalkulator KPR interaktif tersedia untuk membantu calon pembeli menghitung cicilan bulanan." },
       { q: "Bisa update progress pembangunan?", a: "Tentu, galeri foto progress bisa di-update berkala dari admin panel." },
       { q: "Bagaimana lokasi strategisnya?", a: "Halaman khusus menampilkan keunggulan lokasi, akses jalan, fasilitas sekitar, dan peta." },
@@ -885,7 +885,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Pak Djoni", role: "Kontraktor Mandiri", text: "Estimasi biaya online di website membantu filter klien yang serius. Leads jadi lebih berkualitas." }
     ],
     [
-      { q: "Berapa biaya website kontraktor?", a: "Mulai dari Rp 1.600.000 untuk portofolio dasar hingga Rp 2.900.000 dengan kalkulator biaya dan CRM leads." },
+      { q: "Berapa biaya website kontraktor?", a: "Mulai dari Rp 1.900.000 untuk portofolio dasar hingga Rp 5.900.000 dengan kalkulator biaya dan CRM leads." },
       { q: "Berapa estimasi waktu proyek?", a: "Website menampilkan informasi estimasi waktu berdasarkan jenis dan skala proyek Anda." },
       { q: "Apakah ada garansi pekerjaan?", a: "Informasi garansi dan kebijakan after-service bisa ditampilkan di halaman khusus." },
       { q: "Bisa tambah portofolio proyek baru?", a: "Ya, upload foto proyek terbaru dan detail pekerjaan langsung dari admin panel." },
@@ -922,7 +922,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Bu Lastri", role: "Interior Designer, Home Sweet Design", text: "Kategorisasi portofolio di website memudahkan klien melihat style yang mereka inginkan." }
     ],
     [
-      { q: "Berapa biaya website desain interior?", a: "Mulai dari Rp 1.600.000 untuk portofolio dasar hingga Rp 2.900.000 dengan galeri premium dan form konsultasi." },
+      { q: "Berapa biaya website desain interior?", a: "Mulai dari Rp 1.900.000 untuk portofolio dasar hingga Rp 5.900.000 dengan galeri premium dan form konsultasi." },
       { q: "Berapa revisi desain?", a: "Kebijakan revisi Anda bisa ditampilkan di halaman layanan agar klien tahu sejak awal." },
       { q: "Bagaimana timeline proyek interior?", a: "Halaman proses kerja menjelaskan tahapan dari konsultasi hingga handover lengkap dengan estimasi waktu." },
       { q: "Bisa update portofolio sendiri?", a: "Ya, upload proyek baru dengan foto-foto dan deskripsi langsung dari admin panel." },
@@ -959,7 +959,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Pak Wahyu, S.T.", role: "Arsitek Perumahan, Wahyu Arsitektur", text: "Form konsultasi online sangat membantu screening project awal. Kami bisa fokus pada klien yang serius." }
     ],
     [
-      { q: "Berapa biaya website arsitek?", a: "Mulai dari Rp 1.600.000 untuk portofolio dasar hingga Rp 2.900.000 dengan galeri proyek lengkap dan form konsultasi." },
+      { q: "Berapa biaya website arsitek?", a: "Mulai dari Rp 1.900.000 untuk portofolio dasar hingga Rp 5.900.000 dengan galeri proyek lengkap dan form konsultasi." },
       { q: "Apakah termasuk desain gambar IMB?", a: "Website menampilkan layanan Anda termasuk desain rumah dan gambar IMB — Anda yang menentukan layanan." },
       { q: "Bagaimana timeline proyek arsitektur?", a: "Halaman proses kerja menjelaskan tahapan lengkap dari konsultasi hingga pengawasan pembangunan." },
       { q: "Bisa update portofolio?", a: "Ya, upload proyek baru lengkap dengan render 3D, foto, dan detail dari admin panel." },
@@ -1000,7 +1000,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Pak Hendry", role: "Owner, Hendry Auto Service", text: "Website membuat bengkel kami tampil profesional. Pelanggan corporate dan fleet management pun datang." }
     ],
     [
-      { q: "Berapa biaya website bengkel?", a: "Mulai dari Rp 1.600.000 untuk profil bengkel dasar hingga Rp 2.900.000 dengan booking online dan integrasi Maps." },
+      { q: "Berapa biaya website bengkel?", a: "Mulai dari Rp 1.900.000 untuk profil bengkel dasar hingga Rp 5.900.000 dengan booking online dan integrasi Maps." },
       { q: "Berapa estimasi waktu servis?", a: "Website bisa menampilkan estimasi waktu per jenis servis untuk informasi pelanggan." },
       { q: "Apakah ada garansi servis?", a: "Informasi garansi dan kebijakan servis bisa ditampilkan di halaman khusus." },
       { q: "Bisa update harga sendiri?", a: "Ya, panel admin memudahkan update daftar layanan, harga, dan promo kapanpun." },
@@ -1037,7 +1037,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Bu Linda", role: "Owner, Linda Car Rental", text: "Katalog armada di website sangat membantu. Penyewa bisa pilih mobil dan langsung booking." }
     ],
     [
-      { q: "Berapa biaya website rental mobil?", a: "Mulai dari Rp 1.600.000 untuk katalog armada dasar hingga Rp 2.900.000 dengan booking online terintegrasi." },
+      { q: "Berapa biaya website rental mobil?", a: "Mulai dari Rp 1.900.000 untuk katalog armada dasar hingga Rp 5.900.000 dengan booking online terintegrasi." },
       { q: "Berapa DP/uang muka sewa?", a: "Kebijakan DP bisa ditampilkan di halaman syarat ketentuan sesuai ketentuan rental Anda." },
       { q: "Apakah ada opsi supir?", a: "Ya, opsi sewa dengan supir atau lepas kunci bisa ditampilkan di setiap armada." },
       { q: "Bisa update armada sendiri?", a: "Tentu, tambah atau hapus armada, update ketersediaan dan harga dari admin panel." },
@@ -1074,7 +1074,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Pak Herman", role: "Owner, Herman Motor Sport", text: "Simulasi kredit di website sangat membantu. Pembeli datang sudah tahu cicilan per bulannya." }
     ],
     [
-      { q: "Berapa biaya website dealer motor?", a: "Mulai dari Rp 1.600.000 untuk katalog stok dasar hingga Rp 2.900.000 dengan filter pencarian dan simulasi kredit." },
+      { q: "Berapa biaya website dealer motor?", a: "Mulai dari Rp 1.900.000 untuk katalog stok dasar hingga Rp 5.900.000 dengan filter pencarian dan simulasi kredit." },
       { q: "Apakah bisa kredit?", a: "Website menampilkan opsi kredit dan simulasi cicilan sesuai leasing yang Anda kerjasama." },
       { q: "Ada garansi motor bekas?", a: "Informasi garansi dan kebijakan purna jual bisa ditampilkan di halaman khusus." },
       { q: "Bisa tukar tambah?", a: "Ya, informasi program tukar tambah dan syaratnya bisa ditampilkan di website." },
@@ -1111,7 +1111,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Kak Doni", role: "Owner, Doni Auto Detailing", text: "Website profesional membuat layanan detailing kami tampil premium. Pelanggan rela bayar lebih." }
     ],
     [
-      { q: "Berapa biaya website cuci mobil?", a: "Mulai dari Rp 1.600.000 untuk katalog layanan dasar hingga Rp 2.900.000 dengan booking online dan member system." },
+      { q: "Berapa biaya website cuci mobil?", a: "Mulai dari Rp 1.900.000 untuk katalog layanan dasar hingga Rp 5.900.000 dengan booking online dan member system." },
       { q: "Berapa waktu pengerjaan cuci?", a: "Estimasi waktu per paket cuci bisa ditampilkan agar pelanggan tahu sebelum booking." },
       { q: "Apakah ada layanan antar jemput?", a: "Informasi layanan cuci panggilan atau antar jemput bisa ditampilkan di website." },
       { q: "Bisa update harga sendiri?", a: "Ya, panel admin memudahkan update paket, harga, dan promo kapanpun." },
@@ -1148,7 +1148,7 @@ export const NICHES: NicheDefinition[] = [
       { name: "Kak Bimo", role: "Founder, Bimotif Custom", text: "Galeri hasil modifikasi di website sangat efektif. Customer datang sudah punya referensi jelas." }
     ],
     [
-      { q: "Berapa biaya website toko aksesori?", a: "Mulai dari Rp 1.600.000 untuk katalog produk dasar hingga Rp 2.900.000 dengan toko online dan galeri." },
+      { q: "Berapa biaya website toko aksesori?", a: "Mulai dari Rp 1.900.000 untuk katalog produk dasar hingga Rp 5.900.000 dengan toko online dan galeri." },
       { q: "Berapa harga pemasangan?", a: "Harga produk dan jasa pemasangan bisa ditampilkan terpisah di setiap produk." },
       { q: "Apakah ada garansi produk?", a: "Informasi garansi dan kebijakan retur bisa ditampilkan di halaman syarat ketentuan." },
       { q: "Bisa update stok sendiri?", a: "Ya, sangat mudah menambah produk baru, update stok, dan mengatur harga dari admin panel." },
@@ -1192,7 +1192,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Layanan apa saja yang tersedia?", a: "Mulai dari pembuatan akta, legalisasi, AJB, balik nama, hingga konsultasi hukum perdata." },
       { q: "Berapa biaya jasa notaris?", a: "Biaya bervariasi sesuai jenis layanan. Halaman layanan di website menampilkan estimasi biaya per jenis akta." },
       { q: "Apa wilayah kerja notaris ini?", a: "Informasi wilayah kerja notaris ditampilkan jelas di website sesuai SK pengangkatan." },
-      { q: "Berapa biaya website notaris?", a: "Mulai dari Rp 1.600.000 untuk profil kantor dasar hingga Rp 2.900.000 dengan form konsultasi dan blog." },
+      { q: "Berapa biaya website notaris?", a: "Mulai dari Rp 1.900.000 untuk profil kantor dasar hingga Rp 5.900.000 dengan form konsultasi dan blog." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah data profil dan layanan notaris lengkap diterima." }
     ]
   ),
@@ -1229,7 +1229,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa biaya konsultasi awal?", a: "Informasi tarif konsultasi bisa ditampilkan di website sesuai kebijakan kantor hukum Anda." },
       { q: "Bidang hukum apa yang ditangani?", a: "Semua bidang spesialisasi Anda bisa ditampilkan detail di halaman practice area." },
       { q: "Bagaimana proses hukumnya?", a: "Halaman khusus menjelaskan alur kerja dari konsultasi awal hingga penyelesaian kasus." },
-      { q: "Berapa biaya website law firm?", a: "Mulai dari Rp 1.600.000 untuk profil dasar hingga Rp 2.900.000 dengan blog hukum dan CRM klien." },
+      { q: "Berapa biaya website law firm?", a: "Mulai dari Rp 1.900.000 untuk profil dasar hingga Rp 5.900.000 dengan blog hukum dan CRM klien." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah data profil dan layanan hukum lengkap diterima." }
     ]
   ),
@@ -1266,7 +1266,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa biaya konsultasi pajak?", a: "Tarif konsultasi bervariasi sesuai layanan. Website menampilkan estimasi biaya untuk transparansi." },
       { q: "Jenis pajak apa yang ditangani?", a: "Semua jenis pajak: PPh, PPN, PBB, pajak daerah, dan konsultasi tax planning." },
       { q: "Kapan deadline SPT?", a: "Halaman khusus menampilkan kalender deadline pajak penting per tahun." },
-      { q: "Berapa biaya website konsultan pajak?", a: "Mulai dari Rp 1.600.000 untuk profil dasar hingga Rp 2.900.000 dengan kalkulator pajak dan blog." },
+      { q: "Berapa biaya website konsultan pajak?", a: "Mulai dari Rp 1.900.000 untuk profil dasar hingga Rp 5.900.000 dengan kalkulator pajak dan blog." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah data layanan dan profil lengkap diterima." }
     ]
   ),
@@ -1303,7 +1303,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa bunga simpanan/pinjaman?", a: "Informasi suku bunga dan produk keuangan bisa ditampilkan transparan di website." },
       { q: "Apa syarat menjadi anggota?", a: "Halaman khusus menampilkan persyaratan dan procedure keanggotaan secara detail." },
       { q: "Bagaimana cara bergabung?", a: "Form pendaftaran online tersedia agar calon anggota bisa mendaftar dari mana saja." },
-      { q: "Berapa biaya website koperasi?", a: "Mulai dari Rp 1.600.000 untuk profil dasar hingga Rp 2.900.000 dengan form pendaftaran dan informasi produk." },
+      { q: "Berapa biaya website koperasi?", a: "Mulai dari Rp 1.900.000 untuk profil dasar hingga Rp 5.900.000 dengan form pendaftaran dan informasi produk." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah data koperasi dan produk keuangan lengkap diterima." }
     ]
   ),
@@ -1340,7 +1340,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa premi asuransi?", a: "Premi bervariasi sesuai produk dan profil nasabah. Kalkulator premi di website membantu estimasi." },
       { q: "Bagaimana proses klaim?", a: "Halaman khusus menjelaskan prosedur klaim step-by-step untuk kemudahan nasabah." },
       { q: "Jenis produk apa yang tersedia?", a: "Daftar lengkap produk asuransi dari jiwa, kesehatan, kendaraan, hingga investasi bisa dilihat di website." },
-      { q: "Berapa biaya website asuransi?", a: "Mulai dari Rp 1.600.000 untuk profil agen dasar hingga Rp 2.900.000 dengan kalkulator premi dan blog." },
+      { q: "Berapa biaya website asuransi?", a: "Mulai dari Rp 1.900.000 untuk profil agen dasar hingga Rp 5.900.000 dengan kalkulator premi dan blog." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah data produk dan profil lengkap diterima." }
     ]
   ),
@@ -1381,7 +1381,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa MOQ (Minimum Order Quantity)?", a: "Informasi MOQ per produk bisa ditampilkan jelas di katalog untuk transparansi." },
       { q: "Sistem pembayaran apa yang tersedia?", a: "Halaman khusus menampilkan opsi pembayaran: transfer, COD, atau term of payment." },
       { q: "Bagaimana area distribusi?", a: "Peta interaktif menampilkan area yang sudah tercover dan yang masih open territory." },
-      { q: "Berapa biaya website distributor?", a: "Mulai dari Rp 1.600.000 untuk katalog B2B dasar hingga Rp 2.900.000 dengan form kemitraan dan CRM." },
+      { q: "Berapa biaya website distributor?", a: "Mulai dari Rp 1.900.000 untuk katalog B2B dasar hingga Rp 5.900.000 dengan form kemitraan dan CRM." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 7-10 hari kerja untuk website B2B dengan katalog dan area distribusi lengkap." }
     ]
   ),
@@ -1418,7 +1418,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Format file apa yang diterima?", a: "Informasi format file (PDF, AI, CDR) dan panduan desain bisa ditampilkan di website." },
       { q: "Berapa waktu pengerjaan?", a: "Estimasi waktu per jenis cetak ditampilkan transparan agar klien tahu jadwal selesai." },
       { q: "Apakah ada area pengiriman?", a: "Informasi area pengiriman dan ongkir bisa ditampilkan di halaman khusus." },
-      { q: "Berapa biaya website percetakan?", a: "Mulai dari Rp 1.600.000 untuk katalog produk cetak hingga Rp 2.900.000 dengan kalkulator harga dan order online." },
+      { q: "Berapa biaya website percetakan?", a: "Mulai dari Rp 1.900.000 untuk katalog produk cetak hingga Rp 5.900.000 dengan kalkulator harga dan order online." },
       { q: "Berapa lama pengerjaan website?", a: "Rata-rata 5-7 hari kerja setelah data produk dan contoh hasil cetak diterima." }
     ]
   ),
@@ -1455,7 +1455,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa MOQ?", a: "Minimum order bervariasi per produk. Biasanya mulai dari 1-2 lusin untuk produksi custom." },
       { q: "Berapa waktu produksi?", a: "Estimasi 2-4 minggu tergantung jumlah order dan kompleksitas desain." },
       { q: "Bahan apa saja tersedia?", a: "Halaman khusus menampilkan katalog bahan dengan sample warna dan spesifikasi." },
-      { q: "Berapa biaya website konveksi?", a: "Mulai dari Rp 1.600.000 untuk katalog produk dasar hingga Rp 2.900.000 dengan form order custom dan galeri." },
+      { q: "Berapa biaya website konveksi?", a: "Mulai dari Rp 1.900.000 untuk katalog produk dasar hingga Rp 5.900.000 dengan form order custom dan galeri." },
       { q: "Berapa lama pengerjaan website?", a: "Rata-rata 5-7 hari kerja setelah foto produk dan data lengkap diterima." }
     ]
   ),
@@ -1492,7 +1492,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa biaya jasa security?", a: "Tarif per personel per bulan bisa ditampilkan atau berdasarkan penawaran custom." },
       { q: "Bagaimana rekrutmen personel?", a: "Informasi proses seleksi, training, dan sertifikasi personel bisa ditampilkan di website." },
       { q: "Apakah ada training?", a: "Halaman khusus menampilkan program pelatihan dan sertifikasi untuk semua personel." },
-      { q: "Berapa biaya website security?", a: "Mulai dari Rp 1.600.000 untuk profil dasar hingga Rp 2.900.000 dengan portofolio klien dan form penawaran." },
+      { q: "Berapa biaya website security?", a: "Mulai dari Rp 1.900.000 untuk profil dasar hingga Rp 5.900.000 dengan portofolio klien dan form penawaran." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah data perusahaan dan legalitas lengkap diterima." }
     ]
   ),
@@ -1529,7 +1529,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa biaya cleaning?", a: "Harga mulai dari Rp 150.000 per sesi untuk rumah. Harga kontrak kantor berdasarkan luas area." },
       { q: "Apakah peralatan disediakan?", a: "Ya, tim kami datang dengan peralatan dan bahan cleaning profesional lengkap." },
       { q: "Bagaimana area layanan?", a: "Informasi area layanan ditampilkan di website beserta tambahan biaya transportasi jika di luar area." },
-      { q: "Berapa biaya website cleaning service?", a: "Mulai dari Rp 1.600.000 untuk profil dasar hingga Rp 2.900.000 dengan booking online dan galeri." },
+      { q: "Berapa biaya website cleaning service?", a: "Mulai dari Rp 1.900.000 untuk profil dasar hingga Rp 5.900.000 dengan booking online dan galeri." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah data layanan dan foto hasil kerja diterima." }
     ]
   ),
@@ -1570,7 +1570,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa biaya membership?", a: "Harga paket member bisa ditampilkan transparan di website sesuai kebijakan gym Anda." },
       { q: "Fasilitas apa saja?", a: "Halaman khusus menampilkan semua fasilitas: alat fitness, locker, shower, sauna, dll." },
       { q: "Kapan jadwal kelas group?", a: "Jadwal kelas terbaru selalu terupdate di website agar member bisa merencanakan latihan." },
-      { q: "Berapa biaya website gym?", a: "Mulai dari Rp 1.600.000 untuk profil gym dasar hingga Rp 2.900.000 dengan member system dan jadwal." },
+      { q: "Berapa biaya website gym?", a: "Mulai dari Rp 1.900.000 untuk profil gym dasar hingga Rp 5.900.000 dengan member system dan jadwal." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah foto fasilitas dan data lengkap diterima." }
     ]
   ),
@@ -1607,7 +1607,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa biaya jasa foto?", a: "Paket bervariasi mulai dari foto personal hingga full wedding. Detail harga di halaman paket." },
       { q: "Bagaimana hak cipta foto?", a: "Informasi hak cipta dan penggunaan foto bisa dijelaskan di halaman syarat ketentuan." },
       { q: "Berapa revisi yang didapat?", a: "Jumlah foto edit dan revisi per paket bisa ditampilkan transparan di website." },
-      { q: "Berapa biaya website fotografer?", a: "Mulai dari Rp 1.600.000 untuk galeri portofolio hingga Rp 2.900.000 dengan booking dan showreel." },
+      { q: "Berapa biaya website fotografer?", a: "Mulai dari Rp 1.900.000 untuk galeri portofolio hingga Rp 5.900.000 dengan booking dan showreel." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah portofolio dan data lengkap diterima." }
     ]
   ),
@@ -1644,7 +1644,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa biaya paket WO?", a: "Paket bervariasi dari intimate wedding hingga luxury. Detail harga di halaman paket." },
       { q: "Bagaimana area layanan?", a: "Informasi area layanan ditampilkan beserta biaya tambahan untuk lokasi di luar kota." },
       { q: "Apakah bisa pilih vendor sendiri?", a: "Ya, website menampilkan opsi paket all-in atau pilihan vendor sesuai keinginan." },
-      { q: "Berapa biaya website WO?", a: "Mulai dari Rp 1.600.000 untuk galeri dasar hingga Rp 2.900.000 dengan booking dan vendor listing." },
+      { q: "Berapa biaya website WO?", a: "Mulai dari Rp 1.900.000 untuk galeri dasar hingga Rp 5.900.000 dengan booking dan vendor listing." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah portofolio pernikahan dan data lengkap diterima." }
     ]
   ),
@@ -1681,7 +1681,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa harga buket bunga?", a: "Harga mulai dari Rp 150.000 untuk buket mini. Detail harga per produk ada di katalog." },
       { q: "Bagaimana area pengiriman?", a: "Informasi area delivery dan estimasi ongkir ditampilkan saat proses order." },
       { q: "Bisa custom order?", a: "Ya, form custom order tersedia untuk request buket sesuai tema, warna, dan budget." },
-      { q: "Berapa biaya website florist?", a: "Mulai dari Rp 1.600.000 untuk katalog buket hingga Rp 2.900.000 dengan order online dan delivery tracking." },
+      { q: "Berapa biaya website florist?", a: "Mulai dari Rp 1.900.000 untuk katalog buket hingga Rp 5.900.000 dengan order online dan delivery tracking." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah foto produk berkualitas tinggi diterima." }
     ]
   ),
@@ -1718,7 +1718,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa biaya grooming?", a: "Harga bervariasi per jenis dan ukuran hewan. Detail harga ada di halaman paket grooming." },
       { q: "Jenis hewan apa yang dilayani?", a: "Grooming tersedia untuk anjing, kucing, dan hewan peliharaan lainnya sesuai layanan." },
       { q: "Produk apa saja tersedia?", a: "Katalog lengkap dari makanan premium, aksesori, hingga suplemen untuk berbagai jenis hewan." },
-      { q: "Berapa biaya website pet shop?", a: "Mulai dari Rp 1.600.000 untuk katalog dasar hingga Rp 2.900.000 dengan booking online dan blog." },
+      { q: "Berapa biaya website pet shop?", a: "Mulai dari Rp 1.900.000 untuk katalog dasar hingga Rp 5.900.000 dengan booking online dan blog." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah foto produk dan data layanan diterima." }
     ]
   ),
@@ -1759,7 +1759,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa tarif pengiriman?", a: "Tarif bervariasi berdasarkan berat dan tujuan. Kalkulator otomatis tersedia di website." },
       { q: "Berapa batas berat maksimal?", a: "Informasi batas berat dan dimensi per jenis layanan ditampilkan jelas di website." },
       { q: "Bagaimana area layanan?", a: "Peta area delivery menampilkan seluruh wilayah yang sudah dilayani." },
-      { q: "Berapa biaya website ekspedisi?", a: "Mulai dari Rp 1.600.000 untuk profil dasar hingga Rp 2.900.000 dengan kalkulator tarif dan tracking." },
+      { q: "Berapa biaya website ekspedisi?", a: "Mulai dari Rp 1.900.000 untuk profil dasar hingga Rp 5.900.000 dengan kalkulator tarif dan tracking." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 5-7 hari kerja setelah data tarif dan rute pengiriman lengkap diterima." }
     ]
   ),
@@ -1796,7 +1796,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa biaya laundry per kg?", a: "Harga mulai dari Rp 7.000/kg reguler. Detail harga per jenis layanan ada di website." },
       { q: "Berapa lama waktu selesai?", a: "Reguler 2-3 hari, Express 6-8 jam. Estimasi ditampilkan di website." },
       { q: "Bagaimana area antar jemput?", a: "Peta area layanan ditampilkan beserta jadwal pickup dan minimum order." },
-      { q: "Berapa biaya website laundry?", a: "Mulai dari Rp 1.600.000 untuk profil dasar hingga Rp 2.900.000 dengan order online dan tracking." },
+      { q: "Berapa biaya website laundry?", a: "Mulai dari Rp 1.900.000 untuk profil dasar hingga Rp 5.900.000 dengan order online dan tracking." },
       { q: "Berapa lama pengerjaan website?", a: "Rata-rata 5-7 hari kerja setelah data layanan dan harga lengkap diterima." }
     ]
   ),
@@ -1833,7 +1833,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Apakah bahan kimia aman?", a: "Ya, kami menggunakan bahan berstandar WHO dan Kemenkes yang aman untuk keluarga dan hewan peliharaan." },
       { q: "Berapa lama garansi?", a: "Garansi treatment bervariasi 3-12 bulan tergantung jenis hama dan paket layanan." },
       { q: "Berapa waktu pengerjaan?", a: "Treatment biasanya selesai 2-4 jam tergantung luas area dan jenis hama." },
-      { q: "Berapa biaya website pest control?", a: "Mulai dari Rp 1.600.000 untuk profil dasar hingga Rp 2.900.000 dengan booking survey dan blog." },
+      { q: "Berapa biaya website pest control?", a: "Mulai dari Rp 1.900.000 untuk profil dasar hingga Rp 5.900.000 dengan booking survey dan blog." },
       { q: "Berapa lama pengerjaan website?", a: "Rata-rata 5-7 hari kerja setelah data layanan dan sertifikasi diterima." }
     ]
   ),
@@ -1870,7 +1870,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa harga gas dan air galon?", a: "Harga update harian/mingguan dan ditampilkan transparan di website." },
       { q: "Bagaimana area pengiriman?", a: "Peta area delivery menampilkan wilayah yang dilayani dan estimasi waktu antar." },
       { q: "Berapa minimum order?", a: "Kebijakan minimum order dan free delivery bisa ditampilkan sesuai ketentuan agen." },
-      { q: "Berapa biaya website agen gas/air?", a: "Mulai dari Rp 1.600.000 untuk profil dasar hingga Rp 2.900.000 dengan order online dan langganan." },
+      { q: "Berapa biaya website agen gas/air?", a: "Mulai dari Rp 1.900.000 untuk profil dasar hingga Rp 5.900.000 dengan order online dan langganan." },
       { q: "Berapa lama pengerjaan?", a: "Rata-rata 3-5 hari kerja karena struktur website relatif sederhana." }
     ]
   ),
@@ -1907,7 +1907,7 @@ export const NICHES: NicheDefinition[] = [
       { q: "Berapa biaya jasa las?", a: "Biaya bervariasi per jenis pekerjaan dan material. Estimasi bisa dihitung lewat form penawaran." },
       { q: "Berapa waktu pengerjaan?", a: "Tergantung skala proyek, biasanya 3-14 hari untuk proyek residensial." },
       { q: "Material apa yang tersedia?", a: "Besi hollow, pipa, plat, stainless steel, aluminium — sesuai spesifikasi proyek." },
-      { q: "Berapa biaya website bengkel las?", a: "Mulai dari Rp 1.600.000 untuk portofolio dasar hingga Rp 2.900.000 dengan galeri dan form penawaran." },
+      { q: "Berapa biaya website bengkel las?", a: "Mulai dari Rp 1.900.000 untuk portofolio dasar hingga Rp 5.900.000 dengan galeri dan form penawaran." },
       { q: "Berapa lama pengerjaan website?", a: "Rata-rata 5-7 hari kerja setelah foto portofolio dan data bengkel diterima." }
     ]
   ),

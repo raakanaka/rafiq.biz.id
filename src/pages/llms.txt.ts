@@ -1,4 +1,4 @@
-import { ALLOWED_SERVICES, TARGET_CITIES, WEB_DEV_SERVICES, SEO_SERVICES } from '../../lib/constants';
+import { TARGET_CITIES, WEB_DEV_SERVICES, SEO_SERVICES } from '../../lib/constants';
 
 function formatString(str: string): string {
   return str.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
@@ -29,22 +29,23 @@ Rafiq is a dedicated Web Developer and SEO Specialist based in Indonesia. He spe
 ${WEB_DEV_SERVICES.map(s => `- [${formatString(s)}](${baseUrl}/${s})`).join('\n')}
 
 Pricing:
-- Paket Starter (UMKM/Personal): Rp 1.600.000
-- Paket Pro (Perusahaan/CV): Rp 2.200.000
-- Paket Premium (Corporate VIP): Rp 2.900.000
+- Paket Starter (UMKM/Personal): Rp 1.900.000
+- Paket Pro (Perusahaan/CV): Rp 3.500.000
+- Paket Premium (Corporate VIP): Rp 5.900.000
+- Harga khusus Medan: Rp 2.000.000 / Rp 3.500.000 / Rp 5.900.000
 
 E-Commerce UMKM Special Pricing:
-- Paket Basic UMKM: Rp 3.500.000
-- Paket Advanced UMKM: Rp 5.500.000
-- Paket Custom Enterprise: Custom Pricing
+- Paket Basic UMKM: Rp 4.500.000
+- Paket Advanced UMKM: Rp 7.500.000
+- Paket Custom Enterprise: Mulai Rp 12.000.000
 
 ### SEO Services
 ${SEO_SERVICES.map(s => `- [${formatString(s)}](${baseUrl}/${s})`).join('\n')}
 
 Pricing:
-- SEO Lokal (GMB/Maps): Rp 1.800.000/bulan
-- SEO Bisnis (Keyword Competition): Rp 2.500.000/bulan
-- SEO VIP Enterprise (National): Rp 3.500.000/bulan
+- SEO Lokal (GMB/Maps): Rp 2.500.000/bulan
+- SEO Bisnis (Keyword Competition): Rp 4.000.000/bulan
+- SEO VIP Enterprise (National): Rp 6.500.000/bulan
 
 ## Portfolio / Projects
 

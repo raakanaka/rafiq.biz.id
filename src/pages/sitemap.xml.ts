@@ -25,6 +25,8 @@ export async function GET() {
   ALLOWED_SERVICES.forEach((service) => {
     routes.push({ url: `${baseUrl}/${service}`, priority: '0.9', changefreq: 'weekly' });
     routes.push({ url: `${baseUrl}/${service}/area`, priority: '0.8', changefreq: 'weekly' });
+    routes.push({ url: `${baseUrl}/${service}/area/jakarta`, priority: '0.85', changefreq: 'monthly' });
+    routes.push({ url: `${baseUrl}/${service}/area/medan`, priority: '0.85', changefreq: 'monthly' });
 
     TARGET_CITIES.forEach((city) => {
       routes.push({ url: `${baseUrl}/${service}/${city}`, priority: '0.7', changefreq: 'weekly' });
@@ -42,9 +44,13 @@ export async function GET() {
     });
   });
 
+  const uniqueRoutes = Array.from(
+    new Map(routes.map((route) => [route.url, route])).values()
+  );
+
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes.map(r => `  <url>
+${uniqueRoutes.map(r => `  <url>
     <loc>${r.url}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${r.changefreq}</changefreq>

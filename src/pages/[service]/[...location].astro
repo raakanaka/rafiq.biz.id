@@ -85,7 +85,7 @@ const titleContent = isSeoService
 
 const descriptionContent = isSeoService
   ? `Mencari ahli optimasi ranking laman? Kami adalah agensi Jasa SEO Profesional${displayLocation} yang fokus mendominasi kata kunci Google, Bing, & AI Overview. Tingkatkan trafik Anda!`
-  : `Mencari jasa pembuatan website${displayLocation}? Kami adalah web developer profesional yang berfokus pada desain web responsif, company profile, dan toko online dengan optimasi SEO tingkat lanjut. Mulai Rp 1.6 Juta.`;
+  : `Mencari jasa pembuatan website${displayLocation}? Kami adalah web developer profesional yang berfokus pada desain web responsif, company profile, dan toko online dengan optimasi SEO tingkat lanjut. Mulai Rp 1.9 Juta.`;
 
 const keywordsList = isSeoService ? [
   `${titlePrefix}`,
@@ -110,7 +110,7 @@ const keywordsList = isSeoService ? [
 const faqListWebDev = [
     {
       q: "Berapa biaya jasa pembuatan website profesional untuk bisnis saya?",
-      a: "Harga layanan dari web developer kami sangat kompetitif namun tetap memberikan standar kualitas enterprise. Kami menawarkan paket transparan mulai dari Rp1.600.000 untuk paket pembuatan web UMKM, hingga Rp2.900.000 untuk kelas Corporate Premium dengan fitur e-commerce dan optimasi SEO tingkat lanjut."
+      a: "Harga layanan dari web developer kami sangat kompetitif namun tetap memberikan standar kualitas enterprise. Kami menawarkan paket transparan mulai dari Rp1.900.000 untuk paket pembuatan web UMKM, hingga Rp5.900.000 untuk kelas Corporate Premium dengan fitur e-commerce dan optimasi SEO tingkat lanjut."
     },
     {
       q: "Berapa lama proses pembuatan / pengembangan toko online hingga dapat digunakan?",
@@ -145,7 +145,7 @@ const faqListWebDev = [
 const faqListSEO = [
     {
       q: `Berapa biaya rata-rata untuk Jasa ${serviceName} ini?`,
-      a: "Skema harga kami sangat transparan; mulai dari Rp 1.800.000 untuk paket Lokal SEO GMB, Rp 2.500.000 untuk Optimasi SEO Bisnis skala menengah, dan Rp 3.500.000 untuk strategi SEO VIP Enterprise komprehensif yang dirancang menggandakan omzet secara organik."
+      a: "Skema harga kami sangat transparan; mulai dari Rp 2.500.000 untuk paket Lokal SEO GMB, Rp 4.000.000 untuk Optimasi SEO Bisnis skala menengah, dan Rp 6.500.000 untuk strategi SEO VIP Enterprise komprehensif yang dirancang menggandakan omzet secara organik."
     },
     {
       q: "Berapa lama waktu yang dibutuhkan hingga website menembus Page 1 Google?",
@@ -179,13 +179,13 @@ const faqListSEO = [
 
 const currentFaqList = isSeoService ? faqListSEO : faqListWebDev;
 const currentOffers = isSeoService ? [
-    { name: "SEO Lokal", price: "1800000", priceCurrency: "IDR" },
-    { name: "SEO Bisnis", price: "2500000", priceCurrency: "IDR" },
-    { name: "SEO VIP Enterprise", price: "3500000", priceCurrency: "IDR" },
+    { name: "SEO Lokal", price: "2500000", priceCurrency: "IDR" },
+    { name: "SEO Bisnis", price: "4000000", priceCurrency: "IDR" },
+    { name: "SEO VIP Enterprise", price: "6500000", priceCurrency: "IDR" },
 ] : [
-    { name: "Paket Starter", price: "1600000", priceCurrency: "IDR" },
-    { name: "Paket Pro", price: "2200000", priceCurrency: "IDR" },
-    { name: "Paket Premium", price: "2900000", priceCurrency: "IDR" },
+    { name: "Paket Starter", price: "1900000", priceCurrency: "IDR" },
+    { name: "Paket Pro", price: "3500000", priceCurrency: "IDR" },
+    { name: "Paket Premium", price: "5900000", priceCurrency: "IDR" },
 ];
 
 const jsonLd = {
@@ -302,6 +302,9 @@ const jsonLd = {
                         Paket <span class="text-accent-pop">Harga</span> Terbaik
                     </h2>
                     <p class="text-text-secondary text-lg">Pilih paket investasi yang mengembalikan margin lewat kekuatan terorganisasi organik lalu-lintas pencari mesin.</p>
+                    <p class="text-sm text-text-secondary mt-3 max-w-3xl mx-auto leading-relaxed">
+                        Rekomendasi utama ada di paket tengah karena paling seimbang untuk kualitas teknis, SEO, dan biaya. Harga dapat menyesuaikan jika komponen domain, hosting premium, lisensi plugin, API, atau tools berbayar mengikuti kenaikan kurs USD.
+                    </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
                    {/* SEO or WebDev Packages */}
@@ -313,7 +316,7 @@ const jsonLd = {
                             <h3 class="text-2xl font-bold text-foreground">SEO Lokal</h3>
                             </div>
                             <div class="mb-6 flex items-baseline">
-                            <span class="text-3xl font-extrabold text-foreground">Rp1,8 Juta</span>
+                            <span class="text-3xl font-extrabold text-foreground">Rp2,5 Juta</span>
                             <span class="text-text-secondary ml-2">/bulan</span>
                             </div>
                             <ul class="space-y-4 mb-8 flex-1">
@@ -335,7 +338,7 @@ const jsonLd = {
                             <h3 class="text-2xl font-bold text-foreground">SEO Bisnis</h3>
                             </div>
                             <div class="mb-6 flex items-baseline">
-                            <span class="text-3xl font-extrabold text-foreground">Rp2,5 Juta</span>
+                            <span class="text-3xl font-extrabold text-foreground">Rp4 Juta</span>
                             <span class="text-text-secondary ml-2">/bulan</span>
                             </div>
                             <ul class="space-y-4 mb-8 flex-1">
@@ -354,7 +357,7 @@ const jsonLd = {
                             <h3 class="text-2xl font-bold text-foreground">SEO VIP Enterprise</h3>
                             </div>
                             <div class="mb-6 flex items-baseline">
-                            <span class="text-3xl font-extrabold text-foreground">Rp3,5 Juta</span>
+                            <span class="text-3xl font-extrabold text-foreground">Rp6,5 Juta</span>
                             <span class="text-text-secondary ml-2">/bulan</span>
                             </div>
                             <ul class="space-y-4 mb-8 flex-1">
@@ -376,7 +379,7 @@ const jsonLd = {
                             <h3 class="text-2xl font-bold text-foreground">Paket Starter</h3>
                             </div>
                             <div class="mb-6 flex items-baseline">
-                            <span class="text-3xl font-extrabold text-foreground">Rp1,6 Juta</span>
+                            <span class="text-3xl font-extrabold text-foreground">Rp1,9 Juta</span>
                             </div>
                             <ul class="space-y-4 mb-8 flex-1">
                             {["Custom Tema Responsif", "Domain & Hosting (1 Tahun)", "SEO On-Page Dasar", "Bandwidth Unmetered", "Integrasi Tombol WhatsApp", "Maks. 5 Halaman Dasar"].map((feature) => (
@@ -397,7 +400,7 @@ const jsonLd = {
                             <h3 class="text-2xl font-bold text-foreground">Paket Pro</h3>
                             </div>
                             <div class="mb-6 flex items-baseline">
-                            <span class="text-3xl font-extrabold text-foreground">Rp2,2 Juta</span>
+                            <span class="text-3xl font-extrabold text-foreground">Rp3,5 Juta</span>
                             </div>
                             <ul class="space-y-4 mb-8 flex-1">
                             {["Semua Fitur Paket Starter", "Desain Halaman Khusus Premium", "Email Bisnis Profesional", "Setup Schema Markup / AI Overview", "Maks. 10 Halaman", "Gratis Setup Google My Business"].map((feature) => (
@@ -415,7 +418,7 @@ const jsonLd = {
                             <h3 class="text-2xl font-bold text-foreground">Paket Premium</h3>
                             </div>
                             <div class="mb-6 flex items-baseline">
-                            <span class="text-3xl font-extrabold text-foreground">Rp2,9 Juta</span>
+                            <span class="text-3xl font-extrabold text-foreground">Rp5,9 Juta</span>
                             </div>
                             <ul class="space-y-4 mb-8 flex-1">
                             {["Semua Fitur Paket Pro", "Server Hosting Premium Spesifikasi Tinggi", "Katalog Produk Lanjut/LMS", "Fitur Bilingual (Dua Bahasa)", "Analisis Konversi Tahapan", "Revisi Minor Selama Masa Aktif"].map((feature) => (

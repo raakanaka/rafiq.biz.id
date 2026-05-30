@@ -8,7 +8,7 @@ export async function GET() {
   const baseUrl = 'https://rafiq.biz.id';
 
   const faqWebDev = [
-    { q: "Berapa biaya jasa pembuatan website profesional?", a: "Harga mulai dari Rp1.600.000 untuk paket UMKM, hingga Rp2.900.000 untuk Corporate Premium dengan fitur e-commerce dan optimasi SEO tingkat lanjut." },
+    { q: "Berapa biaya jasa pembuatan website profesional?", a: "Harga mulai dari Rp1.900.000 untuk paket UMKM, hingga Rp5.900.000 untuk Corporate Premium dengan fitur e-commerce dan optimasi SEO tingkat lanjut. Khusus pasar Medan, paket website dimulai dari Rp2.000.000." },
     { q: "Berapa lama proses pembuatan website?", a: "Rata-rata antara 3-14 hari kerja tergantung kelengkapan materi dan kerumitan sistem." },
     { q: "Apakah website sudah SEO-Friendly?", a: "Ya. Semua website dibangun dengan On-Page SEO, Semantic HTML, schema markup JSON-LD, dan didaftarkan ke Google Search Console dan Bing Webmaster." },
     { q: "Bagaimana optimasi AI Overview (Google SGE)?", a: "Website dirancang ramah untuk crawler AI (LLM-friendly) dengan copywriting semantik agar mudah diindeks oleh mesin SGE." },
@@ -19,7 +19,7 @@ export async function GET() {
   ];
 
   const faqSeo = [
-    { q: "Berapa biaya Jasa SEO?", a: "Mulai Rp 1.800.000 untuk Lokal SEO GMB, Rp 2.500.000 untuk SEO Bisnis, dan Rp 3.500.000 untuk SEO VIP Enterprise." },
+    { q: "Berapa biaya Jasa SEO?", a: "Mulai Rp 2.500.000 untuk Lokal SEO GMB, Rp 4.000.000 untuk SEO Bisnis, dan Rp 6.500.000 untuk SEO VIP Enterprise." },
     { q: "Berapa lama website menembus Page 1 Google?", a: "Pergerakan naik biasanya terlihat di bulan pertama sampai ketiga, tergantung keyword difficulty dan frekuensi optimasi." },
     { q: "Teknik SEO apa yang digunakan?", a: "100% White-Hat SEO: perbaikan Core Web Vitals, siloing on-page, schema semantis, dan High-Authority Backlink." },
     { q: "Apakah mendukung AI Overview / SGE?", a: "Ya, melalui integrasi Schema-LD JSON dengan presisi informasi lokal, AI LLM lebih mudah memahami situs bisnis Anda." },
@@ -91,17 +91,19 @@ ${WEB_DEV_SERVICES.map(s => `### ${formatString(s)}
 
 | Package | Price | Features |
 |---------|-------|----------|
-| Paket Starter (UMKM/Personal) | Rp 1.600.000 | Custom responsive theme, domain & hosting (1 year), basic on-page SEO, WhatsApp integration, max 5 pages |
-| Paket Pro (Perusahaan/CV) | Rp 2.200.000 | All Starter features + premium page design, professional business email, Schema Markup / AI Overview setup, max 10 pages, Google My Business setup |
-| Paket Premium (Corporate VIP) | Rp 2.900.000 | All Pro features + premium hosting, advanced product catalog/LMS, bilingual support, conversion analysis, minor revisions during active period |
+| Paket Starter (UMKM/Personal) | Rp 1.900.000 | Custom responsive theme, domain & hosting (1 year), basic on-page SEO, WhatsApp integration, max 5 pages |
+| Paket Pro (Perusahaan/CV) | Rp 3.500.000 | All Starter features + premium page design, professional business email, Schema Markup / AI Overview setup, max 10 pages, Google My Business setup |
+| Paket Premium (Corporate VIP) | Rp 5.900.000 | All Pro features + premium hosting, advanced product catalog/LMS, bilingual support, conversion analysis, minor revisions during active period |
+
+Medan special website pricing: Rp 2.000.000 / Rp 3.500.000 / Rp 5.900.000.
 
 #### E-Commerce UMKM Special Pricing
 
 | Package | Price | Features |
 |---------|-------|----------|
-| Paket Basic UMKM | Rp 3.500.000 | Responsive E-commerce design, domain & hosting, basic SEO, payment gateway integration, basic product catalog |
-| Paket Advanced UMKM | Rp 5.500.000 | All Basic features + Setup Google Merchant Shopping, premium design, business email, AI Overview setup, advanced catalog, automatic shipping courier integration |
-| Paket Custom Enterprise | Custom | All Advanced features + custom web app, ERP/cashier integration, bilingual, dedicated support |
+| Paket Basic UMKM | Rp 4.500.000 | Responsive E-commerce design, domain & hosting, basic SEO, payment gateway integration, basic product catalog |
+| Paket Advanced UMKM | Rp 7.500.000 | All Basic features + Setup Google Merchant Shopping, premium design, business email, AI Overview setup, advanced catalog, automatic shipping courier integration |
+| Paket Custom Enterprise | Mulai Rp 12.000.000 | All Advanced features + custom web app, ERP/cashier integration, bilingual, dedicated support |
 
 #### Web Development FAQ
 
@@ -122,9 +124,9 @@ ${SEO_SERVICES.map(s => `### ${formatString(s)}
 
 | Package | Price | Features |
 |---------|-------|----------|
-| SEO Lokal (GMB/Maps) | Rp 1.800.000/month | Technical on-page SEO audit, Google Maps profile optimization, long-tail keyword research, meta & title tag optimization, sitemap submission |
-| SEO Bisnis (Keyword Competition) | Rp 2.500.000/month | All Local features + high authority external backlinks, 2 semantic SEO articles, Schema JSON-LD/SGE optimization, monthly Google Analytics report |
-| SEO VIP Enterprise (National) | Rp 3.500.000/month | All Business features + edu-web supplier network, site code structure optimization, 4+ authority pillar articles, external spam attack protection, dedicated consultant |
+| SEO Lokal (GMB/Maps) | Rp 2.500.000/month | Technical on-page SEO audit, Google Maps profile optimization, long-tail keyword research, meta & title tag optimization, sitemap submission |
+| SEO Bisnis (Keyword Competition) | Rp 4.000.000/month | All Local features + high authority external backlinks, 2 semantic SEO articles, Schema JSON-LD/SGE optimization, monthly Google Analytics report |
+| SEO VIP Enterprise (National) | Rp 6.500.000/month | All Business features + edu-web supplier network, site code structure optimization, 4+ authority pillar articles, external spam attack protection, dedicated consultant |
 
 #### SEO FAQ
 
