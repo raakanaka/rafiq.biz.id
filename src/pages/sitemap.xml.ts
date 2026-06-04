@@ -1,17 +1,28 @@
+import { getCollection } from 'astro:content';
 import { ALLOWED_SERVICES, TARGET_CITIES, TARGET_CITIES_98 } from '../../lib/constants';
 import { NICHE_SLUGS } from '../../lib/niches';
 import { projects } from '../../lib/projects';
 
 export async function GET() {
   const baseUrl = 'https://rafiq.biz.id';
-  const lastmod = '2026-05-30';
+  const lastmod = '2026-06-04';
 
   const routes: Array<{ url: string; priority: string; changefreq: string }> = [
     { url: baseUrl, priority: '1.0', changefreq: 'weekly' },
     { url: `${baseUrl}/about`, priority: '0.8', changefreq: 'monthly' },
     { url: `${baseUrl}/projects`, priority: '0.8', changefreq: 'monthly' },
+    { url: `${baseUrl}/blog`, priority: '0.8', changefreq: 'weekly' },
     { url: `${baseUrl}/contact`, priority: '0.5', changefreq: 'yearly' },
   ];
+
+  const blogPosts = await getCollection('blog');
+  blogPosts.forEach((post) => {
+    routes.push({
+      url: `${baseUrl}/blog/${post.id}`,
+      priority: '0.7',
+      changefreq: 'weekly'
+    });
+  });
 
   projects.forEach((project) => {
     routes.push({

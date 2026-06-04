@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "submit-index": "node scripts/google-indexing.js"
   },
   "overrides": {
     "vite": "^7.3.1"
@@ -28,6 +29,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9",
+    "google-auth-library": "^10.6.2",
     "tailwindcss": "^4",
     "typescript": "^5.9.3"
   }

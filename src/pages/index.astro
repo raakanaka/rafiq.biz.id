@@ -5,10 +5,57 @@ import HeroStatic from '../../components/HeroStatic.astro';
 import ExperienceStatic from '../../components/ExperienceStatic.astro';
 import Footer from '../../components/Footer';
 import FeaturedProjectsCarousel from '../../components/FeaturedProjectsCarousel';
+import Testimonials from '../../components/Testimonials.astro';
+import LeadMagnet from '../../components/LeadMagnet';
 
 const homeJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+        {
+            "@type": "ProfessionalService",
+            "name": "Rafiq Web Developer & SEO Specialist",
+            "image": "https://rafiq.biz.id/favicon.ico",
+            "@id": "https://rafiq.biz.id/#service",
+            "url": "https://rafiq.biz.id",
+            "telephone": "+6282160731800",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Medan",
+                "addressLocality": "Medan",
+                "addressRegion": "Sumatera Utara",
+                "postalCode": "20123",
+                "addressCountry": "ID"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 3.5952,
+                "longitude": 98.6722
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            "sameAs": [
+                "https://github.com/raakanaka",
+                "https://linkedin.com/in/rafiq-alhafizh-adha"
+            ],
+            "areaServed": [
+                { "@type": "Country", "name": "Indonesia" },
+                { "@type": "Place", "name": "Medan" },
+                { "@type": "Place", "name": "Jakarta" },
+                { "@type": "Place", "name": "Surabaya" },
+                { "@type": "Place", "name": "Bandung" }
+            ]
+        },
         {
             "@type": "Person",
             "name": "Rafiq Al Hafizh Adha",
@@ -103,6 +150,15 @@ const skills = [
                 </div>
             </div>
         </section>
+
+        <!-- Divider band -->
+        <div class="divider-band"></div>
+
+        <!-- Testimonials -->
+        <Testimonials />
+
+        <!-- Lead Magnet (Free Website Audit) -->
+        <LeadMagnet client:only="react" />
 
         <Footer client:load />
     </main>

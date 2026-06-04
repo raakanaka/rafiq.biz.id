@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import Testimonials from '../../components/Testimonials.astro';
 
 const skills = [
     { name: "JavaScript", emoji: "⚡" },
@@ -120,6 +121,12 @@ const jsonLd = {
                 </div>
             </div>
         </section>
+
+        <!-- Divider band -->
+        <div class="divider-band"></div>
+
+        <!-- Testimonials -->
+        <Testimonials />
 
         <Footer client:load />
     </main>

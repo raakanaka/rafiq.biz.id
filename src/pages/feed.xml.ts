@@ -1,3 +1,4 @@
+import { getCollection } from 'astro:content';
 import { ALLOWED_SERVICES, TARGET_CITIES, SEO_SERVICES } from '../../lib/constants';
 
 function formatString(str: string): string {
@@ -95,7 +96,15 @@ export async function GET() {
     category: 'Portfolio',
   }));
 
-  const allItems = [...staticItems, ...serviceItems, ...cityItems, ...projectItems];
+  const blogPosts = await getCollection('blog');
+  const blogItems = blogPosts.map(p => ({
+    title: p.data.title,
+    link: `${baseUrl}/blog/${p.id}`,
+    description: p.data.description,
+    category: 'Blog',
+  }));
+
+  const allItems = [...staticItems, ...serviceItems, ...cityItems, ...projectItems, ...blogItems];
 
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">

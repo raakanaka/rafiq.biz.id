@@ -9,6 +9,7 @@ interface Props {
   robots?: string;
   ogImage?: string;
   ogType?: string;
+  lang?: string;
 }
 
 const { 
@@ -17,8 +18,9 @@ const {
   keywords = ["Rafiq", "Web Developer", "SEO Specialist", "Indonesia", "Frontend Developer", "Astro", "React"],
   canonicalUrl = Astro.url.href,
   robots = "index, follow",
-  ogImage = "/globe.svg",
-  ogType = "website"
+  ogImage = "/og-image.png",
+  ogType = "website",
+  lang = "id"
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL("https://rafiq.biz.id");
@@ -26,7 +28,7 @@ const absoluteOgImage = new URL(ogImage, siteUrl).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />

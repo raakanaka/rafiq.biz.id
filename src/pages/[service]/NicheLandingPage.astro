@@ -270,6 +270,24 @@ const jsonLd = {
       </div>
     </section>
 
+    <!-- CAKUPAN AREA LOKAL -->
+    {cityName && cityName !== "Seluruh Indonesia" && (
+      <section class="section bg-white" style="border-top: 1.5px solid #e5e7eb; padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <h3 class="text-xl font-bold mb-4 text-foreground">Jangkauan Layanan Pembuatan Web di {cityName}</h3>
+          <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+            Jasa pembuatan website {nicheDisplayName.toLowerCase()} kami menjangkau seluruh area di {cityName} dan sekitarnya, termasuk wilayah {
+              cityName.toLowerCase() === "jakarta" ? "Gambir, Kebayoran Baru, Menteng, Kelapa Gading, Senayan, Pantai Indah Kapuk (PIK), Sudirman, Kemang, dan sekitarnya." :
+              cityName.toLowerCase() === "medan" ? "Medan Baru, Medan Selayang, Medan Sunggal, Medan Petisah, Medan Helvetia, Medan Kota, Medan Johor, dan sekitarnya." :
+              cityName.toLowerCase() === "surabaya" ? "Tunjungan, Gubeng, Wonokromo, Darmo, Sukolilo, Rungkut, Tegalsari, Kenjeran, dan sekitarnya." :
+              cityName.toLowerCase() === "bandung" ? "Dago, Pasteur, Gedebage, Coblong, Cihampelas, Braga, Lembang, Buahbatu, dan sekitarnya." :
+              `${cityName} Pusat, ${cityName} Utara, ${cityName} Selatan, ${cityName} Barat, ${cityName} Timur, dan area sekitarnya.`
+            } Hubungi kami untuk pembuatan website berkinerja tinggi, responsif, dan siap mendominasi pasar lokal Anda.
+          </p>
+        </div>
+      </section>
+    )}
+
     <!-- CTA FINAL -->
     <section class="section bg-border-dark text-white text-center">
       <div class="max-w-3xl mx-auto px-4">

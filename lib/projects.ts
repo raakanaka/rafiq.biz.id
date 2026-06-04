@@ -666,6 +666,64 @@ export function getProjectBySlug(slug: string) {
 }
 
 export function getProjectNarrative(project: Project) {
+  const customNarratives: Record<string, {
+    en: { role: string; approach: string; outcome: string };
+    id: { role: string; approach: string; outcome: string };
+  }> = {
+    "duniafintech": {
+      en: {
+        role: "Lead Performance Developer and Web Optimizer.",
+        approach: "We audited the WordPress installation, removed unused plugins and widgets, minimized heavy images, activated caching systems, threw away dead code, and optimized the database for rapid article loading.",
+        outcome: "The website speed increased significantly, lowering bounce rates, and securing the platform's core Google rankings for major financial technology terms."
+      },
+      id: {
+        role: "Developer Utama Optimasi Performa dan Web.",
+        approach: "Kami melakukan audit terhadap instalasi WordPress, menghapus plugin dan widget yang tidak terpakai, memperkecil gambar yang berat, mengaktifkan sistem caching, membuang kode sampah, serta mengoptimalkan database untuk memuat artikel secara instan.",
+        outcome: "Kecepatan website meningkat secara signifikan, menurunkan bounce rate pembaca, dan mengamankan ranking utama Google untuk kata kunci teknologi keuangan."
+      }
+    },
+    "haloexpert": {
+      en: {
+        role: "UI/UX Designer and Frontend Collaborator.",
+        approach: "Redesigned the entire UI/UX system of Halo Siswa during its rebranding to HaloExpert. Conducted interaction design research, built custom visual components (navigation, hero, footer), and ran application testing prototypes.",
+        outcome: "Created a modern, high-conversion learning management system interface that increased student engagement and streamlined the rebranding launch."
+      },
+      id: {
+        role: "Desainer UI/UX dan Kolaborator Frontend.",
+        approach: "Mendesain ulang seluruh sistem UI/UX Halo Siswa selama proses rebranding menjadi HaloExpert. Melakukan riset desain interaksi, membangun komponen visual kustom (navigasi, hero, footer), dan melakukan pengujian prototipe aplikasi.",
+        outcome: "Menghasilkan antarmuka sistem manajemen pembelajaran (LMS) modern berkonversi tinggi yang meningkatkan keterlibatan siswa serta menyukseskan peluncuran rebranding."
+      }
+    },
+    "alkhair-tour-and-travel": {
+      en: {
+        role: "Full-stack Developer and SEO Specialist.",
+        approach: "Designed the travel brand UI/UX from wireframes to launch. Integrated a customized travel catalog CMS for packages (Umrah, tours) and implemented technical SEO (URL structure, canonical tags, metadata, speed optimization).",
+        outcome: "Launched a fully responsive, search-friendly travel portal that generates direct bookings and ranks highly for religious/leisure travel keywords."
+      },
+      id: {
+        role: "Full-stack Developer dan Spesialis SEO.",
+        approach: "Mendesain UI/UX brand perjalanan dari wireframe hingga rilis. Mengintegrasikan CMS katalog paket travel (Umrah, tur) yang disesuaikan serta menerapkan SEO teknikal (struktur URL, canonical tag, metadata, dan kecepatan situs).",
+        outcome: "Meluncurkan portal travel responsif dan ramah SEO yang memicu pemesanan langsung serta berada di posisi teratas untuk kata kunci pencarian travel religi/wisata."
+      }
+    },
+    "evrando-seo": {
+      en: {
+        role: "SEO Strategist & Technical Auditor.",
+        approach: "Conducted deep competitor analysis and keyword research targeting regional construction keywords like 'Lysaght Medan'. Optimized on-page elements, meta properties, page speed, and built a clean external link profile.",
+        outcome: "Successfully achieved Page 1 Google rankings for the primary target keywords, multiplying organic leads and distributor inquiries."
+      },
+      id: {
+        role: "Spesialis SEO & Auditor Teknikal.",
+        approach: "Melakukan analisis kompetitor mendalam dan riset keyword untuk kata kunci konstruksi regional seperti 'Lysaght Medan'. Mengoptimasi elemen on-page, properti meta, kecepatan halaman, serta membangun profil tautan masuk yang natural.",
+        outcome: "Berhasil menembus halaman pertama Google untuk kata kunci target utama, melipatgandakan prospek organik dan pertanyaan calon distributor."
+      }
+    }
+  };
+
+  if (customNarratives[project.slug]) {
+    return customNarratives[project.slug];
+  }
+
   return {
     en: {
       role: `${project.service} for the ${project.industry.toLowerCase()} space.`,

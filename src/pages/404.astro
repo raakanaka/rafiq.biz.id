@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+
+const titleContent = "Halaman Tidak Ditemukan (404) | Rafiq";
+const descriptionContent = "Maaf, halaman yang Anda cari tidak ditemukan. Kembali ke beranda untuk melihat layanan pembuatan website dan optimasi SEO.";
+---
+
+<Layout title={titleContent} description={descriptionContent} robots="noindex, follow">
+    <main class="min-h-screen flex flex-col bg-background font-body">
+        <Navbar client:only="react" />
+
+        <section class="section flex-1 flex items-center justify-center">
+            <div class="max-w-md w-full px-4 text-center">
+                <div class="card-hard p-10 bg-white">
+                    <span style="font-size: 5rem; display: block; animation: float 4s ease-in-out infinite;">🔍</span>
+                    
+                    <h1 class="text-6xl font-black mt-6 mb-3 text-accent-pop" style="color: var(--accent-dark);">404</h1>
+                    <h2 class="text-xl font-bold mb-4 text-foreground">Halaman Tidak Ditemukan</h2>
+                    
+                    <p class="text-text-secondary text-sm leading-relaxed mb-8">
+                        Maaf, halaman yang Anda cari telah dipindahkan, dihapus, atau tidak pernah ada. Mari kembali ke jalur yang benar!
+                    </p>
+
+                    <div class="flex flex-col gap-3">
+                        <a href="/" class="btn-kirim w-full text-center text-sm font-bold" style="text-decoration: none;">
+                            Kembali ke Beranda 🏠
+                        </a>
+                        <a href="/projects" class="btn-outline-brutal w-full text-center text-sm font-bold" style="text-decoration: none; background-color: white;">
+                            Lihat Portofolio Proyek 📁
+                        </a>
+                        <a href="/blog" class="btn-outline-brutal w-full text-center text-sm font-bold" style="text-decoration: none; background-color: white;">
+                            Baca Artikel Blog 📝
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <Footer client:load />
+    </main>
+</Layout>

@@ -461,6 +461,24 @@ const jsonLd = {
             </div>
         </section>
 
+        {/* LOCALIZED AREA COVERAGE */}
+        {locationName && (
+            <section class="section bg-white" style="border-top: 1.5px solid #e5e7eb; padding-top: 4rem; padding-bottom: 4rem;">
+                <div class="max-w-4xl mx-auto px-4 text-center">
+                    <h3 class="text-xl font-bold mb-4 text-foreground">Cakupan Area Layanan di {locationName}</h3>
+                    <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                        Layanan {serviceName.toLowerCase()} kami mencakup seluruh wilayah di {locationName} dan sekitarnya, termasuk area {
+                            locationName.toLowerCase() === "jakarta" ? "Gambir, Kebayoran Baru, Menteng, Kelapa Gading, Senayan, Pantai Indah Kapuk (PIK), Sudirman, Kemang, dan sekitarnya." :
+                            locationName.toLowerCase() === "medan" ? "Medan Baru, Medan Selayang, Medan Sunggal, Medan Petisah, Medan Helvetia, Medan Kota, Medan Johor, dan sekitarnya." :
+                            locationName.toLowerCase() === "surabaya" ? "Tunjungan, Gubeng, Wonokromo, Darmo, Sukolilo, Rungkut, Tegalsari, Kenjeran, dan sekitarnya." :
+                            locationName.toLowerCase() === "bandung" ? "Dago, Pasteur, Gedebage, Coblong, Cihampelas, Braga, Lembang, Buahbatu, dan sekitarnya." :
+                            `${locationName} Pusat, ${locationName} Utara, ${locationName} Selatan, ${locationName} Barat, ${locationName} Timur, dan area sekitarnya.`
+                        } Kami siap melayani konsultasi langsung maupun jarak jauh (remote).
+                    </p>
+                </div>
+            </section>
+        )}
+
         {/* INTERNAL LINKING DIRECTORY (ENTERPRISE SEO CRAWLER) */}
         <section class="bg-background pt-12 pb-24 border-t border-gray-200">
             <div class="max-w-4xl mx-auto px-4 text-center">

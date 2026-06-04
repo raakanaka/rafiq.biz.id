@@ -1,0 +1,75 @@
+---
+import { Star } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "PT Halo Karya Bersama",
+    role: "LMS Rebranding (HaloExpert)",
+    feedback: "Sistem LMS kami berhasil dirancang ulang dengan sangat lancar. Desain UI/UX baru dari Rafiq sangat intuitif, modern, dan sangat disukai oleh para siswa kami.",
+    avatar: "📚",
+    rating: 5,
+    color: "#dbeafe"
+  },
+  {
+    name: "PT Duta Agensi Mail",
+    role: "Media Optimization (Duniafintech)",
+    feedback: "Performa loading website berita kami naik pesat setelah dioptimasi oleh Rafiq. Bounce rate pembaca kami turun drastis dan traffic organik Google meroket tajam.",
+    avatar: "💰",
+    rating: 5,
+    color: "#d1fae5"
+  },
+  {
+    name: "Al Khair Tour & Travel",
+    role: "Full Travel Web & SEO",
+    feedback: "Sangat puas dengan pengerjaan website travel kami. Fiturnya lengkap, tampilannya responsif, dan optimasi SEO lokalnya langsung menembus halaman pertama Google.",
+    avatar: "✈️",
+    rating: 5,
+    color: "#fef3c7"
+  }
+];
+---
+
+<section class="section bg-background" id="testimoni">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <div class="badge-brutal mb-4 bg-white">
+        <span>⭐</span> Testimoni Klien
+      </div>
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-foreground" style="letter-spacing: -0.02em;">
+        Apa Kata <span class="text-accent-pop">Mereka?</span>
+      </h2>
+      <p class="text-text-secondary text-lg max-w-2xl mx-auto">
+        Kisah sukses nyata dari para pemilik bisnis yang mempercayakan pembuatan website dan optimasi SEO mereka kepada kami.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((t) => (
+        <div class="card-hard p-8 bg-white flex flex-col justify-between">
+          <div>
+            <!-- Stars -->
+            <div class="flex items-center gap-1 mb-4 text-accent">
+              {[...Array(t.rating)].map(() => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-accent"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              ))}
+            </div>
+            
+            <p class="text-text-secondary italic leading-relaxed mb-6">
+              "{t.feedback}"
+            </p>
+          </div>
+
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-dashed border-gray-100">
+            <div class="icon-circle" style={`background: ${t.color}; width: 40px; height: 40px;`}>
+              <span class="text-lg">{t.avatar}</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-foreground leading-tight text-sm md:text-base">{t.name}</h4>
+              <p class="text-xs text-text-secondary font-medium">{t.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
