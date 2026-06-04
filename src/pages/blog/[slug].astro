@@ -125,9 +125,19 @@ const jsonLd = {
             {post.data.title}
           </h1>
 
-          <p class="text-lg md:text-xl leading-relaxed text-text-secondary italic">
+          <p class="text-lg md:text-xl leading-relaxed text-text-secondary italic mb-8">
             {post.data.description}
           </p>
+
+          {post.data.heroImage && (
+            <div class="w-full border-4 border-black rounded-xl overflow-hidden bg-accent-light flex items-center justify-center mb-8 shadow-hard">
+              {post.data.heroImage.startsWith('/') ? (
+                <img src={post.data.heroImage} alt={post.data.title} class="w-full h-auto object-cover max-h-[450px]" />
+              ) : (
+                <span class="text-8xl py-12">{post.data.heroImage}</span>
+              )}
+            </div>
+          )}
         </header>
 
         <!-- Divider -->

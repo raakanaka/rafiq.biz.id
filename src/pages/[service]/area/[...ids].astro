@@ -5,6 +5,12 @@ import { ArrowLeft, ArrowUpRight, CheckCircle2, MapPin } from "lucide-react";
 
 export const prerender = false;
 
+// Set Cache-Control header for Cloudflare Edge CDN to cache the rendered page for 7 days
+Astro.response.headers.set(
+  'Cache-Control',
+  'public, max-age=604800, s-maxage=604800, stale-while-revalidate=86400'
+);
+
 const { service, ids } = Astro.params;
 const resolvedService = service as string;
 const idsArray = ids ? ids.split('/') : [];
@@ -20,13 +26,46 @@ type Region = {
 
 async function fetchRegions(level: 'provinces' | 'regencies' | 'districts' | 'villages', parentId?: string): Promise<Region[]> {
   try {
-    let url = `https://emsifa.github.io/api-wilayah-indonesia/api/${level}.json`;
+    // Directly query the target domain to avoid 301 redirects
+    let url = `https://www.emsifa.com/api-wilayah-indonesia/api/${level}.json`;
     if (parentId && level !== 'provinces') {
-      url = `https://emsifa.github.io/api-wilayah-indonesia/api/${level}/${parentId}.json`;
+      url = `https://www.emsifa.com/api-wilayah-indonesia/api/${level}/${parentId}.json`;
     }
+
+    // Attempt to use Cloudflare Cache API if running in Cloudflare context
+    let cache: any;
+    try {
+      if (typeof caches !== 'undefined') {
+        cache = await caches.open('api-regions');
+        const cachedResponse = await cache.match(url);
+        if (cachedResponse) {
+          return await cachedResponse.json();
+        }
+      }
+    } catch (e) {
+      // Fail silently if cache is unavailable (e.g. local dev)
+    }
+
     const res = await fetch(url);
     if (!res.ok) return [];
-    return await res.json();
+    const data = await res.json();
+
+    // Cache the response locally if Cloudflare Cache API is available
+    try {
+      if (cache && res.ok) {
+        const responseToCache = new Response(JSON.stringify(data), {
+          headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'public, max-age=2592000' // Cache API response for 30 days
+          }
+        });
+        await cache.put(url, responseToCache);
+      }
+    } catch (e) {
+      // Fail silently
+    }
+
+    return data;
   } catch (err) {
     return [];
   }
