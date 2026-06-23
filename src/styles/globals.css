@@ -1235,3 +1235,60 @@ a.sd-contact-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px -
   .sd-snapshot { position: static; }
   .sd-narrative { grid-template-columns: 1fr; gap: 8px; }
 }
+
+/* ============================================
+   PREMIUM MOTION — scroll reveal + smooth scroll
+   ============================================ */
+
+/* Anchor offset for sticky header */
+.sd [id] { scroll-margin-top: 96px; }
+
+/* Lenis smooth scroll (official recommended styles) */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+/* Scroll-reveal: hidden state applied only when JS + motion are on (.reveal-on on <html>) */
+.reveal-on .sd-head,
+.reveal-on .sd-hero-copy,
+.reveal-on .sd-hero-art,
+.reveal-on .sd-row,
+.reveal-on .sd-card,
+.reveal-on .sd-proj,
+.reveal-on .sd-blog-card,
+.reveal-on .sd-contact-card,
+.reveal-on .sd-skill,
+.reveal-on .sd-audit,
+.reveal-on .sd-cta,
+.reveal-on .sd-page-h1,
+.reveal-on .sd-page-lead,
+.reveal-on .sd-article-tags,
+.reveal-on .sd-article-h1,
+.reveal-on .sd-article-desc,
+.reveal-on .sd-article-hero,
+.reveal-on .sd-prose,
+.reveal-on .sd-detail-grid,
+.reveal-on .sd-narrative > *,
+.reveal-on .sd-bio,
+.reveal-on .sd-center,
+.reveal-on .sd-404 {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+  will-change: opacity, transform;
+}
+.reveal-on .is-in { opacity: 1 !important; transform: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on .sd-head, .reveal-on .sd-card, .reveal-on .sd-proj, .reveal-on .sd-blog-card,
+  .reveal-on .sd-contact-card, .reveal-on .sd-skill, .reveal-on .sd-row, .reveal-on .sd-audit,
+  .reveal-on .sd-cta, .reveal-on .sd-page-h1, .reveal-on .sd-page-lead, .reveal-on .sd-hero-copy,
+  .reveal-on .sd-hero-art, .reveal-on .sd-article-tags, .reveal-on .sd-article-h1,
+  .reveal-on .sd-article-desc, .reveal-on .sd-article-hero, .reveal-on .sd-prose,
+  .reveal-on .sd-detail-grid, .reveal-on .sd-narrative > *, .reveal-on .sd-bio,
+  .reveal-on .sd-center, .reveal-on .sd-404 {
+    opacity: 1; transform: none; transition: none;
+  }
+}

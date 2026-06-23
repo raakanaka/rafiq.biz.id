@@ -43,8 +43,20 @@ const absoluteOgImage = new URL(ogImage, siteUrl).href;
         <link rel="llms" type="text/plain" href="/llms.txt" />
         <link rel="llms-full" type="text/plain" href="/llms-full.txt" />
 		<meta name="generator" content={Astro.generator} />
+        <!-- Scroll-reveal: hide animated elements before paint (only if motion is allowed); failsafe reveals all if the motion script never runs -->
+        <script is:inline>
+          (function () {
+            try {
+              if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+              var d = document.documentElement;
+              d.classList.add('reveal-on');
+              window.setTimeout(function () { if (!window.__motionReady) d.classList.remove('reveal-on'); }, 3000);
+            } catch (e) {}
+          })();
+        </script>
+
         <slot name="head" />
-        
+
         <!-- Google Verification -->
         <meta name="google-site-verification" content="5miu4ARJmpD9kvO9MCJEXx68h31JTqARMZbMlb8Kem4" />
 
@@ -77,3 +89,71 @@ const absoluteOgImage = new URL(ogImage, siteUrl).href;
 		<slot />
 	</body>
 </html>
+
+<script>
+  import Lenis from 'lenis';
+
+  const REVEAL = '.sd-head, .sd-hero-copy, .sd-hero-art, .sd-row, .sd-card, .sd-proj, .sd-blog-card, .sd-contact-card, .sd-skill, .sd-audit, .sd-cta, .sd-page-h1, .sd-page-lead, .sd-article-tags, .sd-article-h1, .sd-article-desc, .sd-article-hero, .sd-prose, .sd-detail-grid, .sd-narrative > *, .sd-bio, .sd-center, .sd-404';
+
+  function initMotion() {
+    (window as any).__motionReady = true;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      document.documentElement.classList.remove('reveal-on');
+      return;
+    }
+
+    // --- Scroll reveal (staggered within each parent) ---
+    try {
+      const els = Array.from(document.querySelectorAll(REVEAL)) as HTMLElement[];
+      if (!('IntersectionObserver' in window)) {
+        document.documentElement.classList.remove('reveal-on');
+      } else {
+        const counts = new Map<Element, number>();
+        els.forEach((el) => {
+          const p = el.parentElement;
+          if (!p) return;
+          const i = counts.get(p) || 0;
+          counts.set(p, i + 1);
+          el.style.transitionDelay = Math.min(i * 70, 350) + 'ms';
+        });
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-in');
+              io.unobserve(e.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        els.forEach((el) => io.observe(el));
+      }
+    } catch (e) {
+      document.documentElement.classList.remove('reveal-on');
+    }
+
+    // --- Lenis smooth scroll (desktop wheel; native on touch) ---
+    try {
+      const lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1, smoothWheel: true });
+      function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener('click', (e) => {
+          const id = a.getAttribute('href');
+          if (!id || id.length < 2) return;
+          const target = document.querySelector(id);
+          if (target) {
+            e.preventDefault();
+            lenis.scrollTo(target as HTMLElement, { offset: -90 });
+          }
+        });
+      });
+    } catch (e) {}
+  }
+
+  initMotion();
+  document.addEventListener('astro:page-load', initMotion);
+</script>
