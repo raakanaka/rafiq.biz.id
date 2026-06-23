@@ -1,90 +1,63 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
+import SaudaraHeader from '../../../components/SaudaraHeader.astro';
+import SaudaraFooter from '../../../components/SaudaraFooter.astro';
+import Icon from '../../../components/Icon.astro';
 
 const posts = await getCollection('blog');
 const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const titleContent = "Blog & Edukasi SEO / Web Development | Rafiq";
 const descriptionContent = "Temukan panduan praktis, tips terbaru, dan studi kasus mendalam seputar web development performa tinggi dan strategi SEO organik.";
+
+const fmtDate = (d: Date) => new Date(d).toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric' });
+const isImage = (s?: string) => !!s && s.startsWith('/');
 ---
 
 <Layout title={titleContent} description={descriptionContent}>
-    <main class="min-h-screen flex flex-col bg-background font-body">
-        <Navbar client:only="react" />
+    <div class="sd">
+        <SaudaraHeader />
 
-        <section class="section flex-1">
-            <div class="max-w-6xl mx-auto px-4">
-                <!-- Header -->
-                <div class="text-center mb-16">
-                    <h1 class="text-4xl md:text-5xl font-extrabold mb-4" style="color: var(--foreground); letter-spacing: -0.02em;">
-                        Blog & <span class="text-accent-pop">Edukasi</span>
-                    </h1>
-                    <p class="text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
-                        Kumpulan wawasan taktis, riset industri, dan panduan optimasi web untuk membantu bisnis Anda mendominasi pencarian Google.
-                    </p>
-                </div>
-
-                {sortedPosts.length === 0 ? (
-                    <div class="card-hard p-12 text-center max-w-md mx-auto">
-                        <span style="font-size: 3rem;">📭</span>
-                        <h2 class="text-xl font-bold mt-4 mb-2">Belum Ada Artikel</h2>
-                        <p class="text-text-secondary">Kami sedang meramu artikel baru berkualitas tinggi. Tetap pantau!</p>
-                    </div>
-                ) : (
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {sortedPosts.map((post) => (
-                            <article class="card-hard hover:-translate-y-1.5 transition-transform flex flex-col p-6 bg-white">
-                                {post.data.heroImage && (
-                                    <div class="h-48 w-full border-2 border-black rounded-lg mb-4 overflow-hidden bg-accent-light flex items-center justify-center">
-                                        {post.data.heroImage.startsWith('/') ? (
-                                            <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover" />
-                                        ) : (
-                                            <span class="text-5xl">{post.data.heroImage}</span>
-                                        )}
-                                    </div>
-                                )}
-
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="flex flex-wrap gap-1.5">
-                                        {post.data.tags.map((tag) => (
-                                            <span class="chip" style="font-size: 0.65rem; padding: 2px 8px;">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <span class="text-xs font-bold text-text-secondary">
-                                        {new Date(post.data.pubDate).toLocaleDateString('id-ID', {
-                                            year: 'numeric',
-                                            month: 'short',
-                                            day: 'numeric'
-                                        })}
-                                    </span>
-                                </div>
-
-                                <div class="flex-1">
-                                    <h2 class="text-xl font-extrabold mb-3 line-clamp-2">
-                                        <a href={`/blog/${post.id}`} class="hover:text-accent transition-colors" style="text-decoration: none; color: var(--foreground);">
-                                            {post.data.title}
-                                        </a>
-                                    </h2>
-                                    <p class="text-sm text-text-secondary mb-6 line-clamp-3 leading-relaxed">
-                                        {post.data.description}
-                                    </p>
-                                </div>
-
-                                <a href={`/blog/${post.id}`} class="btn-outline-brutal text-center justify-center py-2 px-4 text-xs font-bold w-full" style="text-decoration: none;">
-                                    Baca Selengkapnya →
-                                </a>
-                            </article>
-                        ))}
-                    </div>
-                )}
-            </div>
+        <section class="sd-page-hero">
+            <div class="sd-badge"><span class="sd-dot"></span><span>Blog &amp; edukasi</span></div>
+            <h1 class="sd-page-h1">Blog &amp; <span class="serif">insights</span></h1>
+            <p class="sd-page-lead">Kumpulan wawasan taktis, riset industri, dan panduan optimasi web untuk membantu bisnis Anda mendominasi pencarian Google.</p>
         </section>
 
-        <Footer client:load />
-    </main>
+        <section class="sd-section" style="padding-top:40px;">
+            {sortedPosts.length === 0 ? (
+                <div class="sd-card" style="max-width:440px;margin:0 auto;text-align:center;">
+                    <div class="sd-ic" style="margin:0 auto 16px;"><Icon name="newspaper" /></div>
+                    <h2 class="sd-card-title">Belum Ada Artikel</h2>
+                    <p class="sd-p">Kami sedang meramu artikel baru berkualitas tinggi. Tetap pantau!</p>
+                </div>
+            ) : (
+                <div class="sd-grid-3">
+                    {sortedPosts.map((post) => (
+                        <a href={`/blog/${post.id}`} class="sd-blog-card">
+                            <div class="sd-blog-banner">
+                                {isImage(post.data.heroImage)
+                                    ? <img src={post.data.heroImage} alt={post.data.title} />
+                                    : <Icon name="newspaper" />}
+                            </div>
+                            <div class="sd-blog-body">
+                                <div class="sd-blog-meta">
+                                    <div class="sd-tags">
+                                        {post.data.tags.slice(0, 2).map((tag) => <span class="sd-tag">{tag}</span>)}
+                                    </div>
+                                    <span class="sd-blog-date"><Icon name="calendar" sw={1.8} />{fmtDate(post.data.pubDate)}</span>
+                                </div>
+                                <h2 class="sd-blog-title">{post.data.title}</h2>
+                                <p class="sd-blog-desc">{post.data.description}</p>
+                                <span class="sd-blog-more">Baca selengkapnya <Icon name="arrowRight" /></span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            )}
+        </section>
+
+        <SaudaraFooter />
+    </div>
 </Layout>

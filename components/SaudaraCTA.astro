@@ -1,0 +1,77 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  id?: string;
+  heading1: string;
+  heading2: string;
+  text: string;
+}
+const { id, heading1, heading2, text } = Astro.props;
+
+// Floating chips + cursor target coords (within the 340x300 panel).
+const chips = [
+  { label: 'Design', style: 'left:6px;top:64px;', cx: 78, cy: 104 },
+  { label: 'Build', style: 'right:8px;top:18px;', cx: 250, cy: 58 },
+  { label: 'Launch', style: 'right:2px;top:150px;', cx: 258, cy: 190 },
+  { label: 'Rank', style: 'left:36px;bottom:30px;', cx: 96, cy: 224 },
+];
+
+const stars = [
+  'top:34px;left:60px;', 'top:90px;left:300px;', 'top:200px;left:40px;',
+  'top:250px;left:280px;background:rgba(242,101,34,0.4);', 'top:130px;left:150px;',
+  'top:60px;left:230px;background:rgba(242,101,34,0.3);', 'top:18px;left:150px;', 'top:230px;left:120px;',
+];
+---
+<section class="sd-section sd-cta-sec" {...(id ? { id } : {})}>
+  <div class="sd-cta">
+    <div class="sd-cta-anim" aria-hidden="true">
+      {stars.map((s) => <span class="sd-cta-star" style={s}></span>)}
+
+      <div class="sd-cta-logo">R</div>
+
+      {chips.map((c, i) => (
+        <div class={`sd-chip${i === 0 ? ' on' : ''}`} style={c.style} data-cx={c.cx} data-cy={c.cy}>{c.label}</div>
+      ))}
+
+      <div class="sd-cursor">
+        <svg width="17" height="18" viewBox="0 0 12 13" fill="var(--ac)" stroke="#fff" stroke-width="1"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 5.50676L0 0L2.83818 13L6.30623 7.86537L12 5.50676V5.50676Z"></path></svg>
+        <span class="sd-cursor-label">Rafiq</span>
+      </div>
+    </div>
+
+    <div class="sd-cta-copy">
+      <h2 class="sd-cta-h">{heading1}<br><span class="serif">{heading2}</span></h2>
+      <p class="sd-cta-p">{text}</p>
+      <div class="sd-cta-actions">
+        <a href="https://wa.me/6282160731800" target="_blank" rel="noopener noreferrer" class="sd-btn"><Icon name="phone" /> Chat on WhatsApp</a>
+        <a href="mailto:rafiq.adha@rafiq.biz.id" class="sd-cta-mail">rafiq.adha@rafiq.biz.id</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initSaudaraCTA() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.sd-cta-anim').forEach((root) => {
+      const chips = Array.from(root.querySelectorAll('.sd-chip'));
+      const cursor = root.querySelector('.sd-cursor') as HTMLElement | null;
+      if (!chips.length || !cursor) return;
+      let i = 0;
+      const apply = () => {
+        chips.forEach((c, idx) => c.classList.toggle('on', idx === i));
+        const c = chips[i];
+        const x = parseFloat(c.getAttribute('data-cx') || '0') - 6;
+        const y = parseFloat(c.getAttribute('data-cy') || '0') - 4;
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'px';
+      };
+      apply();
+      if (reduce) return;
+      setInterval(() => { i = (i + 1) % chips.length; apply(); }, 1700);
+    });
+  }
+  initSaudaraCTA();
+  document.addEventListener('astro:page-load', initSaudaraCTA);
+</script>

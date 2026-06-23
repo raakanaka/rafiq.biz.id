@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
-import { iconColors, projects } from '../../lib/projects';
+import SaudaraHeader from '../../components/SaudaraHeader.astro';
+import SaudaraFooter from '../../components/SaudaraFooter.astro';
+import Icon from '../../components/Icon.astro';
+import { projects } from '../../lib/projects';
+import { projectIcon } from '../../lib/icons';
 
 const canonicalUrl = "https://rafiq.biz.id/projects";
 const jsonLd = {
@@ -36,72 +38,35 @@ const jsonLd = {
         <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
     </Fragment>
 
-    <main class="min-h-screen flex flex-col">
-        <Navbar client:only="react" />
+    <div class="sd">
+        <SaudaraHeader />
 
-        <section class="section flex-1">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h1
-                        class="text-4xl md:text-5xl font-extrabold mb-4"
-                        style="color: var(--foreground); letter-spacing: -0.02em;"
-                    >
-                        Project <span class="text-accent-pop">Portfolio</span>
-                    </h1>
-                    <p class="text-lg max-w-3xl mx-auto" style="color: var(--text-secondary);">
-                        A curated archive of websites, platforms, SEO work, and digital systems built for different industries.
-                    </p>
-                </div>
+        <section class="sd-page-hero">
+            <div class="sd-badge"><span class="sd-dot"></span><span>{projects.length}+ projects shipped</span></div>
+            <h1 class="sd-page-h1">Project <span class="serif">portfolio</span></h1>
+            <p class="sd-page-lead">A curated archive of websites, platforms, SEO work, and digital systems built for businesses across different industries.</p>
+        </section>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {projects.map((project, i) => (
-                        <a
-                            href={`/projects/${project.slug}`}
-                            class="card-brutal group block hover:-translate-y-1 transition-transform"
-                            style="padding: 1.5rem; text-decoration: none; display: flex; flex-direction: column;"
-                        >
-                            <div class="flex items-start justify-between mb-3">
-                                <div
-                                    class="icon-circle"
-                                    style={`background: ${iconColors[i % iconColors.length].bg};`}
-                                >
-                                    <span style="font-size: 1.125rem;">{project.emoji}</span>
-                                </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style="color: var(--text-secondary); transition: transform 0.2s; flex-shrink: 0; margin-top: 2px;"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                            </div>
-                            <p class="text-xs font-bold uppercase mb-2" style="color: var(--accent-dark); letter-spacing: 0.08em;">
-                                {project.industry}
-                            </p>
-                            <h2
-                                class="text-base font-bold mb-2"
-                                style="color: var(--foreground);"
-                            >
-                                {project.title}
-                            </h2>
-                            <p
-                                class="text-sm leading-relaxed mb-3"
-                                style="color: var(--text-secondary);"
-                            >
-                                {project.summary.en}
-                            </p>
-                            <p
-                                class="text-sm leading-relaxed mb-4 flex-1"
-                                lang="id"
-                                style="color: var(--text-secondary);"
-                            >
-                                {project.summary.id}
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                {project.tech.map((t) => (
-                                    <span class="chip">{t}</span>
-                                ))}
-                            </div>
-                        </a>
-                    ))}
-                </div>
+        <section class="sd-section" style="padding-top:40px;">
+            <div class="sd-grid-3">
+                {projects.map((project) => (
+                    <a href={`/projects/${project.slug}`} class="sd-proj">
+                        <div class="sd-proj-top">
+                            <span class="sd-proj-ic"><Icon name={projectIcon(project)} /></span>
+                            <span class="sd-proj-arrow"><Icon name="arrowUpRight" /></span>
+                        </div>
+                        <p class="sd-proj-industry">{project.industry}</p>
+                        <h2 class="sd-card-title">{project.title}</h2>
+                        <p class="sd-p" style="margin-bottom:10px;">{project.summary.en}</p>
+                        <p class="sd-p" lang="id" style="font-size:13.5px;color:#9ca3af;margin-bottom:16px;">{project.summary.id}</p>
+                        <div class="sd-tags">
+                            {project.tech.map((t) => <span class="sd-tag">{t}</span>)}
+                        </div>
+                    </a>
+                ))}
             </div>
         </section>
 
-        <Footer client:load />
-    </main>
+        <SaudaraFooter />
+    </div>
 </Layout>

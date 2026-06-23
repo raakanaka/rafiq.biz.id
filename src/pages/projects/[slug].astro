@@ -1,8 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
+import SaudaraHeader from '../../../components/SaudaraHeader.astro';
+import SaudaraFooter from '../../../components/SaudaraFooter.astro';
+import SaudaraCTA from '../../../components/SaudaraCTA.astro';
+import Icon from '../../../components/Icon.astro';
 import { getProjectNarrative, projects } from '../../../lib/projects';
+import { projectIcon } from '../../../lib/icons';
 
 export const prerender = true;
 
@@ -51,126 +54,87 @@ const jsonLd = {
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   </Fragment>
 
-  <main class="min-h-screen flex flex-col">
-    <Navbar client:only="react" />
+  <div class="sd">
+    <SaudaraHeader />
 
-    <section class="section flex-1" style="background: var(--card-bg);">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-10">
-          <a href="/projects" class="btn-outline-brutal" style="padding: 0.55rem 1rem; font-size: 0.8125rem;">
-            ← Back to Projects
-          </a>
-        </div>
+    <section class="sd-section" style="padding-top:40px;">
+      <div class="sd-detail-grid">
+        <article>
+          <div class="sd-detail-badges">
+            <span class="sd-detail-icon"><Icon name={projectIcon(project)} /></span>
+            <span class="sd-pill-tag">{project.industry}</span>
+            <span class="sd-pill-tag">{project.service}</span>
+          </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-8 items-start">
-          <article class="project-detail-panel">
-            <div class="flex flex-wrap items-center gap-3 mb-5">
-              <span class="project-detail-icon">{project.emoji}</span>
-              <span class="badge-brutal">{project.industry}</span>
-              <span class="badge-brutal">{project.service}</span>
-            </div>
+          <p class="sd-detail-kicker">Project Detail</p>
+          <h1 class="sd-detail-h1">{project.title}</h1>
 
-            <p class="text-sm font-bold uppercase mb-3" style="color: var(--accent-dark); letter-spacing: 0.08em;">
-              Project Detail
-            </p>
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-5" style="color: var(--foreground); letter-spacing: -0.02em; line-height: 1;">
-              {project.title}
-            </h1>
+          <div class="sd-lang">
+            <div class="sd-lang-label">English</div>
+            <p>{project.summary.en}</p>
+          </div>
+          <div class="sd-lang" lang="id">
+            <div class="sd-lang-label">Bahasa Indonesia</div>
+            <p>{project.summary.id}</p>
+          </div>
+        </article>
 
-            <div class="project-language-stack">
-              <section>
-                <div class="language-label">English</div>
-                <p class="project-lead">{project.summary.en}</p>
-              </section>
-
-              <section lang="id">
-                <div class="language-label">Bahasa Indonesia</div>
-                <p class="project-lead">{project.summary.id}</p>
-              </section>
-            </div>
-          </article>
-
-          <aside class="project-side-panel">
-            <h2 class="text-lg font-extrabold mb-4" style="color: var(--foreground);">
-              Project Snapshot
-            </h2>
-            <dl class="project-meta-list">
-              <div>
-                <dt>Industry</dt>
-                <dd>{project.industry}</dd>
-              </div>
-              <div>
-                <dt>Service</dt>
-                <dd>{project.service}</dd>
-              </div>
-              <div>
-                <dt>Website</dt>
-                <dd>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer nofollow">
-                    Visit live project
-                  </a>
-                </dd>
-              </div>
-            </dl>
-            <div class="flex flex-wrap gap-2 mt-6">
-              {project.tech.map((tag) => (
-                <span class="chip">{tag}</span>
-              ))}
-            </div>
-          </aside>
-        </div>
+        <aside class="sd-snapshot">
+          <h2>Project Snapshot</h2>
+          <dl>
+            <div><dt>Industry</dt><dd>{project.industry}</dd></div>
+            <div><dt>Service</dt><dd>{project.service}</dd></div>
+            <div><dt>Website</dt><dd><a href={project.link} target="_blank" rel="noopener noreferrer nofollow">Visit live project →</a></dd></div>
+          </dl>
+          <div class="sd-snapshot-tags">
+            {project.tech.map((tag) => <span class="sd-tag">{tag}</span>)}
+          </div>
+        </aside>
       </div>
     </section>
 
-    <div class="divider-band"></div>
-
-    <section class="section">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div class="project-content-block">
-          <div class="language-label">English</div>
+    <section class="sd-section alt">
+      <div class="sd-narrative">
+        <div class="sd-prose">
+          <div class="sd-lang-label">English</div>
           <h2>Professional Context</h2>
           <p>{narrative.en.role}</p>
-
           <h3>Approach</h3>
           <p>{narrative.en.approach}</p>
-
           <h3>Outcome</h3>
           <p>{narrative.en.outcome}</p>
         </div>
-
-        <div class="project-content-block" lang="id">
-          <div class="language-label">Bahasa Indonesia</div>
+        <div class="sd-prose" lang="id">
+          <div class="sd-lang-label">Bahasa Indonesia</div>
           <h2>Konteks Profesional</h2>
           <p>{narrative.id.role}</p>
-
           <h3>Pendekatan</h3>
           <p>{narrative.id.approach}</p>
-
           <h3>Hasil</h3>
           <p>{narrative.id.outcome}</p>
         </div>
       </div>
     </section>
 
-    <section class="section" style="background: var(--card-bg); padding-top: 4rem; padding-bottom: 4rem;">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+    <section class="sd-section">
+      <div class="sd-card" style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;">
         <div>
-          <h2 class="text-2xl md:text-3xl font-extrabold mb-2" style="color: var(--foreground);">
-            Explore the original website
-          </h2>
-          <p style="color: var(--text-secondary);" lang="id">
-            Buka website asli project ini untuk melihat konteks publiknya.
-          </p>
+          <h2 class="sd-card-title" style="font-size:22px;margin-bottom:6px;">Explore the original website</h2>
+          <p class="sd-p" lang="id">Buka website asli project ini untuk melihat konteks publiknya.</p>
         </div>
-        <div class="flex flex-wrap gap-3">
-          <a href="/projects" class="btn-outline-brutal">More Projects</a>
-          <a href={project.link} target="_blank" rel="noopener noreferrer nofollow" class="btn-kirim">
-            Visit Website
-          </a>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="/projects" class="sd-pill-line">More projects</a>
+          <a href={project.link} target="_blank" rel="noopener noreferrer nofollow" class="sd-btn"><Icon name="externalLink" /> Visit website</a>
         </div>
       </div>
     </section>
 
-    <Footer client:load />
-  </main>
+    <SaudaraCTA
+      heading1="Want results"
+      heading2="like this?"
+      text="Let's build a fast, search-ready website for your business. Free consultation — no commitment."
+    />
+
+    <SaudaraFooter />
+  </div>
 </Layout>

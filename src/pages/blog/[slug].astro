@@ -1,8 +1,10 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
+import SaudaraHeader from '../../../components/SaudaraHeader.astro';
+import SaudaraFooter from '../../../components/SaudaraFooter.astro';
+import SaudaraCTA from '../../../components/SaudaraCTA.astro';
+import Icon from '../../../components/Icon.astro';
 
 export const prerender = true;
 
@@ -17,6 +19,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
+const isImage = post.data.heroImage?.startsWith('/');
 const canonicalUrl = `https://rafiq.biz.id/blog/${post.id}`;
 const jsonLd = {
   "@context": "https://schema.org",
@@ -48,124 +51,47 @@ const jsonLd = {
 <Layout title={`${post.data.title} | Rafiq Blog`} description={post.data.description} canonicalUrl={canonicalUrl}>
   <Fragment slot="head">
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-    <style is:inline>
-      /* Simple typography helpers for rendered markdown */
-      .blog-prose h2 {
-        font-size: 1.75rem;
-        font-weight: 800;
-        margin-top: 2.5rem;
-        margin-bottom: 1.25rem;
-        color: var(--foreground);
-        letter-spacing: -0.02em;
-      }
-      .blog-prose h3 {
-        font-size: 1.35rem;
-        font-weight: 700;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        color: var(--foreground);
-      }
-      .blog-prose p {
-        font-size: 1.0625rem;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-        color: var(--text-secondary);
-      }
-      .blog-prose ul {
-        list-style-type: disc;
-        padding-left: 1.5rem;
-        margin-bottom: 1.5rem;
-        color: var(--text-secondary);
-      }
-      .blog-prose li {
-        margin-bottom: 0.5rem;
-        font-size: 1.0625rem;
-        line-height: 1.7;
-      }
-      .blog-prose hr {
-        border: 0;
-        border-top: 2px dashed var(--border-dark);
-        margin: 2.5rem 0;
-      }
-      .blog-prose strong {
-        color: var(--foreground);
-        font-weight: 700;
-      }
-    </style>
   </Fragment>
 
-  <main class="min-h-screen flex flex-col bg-background font-body">
-    <Navbar client:only="react" />
+  <div class="sd">
+    <SaudaraHeader />
 
-    <section class="section flex-1" style="background: var(--card-bg);">
-      <div class="max-w-4xl mx-auto px-4">
-        <!-- Back Link -->
-        <div class="mb-10">
-          <a href="/blog" class="btn-outline-brutal" style="padding: 0.55rem 1rem; font-size: 0.8125rem; text-decoration: none;">
-            ← Kembali ke Blog
-          </a>
+    <section class="sd-section" style="padding-top:40px;">
+      <div class="sd-article">
+        <div style="margin-bottom:28px;">
+          <a href="/blog" class="sd-back"><Icon name="arrowLeft" /> Kembali ke Blog</a>
         </div>
 
-        <!-- Article Header -->
-        <header class="mb-12">
-          <div class="flex flex-wrap items-center gap-3 mb-4">
-            {post.data.tags.map((tag) => (
-              <span class="chip">{tag}</span>
-            ))}
-            <span class="text-sm font-bold text-text-secondary">
-              {new Date(post.data.pubDate).toLocaleDateString('id-ID', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </span>
+        <header>
+          <div class="sd-article-tags">
+            {post.data.tags.map((tag) => <span class="sd-tag">{tag}</span>)}
+            <span class="sd-blog-date"><Icon name="calendar" sw={1.8} />{new Date(post.data.pubDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
           </div>
 
-          <h1 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight" style="color: var(--foreground); letter-spacing: -0.02em;">
-            {post.data.title}
-          </h1>
-
-          <p class="text-lg md:text-xl leading-relaxed text-text-secondary italic mb-8">
-            {post.data.description}
-          </p>
+          <h1 class="sd-article-h1">{post.data.title}</h1>
+          <p class="sd-article-desc">{post.data.description}</p>
 
           {post.data.heroImage && (
-            <div class="w-full border-4 border-black rounded-xl overflow-hidden bg-accent-light flex items-center justify-center mb-8 shadow-hard">
-              {post.data.heroImage.startsWith('/') ? (
-                <img src={post.data.heroImage} alt={post.data.title} class="w-full h-auto object-cover max-h-[450px]" />
-              ) : (
-                <span class="text-8xl py-12">{post.data.heroImage}</span>
-              )}
+            <div class="sd-article-hero">
+              {isImage
+                ? <img src={post.data.heroImage} alt={post.data.title} />
+                : <Icon name="newspaper" />}
             </div>
           )}
         </header>
 
-        <!-- Divider -->
-        <div class="divider-band mb-10"></div>
-
-        <!-- Article Content -->
-        <article class="blog-prose">
+        <article class="sd-prose">
           <Content />
         </article>
-
-        <!-- Call to Action Banner -->
-        <div class="card-hard mt-16 p-8 bg-accent-light" style="border-color: var(--accent-dark);">
-          <h3 class="text-xl font-extrabold mb-3">Butuh Website Bisnis Cepat & SEO-Optimized?</h3>
-          <p class="text-text-secondary mb-6 text-sm md:text-base leading-relaxed">
-            Kami membantu mendesain dan mengoptimasi website agar memuat di bawah 2 detik, menembus halaman pertama Google, dan mengonversi trafik menjadi pembeli aktif.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="https://wa.me/6282160731800?text=Halo%20Rafiq%2C%20saya%20tertarik%20dengan%20layanan%20pembuatan%20website%20dan%20optimasi%20SEO." target="_blank" rel="noopener noreferrer" class="btn-kirim text-sm" style="text-decoration: none;">
-              Konsultasi WhatsApp Gratis 📞
-            </a>
-            <a href="/contact" class="btn-outline-brutal text-sm" style="text-decoration: none; bg-color: white;">
-              Hubungi Kami
-            </a>
-          </div>
-        </div>
       </div>
     </section>
 
-    <Footer client:load />
-  </main>
+    <SaudaraCTA
+      heading1="Butuh website cepat"
+      heading2="& SEO-optimized?"
+      text="Saya bantu desain dan optimasi website agar memuat di bawah 2 detik, menembus halaman pertama Google, dan mengubah trafik jadi pembeli."
+    />
+
+    <SaudaraFooter />
+  </div>
 </Layout>

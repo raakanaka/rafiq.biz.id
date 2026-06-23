@@ -1,21 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
-import Testimonials from '../../components/Testimonials.astro';
+import SaudaraHeader from '../../components/SaudaraHeader.astro';
+import SaudaraFooter from '../../components/SaudaraFooter.astro';
+import SaudaraCTA from '../../components/SaudaraCTA.astro';
+import Icon from '../../components/Icon.astro';
 
 const skills = [
-    { name: "JavaScript", emoji: "⚡" },
-    { name: "TypeScript", emoji: "🔷" },
-    { name: "React", emoji: "⚛️" },
-    { name: "Astro", emoji: "🚀" },
-    { name: "Tailwind CSS", emoji: "🎨" },
-    { name: "Node.js", emoji: "🟩" },
-    { name: "Git", emoji: "🔀" },
-    { name: "UI/UX", emoji: "✨" },
-    { name: "SEO", emoji: "🔍" },
-    { name: "Keyword Research", emoji: "🔑" },
-    { name: "Analytics", emoji: "📊" },
+    { name: "JavaScript", icon: "code" },
+    { name: "TypeScript", icon: "braces" },
+    { name: "React", icon: "atom" },
+    { name: "Astro", icon: "rocket" },
+    { name: "Tailwind CSS", icon: "palette" },
+    { name: "Node.js", icon: "hexagon" },
+    { name: "Git", icon: "git" },
+    { name: "UI/UX", icon: "sparkles" },
+    { name: "SEO", icon: "search" },
+    { name: "Keyword Research", icon: "key" },
+    { name: "Analytics", icon: "barChart" },
+];
+
+const testimonials = [
+    { name: "PT Halo Karya Bersama", role: "LMS Rebranding (HaloExpert)", feedback: "Sistem LMS kami berhasil dirancang ulang dengan sangat lancar. Desain UI/UX baru dari Rafiq sangat intuitif, modern, dan disukai para siswa kami.", initials: "HK" },
+    { name: "PT Duta Agensi Mail", role: "Media Optimization (Duniafintech)", feedback: "Performa loading website berita kami naik pesat. Bounce rate turun drastis dan traffic organik Google meroket tajam.", initials: "DM" },
+    { name: "Al Khair Tour & Travel", role: "Full Travel Web & SEO", feedback: "Sangat puas dengan pengerjaan website travel kami. Fiturnya lengkap, responsif, dan optimasi SEO lokalnya langsung menembus halaman pertama Google.", initials: "AK" },
 ];
 
 const canonicalUrl = "https://rafiq.biz.id/about";
@@ -39,95 +46,80 @@ const jsonLd = {
         <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
     </Fragment>
 
-    <main class="min-h-screen flex flex-col">
-        <Navbar client:only="react" />
+    <div class="sd">
+        <SaudaraHeader />
 
-        <section class="section flex-1">
-            <div class="max-w-4xl mx-auto">
-                <!-- Header -->
-                <div class="mb-12">
-                    <h1
-                        class="text-4xl md:text-5xl font-extrabold mb-4"
-                        style="color: var(--foreground); letter-spacing: -0.02em;"
-                    >
-                        About <span class="text-accent-pop">Me</span>
-                    </h1>
-                    <p class="text-lg" style="color: var(--text-secondary);">
-                        Get to know the person behind the code ✦
-                    </p>
-                </div>
+        <section class="sd-page-hero">
+            <div class="sd-badge"><span class="sd-dot"></span><span>Web Developer &amp; SEO Specialist</span></div>
+            <h1 class="sd-page-h1">About <span class="serif">me</span></h1>
+            <p class="sd-page-lead">Get to know the person behind the code — and the way I think about fast, search-ready websites.</p>
+        </section>
 
-                <!-- Bio card (hard border style) -->
-                <div
-                    class="card-hard mb-12"
-                    style="padding: 2rem;"
-                >
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="icon-circle" style="background: var(--accent-light);">
-                            <span style="font-size: 1.25rem;">👋</span>
-                        </div>
-                        <div>
-                            <div class="text-base font-bold" style="color: var(--foreground);">Rafiq</div>
-                            <div class="text-xs font-semibold" style="color: var(--text-secondary);">Web Developer & SEO Specialist</div>
-                        </div>
-                    </div>
-                    <p
-                        class="text-base leading-relaxed mb-4"
-                        style="color: var(--text-secondary);"
-                    >
-                        I am Rafiq, a dedicated Web Developer and SEO Specialist based in Indonesia.
-                        I specialize in building accessible, performant, and visually striking applications.
-                        With a strong background in modern web technologies, I turn complex problems into elegant solutions.
-                    </p>
-                    <p
-                        class="text-base leading-relaxed"
-                        style="color: var(--text-secondary);"
-                    >
-                        My journey began with a curiosity for how things work on the screen.
-                        Today, I work with the latest tech stack including Astro, React, and Tailwind CSS
-                        to deliver high-quality digital experiences.
-                    </p>
-                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px dashed var(--border-dark); display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
-                        <span class="text-sm font-bold" style="color: var(--foreground);">Need a copy of my resume?</span>
-                        <a
-                            href="/Resume_Rafiq_Al_Hafizh_Adha.pdf"
-                            download
-                            class="btn-kirim"
-                            style="padding: 0.5rem 1.25rem; font-size: 0.8125rem; text-decoration: none;"
-                        >
-                            Download CV / Resume 📥
-                        </a>
+        <!-- BIO -->
+        <section class="sd-section" style="padding-top:40px;">
+            <div class="sd-card sd-bio">
+                <div class="sd-bio-head">
+                    <div class="sd-bio-avatar">R</div>
+                    <div>
+                        <div class="sd-bio-name">Rafiq Al Hafizh Adha</div>
+                        <div class="sd-bio-role">Web Developer &amp; SEO Specialist · Indonesia</div>
                     </div>
                 </div>
-
-                <!-- Skills -->
-                <div>
-                    <h2
-                        class="text-2xl font-extrabold mb-6"
-                        style="color: var(--foreground);"
-                    >
-                        Skills ⚡
-                    </h2>
-                    <div class="flex flex-wrap gap-3">
-                        {skills.map((skill) => (
-                            <span
-                                class="badge-brutal hover:-translate-y-1 hover:shadow-[3px_3px_0px_var(--border-dark)] transition-all duration-300"
-                                style="font-size: 0.8125rem; padding: 6px 14px; display: inline-block;"
-                            >
-                                <span>{skill.emoji}</span> {skill.name}
-                            </span>
-                        ))}
-                    </div>
+                <p>I'm Rafiq, a dedicated Web Developer and SEO Specialist based in Indonesia. I specialize in building accessible, performant, and visually striking websites — turning complex problems into elegant, fast-loading solutions.</p>
+                <p>My journey began with a curiosity for how things work on the screen. Today I work with a modern stack — Astro, React, and Tailwind CSS — to deliver high-quality digital experiences that also rank well on Google.</p>
+                <div class="sd-bio-resume">
+                    <span>Need a copy of my resume?</span>
+                    <a href="/Resume_Rafiq_Al_Hafizh_Adha.pdf" download class="sd-btn" style="padding:11px 20px;font-size:15px;"><Icon name="download" sw={2} /> Download CV / Resume</a>
                 </div>
             </div>
         </section>
 
-        <!-- Divider band -->
-        <div class="divider-band"></div>
+        <!-- SKILLS -->
+        <section class="sd-section alt sd-skills-sec" style="padding-top:56px;">
+            <div class="sd-head">
+                <h2 class="sd-h2">Skills &amp; <span class="serif">stack</span></h2>
+                <p class="sd-sub">The tools and disciplines I work with to ship and grow websites.</p>
+            </div>
+            <div class="sd-skills">
+                {skills.map((s) => <span class="sd-skill"><Icon name={s.icon} /> {s.name}</span>)}
+            </div>
+        </section>
 
-        <!-- Testimonials -->
-        <Testimonials />
+        <!-- TESTIMONIALS -->
+        <section class="sd-section">
+            <div class="sd-head">
+                <h2 class="sd-h2">What clients <span class="serif">say</span></h2>
+                <p class="sd-sub">Real results from business owners who trusted me with their websites and SEO.</p>
+            </div>
+            <div class="sd-grid-3">
+                {testimonials.map((t) => (
+                    <div class="sd-card sd-testi">
+                        <div class="sd-stars">
+                            <Icon name="star" fill="currentColor" stroke="none" />
+                            <Icon name="star" fill="currentColor" stroke="none" />
+                            <Icon name="star" fill="currentColor" stroke="none" />
+                            <Icon name="star" fill="currentColor" stroke="none" />
+                            <Icon name="star" fill="currentColor" stroke="none" />
+                        </div>
+                        <p class="sd-quote">“{t.feedback}”</p>
+                        <div class="sd-testi-foot">
+                            <div class="sd-avatar">{t.initials}</div>
+                            <div>
+                                <div class="sd-testi-name">{t.name}</div>
+                                <div class="sd-testi-role">{t.role}</div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
 
-        <Footer client:load />
-    </main>
+        <SaudaraCTA
+            heading1="Like how I"
+            heading2="work?"
+            text="Tell me about your project and let's build something fast, polished, and built to rank."
+        />
+
+        <SaudaraFooter />
+    </div>
 </Layout>

@@ -1,12 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../../components/Navbar';
-import HeroStatic from '../../components/HeroStatic.astro';
-import ExperienceStatic from '../../components/ExperienceStatic.astro';
-import Footer from '../../components/Footer';
-import FeaturedProjectsCarousel from '../../components/FeaturedProjectsCarousel';
-import Testimonials from '../../components/Testimonials.astro';
-import LeadMagnet from '../../components/LeadMagnet';
+import SaudaraHeader from '../../components/SaudaraHeader.astro';
+import SaudaraFooter from '../../components/SaudaraFooter.astro';
+import SaudaraCTA from '../../components/SaudaraCTA.astro';
+import Icon from '../../components/Icon.astro';
+import { projects } from '../../lib/projects';
+import { projectIcon } from '../../lib/icons';
 
 const homeJsonLd = {
     "@context": "https://schema.org",
@@ -34,13 +33,7 @@ const homeJsonLd = {
             },
             "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday"
-                ],
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
                 "opens": "09:00",
                 "closes": "18:00"
             },
@@ -78,14 +71,50 @@ const homeJsonLd = {
 };
 
 const skills = [
-    { name: "JavaScript", emoji: "⚡" },
-    { name: "TypeScript", emoji: "🔷" },
-    { name: "React", emoji: "⚛️" },
-    { name: "Astro", emoji: "🚀" },
-    { name: "Tailwind CSS", emoji: "🎨" },
-    { name: "Node.js", emoji: "🟩" },
-    { name: "SEO", emoji: "🔍" },
-    { name: "UI/UX Design", emoji: "✨" },
+    { name: "JavaScript", icon: "code" },
+    { name: "TypeScript", icon: "braces" },
+    { name: "React", icon: "atom" },
+    { name: "Astro", icon: "rocket" },
+    { name: "Tailwind CSS", icon: "palette" },
+    { name: "Node.js", icon: "hexagon" },
+    { name: "SEO", icon: "search" },
+    { name: "UI/UX", icon: "sparkles" },
+];
+
+const services = [
+    { title: "Web Development", icon: "code", body: "Fast, accessible websites built with modern stacks — Astro, React, and clean, maintainable code. From landing pages to full company sites." },
+    { title: "SEO Optimization", icon: "search", body: "On-page, technical, and local SEO that gets you found. Clean structure, schema, fast Core Web Vitals — built to climb Google's first page." },
+    { title: "Speed & Performance", icon: "zap", body: "Real performance wins — image compression, caching, and lean code. I've cut load times by 40%+ and dropped bounce rates for live clients." },
+    { title: "UI/UX Design", icon: "layout", body: "Interfaces that feel effortless. Responsive layouts, thoughtful interaction design, and polished visuals that turn visitors into customers." },
+];
+
+const experiences = [
+    { title: "SEO & Web Development", company: "Asia Safety Protection", type: "Freelance", period: "Jan 2026 — Present", desc: "Improving website structure, on/off-page SEO, page speed, and technical foundations for long-term organic growth.", icon: "search" },
+    { title: "Front-End Development", company: "PraktiQu", type: "Contract", period: "Apr 2025 — Present", desc: "Building landing page systems, refining layouts, and crafting responsive, user-friendly interfaces.", icon: "atom" },
+    { title: "Web Development", company: "Al Khair Tour & Travel", type: "Contract", period: "Aug 2025 — Mar 2026", desc: "End-to-end design and build of the Al Khair site — UI, responsive frontend/backend, CMS, and SEO.", icon: "globe" },
+    { title: "Web Design", company: "PT Socta Creatives Indonesia", type: "Apprenticeship", period: "Nov 2024 — Oct 2025", desc: "Designing and building sites in WordPress and Framer. Improved site speed by 40% via caching and image work.", icon: "palette" },
+    { title: "Product Design", company: "PT Duta Agensi Mail", type: "Contract", period: "Jan 2024 — Nov 2024", desc: "Led the project to speed up duniafintech.com — optimized widgets, plugins, images, caching, and databases.", icon: "barChart" },
+    { title: "Product Design", company: "PT Halo Karya Bersama", type: "Intern", period: "Nov 2023 — Mar 2024", desc: "Redesigned Halo Siswa's UI/UX, rebranded as HaloExpert — heroes, footers, navigation, and prototyping.", icon: "layout" },
+];
+
+const featuredSlugs = ["polosinaja", "midiatek", "svingolf-apparel", "haloexpert", "ekspora", "kapten-seo"];
+const featuredProjects = featuredSlugs
+    .map((slug) => projects.find((p) => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
+const testimonials = [
+    { name: "PT Halo Karya Bersama", role: "LMS Rebranding (HaloExpert)", feedback: "Sistem LMS kami berhasil dirancang ulang dengan sangat lancar. Desain UI/UX baru dari Rafiq sangat intuitif, modern, dan disukai para siswa kami.", initials: "HK" },
+    { name: "PT Duta Agensi Mail", role: "Media Optimization (Duniafintech)", feedback: "Performa loading website berita kami naik pesat. Bounce rate turun drastis dan traffic organik Google meroket tajam.", initials: "DM" },
+    { name: "Al Khair Tour & Travel", role: "Full Travel Web & SEO", feedback: "Sangat puas dengan pengerjaan website travel kami. Fiturnya lengkap, responsif, dan optimasi SEO lokalnya langsung menembus halaman pertama Google.", initials: "AK" },
+];
+
+const faqs = [
+    { q: "What services do you offer?", a: "Web development, technical & on-page SEO, performance optimization, and UI/UX design. I handle everything from a single landing page to a full company website with ongoing SEO." },
+    { q: "How long does a website take?", a: "A focused landing page typically ships in 1–2 weeks; a full multi-page company site usually lands in 3–5 weeks depending on scope, content, and revisions." },
+    { q: "Will my site rank on Google?", a: "Every build ships SEO-ready — clean structure, schema, fast Core Web Vitals, and on-page optimization. For competitive keywords I also offer ongoing SEO to keep climbing." },
+    { q: "Can you fix my slow website?", a: "Yes. Speed is one of my specialties — I've cut load times by 40%+ through caching, image compression, and lean code. Send me your URL for a free audit." },
+    { q: "Do you work remotely?", a: "Yes, I work with clients across Indonesia and beyond, fully remote. Communication usually happens over WhatsApp and email." },
+    { q: "How do we get started?", a: "Send me a message or request a free website audit. We'll talk through your goals, I'll scope the work, and you'll get a clear quote before anything begins." },
 ];
 ---
 
@@ -94,72 +123,311 @@ const skills = [
         <script type="application/ld+json" is:inline set:html={JSON.stringify(homeJsonLd)} />
     </Fragment>
 
-    <main class="min-h-screen flex flex-col">
-        <Navbar client:only="react" />
-        <HeroStatic />
+    <div class="sd">
+        <SaudaraHeader />
 
-        <!-- Divider band -->
-        <div class="divider-band"></div>
-
-        <!-- Work Experience -->
-        <ExperienceStatic />
-        
-        <!-- Divider band -->
-        <div class="divider-band"></div>
-
-        <!-- Featured Projects -->
-        <section class="section" style="background: var(--card-bg)">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-extrabold mb-3" style="color: var(--foreground); letter-spacing: -0.02em;">
-                        Featured <span class="text-accent-pop">Projects</span>
-                    </h2>
-                    <p style="color: var(--text-secondary); font-size: 1.0625rem;">
-                        Rotating highlights from the full project archive
+        <!-- ===== HERO ===== -->
+        <section id="top" class="sd-hero">
+            <div class="sd-hero-grid">
+                <div class="sd-hero-copy">
+                    <div class="sd-badge">
+                        <span class="sd-dot"></span>
+                        <span>Available for freelance</span>
+                    </div>
+                    <h1 class="sd-h1">
+                        Build, Create &amp; <span class="ac">Stand Out</span><br>
+                        <span class="serif">— With Rafiq.</span>
+                    </h1>
+                    <p class="sd-lead">
+                        Web Developer &amp; SEO Specialist based in Indonesia. I craft fast,
+                        accessible, search-ready websites — from first wireframe to ranking on
+                        Google's first page.
                     </p>
-                    <p class="mt-2" lang="id" style="color: var(--text-secondary); font-size: 0.95rem;">
-                        Sorotan project bergantian dari arsip portfolio lengkap
-                    </p>
+                    <div class="sd-hero-cta">
+                        <a href="/projects" class="sd-btn">View Projects <Icon name="arrowRight" /></a>
+                        <a href="#audit" class="sd-link-cta">Free website audit <Icon name="arrowRight" /></a>
+                    </div>
+                    <div class="sd-trust-label">Trusted by teams across Indonesia</div>
+                    <div class="sd-trust">
+                        <span>Asia Safety</span>
+                        <span>PraktiQu</span>
+                        <span>Al Khair</span>
+                        <span>Duniafintech</span>
+                    </div>
                 </div>
-
-                <FeaturedProjectsCarousel client:only="react" />
-            </div>
-        </section>
-
-        <!-- Divider band -->
-        <div class="divider-band"></div>
-
-        <!-- Skills -->
-        <section class="section">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-extrabold mb-3" style="color: var(--foreground); letter-spacing: -0.02em;">
-                        Skills & <span class="text-accent-pop">Stack</span>
-                    </h2>
-                    <p style="color: var(--text-secondary); font-size: 1.0625rem;">
-                        Technologies I work with daily
-                    </p>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-4">
-                    {skills.map((skill) => (
-                        <div class="badge-brutal" style="font-size: 0.875rem; padding: 8px 16px;">
-                            <span>{skill.emoji}</span> {skill.name}
+                <div class="sd-hero-art">
+                    <div class="sd-orb-outer">
+                        <span class="sd-spark s1"></span>
+                        <span class="sd-spark s2"></span>
+                        <span class="sd-spark s3"></span>
+                        <div class="sd-orbit sd-orbit-1"></div>
+                        <div class="sd-orbit sd-orbit-2"></div>
+                        <div class="sd-orb-inner">
+                            <svg class="sd-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-label="Rocket">
+                                <g class="sd-rocket-flame"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path></g>
+                                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                            </svg>
                         </div>
-                    ))}
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Divider band -->
-        <div class="divider-band"></div>
+        <!-- ===== HOW I WORK ===== -->
+        <section id="how" class="sd-section">
+            <div class="sd-head">
+                <h2 class="sd-h2">How I <span class="serif">work</span></h2>
+                <p class="sd-sub">A clear, no-surprises process — from the first conversation to a site that loads fast and ranks.</p>
+            </div>
 
-        <!-- Testimonials -->
-        <Testimonials />
+            <div class="sd-timeline">
+                <div class="sd-tl-line"></div>
 
-        <!-- Lead Magnet (Free Website Audit) -->
-        <LeadMagnet client:only="react" />
+                <!-- STEP 1 -->
+                <div class="sd-row">
+                    <div class="sd-row-text right">
+                        <div class="sd-step-no">01 · DISCOVERY</div>
+                        <h3 class="sd-h3">Tell Me About Your Project</h3>
+                        <p class="sd-p">Share your goals in any format — a brief, a few links, or just a chat. I ask the right questions to understand your business, audience, and what success looks like.</p>
+                    </div>
+                    <div class="sd-node"><span></span></div>
+                    <div class="sd-row-card">
+                        <div class="sd-mock">
+                            <div class="sd-mock-label">New project</div>
+                            <div class="sd-bubble-row"><div class="sd-bubble">I need a fast company website with local SEO so we show up on Google in Medan.</div></div>
+                            <div class="sd-mock-input"><Icon name="mail" sw={1.8} /> Share your brief, references, or goals</div>
+                        </div>
+                    </div>
+                </div>
 
-        <Footer client:load />
-    </main>
+                <!-- STEP 2 -->
+                <div class="sd-row">
+                    <div class="sd-row-card">
+                        <div class="sd-mock">
+                            <div class="sd-check"><Icon name="check" sw={3} stroke="var(--ac)" />Responsive design, mobile-first</div>
+                            <div class="sd-check"><Icon name="check" sw={3} stroke="var(--ac)" />Clean, semantic, maintainable code</div>
+                            <div class="sd-check"><Icon name="check" sw={3} stroke="var(--ac)" />SEO &amp; schema baked in from day one</div>
+                            <div class="sd-browser">
+                                <div class="sd-browser-bar"><span></span><span></span><span></span></div>
+                                <div class="sd-browser-body">rafiq.biz.id</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sd-node"><span></span></div>
+                    <div class="sd-row-text left">
+                        <div class="sd-step-no">02 · DESIGN &amp; BUILD</div>
+                        <h3 class="sd-h3">Design &amp; Build</h3>
+                        <p class="sd-p">I design and develop your site with performance and SEO built in — responsive layouts, clean code, and a polished UI. You see progress along the way, not just at the end.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="sd-row">
+                    <div class="sd-row-text right">
+                        <div class="sd-step-no">03 · LAUNCH</div>
+                        <h3 class="sd-h3">Launch, Tuned for Speed</h3>
+                        <p class="sd-p">Before going live, every page is optimized for Core Web Vitals. You launch with a site that scores high on performance, accessibility, and SEO — not one that needs fixing later.</p>
+                    </div>
+                    <div class="sd-node"><span></span></div>
+                    <div class="sd-row-card">
+                        <div class="sd-mock">
+                            <div class="sd-mock-label">Lighthouse report</div>
+                            <div class="sd-scores">
+                                <div class="sd-score"><div class="sd-score-num">98</div><div class="sd-score-lbl">Performance</div></div>
+                                <div class="sd-score"><div class="sd-score-num">100</div><div class="sd-score-lbl">SEO</div></div>
+                                <div class="sd-score"><div class="sd-score-num">96</div><div class="sd-score-lbl">Accessibility</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="sd-row">
+                    <div class="sd-row-card">
+                        <div class="sd-mock">
+                            <div class="sd-mock-label">Keyword rankings</div>
+                            <div class="sd-rank"><span>jasa website medan</span><span class="up">#14 → #3 ▲</span></div>
+                            <div class="sd-rank"><span>seo specialist indonesia</span><span class="up">#22 → #6 ▲</span></div>
+                            <div class="sd-rank"><span>website cepat &amp; ringan</span><span class="up">#9 → #1 ▲</span></div>
+                        </div>
+                    </div>
+                    <div class="sd-node"><span></span></div>
+                    <div class="sd-row-text left">
+                        <div class="sd-step-no">04 · GROW</div>
+                        <h3 class="sd-h3">Rank &amp; Grow</h3>
+                        <p class="sd-p">Launching is the start. With ongoing technical and on-page SEO, your site keeps climbing — more visibility, more organic traffic, more customers over time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHAT I DO ===== -->
+        <section class="sd-section alt">
+            <div class="sd-head">
+                <h2 class="sd-h2">What I <span class="serif">do</span></h2>
+                <p class="sd-sub">Everything your website needs to look great, load fast, and get found — handled end to end.</p>
+            </div>
+            <div class="sd-grid-2">
+                {services.map((s) => (
+                    <div class="sd-card">
+                        <div class="sd-ic"><Icon name={s.icon} /></div>
+                        <h3 class="sd-card-title">{s.title}</h3>
+                        <p class="sd-p">{s.body}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <!-- ===== FEATURED PROJECTS ===== -->
+        <section class="sd-section">
+            <div class="sd-head">
+                <h2 class="sd-h2">Featured <span class="serif">projects</span></h2>
+                <p class="sd-sub">A few highlights from the archive — real sites built and shipped for real businesses.</p>
+            </div>
+            <div class="sd-grid-3">
+                {featuredProjects.map((p) => (
+                    <a href={`/projects/${p.slug}`} class="sd-proj">
+                        <div class="sd-proj-top">
+                            <span class="sd-proj-ic"><Icon name={projectIcon(p)} /></span>
+                            <span class="sd-proj-arrow"><Icon name="arrowUpRight" /></span>
+                        </div>
+                        <p class="sd-proj-industry">{p.industry}</p>
+                        <h3 class="sd-card-title">{p.title}</h3>
+                        <p class="sd-p sd-clamp">{p.summary.en}</p>
+                        <div class="sd-tags">
+                            {p.tech.map((t) => <span class="sd-tag">{t}</span>)}
+                        </div>
+                    </a>
+                ))}
+            </div>
+            <div class="sd-center"><a href="/projects" class="sd-pill-line">View all projects <Icon name="arrowRight" size={16} /></a></div>
+        </section>
+
+        <!-- ===== EXPERIENCE ===== -->
+        <section class="sd-section alt">
+            <div class="sd-head">
+                <h2 class="sd-h2">Work <span class="serif">experience</span></h2>
+                <p class="sd-sub">My professional journey so far — across web development, SEO, and product design.</p>
+            </div>
+            <div class="sd-grid-2">
+                {experiences.map((e) => (
+                    <div class="sd-card sd-exp">
+                        <div class="sd-exp-head">
+                            <div class="sd-exp-emoji"><Icon name={e.icon} /></div>
+                            <div>
+                                <h3 class="sd-card-title sd-exp-title">{e.title}</h3>
+                                <div class="sd-exp-meta"><span class="sd-exp-co">{e.company}</span><span class="sd-exp-badge">{e.type}</span></div>
+                            </div>
+                        </div>
+                        <p class="sd-p">{e.desc}</p>
+                        <div class="sd-exp-period">{e.period}</div>
+                    </div>
+                ))}
+            </div>
+            <div class="sd-center"><a href="https://www.linkedin.com/in/rafiq-alhafizh-adha/" target="_blank" rel="noopener noreferrer" class="sd-pill-line">Full profile on LinkedIn <Icon name="arrowUpRight" size={16} /></a></div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section class="sd-section sd-skills-sec">
+            <div class="sd-head">
+                <h2 class="sd-h2">Skills &amp; <span class="serif">stack</span></h2>
+                <p class="sd-sub">Technologies I work with daily.</p>
+            </div>
+            <div class="sd-skills">
+                {skills.map((s) => <span class="sd-skill"><Icon name={s.icon} /> {s.name}</span>)}
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="sd-section alt">
+            <div class="sd-head">
+                <h2 class="sd-h2">What clients <span class="serif">say</span></h2>
+                <p class="sd-sub">Real results from business owners who trusted me with their websites and SEO.</p>
+            </div>
+            <div class="sd-grid-3">
+                {testimonials.map((t) => (
+                    <div class="sd-card sd-testi">
+                        <div class="sd-stars">
+                            <Icon name="star" fill="currentColor" stroke="none" />
+                            <Icon name="star" fill="currentColor" stroke="none" />
+                            <Icon name="star" fill="currentColor" stroke="none" />
+                            <Icon name="star" fill="currentColor" stroke="none" />
+                            <Icon name="star" fill="currentColor" stroke="none" />
+                        </div>
+                        <p class="sd-quote">“{t.feedback}”</p>
+                        <div class="sd-testi-foot">
+                            <div class="sd-avatar">{t.initials}</div>
+                            <div>
+                                <div class="sd-testi-name">{t.name}</div>
+                                <div class="sd-testi-role">{t.role}</div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <!-- ===== FREE AUDIT ===== -->
+        <section id="audit" class="sd-section">
+            <div class="sd-audit">
+                <div class="sd-audit-copy">
+                    <div class="sd-badge"><span class="sd-dot"></span><span>Free · no commitment</span></div>
+                    <h2 class="sd-h2" style="text-align:left;margin-bottom:14px;">Free Website <span class="serif">Audit</span></h2>
+                    <p class="sd-p" style="font-size:16px;max-width:420px;">Wondering why your site is slow or quiet? Send your URL and I'll record a short (3-min) video covering your speed and SEO gaps — straight to your WhatsApp.</p>
+                    <ul class="sd-audit-list">
+                        <li><Icon name="check" sw={3} /> 100% free, no strings attached</li>
+                        <li><Icon name="check" sw={3} /> Tactical fixes you can act on</li>
+                        <li><Icon name="check" sw={3} /> Delivered to your WhatsApp</li>
+                    </ul>
+                </div>
+                <form class="sd-form" id="audit-form">
+                    <label>Full name<input type="text" id="a-name" placeholder="Your name" required></label>
+                    <label>Website URL<input type="url" id="a-url" placeholder="https://yoursite.com" required></label>
+                    <label>Notes (optional)<textarea id="a-note" placeholder="e.g. site is slow on mobile"></textarea></label>
+                    <button type="submit" class="sd-btn sd-btn-full">Request audit on WhatsApp <Icon name="arrowRight" /></button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT CTA ===== -->
+        <SaudaraCTA
+            id="contact"
+            heading1="Ready to Build"
+            heading2="Something Great?"
+            text="Let's talk about your website. Free consultation — no commitment."
+        />
+
+        <!-- ===== FAQ ===== -->
+        <section id="faq" class="sd-section">
+            <div class="sd-faq">
+                <h2 class="sd-h2" style="margin-bottom:32px;">Frequently Asked <span class="serif">Questions</span></h2>
+                {faqs.map((f) => (
+                    <details class="sd-faq-item">
+                        <summary>{f.q}<span class="sd-chev"><Icon name="chevronDown" /></span></summary>
+                        <div class="sd-faq-a">{f.a}</div>
+                    </details>
+                ))}
+            </div>
+        </section>
+
+        <SaudaraFooter />
+    </div>
 </Layout>
+
+<script is:inline>
+    (function () {
+        var form = document.getElementById('audit-form');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = document.getElementById('a-name').value.trim();
+            var url = document.getElementById('a-url').value.trim();
+            var note = document.getElementById('a-note').value.trim();
+            if (!name || !url) return;
+            var msg = 'Halo Rafiq, saya ingin mengajukan Audit Website & SEO Gratis.\n\nNama: ' + name + '\nWebsite: ' + url + '\nKebutuhan: ' + (note || 'Audit umum (kecepatan & performa SEO)');
+            window.open('https://wa.me/6282160731800?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
+        });
+    })();
+</script>

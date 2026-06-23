@@ -1,53 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
-import { Mail, Linkedin, Github, MapPin } from "lucide-react";
-
-const contactColors = [
-    { bg: "#fef3c7", icon: "#d97706" },
-    { bg: "#dbeafe", icon: "#2563eb" },
-    { bg: "#d1fae5", icon: "#059669" },
-    { bg: "#fce7f3", icon: "#db2777" },
-];
+import SaudaraHeader from '../../components/SaudaraHeader.astro';
+import SaudaraFooter from '../../components/SaudaraFooter.astro';
+import SaudaraCTA from '../../components/SaudaraCTA.astro';
+import Icon from '../../components/Icon.astro';
 
 const contacts = [
-    {
-        title: "Email",
-        value: "rafiq.adha@rafiq.biz.id",
-        href: "mailto:rafiq.adha@rafiq.biz.id",
-    },
-    {
-        title: "Email",
-        value: "rafiqalhafizh12@gmail.com",
-        href: "mailto:rafiqalhafizh12@gmail.com",
-    },
-    {
-        title: "LinkedIn",
-        value: "@rafiq-alhafizh-adha",
-        href: "https://linkedin.com/in/rafiq-alhafizh-adha",
-    },
-    {
-        title: "GitHub",
-        value: "/raakanaka",
-        href: "https://github.com/raakanaka",
-    },
-    {
-        title: "Location",
-        value: "Jakarta, Indonesia",
-        href: null,
-    },
+    { title: "Email", value: "rafiq.adha@rafiq.biz.id", href: "mailto:rafiq.adha@rafiq.biz.id", icon: "mail" },
+    { title: "WhatsApp", value: "+62 821 6073 1800", href: "https://wa.me/6282160731800", icon: "phone" },
+    { title: "LinkedIn", value: "@rafiq-alhafizh-adha", href: "https://linkedin.com/in/rafiq-alhafizh-adha", icon: "linkedin" },
+    { title: "GitHub", value: "/raakanaka", href: "https://github.com/raakanaka", icon: "github" },
+    { title: "Alt. Email", value: "rafiqalhafizh12@gmail.com", href: "mailto:rafiqalhafizh12@gmail.com", icon: "mail" },
+    { title: "Location", value: "Medan, Indonesia", href: null, icon: "mapPin" },
 ];
-
-const getIcon = (title: string) => {
-    switch(title) {
-        case "Email": return Mail;
-        case "LinkedIn": return Linkedin;
-        case "GitHub": return Github;
-        case "Location": return MapPin;
-        default: return MapPin;
-    }
-}
 
 const canonicalUrl = "https://rafiq.biz.id/contact";
 const jsonLd = {
@@ -69,100 +34,45 @@ const jsonLd = {
 };
 ---
 
-<Layout title="Contact | Rafiq" description="Get in touch with Rafiq" canonicalUrl={canonicalUrl}>
+<Layout title="Contact | Rafiq" description="Get in touch with Rafiq for freelance web development, SEO, and digital collaboration." canonicalUrl={canonicalUrl}>
     <Fragment slot="head">
         <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
     </Fragment>
 
-    <main class="min-h-screen flex flex-col">
-        <Navbar client:only="react" />
+    <div class="sd">
+        <SaudaraHeader />
 
-        <section class="section flex-1 flex items-center">
-            <div class="max-w-4xl mx-auto w-full">
-                <!-- Header -->
-                <div class="text-center mb-14">
-                    <h1
-                        class="text-4xl md:text-5xl font-extrabold mb-4"
-                        style="color: var(--foreground); letter-spacing: -0.02em;"
-                    >
-                        Get in <span class="text-accent-pop">Touch</span>
-                    </h1>
-                    <p
-                        class="text-lg mx-auto"
-                        style="color: var(--text-secondary); max-width: 480px;"
-                    >
-                        Ready to start a project? I'm available for freelance work and collaborations ✦
-                    </p>
-                </div>
+        <section class="sd-page-hero">
+            <div class="sd-badge"><span class="sd-dot"></span><span>Available for freelance</span></div>
+            <h1 class="sd-page-h1">Get in <span class="serif">touch</span></h1>
+            <p class="sd-page-lead">Ready to start a project? I'm available for freelance work and collaborations. Pick whichever channel suits you — I usually reply within a day.</p>
+        </section>
 
-                <!-- Contact cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    {contacts.map((item, i) => {
-        const Icon = getIcon(item.title);
-        const isLink = !!item.href;
-        const color = contactColors[i % contactColors.length];
-                        
-                        return isLink ? (
-                            <a
-                                href={item.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="card-brutal flex items-center gap-5 hover:-translate-y-1 transition-transform"
-                                style={`padding: 1.5rem 1.75rem; text-decoration: none; display: flex;`}
-                            >
-                                <div
-                                    class="icon-circle"
-                                    style={`background: ${color.bg}; color: ${color.icon};`}
-                                >
-                                    <Icon size={22} />
-                                </div>
-                                <div>
-                                    <div
-                                        class="text-sm font-bold mb-0.5"
-                                        style="color: var(--text-secondary);"
-                                    >
-                                        {item.title}
-                                    </div>
-                                    <div
-                                        class="text-base font-extrabold"
-                                        style="color: var(--foreground);"
-                                    >
-                                        {item.value}
-                                    </div>
-                                </div>
-                            </a>
-                        ) : (
-                            <div
-                                class="card-brutal flex items-center gap-5 hover:-translate-y-1 transition-transform"
-                                style={`padding: 1.5rem 1.75rem; display: flex;`}
-                            >
-                                <div
-                                    class="icon-circle"
-                                    style={`background: ${color.bg}; color: ${color.icon};`}
-                                >
-                                    <Icon size={22} />
-                                </div>
-                                <div>
-                                    <div
-                                        class="text-sm font-bold mb-0.5"
-                                        style="color: var(--text-secondary);"
-                                    >
-                                        {item.title}
-                                    </div>
-                                    <div
-                                        class="text-base font-extrabold"
-                                        style="color: var(--foreground);"
-                                    >
-                                        {item.value}
-                                    </div>
-                                </div>
+        <section class="sd-section" style="padding-top:40px;padding-bottom:20px;">
+            <div class="sd-contact-grid">
+                {contacts.map((c) => {
+                    const Tag = c.href ? 'a' : 'div';
+                    const attrs = c.href ? { href: c.href, target: '_blank', rel: 'noopener noreferrer' } : {};
+                    return (
+                        <Tag class="sd-contact-card" {...attrs}>
+                            <div class="sd-contact-ic"><Icon name={c.icon} /></div>
+                            <div>
+                                <div class="sd-contact-label">{c.title}</div>
+                                <div class="sd-contact-val">{c.value}</div>
                             </div>
-                        );
-                    })}
-                </div>
+                        </Tag>
+                    );
+                })}
             </div>
         </section>
 
-        <Footer client:load />
-    </main>
+        <!-- ===== CTA ===== -->
+        <SaudaraCTA
+            heading1="Prefer to just"
+            heading2="start chatting?"
+            text="Send a quick message on WhatsApp and tell me about your project. Free consultation — no commitment."
+        />
+
+        <SaudaraFooter />
+    </div>
 </Layout>
