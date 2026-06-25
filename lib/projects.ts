@@ -187,7 +187,7 @@ export const projects: Project[] = [
     id: 10,
     slug: "alkhair-tour-and-travel",
     title: "Alkhair Tour and Travel",
-    link: "https://alkhaitravel.id",
+    link: "https://alkhairtravel.id",
     tech: ["Travel", "Agency", "Gallery"],
     industry: "Travel agency",
     service: "Travel website",
