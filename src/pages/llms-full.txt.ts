@@ -47,7 +47,7 @@ export async function GET() {
     { title: "BPT KLIN", desc: "Chemical soap and professional cleaning solutions.", link: "https://bptklin.com", tech: ["Chemical", "Product", "Industry"] },
     { title: "Asia Safety Pro", desc: "Professional security guard and protection services.", link: "https://asiasafety.pro", tech: ["Security", "Protection", "Service"] },
     { title: "HiiBoss AI", desc: "AI-powered platform building intelligent agents for business automation.", link: "https://hiiboss.ai/", tech: ["AI", "Automation", "Platform"] },
-    { title: "ShopFoodie AI", desc: "AI-driven culinary e-commerce for smart recipe recommendations.", link: "https://shopfoodie-ai.com/", tech: ["E-Commerce", "AI", "FoodTech"] },
+    { title: "ShopFoodie AI", desc: "AI-driven culinary e-commerce for smart recipe recommendations.", link: "https://www.shopfoodie.ai/", tech: ["E-Commerce", "AI", "FoodTech"] },
     { title: "Vive Software", desc: "Modern software solutions and technology consulting for enterprise systems.", link: "https://vive.software/", tech: ["Software", "Enterprise", "Consulting"] },
   ];
 

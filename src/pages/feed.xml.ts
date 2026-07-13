@@ -30,7 +30,7 @@ export async function GET() {
     { title: "DUNIAFINTECH", desc: "Fintech news platform optimized for SEO and high-speed performance.", link: "https://duniafintech.com" },
     { title: "Alkhair Tour and Travel", desc: "Travel agency for the best travel experience.", link: "https://alkhaitravel.id" },
     { title: "HiiBoss AI", desc: "AI-powered platform building intelligent agents for business automation.", link: "https://hiiboss.ai/" },
-    { title: "ShopFoodie AI", desc: "AI-driven culinary e-commerce for smart recipe recommendations.", link: "https://shopfoodie-ai.com/" },
+    { title: "ShopFoodie AI", desc: "AI-driven culinary e-commerce for smart recipe recommendations.", link: "https://www.shopfoodie.ai/" },
     { title: "Vive Software", desc: "Modern software solutions and technology consulting for enterprise systems.", link: "https://vive.software/" },
   ];
 

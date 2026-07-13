@@ -299,7 +299,7 @@ export const projects: Project[] = [
     id: 18,
     slug: "shopfoodie-ai",
     title: "ShopFoodie AI",
-    link: "https://shopfoodie-ai.com/",
+    link: "https://www.shopfoodie.ai/",
     tech: ["E-Commerce", "AI", "FoodTech"],
     industry: "Food technology",
     service: "AI commerce platform",

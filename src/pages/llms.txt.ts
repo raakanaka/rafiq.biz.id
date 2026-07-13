@@ -66,7 +66,7 @@ Pricing:
 - [BPT KLIN](https://bptklin.com) — Chemical soap products
 - [Asia Safety Pro](https://asiasafety.pro) — Security guard services
 - [HiiBoss AI](https://hiiboss.ai/) — AI-powered business automation
-- [ShopFoodie AI](https://shopfoodie-ai.com/) — AI culinary e-commerce
+- [ShopFoodie AI](https://www.shopfoodie.ai/) — AI culinary e-commerce
 - [Vive Software](https://vive.software/) — Enterprise software solutions
 
 ## Skills & Technologies
