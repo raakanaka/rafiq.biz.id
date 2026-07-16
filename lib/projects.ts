@@ -30,6 +30,20 @@ export const iconColors = [
 
 export const projects: Project[] = [
   {
+    id: 47,
+    slug: "giatt-certification",
+    title: "Giatt International Certification",
+    link: "https://giatt.id/",
+    tech: ["Certification", "ISO Compliance", "B2B"],
+    industry: "Certification and compliance services",
+    service: "Company profile and service website",
+    emoji: "📜",
+    summary: {
+      en: "A company profile and service website for an independent certification body accredited under ISO/IEC 17021-1, presenting ISO management system audits (9001, 14001, 45001, 27001, 22000), personnel training, and public certificate verification for organizations across Indonesia.",
+      id: "Website company profile dan layanan untuk lembaga sertifikasi independen yang terakreditasi ISO/IEC 17021-1, menampilkan audit sistem manajemen ISO (9001, 14001, 45001, 27001, 22000), pelatihan personel, dan verifikasi sertifikat publik untuk organisasi di Indonesia.",
+    },
+  },
+  {
     id: 44,
     slug: "polosinaja",
     title: "Polosinaja",
