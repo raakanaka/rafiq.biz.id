@@ -10,6 +10,7 @@ import SaudaraFooter from '../../../components/SaudaraFooter.astro';
 import Icon from '../../../components/Icon.astro';
 import { CITY_DISPLAY_NAMES } from '../../../lib/constants';
 import { districtSentence } from '../../../lib/districts';
+import { cityProfile } from '../../../lib/cityProfiles';
 import type { NicheDefinition } from '../../../lib/niches';
 
 interface Props {
@@ -26,6 +27,7 @@ function formatCityName(slug: string): string {
 }
 
 const cityName = formatCityName(citySlug);
+const profile = cityProfile(citySlug);
 
 // Verified district names, or nothing — never a fabricated list.
 const districtLine = districtSentence(citySlug);
@@ -46,7 +48,13 @@ const canonicalUrl = isNational
   ? `https://rafiq.biz.id/jasa-website-${n.slug}/`
   : `https://rafiq.biz.id/jasa-website-${n.slug}-${citySlug}/`;
 const pageTitle = r(n.title);
-const pageDesc = r(n.description);
+const nicheDisplayName = n.slug.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
+// Deskripsi meta: kalau kota punya profil terverifikasi, pakai konteks
+// ekonominya. Tanpa ini setiap kota memakai kalimat yang sama persis —
+// snippet identik di ratusan hasil pencarian.
+const pageDesc = profile
+  ? `Jasa pembuatan website ${nicheDisplayName.toLowerCase()} di ${cityName}. ${cityName} adalah ${profile.economy}. Website cepat, siap SEO lokal, dan mudah dihubungi lewat WhatsApp.`.slice(0, 300)
+  : r(n.description);
 const pageKeywords = [
   `Jasa Website ${n.slug.replace(/-/g, ' ')}`,
   `website ${n.slug.replace(/-/g, ' ')} ${cityName}`,
@@ -55,8 +63,6 @@ const pageKeywords = [
   "SEO friendly",
   `web developer ${cityName}`
 ];
-
-const nicheDisplayName = n.slug.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
 
 function initials(name: string): string {
   return name.split(' ').filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
@@ -260,13 +266,37 @@ const jsonLd = {
       </div>
     </section>
 
-    <!-- CAKUPAN AREA LOKAL -->
-    {cityName && cityName !== "Seluruh Indonesia" && districtLine && (
+    <!-- KONTEKS PASAR LOKAL -->
+    {profile && (
       <section class="sd-section">
         <div class="sd-area">
-          <h2 class="sd-h2" style="font-size:clamp(22px,2.6vw,30px);">Jangkauan layanan di <span class="serif">{cityName}</span></h2>
+          <h2 class="sd-h2" style="font-size:clamp(22px,2.6vw,30px);">Pasar {nicheDisplayName.toLowerCase()} di <span class="serif">{cityName}</span></h2>
           <p>
-            Jasa pembuatan website {nicheDisplayName.toLowerCase()} kami menjangkau seluruh area di {cityName} dan sekitarnya, termasuk wilayah {districtLine} Hubungi kami untuk pembuatan website berkinerja tinggi, responsif, dan siap mendominasi pasar lokal Anda.
+            {cityName} adalah {profile.economy}. {profile.note}
+          </p>
+          <p>
+            Karakter itu menentukan cara website bekerja di sini. Calon pelanggan
+            di sekitar {profile.districts[0]}
+            {profile.districts.length > 1 && <> dan {profile.districts[1]}</>}
+            {' '}mencari lewat ponsel dan membandingkan beberapa nama sekaligus, jadi
+            halaman yang lambat atau tidak menjawab pertanyaan harga akan
+            ditinggalkan sebelum sempat dibaca. Website {nicheDisplayName.toLowerCase()}
+            {' '}yang kami bangun difokuskan pada kecepatan di jaringan seluler,
+            informasi layanan yang langsung terbaca, dan jalur kontak yang pendek.
+          </p>
+          {districtLine && (
+            <p>
+              Jangkauan layanan mencakup seluruh area {cityName}, termasuk wilayah {districtLine}
+            </p>
+          )}
+          <p class="sd-sources">
+            Sumber data kota:{' '}
+            {profile.sources.map((s, i) => (
+              <>
+                {i > 0 && ', '}
+                <a href={s} target="_blank" rel="noopener noreferrer nofollow">{new URL(s).hostname.replace(/^www\./, '')}</a>
+              </>
+            ))}
           </p>
         </div>
       </section>

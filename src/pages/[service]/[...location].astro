@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import { ALLOWED_SERVICES, SEO_SERVICES, WEB_DEV_SERVICES, TARGET_CITIES, TARGET_CITIES_98, PRIORITY_CITIES } from "../../../lib/constants";
 import { TARGET_REGENCIES_416 } from "../../../lib/regencies";
 import { districtSentence } from "../../../lib/districts";
+import { cityProfile } from "../../../lib/cityProfiles";
 import { NICHE_MAP, NICHE_SLUGS } from "../../../lib/niches";
 import { ArrowUpRight, CheckCircle2, MapPin, Star } from "lucide-react";
 
@@ -693,16 +694,32 @@ const jsonLd = {
         )}
 
         {/* LOCALIZED AREA COVERAGE */}
-        {locationName && districtLine && (
+        {locationName && cityProfile(locationArray.join('-')) && (() => {
+            const profile = cityProfile(locationArray.join('-'))!;
+            return (
             <section class="section bg-white" style="border-top: 1.5px solid #e5e7eb; padding-top: 4rem; padding-bottom: 4rem;">
-                <div class="max-w-4xl mx-auto px-4 text-center">
-                    <h3 class="text-xl font-bold mb-4 text-foreground">Cakupan Area Layanan di {locationName}</h3>
-                    <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-                        Layanan {serviceName.toLowerCase()} kami mencakup seluruh wilayah di {locationName} dan sekitarnya, termasuk area {districtLine} Kami siap melayani konsultasi langsung maupun jarak jauh (remote).
+                <div class="max-w-4xl mx-auto px-4">
+                    <h3 class="text-xl font-bold mb-4 text-foreground text-center">Konteks pasar di {locationName}</h3>
+                    <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-4">
+                        {locationName} adalah {profile.economy}. {profile.note}
+                    </p>
+                    {districtLine && (
+                        <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-4">
+                            Layanan {serviceName.toLowerCase()} kami mencakup seluruh wilayah di {locationName}, termasuk area {districtLine} Konsultasi bisa langsung maupun jarak jauh.
+                        </p>
+                    )}
+                    <p class="text-text-secondary max-w-2xl mx-auto" style="font-size:12.5px;opacity:.75;">
+                        Sumber data kota: {profile.sources.map((s, i) => (
+                            <>
+                                {i > 0 && ', '}
+                                <a href={s} target="_blank" rel="noopener noreferrer nofollow" style="text-decoration:underline;">{new URL(s).hostname.replace(/^www\./, '')}</a>
+                            </>
+                        ))}
                     </p>
                 </div>
             </section>
-        )}
+            );
+        })()}
 
         {/* RELATED SERVICES & ARTICLES (internal linking) */}
         <section class="section bg-background border-t border-gray-200">

@@ -150,5 +150,35 @@ await check('district lists are factual, not generated', async () => {
   }
 });
 
+// Every priority city must carry its own verified local content, and no two
+// cities may share a meta description — identical snippets across hundreds of
+// pages is exactly the doorway pattern this site already had to unwind.
+await check('city pages carry unique, sourced local content', async () => {
+  const marker = {
+    medan: 'Kesawan',
+    makassar: 'Somba Opu',
+    batam: 'Batamindo',
+    palembang: 'Pasar 16 Ilir',
+    balikpapan: 'Klandasan',
+    bandung: 'Cibaduyut',
+    denpasar: 'Pasar Badung',
+    badung: 'Nusa Dua',
+    jakarta: 'Tanah Abang',
+  };
+  const seen = new Map();
+  for (const [city, sample] of Object.entries(marker)) {
+    const html = await text(`/jasa-website-bengkel-las-${city}`);
+    if (!html.includes(sample)) throw new Error(`${city}: missing local fact "${sample}"`);
+
+    const desc = meta(html, /name="description" content="([^"]+)"/);
+    if (!desc) throw new Error(`${city}: no meta description`);
+    if (seen.has(desc)) throw new Error(`${city}: meta description identical to ${seen.get(desc)}`);
+    seen.set(desc, city);
+
+    // Claims about a city must be checkable.
+    if (!/Sumber data kota/.test(html)) throw new Error(`${city}: local claims have no sources`);
+  }
+});
+
 console.log(failed ? `\n${failed} check(s) failed` : '\nall checks passed');
 process.exit(failed ? 1 : 0);
