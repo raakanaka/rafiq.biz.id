@@ -16,7 +16,7 @@ Jika website Anda membutuhkan waktu lebih dari 3 detik untuk memuat halaman saat
 
 ## Mengapa Performa Website di HP Sangat Krusial?
 
-Saat ini, lebih dari 60% pengguna internet di Indonesia mengakses website melalui perangkat seluler dengan jaringan internet yang tidak selalu stabil.
+Survei APJII 2025 mencatat 83,39% pengguna internet Indonesia mengakses lewat smartphone, jauh di atas laptop (11,42%) — dan sering dengan jaringan yang tidak selalu stabil.
 
 Google sangat memahami perilaku ini. Oleh karena itu, Google menerapkan sistem **Mobile-First Indexing**, di mana Google menilai dan merangking website Anda berdasarkan performanya di HP, bukan di laptop atau komputer.
 
@@ -55,6 +55,10 @@ Website yang lambat di HP bukan sekadar masalah teknis biasa; ini adalah kebocor
 
 Jika Anda tidak memiliki waktu untuk mengutak-atik kode website atau merasa frustrasi dengan skor merah di Google PageSpeed Insights, Anda tidak perlu khawatir.
 
-Kami siap membantu Anda mendesain ulang website bisnis yang memuat instan di bawah 2 detik menggunakan teknologi web terkini melalui layanan [Jasa Pembuatan Website](https://rafiq.biz.id/jasa-pembuatan-website).
+Kami siap membantu Anda mendesain ulang website bisnis yang memuat instan di bawah 2 detik menggunakan teknologi web terkini melalui layanan [Jasa Pembuatan Website](/jasa-pembuatan-website/).
 
-Atau, jika website Anda sudah cepat namun masih sepi pengunjung di Google, mari dominasi kata kunci pencarian pelanggan Anda lewat strategi optimasi di [Jasa SEO](https://rafiq.biz.id/jasa-seo) kami. Hubungi kami hari ini untuk konsultasi dan dapatkan analisis performa website Anda secara gratis!
+Atau, jika website Anda sudah cepat namun masih sepi pengunjung di Google, mari dominasi kata kunci pencarian pelanggan Anda lewat strategi optimasi di [Jasa SEO](/jasa-seo/) kami. Hubungi kami hari ini untuk konsultasi dan dapatkan analisis performa website Anda secara gratis!
+
+**Baca juga:**
+- [Kenapa Website Tidak Muncul di Pencarian Google](/blog/website-tidak-muncul-di-google/) — kalau cepat tapi tetap tidak ditemukan
+- [Cara Riset Kata Kunci Gratis Tanpa Tools Berbayar](/blog/cara-riset-kata-kunci-gratis/) — menentukan kata kunci yang realistis

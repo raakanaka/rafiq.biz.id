@@ -20,7 +20,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 
 const isImage = post.data.heroImage?.startsWith('/');
-const canonicalUrl = `https://rafiq.biz.id/blog/${post.id}`;
+const canonicalUrl = `https://rafiq.biz.id/blog/${post.id}/`;
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [

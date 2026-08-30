@@ -35,7 +35,9 @@ Jawabannya adalah **frustrasi pengguna**.
 
 Studi dari Google menunjukkan bahwa:
 * Peluang pengguna keluar dari situs (*bounce rate*) meningkat **32%** jika waktu muat halaman naik dari 1 detik ke 3 detik.
-* Jika waktu muat mencapai 5 detik, peluang mental keluar pembeli naik hingga **90%**.
+* Jika waktu muat mencapai 5 detik, peluang pengunjung keluar naik hingga **90%**.
+
+*Sumber: riset Google/SOASTA (2017) atas 11 juta halaman arahan seluler. Angka ini menggambarkan probabilitas keluar, bukan jaminan hasil pada kasus tertentu.*
 
 Website yang lambat memberikan kesan pertama yang buruk. Pengunjung akan berasumsi bahwa jika Anda tidak peduli dengan kualitas performa website Anda sendiri, Anda mungkin juga tidak akan memberikan layanan berkualitas kepada mereka. Kecepatan memicu rasa percaya (*trust*), dan rasa percaya adalah gerbang utama menuju *closing*.
 
@@ -66,4 +68,4 @@ Jika Anda menggunakan WordPress CMS atau coding custom, berikut adalah beberapa 
 
 Mengabaikan kecepatan website sama saja dengan memberikan pelanggan Anda kepada kompetitor di atas piring emas. Kecepatan bukan lagi sekadar fitur teknis tambahan; ia adalah **infrastruktur dasar penjualan dan SEO**.
 
-Jika Anda merasa kesulitan mengoptimalkan skor Core Web Vitals atau ingin merombak website bisnis Anda agar memuat di bawah 2 detik untuk memaksimalkan *closing*, kami siap membantu Anda dengan layanan [Jasa Pembuatan Website](/jasa-pembuatan-website) profesional bergaransi performa.
+Jika Anda merasa kesulitan mengoptimalkan skor Core Web Vitals atau ingin merombak website bisnis Anda agar memuat di bawah 2 detik untuk memaksimalkan *closing*, kami siap membantu Anda dengan layanan [Jasa Pembuatan Website](/jasa-pembuatan-website/) profesional bergaransi performa.

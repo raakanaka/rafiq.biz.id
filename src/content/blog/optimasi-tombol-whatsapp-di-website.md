@@ -45,6 +45,6 @@ Tombol WhatsApp yang dioptimasi dengan sempurna tidak akan ada gunanya jika webs
 
 Jika Anda merasa tidak memiliki waktu untuk mengutak-atik kode website atau ingin memiliki website yang kencang dan menghasilkan konversi tinggi, kami siap membantu Anda.
 
-Kami menawarkan solusi pembuatan website premium yang memuat dalam sekejap mata melalui layanan [Jasa Pembuatan Website](https://rafiq.biz.id/jasa-pembuatan-website). 
+Kami menawarkan solusi pembuatan website premium yang memuat dalam sekejap mata melalui layanan [Jasa Pembuatan Website](/jasa-pembuatan-website/). 
 
-Dan jika website Anda membutuhkan aliran pengunjung potensial yang siap membeli dari hasil pencarian Google, Anda bisa memanfaatkan keahlian kami di [Jasa SEO](https://rafiq.biz.id/jasa-seo) profesional. Hubungi kami sekarang dan buat bisnis Anda kebanjiran chat calon pembeli setiap harinya!
+Dan jika website Anda membutuhkan aliran pengunjung potensial yang siap membeli dari hasil pencarian Google, Anda bisa memanfaatkan keahlian kami di [Jasa SEO](/jasa-seo/) profesional. Hubungi kami sekarang dan buat bisnis Anda kebanjiran chat calon pembeli setiap harinya!
