@@ -4,6 +4,9 @@ import SaudaraHeader from '../../components/SaudaraHeader.astro';
 import SaudaraFooter from '../../components/SaudaraFooter.astro';
 import Icon from '../../components/Icon.astro';
 
+// Serve a real 404 status, not a 200/302 soft-404 — Google indexes soft-404s as junk.
+Astro.response.status = 404;
+
 const titleContent = "Halaman Tidak Ditemukan (404) | Rafiq";
 const descriptionContent = "Maaf, halaman yang Anda cari tidak ditemukan. Kembali ke beranda untuk melihat layanan pembuatan website dan optimasi SEO.";
 ---

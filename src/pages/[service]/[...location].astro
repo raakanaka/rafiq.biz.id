@@ -44,7 +44,21 @@ if (resolvedService.startsWith('jasa-website-')) {
 
 // Niche pages will be rendered conditionally in the template below.
 if (!nicheMatch && !ALLOWED_SERVICES.includes(resolvedService)) {
-  return Astro.redirect('/404');
+  return Astro.rewrite('/404');
+}
+
+// Any location segment must be a real, known place. Without this an unbounded
+// number of made-up URLs (/jasa-pembuatan-website/anything) all answered 200 —
+// an infinite crawl trap that dilutes the whole domain.
+if (!nicheMatch && locationArray.length > 0) {
+  const joined = locationArray.join('-');
+  const knownPlace =
+    TARGET_CITIES.includes(joined) ||
+    TARGET_CITIES_98.includes(joined) ||
+    TARGET_REGENCIES_416.includes(joined);
+  if (!knownPlace) {
+    return Astro.rewrite('/404');
+  }
 }
 
 function formatString(str: string): string {
@@ -77,6 +91,25 @@ const waMessage = `Halo, saya tertarik dengan ${serviceName.toLowerCase()}${disp
 const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`;
 
 const isSeoService = SEO_SERVICES.includes(resolvedService);
+
+// The 14 service slugs are keyword variants of the same two offers, and their
+// bodies are ~99% identical — pure self-cannibalisation. Keep them reachable,
+// but point every variant's canonical at one primary slug per offer so Google
+// consolidates the signals instead of splitting them 7 ways.
+const PRIMARY_WEB_DEV_SLUG = 'jasa-pembuatan-website';
+const PRIMARY_SEO_SLUG = 'jasa-seo';
+const canonicalService = nicheMatch
+  ? resolvedService
+  : isSeoService
+    ? PRIMARY_SEO_SLUG
+    : WEB_DEV_SERVICES.includes(resolvedService)
+      ? PRIMARY_WEB_DEV_SLUG
+      : resolvedService;
+const canonicalPath = [canonicalService, ...locationArray].join('/');
+const pageCanonicalUrl = `https://rafiq.biz.id/${canonicalPath}/`;
+// A variant slug adds nothing to the index; let it pass equity without being indexed.
+const pageRobots =
+  canonicalService === resolvedService ? 'index, follow' : 'noindex, follow';
 
 // Related internal links: sibling services + relevant blog articles
 const siblingServices = (isSeoService ? SEO_SERVICES : WEB_DEV_SERVICES).filter((s) => s !== resolvedService);
@@ -300,7 +333,7 @@ const jsonLd = {
 {nicheMatch && nicheCitySlug ? (
     <NicheLandingPage niche={nicheMatch} citySlug={nicheCitySlug} />
 ) : (
-<Layout title={titleContent} description={descriptionContent} keywords={keywordsList}>
+<Layout title={titleContent} description={descriptionContent} keywords={keywordsList} canonicalUrl={pageCanonicalUrl} robots={pageRobots}>
     <Fragment slot="head">
         <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
     </Fragment>

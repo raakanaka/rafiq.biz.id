@@ -1,11 +1,13 @@
 import { getCollection } from 'astro:content';
-import { ALLOWED_SERVICES, TARGET_CITIES, TARGET_CITIES_98 } from '../../lib/constants';
+import { TARGET_CITIES, TARGET_CITIES_98 } from '../../lib/constants';
 import { NICHE_SLUGS } from '../../lib/niches';
 import { projects } from '../../lib/projects';
 
 export async function GET() {
   const baseUrl = 'https://rafiq.biz.id';
-  const lastmod = '2026-06-04';
+  // Fixed date, not new Date(): this route is SSR, so a live date would claim
+  // every page changed today on every crawl — a false signal Google learns to ignore.
+  const lastmod = '2026-08-30';
 
   const routes: Array<{ url: string; priority: string; changefreq: string }> = [
     { url: baseUrl, priority: '1.0', changefreq: 'weekly' },
@@ -32,8 +34,12 @@ export async function GET() {
     });
   });
 
-  // Existing service pages (web dev + SEO services × old cities)
-  ALLOWED_SERVICES.forEach((service) => {
+  // Only the two primary service slugs belong in the sitemap. The other 12 are
+  // keyword variants that now canonicalise here and carry noindex — advertising
+  // them would just ask Google to crawl pages we tell it not to index.
+  const PRIMARY_SERVICES = ['jasa-pembuatan-website', 'jasa-seo'];
+
+  PRIMARY_SERVICES.forEach((service) => {
     routes.push({ url: `${baseUrl}/${service}`, priority: '0.9', changefreq: 'weekly' });
     routes.push({ url: `${baseUrl}/${service}/area`, priority: '0.8', changefreq: 'weekly' });
     routes.push({ url: `${baseUrl}/${service}/area/jakarta`, priority: '0.85', changefreq: 'monthly' });
@@ -55,8 +61,15 @@ export async function GET() {
     });
   });
 
+  // Server emits 307 to the trailing-slash form, so publish that form directly
+  // (a sitemap full of redirects burns crawl budget and dilutes canonical signals).
+  const withSlash = routes.map((route) => ({
+    ...route,
+    url: route.url.endsWith('/') ? route.url : `${route.url}/`,
+  }));
+
   const uniqueRoutes = Array.from(
-    new Map(routes.map((route) => [route.url, route])).values()
+    new Map(withSlash.map((route) => [route.url, route])).values()
   );
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

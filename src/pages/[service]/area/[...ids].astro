@@ -16,7 +16,7 @@ const resolvedService = service as string;
 const idsArray = ids ? ids.split('/') : [];
 
 if (!ALLOWED_SERVICES.includes(resolvedService)) {
-  return Astro.redirect('/404');
+  return Astro.rewrite('/404');
 }
 
 type Region = {
@@ -107,50 +107,50 @@ if (priorityAreaLanding) {
 } else if (idsArray.length === 1) {
     const provinces = await fetchRegions('provinces');
     const province = provinces.find(p => slugify(p.name) === idsArray[0]);
-    if (!province) return Astro.redirect('/404');
+    if (!province) return Astro.rewrite('/404');
     currentLevelName = province.name;
     items = await fetchRegions('regencies', province.id);
     nextLevelPath = `/${resolvedService}/area/${idsArray[0]}`;
 } else if (idsArray.length === 2) {
     const provinces = await fetchRegions('provinces');
     const province = provinces.find(p => slugify(p.name) === idsArray[0]);
-    if (!province) return Astro.redirect('/404');
+    if (!province) return Astro.rewrite('/404');
     const regencies = await fetchRegions('regencies', province.id);
     const regency = regencies.find(r => slugify(r.name) === idsArray[1]);
-    if (!regency) return Astro.redirect('/404');
+    if (!regency) return Astro.rewrite('/404');
     currentLevelName = regency.name;
     items = await fetchRegions('districts', regency.id);
     nextLevelPath = `/${resolvedService}/area/${idsArray[0]}/${idsArray[1]}`;
 } else if (idsArray.length === 3) {
     const provinces = await fetchRegions('provinces');
     const province = provinces.find(p => slugify(p.name) === idsArray[0]);
-    if (!province) return Astro.redirect('/404');
+    if (!province) return Astro.rewrite('/404');
     const regencies = await fetchRegions('regencies', province.id);
     const regency = regencies.find(r => slugify(r.name) === idsArray[1]);
-    if (!regency) return Astro.redirect('/404');
+    if (!regency) return Astro.rewrite('/404');
     const districts = await fetchRegions('districts', regency.id);
     const district = districts.find(d => slugify(d.name) === idsArray[2]);
-    if (!district) return Astro.redirect('/404');
+    if (!district) return Astro.rewrite('/404');
     currentLevelName = district.name;
     items = await fetchRegions('villages', district.id);
     nextLevelPath = `/${resolvedService}/area/${idsArray[0]}/${idsArray[1]}/${idsArray[2]}`;
 } else if (idsArray.length === 4) {
     const provinces = await fetchRegions('provinces');
     const province = provinces.find(p => slugify(p.name) === idsArray[0]);
-    if (!province) return Astro.redirect('/404');
+    if (!province) return Astro.rewrite('/404');
     const regencies = await fetchRegions('regencies', province.id);
     const regency = regencies.find(r => slugify(r.name) === idsArray[1]);
-    if (!regency) return Astro.redirect('/404');
+    if (!regency) return Astro.rewrite('/404');
     const districts = await fetchRegions('districts', regency.id);
     const district = districts.find(d => slugify(d.name) === idsArray[2]);
-    if (!district) return Astro.redirect('/404');
+    if (!district) return Astro.rewrite('/404');
     const villages = await fetchRegions('villages', district.id);
     const village = villages.find(v => slugify(v.name) === idsArray[3]);
-    if (!village) return Astro.redirect('/404');
+    if (!village) return Astro.rewrite('/404');
     currentLevelName = village.name;
     items = [];
 } else {
-    return Astro.redirect('/404');
+    return Astro.rewrite('/404');
 }
 
 let backLink = "";
