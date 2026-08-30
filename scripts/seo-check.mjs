@@ -47,7 +47,7 @@ for (const path of [
   '/contact',
   '/jasa-pembuatan-website',
   '/jasa-pembuatan-website/medan',
-  '/jasa-seo/surabaya',
+  '/jasa-seo/makassar',
   '/jasa-website-bengkel-las-medan',
   '/sitemap.xml',
   '/robots.txt',
@@ -99,6 +99,55 @@ await check('no meta keywords (dead signal)', async () => {
 await check('schema has a real phone number', async () => {
   const html = await text('/');
   if (html.includes('+628****1800')) throw new Error('masked placeholder phone in JSON-LD');
+});
+
+// Doorway-page pruning: only priority cities keep their own page.
+const PRIORITY_CITIES = ['jakarta', 'medan', 'bandung', 'denpasar', 'badung', 'batam', 'makassar', 'balikpapan', 'palembang'];
+const PRUNED_CITIES = ['kupang', 'binjai', 'surabaya', 'jayapura', 'tegal', 'sorong'];
+
+for (const city of PRIORITY_CITIES) {
+  await check(`priority city page /jasa-website-bengkel-las-${city}`, async () => {
+    eq((await get(`/jasa-website-bengkel-las-${city}`)).status, 200, 'status');
+  });
+}
+
+for (const city of PRUNED_CITIES) {
+  await check(`pruned city 301s to niche parent (${city})`, async () => {
+    const res = await get(`/jasa-website-bengkel-las-${city}`);
+    eq(res.status, 301, 'status');
+    eq(res.headers.get('location'), '/jasa-website-bengkel-las/', 'location');
+  });
+  await check(`pruned service city 301s (${city})`, async () => {
+    const res = await get(`/jasa-pembuatan-website/${city}`);
+    eq(res.status, 301, 'status');
+    eq(res.headers.get('location'), '/jasa-pembuatan-website/', 'location');
+  });
+}
+
+await check('national niche page is the 301 target and self-canonical', async () => {
+  eq((await get('/jasa-website-bengkel-las')).status, 200, 'status');
+  const html = await text('/jasa-website-bengkel-las');
+  eq(meta(html, /canonical" href="([^"]+)"/), 'https://rafiq.biz.id/jasa-website-bengkel-las/', 'canonical');
+});
+
+// District names must be real, never fabricated from the city name.
+await check('district lists are factual, not generated', async () => {
+  const expected = {
+    denpasar: 'Denpasar Barat',
+    badung: 'Kuta',
+    batam: 'Batam Kota',
+    palembang: 'Ilir Barat I',
+    makassar: 'Ujung Pandang',
+    balikpapan: 'Balikpapan Kota',
+  };
+  for (const [city, sample] of Object.entries(expected)) {
+    const html = await text(`/jasa-website-bengkel-las-${city}`);
+    if (!html.includes(sample)) throw new Error(`${city}: missing real district "${sample}"`);
+    const display = city.charAt(0).toUpperCase() + city.slice(1);
+    if (html.includes(`${display} Pusat, ${display} Utara`)) {
+      throw new Error(`${city}: still emitting fabricated district list`);
+    }
+  }
 });
 
 console.log(failed ? `\n${failed} check(s) failed` : '\nall checks passed');

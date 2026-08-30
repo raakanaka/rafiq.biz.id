@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { TARGET_CITIES, TARGET_CITIES_98 } from '../../lib/constants';
+import { TARGET_CITIES, PRIORITY_CITIES } from '../../lib/constants';
 import { NICHE_SLUGS } from '../../lib/niches';
 import { projects } from '../../lib/projects';
 
@@ -45,17 +45,25 @@ export async function GET() {
     routes.push({ url: `${baseUrl}/${service}/area/jakarta`, priority: '0.85', changefreq: 'monthly' });
     routes.push({ url: `${baseUrl}/${service}/area/medan`, priority: '0.85', changefreq: 'monthly' });
 
-    TARGET_CITIES.forEach((city) => {
+    PRIORITY_CITIES.forEach((city) => {
       routes.push({ url: `${baseUrl}/${service}/${city}`, priority: '0.7', changefreq: 'weekly' });
     });
   });
 
-  // NEW: 48 Niches × 98 Cities = 4,704 landing pages
+  // Niche pages: one national page per niche, plus the priority cities only.
+  // The other ~90 cities were near-identical duplicates and now 301 to the
+  // national page, so listing them here would just advertise redirects.
   NICHE_SLUGS.forEach((niche) => {
-    TARGET_CITIES_98.forEach((city) => {
+    routes.push({
+      url: `${baseUrl}/jasa-website-${niche}`,
+      priority: '0.8',
+      changefreq: 'monthly'
+    });
+
+    PRIORITY_CITIES.forEach((city) => {
       routes.push({
         url: `${baseUrl}/jasa-website-${niche}-${city}`,
-        priority: '0.8',
+        priority: '0.7',
         changefreq: 'monthly'
       });
     });

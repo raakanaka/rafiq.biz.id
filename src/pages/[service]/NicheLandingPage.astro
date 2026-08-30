@@ -9,6 +9,7 @@ import SaudaraHeader from '../../../components/SaudaraHeader.astro';
 import SaudaraFooter from '../../../components/SaudaraFooter.astro';
 import Icon from '../../../components/Icon.astro';
 import { CITY_DISPLAY_NAMES } from '../../../lib/constants';
+import { districtSentence } from '../../../lib/districts';
 import type { NicheDefinition } from '../../../lib/niches';
 
 interface Props {
@@ -26,6 +27,9 @@ function formatCityName(slug: string): string {
 
 const cityName = formatCityName(citySlug);
 
+// Verified district names, or nothing — never a fabricated list.
+const districtLine = districtSentence(citySlug);
+
 // Replace [KOTA] placeholders with actual city name
 function r(text: string): string {
   return text.replace(/\[KOTA\]/g, cityName);
@@ -35,7 +39,12 @@ const whatsappNumber = "6282160731800";
 const waMessage = `Halo, saya tertarik dengan jasa website ${n.slug.replace(/-/g, ' ')} di ${cityName}. Boleh info lebih lanjut?`;
 const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`;
 
-const canonicalUrl = `https://rafiq.biz.id/jasa-website-${n.slug}-${citySlug}`;
+// The national page is served at /jasa-website-<niche>/, not at a
+// "-seluruh-indonesia" URL — that address does not exist.
+const isNational = citySlug === 'seluruh-indonesia';
+const canonicalUrl = isNational
+  ? `https://rafiq.biz.id/jasa-website-${n.slug}/`
+  : `https://rafiq.biz.id/jasa-website-${n.slug}-${citySlug}/`;
 const pageTitle = r(n.title);
 const pageDesc = r(n.description);
 const pageKeywords = [
@@ -252,18 +261,12 @@ const jsonLd = {
     </section>
 
     <!-- CAKUPAN AREA LOKAL -->
-    {cityName && cityName !== "Seluruh Indonesia" && (
+    {cityName && cityName !== "Seluruh Indonesia" && districtLine && (
       <section class="sd-section">
         <div class="sd-area">
           <h2 class="sd-h2" style="font-size:clamp(22px,2.6vw,30px);">Jangkauan layanan di <span class="serif">{cityName}</span></h2>
           <p>
-            Jasa pembuatan website {nicheDisplayName.toLowerCase()} kami menjangkau seluruh area di {cityName} dan sekitarnya, termasuk wilayah {
-              cityName.toLowerCase() === "jakarta" ? "Gambir, Kebayoran Baru, Menteng, Kelapa Gading, Senayan, Pantai Indah Kapuk (PIK), Sudirman, Kemang, dan sekitarnya." :
-              cityName.toLowerCase() === "medan" ? "Medan Baru, Medan Selayang, Medan Sunggal, Medan Petisah, Medan Helvetia, Medan Kota, Medan Johor, dan sekitarnya." :
-              cityName.toLowerCase() === "surabaya" ? "Tunjungan, Gubeng, Wonokromo, Darmo, Sukolilo, Rungkut, Tegalsari, Kenjeran, dan sekitarnya." :
-              cityName.toLowerCase() === "bandung" ? "Dago, Pasteur, Gedebage, Coblong, Cihampelas, Braga, Lembang, Buahbatu, dan sekitarnya." :
-              `${cityName} Pusat, ${cityName} Utara, ${cityName} Selatan, ${cityName} Barat, ${cityName} Timur, dan area sekitarnya.`
-            } Hubungi kami untuk pembuatan website berkinerja tinggi, responsif, dan siap mendominasi pasar lokal Anda.
+            Jasa pembuatan website {nicheDisplayName.toLowerCase()} kami menjangkau seluruh area di {cityName} dan sekitarnya, termasuk wilayah {districtLine} Hubungi kami untuk pembuatan website berkinerja tinggi, responsif, dan siap mendominasi pasar lokal Anda.
           </p>
         </div>
       </section>
