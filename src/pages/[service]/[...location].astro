@@ -2,8 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import NicheLandingPage from './NicheLandingPage.astro';
 import { getCollection } from 'astro:content';
-import { ALLOWED_SERVICES, SEO_SERVICES, WEB_DEV_SERVICES, TARGET_CITIES, TARGET_CITIES_98 } from "../../../lib/constants";
+import { ALLOWED_SERVICES, SEO_SERVICES, WEB_DEV_SERVICES, TARGET_CITIES, TARGET_CITIES_98, PRIORITY_CITIES } from "../../../lib/constants";
 import { TARGET_REGENCIES_416 } from "../../../lib/regencies";
+import { districtSentence } from "../../../lib/districts";
 import { NICHE_MAP, NICHE_SLUGS } from "../../../lib/niches";
 import { ArrowUpRight, CheckCircle2, MapPin, Star } from "lucide-react";
 
@@ -30,6 +31,12 @@ if (resolvedService.startsWith('jasa-website-')) {
     if (remainder.startsWith(nicheSlug + '-')) {
       const citySlug = remainder.slice(nicheSlug.length + 1);
       if (TARGET_CITIES_98.includes(citySlug) || TARGET_REGENCIES_416.includes(citySlug)) {
+        // Only priority cities get their own page. The rest were doorway pages:
+        // identical copy with the city name swapped. Send them to the niche's
+        // parent page, which covers the same offer nationally.
+        if (!PRIORITY_CITIES.includes(citySlug)) {
+          return Astro.redirect(`/jasa-website-${nicheSlug}/`, 301);
+        }
         nicheMatch = NICHE_MAP.get(nicheSlug)!;
         nicheCitySlug = citySlug;
         break;
@@ -58,6 +65,13 @@ if (!nicheMatch && locationArray.length > 0) {
     TARGET_REGENCIES_416.includes(joined);
   if (!knownPlace) {
     return Astro.rewrite('/404');
+  }
+
+  // Same duplicate-content problem as the niche pages: /<service>/<city> bodies
+  // are ~99.8% identical across cities. Keep only the priority cities; the rest
+  // fold into the service's national page.
+  if (!PRIORITY_CITIES.includes(joined)) {
+    return Astro.redirect(`/${resolvedService}/`, 301);
   }
 }
 
@@ -91,6 +105,10 @@ const waMessage = `Halo, saya tertarik dengan ${serviceName.toLowerCase()}${disp
 const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`;
 
 const isSeoService = SEO_SERVICES.includes(resolvedService);
+
+// Real district names only. Cities without verified data get no coverage
+// section at all, rather than an invented "<City> Pusat/Utara/Selatan" list.
+const districtLine = locationArray.length > 0 ? districtSentence(locationArray.join('-')) : null;
 
 // The 14 service slugs are keyword variants of the same two offers, and their
 // bodies are ~99% identical — pure self-cannibalisation. Keep them reachable,
@@ -675,18 +693,12 @@ const jsonLd = {
         )}
 
         {/* LOCALIZED AREA COVERAGE */}
-        {locationName && (
+        {locationName && districtLine && (
             <section class="section bg-white" style="border-top: 1.5px solid #e5e7eb; padding-top: 4rem; padding-bottom: 4rem;">
                 <div class="max-w-4xl mx-auto px-4 text-center">
                     <h3 class="text-xl font-bold mb-4 text-foreground">Cakupan Area Layanan di {locationName}</h3>
                     <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-                        Layanan {serviceName.toLowerCase()} kami mencakup seluruh wilayah di {locationName} dan sekitarnya, termasuk area {
-                            locationName.toLowerCase() === "jakarta" ? "Gambir, Kebayoran Baru, Menteng, Kelapa Gading, Senayan, Pantai Indah Kapuk (PIK), Sudirman, Kemang, dan sekitarnya." :
-                            locationName.toLowerCase() === "medan" ? "Medan Baru, Medan Selayang, Medan Sunggal, Medan Petisah, Medan Helvetia, Medan Kota, Medan Johor, dan sekitarnya." :
-                            locationName.toLowerCase() === "surabaya" ? "Tunjungan, Gubeng, Wonokromo, Darmo, Sukolilo, Rungkut, Tegalsari, Kenjeran, dan sekitarnya." :
-                            locationName.toLowerCase() === "bandung" ? "Dago, Pasteur, Gedebage, Coblong, Cihampelas, Braga, Lembang, Buahbatu, dan sekitarnya." :
-                            `${locationName} Pusat, ${locationName} Utara, ${locationName} Selatan, ${locationName} Barat, ${locationName} Timur, dan area sekitarnya.`
-                        } Kami siap melayani konsultasi langsung maupun jarak jauh (remote).
+                        Layanan {serviceName.toLowerCase()} kami mencakup seluruh wilayah di {locationName} dan sekitarnya, termasuk area {districtLine} Kami siap melayani konsultasi langsung maupun jarak jauh (remote).
                     </p>
                 </div>
             </section>

@@ -57,6 +57,29 @@ export const TARGET_CITIES_98: string[] = [
 ];
 
 // Display name mapping for cities that need special formatting
+// ================================================================
+// KOTA PRIORITAS — satu-satunya kota yang boleh punya landing page niche.
+//
+// Sebelumnya 49 niche x 98 kota = 4.802 halaman yang isinya 99,7% identik
+// (hanya nama kota yang berbeda) — pola yang dilarang kebijakan spam Google
+// sebagai "doorway pages", dan risikonya menjatuhkan seluruh domain.
+//
+// Kota di luar daftar ini di-301 ke halaman niche induknya.
+// Jangan tambah kota ke sini sampai halamannya benar-benar punya konten unik:
+// kecamatan yang faktual, portofolio klien di kota itu, dan konteks pasar lokal.
+// ================================================================
+export const PRIORITY_CITIES: string[] = [
+  "jakarta",
+  "medan",
+  "bandung",
+  "denpasar",
+  "badung",
+  "batam",
+  "makassar",
+  "balikpapan",
+  "palembang",
+];
+
 export const CITY_DISPLAY_NAMES: Record<string, string> = {
   "bandar-lampung": "Bandar Lampung",
   "banda-aceh": "Banda Aceh",
