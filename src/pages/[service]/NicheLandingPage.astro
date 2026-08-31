@@ -10,7 +10,7 @@ import SaudaraFooter from '../../../components/SaudaraFooter.astro';
 import Icon from '../../../components/Icon.astro';
 import { CITY_DISPLAY_NAMES } from '../../../lib/constants';
 import { districtSentence } from '../../../lib/districts';
-import { cityProfile } from '../../../lib/cityProfiles';
+import { cityProfile, cityNicheFaq } from '../../../lib/cityProfiles';
 import type { NicheDefinition } from '../../../lib/niches';
 
 interface Props {
@@ -49,6 +49,10 @@ const canonicalUrl = isNational
   : `https://rafiq.biz.id/jasa-website-${n.slug}-${citySlug}/`;
 const pageTitle = r(n.title);
 const nicheDisplayName = n.slug.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
+// FAQ gabungan: pertanyaan umum niche + pertanyaan yang khas kota ini.
+// Ditaruh setelah yang umum karena yang umum lebih sering dicari.
+const localFaq = cityNicheFaq(citySlug, cityName, nicheDisplayName);
+const allFaq = [...n.faq, ...localFaq];
 // Deskripsi meta: kalau kota punya profil terverifikasi, pakai konteks
 // ekonominya. Tanpa ini setiap kota memakai kalimat yang sama persis —
 // snippet identik di ratusan hasil pencarian.
@@ -92,7 +96,7 @@ const jsonLd = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": n.faq.map(faq => ({ "@type": "Question", "name": r(faq.q), "acceptedAnswer": { "@type": "Answer", "text": r(faq.a) } }))
+      "mainEntity": allFaq.map(faq => ({ "@type": "Question", "name": r(faq.q), "acceptedAnswer": { "@type": "Answer", "text": r(faq.a) } }))
     },
     {
       "@type": "BreadcrumbList",
@@ -257,7 +261,7 @@ const jsonLd = {
     <section class="sd-section alt">
       <div class="sd-faq">
         <h2 class="sd-h2" style="margin-bottom:32px;">Pertanyaan <span class="serif">umum</span></h2>
-        {n.faq.map(faq => (
+        {allFaq.map(faq => (
           <details class="sd-faq-item">
             <summary>{r(faq.q)}<span class="sd-chev"><Icon name="chevronDown" /></span></summary>
             <div class="sd-faq-a">{r(faq.a)}</div>
