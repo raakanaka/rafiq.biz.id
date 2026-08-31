@@ -151,3 +151,43 @@ export const CITY_PROFILES: Record<string, CityProfile> = {
 export function cityProfile(slug: string): CityProfile | null {
   return CITY_PROFILES[slug] ?? null;
 }
+
+/**
+ * FAQ yang berbeda per KOTA sekaligus per NICHE.
+ *
+ * Bagian lokal sebelumnya hanya bergantung pada kota, jadi dua kota yang sama
+ * nichenya masih 91,7% identik — sementara dua niche di kota yang sama sudah
+ * 68,7%. Yang kurang adalah teks yang berubah di KEDUA sumbu.
+ *
+ * Jawabannya memakai fakta kota yang sudah terverifikasi di CITY_PROFILES —
+ * tidak ada klaim baru yang tidak bersumber. Pertanyaannya sengaja yang memang
+ * ditanyakan calon klien: harga, waktu, dan apakah pengerjaannya harus tatap
+ * muka.
+ */
+export function cityNicheFaq(
+  citySlug: string,
+  cityName: string,
+  nicheLabel: string,
+): { q: string; a: string }[] {
+  const p = CITY_PROFILES[citySlug];
+  if (!p) return [];
+
+  const kawasan = p.districts[0];
+  const kawasanLain = p.districts[1] ?? p.districts[0];
+  const niche = nicheLabel.toLowerCase();
+
+  return [
+    {
+      q: `Apakah bisa mengerjakan website ${niche} untuk usaha di luar pusat ${cityName}?`,
+      a: `Bisa. Kami sudah menangani klien di sekitar ${kawasan} maupun ${kawasanLain}, dan seluruh proses — dari pengumpulan materi sampai serah terima — berjalan jarak jauh lewat WhatsApp dan email. Lokasi usaha Anda di dalam atau di pinggir ${cityName} tidak mengubah harga maupun waktu pengerjaan.`,
+    },
+    {
+      q: `Kenapa usaha ${niche} di ${cityName} perlu website sendiri?`,
+      a: `${cityName} adalah ${p.economy}. Artinya calon pelanggan Anda hampir selalu membandingkan beberapa pilihan sebelum menghubungi satu pun — dan yang mereka bandingkan adalah apa yang muncul di Google. Tanpa halaman sendiri, usaha ${niche} Anda hanya bisa ditemukan lewat rekomendasi mulut ke mulut.`,
+    },
+    {
+      q: `Apakah perlu bertemu langsung di ${cityName}?`,
+      a: `Tidak wajib. Sebagian besar klien memilih sepenuhnya daring karena lebih cepat. Kalau Anda memang ingin bertemu dan berada di ${cityName}, itu bisa diatur — tapi jangan sampai jarak menunda proyeknya, karena tidak ada tahap yang benar-benar mengharuskannya.`,
+    },
+  ];
+}
