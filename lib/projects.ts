@@ -35,12 +35,12 @@ export const projects: Project[] = [
     title: "Rindu Tenang Indonesia",
     link: "https://rindutenangindonesia.id/",
     tech: ["SEO", "Local SEO", "Core Web Vitals"],
-    industry: "Event organizer and professional certification",
+    industry: "Corporate strategy and professional certification",
     service: "SEO and organic growth",
     emoji: "📈",
     summary: {
-      en: "An SEO engagement for a Medan-based event management and professional certification company, covering technical SEO, local search visibility, and content structured around competency certification and corporate event services.",
-      id: "Penanganan SEO untuk perusahaan event management dan sertifikasi profesi asal Medan, mencakup SEO teknikal, visibilitas pencarian lokal, dan konten yang disusun seputar sertifikasi kompetensi serta layanan event korporat.",
+      en: "An SEO engagement for a corporate strategic partner focusing on competency development, professional certification (BNSP, KAN & IAF), and organizational interventions across Indonesia.",
+      id: "Penanganan SEO untuk mitra strategis korporat yang berfokus pada pengembangan kompetensi SDM, sertifikasi profesi (BNSP, KAN & IAF), dan intervensi manajemen organisasi di Indonesia.",
     },
   },
   {
