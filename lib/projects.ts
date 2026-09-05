@@ -30,13 +30,41 @@ export const iconColors = [
 
 export const projects: Project[] = [
   {
+    id: 49,
+    slug: "rindu-tenang-indonesia",
+    title: "Rindu Tenang Indonesia",
+    link: "https://rindutenangindonesia.id/",
+    tech: ["SEO", "Local SEO", "Core Web Vitals"],
+    industry: "Event organizer and professional certification",
+    service: "SEO and organic growth",
+    emoji: "📈",
+    summary: {
+      en: "An SEO engagement for a Medan-based event management and professional certification company, covering technical SEO, local search visibility, and content structured around competency certification and corporate event services.",
+      id: "Penanganan SEO untuk perusahaan event management dan sertifikasi profesi asal Medan, mencakup SEO teknikal, visibilitas pencarian lokal, dan konten yang disusun seputar sertifikasi kompetensi serta layanan event korporat.",
+    },
+  },
+  {
+    id: 48,
+    slug: "nosta-heritage",
+    title: "Nosta Heritage Coffeehouse",
+    link: "https://nostaheritage.com/",
+    tech: ["Coffeehouse", "F&B", "Brand Website"],
+    industry: "Coffeehouse and dining",
+    service: "Web developer build",
+    emoji: "☕",
+    summary: {
+      en: "A brand website for a coffeehouse in Kisaran serving coffee and pasta, built to present the menu, atmosphere, and location in a way that turns casual visitors into walk-in guests.",
+      id: "Website brand untuk coffeehouse di Kisaran yang menyajikan kopi dan pasta, dibangun untuk menampilkan menu, suasana, dan lokasi agar pengunjung online tertarik datang langsung ke tempat.",
+    },
+  },
+  {
     id: 47,
     slug: "giatt-certification",
     title: "Giatt International Certification",
     link: "https://giatt.id/",
     tech: ["Certification", "ISO Compliance", "B2B"],
     industry: "Certification and compliance services",
-    service: "Company profile and service website",
+    service: "Web developer build",
     emoji: "📜",
     summary: {
       en: "A company profile and service website for an independent certification body accredited under ISO/IEC 17021-1, presenting ISO management system audits (9001, 14001, 45001, 27001, 22000), personnel training, and public certificate verification for organizations across Indonesia.",
