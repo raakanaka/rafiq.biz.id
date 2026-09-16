@@ -30,6 +30,20 @@ export const iconColors = [
 
 export const projects: Project[] = [
   {
+    id: 50,
+    slug: "mitunbongkar",
+    title: "Mitunbongkar",
+    link: "https://mitunbongkar.com/",
+    tech: ["WordPress", "Demolition", "Service Website"],
+    industry: "Demolition and construction services",
+    service: "Company profile and service website",
+    emoji: "🏗️",
+    summary: {
+      en: "A company profile and service website for a professional demolition contractor operating across Jabodetabek since 2015, presenting demolition services, project portfolio, transparent pricing, and a consultation workflow that turns inquiries into booked surveys.",
+      id: "Website company profile dan layanan untuk kontraktor pembongkaran bangunan profesional yang beroperasi di Jabodetabek sejak 2015, menampilkan layanan bongkar, portofolio proyek, harga transparan, dan alur konsultasi yang mengubah pertanyaan jadi survei terjadwal.",
+    },
+  },
+  {
     id: 49,
     slug: "rindu-tenang-indonesia",
     title: "Rindu Tenang Indonesia",

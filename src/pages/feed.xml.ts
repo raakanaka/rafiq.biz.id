@@ -19,6 +19,7 @@ export async function GET() {
   const now = new Date().toUTCString();
 
   const projects = [
+    { title: "Mitunbongkar", desc: "Company profile and service website for a professional demolition contractor operating across Jabodetabek since 2015.", link: "https://mitunbongkar.com/" },
     { title: "PT Dananjaya Zafer Adibrata", desc: "Company profile for Arka Consultant, specializing in business licensing and formation.", link: "https://dzagroup.co.id/arka-consultant/" },
     { title: "HALOEXPERT", desc: "Learning Management System (LMS) simplifying online training and education programs.", link: "https://haloexpert.id" },
     { title: "Meja Kreatif Studio", desc: "Modern website for a creative studio focusing on digital branding and aesthetics.", link: "https://mejakreatif.com" },
