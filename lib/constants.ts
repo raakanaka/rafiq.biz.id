@@ -73,10 +73,8 @@ export const PRIORITY_CITIES: string[] = [
   "medan",
   "bandung",
   "denpasar",
-  "badung",
   "batam",
   "makassar",
-  "balikpapan",
   "palembang",
 ];
 
