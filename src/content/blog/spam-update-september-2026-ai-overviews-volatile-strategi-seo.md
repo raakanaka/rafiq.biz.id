@@ -1,6 +1,6 @@
 ---
-title: "Google September 2026 Spam Update, AI Overviews Makin Volatile — Apa Yang Harus Dilakukan?"
-description: "Spam update September 2026 mulai rollout, data 9 bulan AI Overviews ungkap volatilitas ekstrem (2-17%), dan Reddit AI citation drop 86% dalam 4 hari. Begini respons strategisnya."
+title: "Spam Update September 2026: AI Overviews Makin Volatile"
+description: "Spam update September 2026 mulai rollout. Data 9 bulan AI Overviews ungkap volatilitas ekstrem dan perubahan pola citation ChatGPT."
 pubDate: "2026-09-26"
 heroImage: ""
 tags: ["Google Update", "AI Overviews", "GEO", "Spam Update", "SEO 2026"]
