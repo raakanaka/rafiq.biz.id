@@ -1,5 +1,5 @@
 ---
-title: "Scope Creep Merusak Proyek? Begini Kontrak Freelance Web yang Melindungi Kamu"
+title: "Scope Creep: Kontrak Aman untuk Freelancer Web"
 description: "72% freelancer pernah tidak dibayar penuh. Akar masalahnya bukan klien jahat—tapi kontrak yang ambigu. Panduan kontrak MSA+SOW plus cara stop scope creep."
 pubDate: "2026-09-27"
 heroImage: ""
@@ -173,4 +173,4 @@ Dokumen-dokumen ini tidak perlu panjang. SOW satu halaman dengan eksklusi yang j
 
 ---
 
-*Butuh website atau jasa SEO untuk bisnis Anda di Medan dan sekitarnya? [Hubungi Rafiq](/kontak) untuk konsultasi gratis.*
+*Butuh website atau jasa SEO untuk bisnis Anda di Medan dan sekitarnya? [Hubungi Rafiq](/contact) untuk konsultasi gratis.*
