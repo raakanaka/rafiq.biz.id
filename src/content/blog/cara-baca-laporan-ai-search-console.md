@@ -1,5 +1,5 @@
 ---
-title: "Cara Membaca Laporan AI Search Console Tanpa Salah Menilai SEO"
+title: "Laporan AI Search Console: Cara Membacanya"
 description: "Laporan AI Search Console membantu melihat kemunculan di AI Overviews dan AI Mode. Ini cara membaca impresi, batas metrik, dan keputusan yang aman."
 pubDate: "2026-09-30"
 date: "2026-09-30"
