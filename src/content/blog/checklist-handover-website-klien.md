@@ -1,5 +1,5 @@
 ---
-title: "Checklist Handover Website ke Klien: Akses, Backup, Dokumen"
+title: "Handover Website: Akses, Backup, Dokumentasi"
 description: "Checklist handover website untuk freelancer: pindahkan akses, siapkan backup, dokumentasikan sistem, dan verifikasi SEO agar klien bisa mengelola situs dengan aman."
 pubDate: "2026-10-04"
 date: "2026-10-04"
