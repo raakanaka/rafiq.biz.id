@@ -541,7 +541,7 @@ const jsonLd = {
                         </div>
                         <div class="card-hard flex flex-col p-8 transform md:-translate-y-4" style="background: var(--accent-light); border-color: var(--accent-dark);">
                             <div class="mb-4 relative">
-                            <div class="absolute -top-4 -right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full border border-border-dark shadow-[2px_2px_0px_#0f172a] transform rotate-3">
+                            <div class="absolute -top-4 -right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full border border-border-dark shadow-none transform rotate-3">
                                 TERLARIS
                             </div>
                             <span class="badge-brutal text-xs mb-4 bg-white">Target Kata Kunci Persaingan</span>
@@ -603,7 +603,7 @@ const jsonLd = {
                         </div>
                         <div class="card-hard flex flex-col p-8 transform md:-translate-y-4" style="background: var(--accent-light); border-color: var(--accent-dark);">
                             <div class="mb-4 relative">
-                            <div class="absolute -top-4 -right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full border border-border-dark shadow-[2px_2px_0px_#0f172a] transform rotate-3">
+                            <div class="absolute -top-4 -right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full border border-border-dark shadow-none transform rotate-3">
                                 TERLARIS
                             </div>
                             <span class="badge-brutal text-xs mb-4 bg-white">Perusahaan / CV</span>
@@ -697,7 +697,7 @@ const jsonLd = {
         {locationName && cityProfile(locationArray.join('-')) && (() => {
             const profile = cityProfile(locationArray.join('-'))!;
             return (
-            <section class="section bg-white" style="border-top: 1.5px solid #e5e7eb; padding-top: 4rem; padding-bottom: 4rem;">
+            <section class="section bg-white" style="border-top: 1.5px solid var(--border); padding-top: 4rem; padding-bottom: 4rem;">
                 <div class="max-w-4xl mx-auto px-4">
                     <h3 class="text-xl font-bold mb-4 text-foreground text-center">Konteks pasar di {locationName}</h3>
                     <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-4">

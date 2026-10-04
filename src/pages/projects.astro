@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SaudaraHeader from '../../components/SaudaraHeader.astro';
 import SaudaraFooter from '../../components/SaudaraFooter.astro';
 import Icon from '../../components/Icon.astro';
+import EditorialScene from '../../components/EditorialScene';
 import { projects } from '../../lib/projects';
 import { projectIcon } from '../../lib/icons';
 
@@ -42,13 +43,14 @@ const jsonLd = {
         <SaudaraHeader />
 
         <section class="sd-page-hero">
+            <EditorialScene ornament client:visible />
             <div class="sd-badge"><span class="sd-dot"></span><span>{projects.length}+ projects shipped</span></div>
             <h1 class="sd-page-h1">Project <span class="serif">portfolio</span></h1>
             <p class="sd-page-lead">A curated archive of websites, platforms, SEO work, and digital systems built for businesses across different industries.</p>
         </section>
 
         <section class="sd-section" style="padding-top:40px;">
-            <div class="sd-grid-3">
+            <div class="sd-grid-3 editorial-projects">
                 {projects.map((project) => (
                     <a href={`/projects/${project.slug}`} class="sd-proj">
                         <div class="sd-proj-top">
@@ -58,7 +60,7 @@ const jsonLd = {
                         <p class="sd-proj-industry">{project.industry}</p>
                         <h2 class="sd-card-title">{project.title}</h2>
                         <p class="sd-p" style="margin-bottom:10px;">{project.summary.en}</p>
-                        <p class="sd-p" lang="id" style="font-size:13.5px;color:#9ca3af;margin-bottom:16px;">{project.summary.id}</p>
+                        <p class="sd-p" lang="id" style="font-size:13.5px;color:var(--sub);margin-bottom:16px;">{project.summary.id}</p>
                         <div class="sd-tags">
                             {project.tech.map((t) => <span class="sd-tag">{t}</span>)}
                         </div>

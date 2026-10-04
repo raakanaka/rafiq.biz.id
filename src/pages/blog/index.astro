@@ -33,7 +33,7 @@ const isImage = (s?: string) => !!s && s.startsWith('/');
                     <p class="sd-p">Kami sedang meramu artikel baru berkualitas tinggi. Tetap pantau!</p>
                 </div>
             ) : (
-                <div class="sd-grid-3">
+                <div class="sd-grid-3 editorial-articles">
                     {sortedPosts.map((post) => (
                         <a href={`/blog/${post.id}`} class="sd-blog-card">
                             <div class="sd-blog-banner">

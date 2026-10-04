@@ -103,7 +103,7 @@ const canonicalHref = canonicalize(canonicalUrl);
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Newsreader:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;500;600;700&family=Newsreader:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 	</head>
 	<body class="antialiased">
 		<slot />
@@ -154,6 +154,7 @@ const canonicalHref = canonicalize(canonicalUrl);
     // --- Lenis smooth scroll (desktop wheel; native on touch) ---
     try {
       const lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1, smoothWheel: true });
+      lenis.on('scroll', () => document.dispatchEvent(new Event('rafiq:scroll')));
       function raf(time: number) {
         lenis.raf(time);
         requestAnimationFrame(raf);
