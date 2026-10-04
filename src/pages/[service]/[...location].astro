@@ -1,4 +1,5 @@
 ---
+import EditorialScene from '../../../components/EditorialScene';
 import Layout from '../../layouts/Layout.astro';
 import NicheLandingPage from './NicheLandingPage.astro';
 import { getCollection } from 'astro:content';
@@ -366,7 +367,7 @@ const jsonLd = {
         </header>
 
         {/* HERO SECTION */}
-        <section class="section pt-6 lg:pt-16 pb-12 lg:pb-24 flex-1 flex flex-col items-center justify-center text-center">
+        <section class="section pt-6 lg:pt-16 pb-12 lg:pb-24 flex-1 flex flex-col items-center justify-center text-center"><div class="legacy-spatial-header"><div>
             <div class="max-w-4xl mx-auto px-4">
                 <div class="badge-brutal mb-6 mx-auto inline-flex">
                     <span>🎯</span> {isSeoService ? "Spesialis Penakluk Algoritma Pencarian Google" : "Web Developer Spesialis Keuntungan Bisnis"}
@@ -389,7 +390,7 @@ const jsonLd = {
                     </a>
                 </div>
             </div>
-        </section>
+        </div><div class="spatial-header-art"><EditorialScene variant="services" client:visible /></div></div></section>
 
         {/* MENGAPA MEMILIH KAMI */}
         <section class="section" style="background: var(--card-bg);">

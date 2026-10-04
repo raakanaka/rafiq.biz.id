@@ -1,4 +1,5 @@
 ---
+import EditorialScene from '../../components/EditorialScene';
 import Layout from '../layouts/Layout.astro';
 import SaudaraHeader from '../../components/SaudaraHeader.astro';
 import SaudaraFooter from '../../components/SaudaraFooter.astro';
@@ -49,11 +50,11 @@ const jsonLd = {
     <div class="sd">
         <SaudaraHeader />
 
-        <section class="sd-page-hero">
+        <section class="sd-page-hero spatial-header"><div class="spatial-header-copy">
             <div class="sd-badge"><span class="sd-dot"></span><span>Web Developer &amp; SEO Specialist</span></div>
             <h1 class="sd-page-h1">About <span class="serif">me</span></h1>
             <p class="sd-page-lead">Get to know the person behind the code — and the way I think about fast, search-ready websites.</p>
-        </section>
+        </div><div class="spatial-header-art"><EditorialScene variant="experience" client:visible /></div></section>
 
         <!-- BIO -->
         <section class="sd-section" style="padding-top:40px;">

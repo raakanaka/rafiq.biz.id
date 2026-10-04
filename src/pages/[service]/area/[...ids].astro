@@ -1,4 +1,5 @@
 ---
+import EditorialScene from '../../../../components/EditorialScene';
 import Layout from '../../../layouts/Layout.astro';
 import { ALLOWED_SERVICES, SEO_SERVICES } from "../../../../lib/constants";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, MapPin } from "lucide-react";
@@ -269,7 +270,7 @@ const jsonLd = {
       <section class="section py-16 flex-1">
         <div class="max-w-5xl mx-auto px-4">
           
-          <div class="mb-12">
+          <div class="legacy-spatial-header"><div class="mb-12">
             {backLink && (
               <a href={backLink} class="inline-flex items-center gap-2 text-accent-dark hover:underline mb-6 font-semibold">
                 <ArrowLeft size={16} /> Kembali
@@ -287,6 +288,7 @@ const jsonLd = {
             </p>
           </div>
 
+<div class="spatial-header-art"><EditorialScene variant="process" client:visible /></div></div>
           {priorityAreaLanding ? (
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[

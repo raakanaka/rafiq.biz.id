@@ -1,4 +1,5 @@
 ---
+import EditorialScene from '../../components/EditorialScene';
 import Layout from '../layouts/Layout.astro';
 import SaudaraHeader from '../../components/SaudaraHeader.astro';
 import SaudaraFooter from '../../components/SaudaraFooter.astro';
@@ -42,11 +43,11 @@ const jsonLd = {
     <div class="sd">
         <SaudaraHeader />
 
-        <section class="sd-page-hero">
+        <section class="sd-page-hero spatial-header"><div class="spatial-header-copy">
             <div class="sd-badge"><span class="sd-dot"></span><span>Available for freelance</span></div>
             <h1 class="sd-page-h1">Get in <span class="serif">touch</span></h1>
             <p class="sd-page-lead">Ready to start a project? I'm available for freelance work and collaborations. Pick whichever channel suits you — I usually reply within a day.</p>
-        </section>
+        </div><div class="spatial-header-art"><EditorialScene variant="process" client:visible /></div></section>
 
         <section class="sd-section" style="padding-top:40px;padding-bottom:20px;">
             <div class="sd-contact-grid">

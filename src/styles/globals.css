@@ -1282,7 +1282,7 @@ html.lenis, html.lenis body { height: auto; }
 .sd { font-family: var(--font-body); }
 .sd-header { padding: 0 24px; background: var(--card-bg); border-bottom: 1px solid var(--border); }
 .sd-headbar { max-width: 1200px; border: 0; border-radius: 0; background: none; backdrop-filter: none; box-shadow: none; padding: 20px 0; }
-.sd-logo-mark, .sd-btn, .btn-kirim, .sd-price-tag, .sd-bio-avatar, .sd-bubble { color: var(--ink); }
+.sd-btn, .btn-kirim, .sd-price-tag, .sd-bio-avatar, .sd-bubble { color: var(--ink); }
 .sd-btn, .btn-kirim, .btn-outline-brutal { box-shadow: none; border: 1px solid transparent; border-radius: var(--radius-sm); }
 .btn-outline-brutal { border-color: var(--border); }
 .btn-kirim:hover, .btn-outline-brutal:hover { transform: none; box-shadow: none; }
@@ -1399,6 +1399,60 @@ html.lenis, html.lenis body { height: auto; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Purpose-specific spatial compositions keep reading surfaces separate. */
+.spatial-layout { max-width: 1200px; margin-inline: auto; display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.4fr); gap: 64px; align-items: start; }
+.spatial-visual { position: sticky; top: 120px; height: 420px; }
+.spatial-visual .editorial-scene, .spatial-header-art .editorial-scene, .project-detail-art .editorial-scene { height: 100%; min-height: 0; }
+.spatial-content { min-width: 0; }
+.spatial-process .spatial-visual { height: 360px; }
+.spatial-projects { grid-template-columns: minmax(0,1fr) minmax(0,1.6fr); }
+.spatial-skills { align-items: center; }
+.spatial-skills .spatial-visual { position: relative; top: 0; height: 280px; }
+.spatial-content .sd-grid-2, .spatial-content .sd-grid-3 { width: 100%; }
+.editorial-home .spatial-content .process-rail .sd-row { grid-template-columns: 1fr; gap: 20px; }
+.editorial-home .spatial-content .process-rail .sd-row-card { grid-column: 1; grid-row: 2; }
+.editorial-home .spatial-content .editorial-projects { display: block; }
+.editorial-home .spatial-content .editorial-projects .sd-proj { border-right: 0; padding-right: 0; }
+.editorial-home .spatial-content .editorial-experience .sd-exp { grid-template-columns: 1fr; }
+.editorial-home .spatial-content .editorial-experience .sd-exp > .sd-p { grid-column: 1; grid-row: auto; }
+.spatial-content .sd-skills { justify-content: flex-start; gap: 0; }
+.spatial-content .sd-skill { width: 50%; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: 20px 12px; background: none; }
+.spatial-header { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); gap: 48px; align-items: center; text-align: left; max-width: 1264px; margin-inline: auto; }
+.spatial-header-copy { min-width: 0; }
+.spatial-header .sd-page-h1 { font-size: clamp(32px, 3.4vw, 50px); }
+.legacy-spatial-header h1 { font-size: clamp(32px, 4vw, 58px); }
+.spatial-header .sd-page-lead { margin-left: 0; }
+.spatial-header .sd-hero-cta { justify-content: flex-start !important; }
+.spatial-header-art { height: 360px; min-width: 0; }
+.sd-page-hero.spatial-header .editorial-scene { position: relative; inset: auto; width: 100%; }
+.legacy-spatial-header { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 32px; max-width: 1200px; margin-inline: auto; align-items: center; padding-inline: 20px; text-align: left; }
+.legacy-spatial-header > div { min-width: 0; }
+.legacy-spatial-header .text-center { text-align: left; }
+.project-detail-art { height: 240px; margin-bottom: 28px; border-bottom: 1px solid var(--border); }
+.editorial-scene:not(.scene-hero) .editorial-scene-ring, .editorial-scene:not(.scene-hero) .editorial-scene-core { display: none; }
+.editorial-scene:has(canvas) .scene-fallback-shapes { visibility: hidden; }
+.legacy-spatial-header .editorial-scene { --ac: var(--accent); --ink: var(--foreground); }
+.scene-fallback-shapes { width: 72%; height: 65%; position: absolute; left: 14%; top: 18%; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; transform: perspective(600px) rotateX(18deg) rotateY(-25deg); }
+.scene-fallback-shapes span { background: var(--ac); border: 1px solid var(--ink); box-shadow: 12px 12px 0 var(--accent-light); }
+.scene-fallback-shapes span:nth-child(even) { background: var(--accent-light); transform: translateZ(20px) rotate(12deg); }
+.scene-process .scene-fallback-shapes { height: 24%; top: 38%; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.scene-process .scene-fallback-shapes span { border-radius: 50%; }
+.scene-projects .scene-fallback-shapes span { background: transparent; border: 5px solid var(--ac); }
+.scene-experience .scene-fallback-shapes { grid-template-columns: 1fr; height: 70%; transform: perspective(600px) rotateX(35deg) rotateY(-20deg); }
+@media (max-width: 860px) {
+  .spatial-layout { gap: 28px; grid-template-columns: minmax(0,.65fr) minmax(0,1fr); }
+  .spatial-header, .legacy-spatial-header { gap: 20px; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); }
+  .spatial-header-art { height: 280px; }
+}
+@media (max-width: 640px) {
+  .spatial-layout, .spatial-header, .legacy-spatial-header { grid-template-columns: 1fr; gap: 24px; }
+  .spatial-visual, .spatial-process .spatial-visual, .spatial-skills .spatial-visual { position: relative; top: 0; height: 240px; }
+  .spatial-header-art { height: 220px; }
+  .spatial-header { padding-inline: 20px; }
+  .spatial-header .sd-page-h1 { overflow-wrap: anywhere; }
+  .spatial-content .sd-skill { width: 100%; }
 }
 
 /* Full-width portfolio stage: type, sculpture, then the action rail. */

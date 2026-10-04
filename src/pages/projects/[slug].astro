@@ -1,4 +1,5 @@
 ---
+import EditorialScene from '../../../components/EditorialScene';
 import Layout from '../../layouts/Layout.astro';
 import SaudaraHeader from '../../../components/SaudaraHeader.astro';
 import SaudaraFooter from '../../../components/SaudaraFooter.astro';
@@ -79,7 +80,7 @@ const jsonLd = {
           </div>
         </article>
 
-        <aside class="sd-snapshot">
+        <aside class="sd-snapshot"><div class="project-detail-art"><EditorialScene variant="projects" client:visible /></div>
           <h2>Project Snapshot</h2>
           <dl>
             <div><dt>Industry</dt><dd>{project.industry}</dd></div>

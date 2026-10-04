@@ -42,12 +42,12 @@ const jsonLd = {
     <div class="sd">
         <SaudaraHeader />
 
-        <section class="sd-page-hero">
-            <EditorialScene ornament client:visible />
+        <section class="sd-page-hero spatial-header"><div class="spatial-header-copy">
+
             <div class="sd-badge"><span class="sd-dot"></span><span>{projects.length}+ projects shipped</span></div>
             <h1 class="sd-page-h1">Project <span class="serif">portfolio</span></h1>
             <p class="sd-page-lead">A curated archive of websites, platforms, SEO work, and digital systems built for businesses across different industries.</p>
-        </section>
+        </div><div class="spatial-header-art"><EditorialScene variant="projects" client:visible /></div></section>
 
         <section class="sd-section" style="padding-top:40px;">
             <div class="sd-grid-3 editorial-projects">

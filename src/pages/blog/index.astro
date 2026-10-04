@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import EditorialScene from '../../../components/EditorialScene';
 import Layout from '../../layouts/Layout.astro';
 import SaudaraHeader from '../../../components/SaudaraHeader.astro';
 import SaudaraFooter from '../../../components/SaudaraFooter.astro';
@@ -19,11 +20,11 @@ const isImage = (s?: string) => !!s && s.startsWith('/');
     <div class="sd">
         <SaudaraHeader />
 
-        <section class="sd-page-hero">
+        <section class="sd-page-hero spatial-header"><div class="spatial-header-copy">
             <div class="sd-badge"><span class="sd-dot"></span><span>Blog &amp; edukasi</span></div>
             <h1 class="sd-page-h1">Blog &amp; <span class="serif">insights</span></h1>
             <p class="sd-page-lead">Kumpulan wawasan taktis, riset industri, dan panduan optimasi web untuk membantu bisnis Anda mendominasi pencarian Google.</p>
-        </section>
+        </div><div class="spatial-header-art"><EditorialScene variant="skills" client:visible /></div></section>
 
         <section class="sd-section" style="padding-top:40px;">
             {sortedPosts.length === 0 ? (

@@ -9,7 +9,9 @@ class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean
   render() { return this.state.failed ? null : this.props.children; }
 }
 
-export default function EditorialScene({ ornament = false }: { ornament?: boolean }) {
+export type SceneVariant = 'hero' | 'process' | 'services' | 'projects' | 'experience' | 'skills';
+
+export default function EditorialScene({ ornament = false, variant = 'hero' }: { ornament?: boolean; variant?: SceneVariant }) {
   const root = useRef<HTMLDivElement>(null);
   const [enabled, setEnabled] = useState(false);
   const [active, setActive] = useState(false);
@@ -50,13 +52,14 @@ export default function EditorialScene({ ornament = false }: { ornament?: boolea
     };
   }, []);
 
-  return <div ref={root} className={`editorial-scene${ornament ? ' editorial-scene-small' : ''}`} aria-hidden="true">
+  return <div ref={root} data-variant={variant} className={`editorial-scene scene-${variant}${ornament ? ' editorial-scene-small' : ''}`} aria-hidden="true">
     <div className="editorial-scene-static">
+      {variant !== 'hero' && <div className="scene-fallback-shapes">{[0,1,2,3].map(i => <span key={i} />)}</div>}
       <span className="editorial-scene-ring" />
       <span className="editorial-scene-core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" dangerouslySetInnerHTML={{ __html: icons.rocket }} /></span>
     </div>
-    {enabled && colors.length === 4 && <SceneBoundary><Suspense fallback={null}>
-      <Scene active={active} mobile={mobile} ornament={ornament} colors={colors} host={root} />
+    {enabled && active && colors.length === 4 && <SceneBoundary><Suspense fallback={null}>
+      <Scene variant={variant} active={active} mobile={mobile} ornament={ornament} colors={colors} host={root} />
     </Suspense></SceneBoundary>}
   </div>;
 }

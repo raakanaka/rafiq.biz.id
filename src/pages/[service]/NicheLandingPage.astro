@@ -4,6 +4,7 @@
  * Renders a full niche-specific landing page for 48 niches × 98 cities.
  * Imported by [service]/[...location].astro when a niche slug is detected.
  */
+import EditorialScene from '../../../components/EditorialScene';
 import Layout from '../../layouts/Layout.astro';
 import SaudaraHeader from '../../../components/SaudaraHeader.astro';
 import SaudaraFooter from '../../../components/SaudaraFooter.astro';
@@ -118,7 +119,7 @@ const jsonLd = {
     <SaudaraHeader />
 
     <!-- HERO -->
-    <section class="sd-page-hero" style="padding-bottom:8px;">
+    <section class="sd-page-hero spatial-header" style="padding-bottom:8px;"><div class="spatial-header-copy">
       <div class="sd-badge"><span class="sd-dot"></span><span>{r(n.hero.badge)}</span></div>
       <h1 class="sd-page-h1">
         {r(n.hero.headline).includes(cityName) ? (
@@ -134,7 +135,7 @@ const jsonLd = {
         <a href={waLink} target="_blank" rel="noopener noreferrer" class="sd-btn">{n.hero.cta} <Icon name="arrowUpRight" /></a>
         <a href="#harga" class="sd-pill-line">Lihat Harga <Icon name="arrowRight" size={16} /></a>
       </div>
-    </section>
+    </div><div class="spatial-header-art"><EditorialScene variant="services" client:visible /></div></section>
 
     <!-- MASALAH & SOLUSI -->
     <section class="sd-section">
