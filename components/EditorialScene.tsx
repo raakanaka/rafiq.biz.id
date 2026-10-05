@@ -1,5 +1,5 @@
 import { Component, Suspense, lazy, useEffect, useRef, useState, type ReactNode } from 'react';
-import { icons } from '../lib/icons';
+import { projects } from '../lib/projects';
 
 const Scene = lazy(() => import('./EditorialSceneCanvas'));
 
@@ -53,11 +53,7 @@ export default function EditorialScene({ ornament = false, variant = 'hero' }: {
   }, []);
 
   return <div ref={root} data-variant={variant} className={`editorial-scene scene-${variant}${ornament ? ' editorial-scene-small' : ''}`} aria-hidden="true">
-    <div className="editorial-scene-static">
-      {variant !== 'hero' && <div className="scene-fallback-shapes">{[0,1,2,3].map(i => <span key={i} />)}</div>}
-      <span className="editorial-scene-ring" />
-      <span className="editorial-scene-core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" dangerouslySetInnerHTML={{ __html: icons.rocket }} /></span>
-    </div>
+    <div className="device-fallback"><div className="fallback-browser"><strong>Rafiq / Portfolio</strong><h3>Build, Create &amp; Stand Out</h3>{projects.filter(p => ['mitunbongkar', 'haloexpert', 'ekspora'].includes(p.slug)).map(p => <p key={p.slug}><b>{p.title}</b><br />{p.industry}</p>)}</div><span className="fallback-base" /></div>
     {enabled && active && colors.length === 4 && <SceneBoundary><Suspense fallback={null}>
       <Scene variant={variant} active={active} mobile={mobile} ornament={ornament} colors={colors} host={root} />
     </Suspense></SceneBoundary>}

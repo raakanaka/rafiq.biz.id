@@ -125,16 +125,15 @@ const faqs = [
         <script type="application/ld+json" is:inline set:html={JSON.stringify(homeJsonLd)} />
     </Fragment>
 
-    <div class="sd editorial-home">
+    <div class="sd pastel-home">
         <SaudaraHeader />
 
         <!-- ===== HERO ===== -->
         <section id="top" class="sd-hero portfolio-stage">
-            <div class="portfolio-heading">
+            <div class="portfolio-copy"><div class="portfolio-heading">
                 <div class="sd-badge"><span class="sd-dot"></span><span>Available for freelance</span></div>
                 <h1 class="sd-h1">Build, Create &amp; <span class="ac">Stand Out</span><br><span class="serif">— With Rafiq.</span></h1>
             </div>
-            <div class="portfolio-sculpture"><EditorialScene client:idle /></div>
             <div class="portfolio-intro">
                 <p class="sd-lead">Web Developer &amp; SEO Specialist based in Indonesia. I craft fast,
                     accessible, search-ready websites — from first wireframe to ranking on
@@ -144,6 +143,7 @@ const faqs = [
                     <a href="#audit" class="sd-link-cta">Free website audit <Icon name="arrowRight" /></a>
                 </div>
             </div>
+            </div><div class="portfolio-sculpture"><EditorialScene client:idle /></div>
             <div class="portfolio-trust">
                 <div class="sd-trust-label">Trusted by teams across Indonesia</div>
                 <div class="sd-trust"><span>Asia Safety</span><span>PraktiQu</span><span>Al Khair</span><span>Duniafintech</span></div>
@@ -157,7 +157,7 @@ const faqs = [
                 <p class="sd-sub">A clear, no-surprises process — from the first conversation to a site that loads fast and ranks.</p>
             </div>
 
-            <div class="spatial-layout spatial-process"><div class="spatial-visual"><EditorialScene variant="process" client:visible /></div><div class="spatial-content"><div class="process-rail">
+            <div class="section-content"><div class="process-rail">
                 
 
                 <!-- STEP 1 -->
@@ -236,7 +236,7 @@ const faqs = [
                     </div>
                 </div>
             </div>
-        </div></div>
+        </div>
         </section>
 
         <!-- ===== WHAT I DO ===== -->
@@ -245,7 +245,7 @@ const faqs = [
                 <h2 class="sd-h2">What I <span class="serif">do</span></h2>
                 <p class="sd-sub">Everything your website needs to look great, load fast, and get found — handled end to end.</p>
             </div>
-            <div class="spatial-layout spatial-services"><div class="spatial-visual"><EditorialScene variant="services" client:visible /></div><div class="spatial-content"><div class="sd-grid-2">
+            <div class="section-content"><div class="sd-grid-2">
                 {services.map((s) => (
                     <div class="sd-card">
                         <div class="sd-ic"><Icon name={s.icon} /></div>
@@ -254,7 +254,7 @@ const faqs = [
                     </div>
                 ))}
             </div>
-        </div></div>
+        </div>
         </section>
 
         <!-- ===== FEATURED PROJECTS ===== -->
@@ -263,7 +263,7 @@ const faqs = [
                 <h2 class="sd-h2">Featured <span class="serif">projects</span></h2>
                 <p class="sd-sub">A few highlights from the archive — real sites built and shipped for real businesses.</p>
             </div>
-            <div class="spatial-layout spatial-projects"><div class="spatial-visual"><EditorialScene variant="projects" client:visible /></div><div class="spatial-content"><div class="sd-grid-3 editorial-projects">
+            <div class="section-content"><div class="sd-grid-3 editorial-projects">
                 {featuredProjects.map((p, index) => (
                     <a href={`/projects/${p.slug}`} class="sd-proj">
                         <div class="sd-proj-top">
@@ -280,7 +280,7 @@ const faqs = [
                 ))}
             </div>
             <div class="sd-center"><a href="/projects" class="sd-pill-line">View all projects <Icon name="arrowRight" size={16} /></a></div>
-        </div></div>
+        </div>
         </section>
 
         <!-- ===== EXPERIENCE ===== -->
@@ -289,7 +289,7 @@ const faqs = [
                 <h2 class="sd-h2">Work <span class="serif">experience</span></h2>
                 <p class="sd-sub">My professional journey so far — across web development, SEO, and product design.</p>
             </div>
-            <div class="spatial-layout spatial-experience"><div class="spatial-visual"><EditorialScene variant="experience" client:visible /></div><div class="spatial-content"><div class="sd-grid-2 editorial-experience">
+            <div class="section-content"><div class="sd-grid-2 editorial-experience">
                 {experiences.map((e) => (
                     <div class="sd-card sd-exp">
                         <div class="sd-exp-head">
@@ -305,7 +305,7 @@ const faqs = [
                 ))}
             </div>
             <div class="sd-center"><a href="https://www.linkedin.com/in/rafiq-alhafizh-adha/" target="_blank" rel="noopener noreferrer" class="sd-pill-line">Full profile on LinkedIn <Icon name="arrowUpRight" size={16} /></a></div>
-        </div></div>
+        </div>
         </section>
 
         <!-- ===== SKILLS ===== -->
@@ -314,10 +314,10 @@ const faqs = [
                 <h2 class="sd-h2">Skills &amp; <span class="serif">stack</span></h2>
                 <p class="sd-sub">Technologies I work with daily.</p>
             </div>
-            <div class="spatial-layout spatial-skills"><div class="spatial-visual"><EditorialScene variant="skills" client:visible /></div><div class="spatial-content"><div class="sd-skills">
+            <div class="section-content"><div class="sd-skills">
                 {skills.map((s) => <span class="sd-skill"><Icon name={s.icon} /> {s.name}</span>)}
             </div>
-        </div></div>
+        </div>
         </section>
 
         <!-- ===== TESTIMONIALS ===== -->

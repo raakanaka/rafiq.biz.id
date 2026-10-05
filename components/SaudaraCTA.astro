@@ -1,6 +1,5 @@
 ---
 import Icon from './Icon.astro';
-import EditorialScene from './EditorialScene';
 
 interface Props {
   id?: string;
@@ -22,7 +21,7 @@ const chips = [
 <section class="sd-section sd-cta-sec" {...(id ? { id } : {})}>
   <div class="sd-cta">
     <div class="sd-cta-anim" aria-hidden="true">
-      <EditorialScene ornament client:visible />
+
       <div class="sd-cta-logo">R</div>
       {chips.map((c) => <div class="sd-chip on" style={c.style}>{c.label}</div>)}
     </div>
