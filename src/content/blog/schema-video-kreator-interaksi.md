@@ -1,5 +1,5 @@
 ---
-title: "Schema Video: 7 Cek Kreator dan Interaksi yang Benar"
+title: "Schema Video: 7 Cek Kreator dan Data Interaksi"
 description: "Google memperbarui VideoObject pada 24 September 2026. Periksa kreator, thumbnail, tanggal, URL video, dan statistik tanpa mengarang engagement."
 pubDate: "2026-10-06"
 date: "2026-10-06"
