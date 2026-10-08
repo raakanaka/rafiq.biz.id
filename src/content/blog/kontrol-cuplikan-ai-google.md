@@ -1,5 +1,5 @@
 ---
-title: "Kontrol Cuplikan AI Google: 5 Pilihan dan Risikonya"
+title: "Kontrol Cuplikan AI Google: 5 Opsi dan Risiko"
 description: "Pahami Googlebot, Google-Extended, nosnippet, data-nosnippet, dan noindex sebelum membatasi konten di AI Overviews atau AI Mode tanpa kehilangan visibilitas."
 pubDate: "2026-10-08"
 date: "2026-10-08"
