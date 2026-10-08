@@ -30,6 +30,20 @@ export const iconColors = [
 
 export const projects: Project[] = [
   {
+    id: 51,
+    slug: "praktiqu-appointment",
+    title: "PraktiQu Appointment",
+    link: "https://appointment.praktiqu.com/",
+    tech: ["Laravel", "PHP", "REST API"],
+    industry: "Psychology clinics and practices",
+    service: "Appointment booking web app",
+    emoji: "🧠",
+    summary: {
+      en: "An appointment web app for psychology clinics. Patients book a clinic, psychologist, service, and time without an account, pay online, and check results with an emailed PIN. Staff and psychologists manage schedules, services, patients, and multiple clinics through separate portals.",
+      id: "Aplikasi janji temu untuk klinik psikologi. Pasien memilih klinik, psikolog, layanan, dan jadwal tanpa akun, membayar online, lalu mengecek hasil dengan PIN dari email. Staf dan psikolog mengelola jadwal, layanan, pasien, serta multi-klinik lewat portal terpisah.",
+    },
+  },
+  {
     id: 50,
     slug: "mitunbongkar",
     title: "Mitunbongkar",
