@@ -30,6 +30,34 @@ export const iconColors = [
 
 export const projects: Project[] = [
   {
+    id: 64,
+    slug: "sakuta",
+    title: "Sakuta",
+    link: "https://sakuta.id/",
+    tech: ["WhatsApp Bot", "Telegram Bot", "AI Receipt Scanning", "Web Dashboard"],
+    industry: "Personal finance and MSME bookkeeping",
+    service: "Chat-based bookkeeping SaaS",
+    emoji: "💰",
+    summary: {
+      en: "A bookkeeping app that runs inside WhatsApp and Telegram. Users type entries such as \"jual kopi 25rb\" and Sakuta records and categorizes them. AI reads receipts and bank transfer proofs, and the system produces profit and loss reports, stock, PDF invoices, budgets, debts and receivables, with a web dashboard and subscription tiers.",
+      id: "Aplikasi pencatat keuangan yang berjalan di WhatsApp dan Telegram. Pengguna mengetik catatan seperti \"jual kopi 25rb\", lalu Sakuta mencatat dan mengkategorikannya. AI membaca struk dan bukti transfer, dan sistem menghasilkan laporan laba rugi, stok, invoice PDF, anggaran, serta utang piutang, lengkap dengan dashboard web dan paket langganan.",
+    },
+  },
+  {
+    id: 63,
+    slug: "movent",
+    title: "Movent",
+    link: "https://movent.id/",
+    tech: ["Laravel", "Tailwind CSS", "Alpine.js"],
+    industry: "Seminars and event organizing",
+    service: "Event organizer website",
+    emoji: "🎤",
+    summary: {
+      en: "A website for an event organizer that designs seminars on mental health, business, leadership, community, and personal development. It presents upcoming events with dates and venues, speaker profiles, insight articles, a gallery, and a collaboration inquiry flow.",
+      id: "Website untuk penyelenggara event yang merancang seminar bertema mental health, bisnis, leadership, komunitas, dan personal development. Menampilkan jadwal event lengkap dengan tanggal dan lokasi, profil pembicara, artikel insight, galeri, serta alur pengajuan kolaborasi.",
+    },
+  },
+  {
     id: 51,
     slug: "praktiqu-appointment",
     title: "PraktiQu Appointment",
