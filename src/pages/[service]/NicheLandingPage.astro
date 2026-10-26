@@ -57,9 +57,12 @@ const allFaq = [...n.faq, ...localFaq];
 // Deskripsi meta: kalau kota punya profil terverifikasi, pakai konteks
 // ekonominya. Tanpa ini setiap kota memakai kalimat yang sama persis —
 // snippet identik di ratusan hasil pencarian.
-const pageDesc = profile
-  ? `Jasa pembuatan website ${nicheDisplayName.toLowerCase()} di ${cityName}. ${cityName} adalah ${profile.economy}. Website cepat, siap SEO lokal, dan mudah dihubungi lewat WhatsApp.`.slice(0, 300)
+// Maks 160 karakter: pakai klausa pertama profil kota (unik per kota), lalu potong di batas kata.
+const econShort = profile ? profile.economy.split(',')[0].split(' — ')[0] : '';
+const rawDesc = profile
+  ? `Jasa website ${nicheDisplayName.toLowerCase()} di ${cityName}: ${econShort}. Cepat, siap SEO lokal, mudah dihubungi via WhatsApp.`
   : r(n.description);
+const pageDesc = rawDesc.length <= 160 ? rawDesc : rawDesc.slice(0, 157).replace(/\s+\S*$/, '') + '...';
 const pageKeywords = [
   `Jasa Website ${n.slug.replace(/-/g, ' ')}`,
   `website ${n.slug.replace(/-/g, ' ')} ${cityName}`,
