@@ -1,5 +1,5 @@
 ---
-title: "Audit URL Crawlable: Hyphen, Huruf Besar, Fragment, dan Parameter"
+title: "Audit URL Crawlable: Hyphen, Huruf Besar, Fragment"
 date: "2026-10-25"
 pubDate: "2026-10-25"
 excerpt: "Google memperbarui panduan struktur URL pada 23 Okt 2026. Pakai 6 cek ini untuk audit hyphen, huruf besar, fragment, dan parameter situs klien."
