@@ -30,6 +30,20 @@ export const iconColors = [
 
 export const projects: Project[] = [
   {
+    id: 65,
+    slug: "statlab",
+    title: "Statlab",
+    link: "https://statlab.web.id/",
+    tech: ["Next.js", "WhatsApp Bot", "Claude AI", "intervals.icu API", "Web Dashboard"],
+    industry: "Sports and fitness",
+    service: "AI sports coaching assistant on WhatsApp",
+    emoji: "🏃",
+    summary: {
+      en: "An AI sports assistant named Koci that runs on WhatsApp. It reads training data from Garmin, Strava, or Apple Health through intervals.icu, answers questions about running, swimming, cycling, pilates, football, and other sports, and adjusts its language to beginner, intermediate, or expert level. Users sign in with a WhatsApp code, get a fitness dashboard, save training plans to their intervals.icu calendar, and can add Koci to team or club WhatsApp groups.",
+      id: "Asisten olahraga berbasis AI bernama Koci yang berjalan di WhatsApp. Koci membaca data latihan dari Garmin, Strava, atau Apple Health lewat intervals.icu, menjawab pertanyaan seputar lari, renang, sepeda, pilates, sepak bola, dan olahraga lain, serta menyesuaikan bahasanya untuk level pemula, menengah, atau expert. Pengguna masuk dengan kode WhatsApp, mendapat dashboard kebugaran, menyimpan rencana latihan ke kalender intervals.icu, dan bisa memasukkan Koci ke grup WhatsApp tim atau klub.",
+    },
+  },
+  {
     id: 64,
     slug: "sakuta",
     title: "Sakuta",
