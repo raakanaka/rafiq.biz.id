@@ -57,6 +57,10 @@ Ketika suatu permukaan iklan baru muncul, laporan yang tidak punya tempat khusus
 
 Setelah pengumuman seperti ini, klien biasanya menerima pesan dari vendor iklan lain yang menjanjikan hasil. Siapkan satu kalimat standar: "Kita bergerak ketika Google mengumumkan ketersediaan di Indonesia dan ada data kinerja yang bisa diverifikasi." Ini melindungi klien dari biaya uji coba yang belum perlu.
 
+## Contoh catatan untuk klien
+
+Supaya tidak ditulis ulang setiap bulan, pakai format singkat seperti ini di laporan: "Status iklan AI Mode Indonesia: belum diumumkan per [tanggal cek]. Sumber: blog Ads & Commerce Google. Tindakan bulan ini: audit halaman tujuan dan promo. Tidak ada perubahan anggaran." Format ini jujur, mudah diperbarui, dan menunjukkan bahwa Anda memantau perubahan tanpa menjual janji. Jika suatu saat statusnya berubah, cukup ganti baris pertama dan tambahkan tautan pengumuman resminya. Simpan juga tanggal cek terakhir, karena klien akan menilai seberapa segar informasi tersebut.
+
 ## Kapan sebaiknya ditinjau ulang
 
 Cukup dua pemicu:
